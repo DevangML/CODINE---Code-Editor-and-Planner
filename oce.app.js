@@ -23,13 +23,13 @@ expressApp.use("/contact", ocePostRouter)
 
 // Static view configuration
 
-expressApp.use(express.static(path.resolve(__dirname, '../view/build')));
+expressApp.use(express.static(path.resolve(__dirname, './view/build')));
 
 
 // Catch all requests that don't match any route
 expressApp.get("*", (req, res) => {
   res.sendFile(
-    path.join(__dirname, "../view/build/index.html")
+    path.join(__dirname, "./view/build/index.html")
   )
 })
 
