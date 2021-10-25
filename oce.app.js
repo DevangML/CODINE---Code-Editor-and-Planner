@@ -2,7 +2,7 @@
 const express = require("express")
 const { ocePostRouter, oceVanillaRouter } = require("./routes/oce.routes")
 const cors = require("cors")
-require("path")
+const path = require("path")
 require("dotenv").config({ path: ".env" })
 
 // App Initialization
@@ -23,8 +23,7 @@ expressApp.use("/contact", ocePostRouter)
 
 // Static view configuration
 
-expressApp.use(express.static(
-  path.join(__dirname,“../view/build”)))
+expressApp.use(express.static(path.resolve(__dirname, '../view/build')));
 
 
 // Catch all requests that don't match any route
