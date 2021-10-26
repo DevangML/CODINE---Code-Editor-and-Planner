@@ -4,9 +4,14 @@ const { ocePostRouter, oceVanillaRouter } = require("./routes/oce.routes")
 const cors = require("cors")
 const path = require("path")
 require("dotenv").config({ path: ".env" })
+const compression = require('compression');
 
 // App Initialization
 const expressApp = express()
+
+// Compression
+
+expressApp.use(compression())
 
 // CORS Setup
 var corsOptions = {
