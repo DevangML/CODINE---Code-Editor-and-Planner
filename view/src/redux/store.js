@@ -1,21 +1,21 @@
-import { combineReducers, createStore } from "redux"
-import throttle from "lodash.throttle"
-import seed from "./seed"
+import { combineReducers, createStore } from 'redux'
+import throttle from 'lodash.throttle'
+import seed from './seed'
 
 const board = (state = { lists: [] }, action) => {
   switch (action.type) {
-    case "ADD_LIST": {
+    case 'ADD_LIST': {
       const { listId } = action.payload
       return { lists: [...state.lists, listId] }
     }
-    case "MOVE_LIST": {
+    case 'MOVE_LIST': {
       const { oldListIndex, newListIndex } = action.payload
       const newLists = Array.from(state.lists)
       const [removedList] = newLists.splice(oldListIndex, 1)
       newLists.splice(newListIndex, 0, removedList)
       return { lists: newLists }
     }
-    case "DELETE_LIST": {
+    case 'DELETE_LIST': {
       const { listId } = action.payload
       const filterDeleted = (tmpListId) => tmpListId !== listId
       const newLists = state.lists.filter(filterDeleted)
@@ -28,33 +28,33 @@ const board = (state = { lists: [] }, action) => {
 
 const listsById = (state = {}, action) => {
   switch (action.type) {
-    case "ADD_LIST": {
+    case 'ADD_LIST': {
       const { listId, listTitle } = action.payload
       return {
         ...state,
         [listId]: { _id: listId, title: listTitle, cards: [] }
       }
     }
-    case "CHANGE_LIST_TITLE": {
+    case 'CHANGE_LIST_TITLE': {
       const { listId, listTitle } = action.payload
       return {
         ...state,
         [listId]: { ...state[listId], title: listTitle }
       }
     }
-    case "DELETE_LIST": {
+    case 'DELETE_LIST': {
       const { listId } = action.payload
       const { [listId]: deletedList, ...restOfLists } = state
       return restOfLists
     }
-    case "ADD_CARD": {
+    case 'ADD_CARD': {
       const { listId, cardId } = action.payload
       return {
         ...state,
         [listId]: { ...state[listId], cards: [...state[listId].cards, cardId] }
       }
     }
-    case "MOVE_CARD": {
+    case 'MOVE_CARD': {
       const { oldCardIndex, newCardIndex, sourceListId, destListId } =
         action.payload
       // Move within the same list
@@ -78,7 +78,7 @@ const listsById = (state = {}, action) => {
         [destListId]: { ...state[destListId], cards: destinationCards }
       }
     }
-    case "DELETE_CARD": {
+    case 'DELETE_CARD': {
       const { cardId: deletedCardId, listId } = action.payload
       const filterDeleted = (cardId) => cardId !== deletedCardId
       return {
@@ -96,21 +96,21 @@ const listsById = (state = {}, action) => {
 
 const cardsById = (state = {}, action) => {
   switch (action.type) {
-    case "ADD_CARD": {
+    case 'ADD_CARD': {
       const { cardText, cardId } = action.payload
       return { ...state, [cardId]: { text: cardText, _id: cardId } }
     }
-    case "CHANGE_CARD_TEXT": {
+    case 'CHANGE_CARD_TEXT': {
       const { cardText, cardId } = action.payload
       return { ...state, [cardId]: { ...state[cardId], text: cardText } }
     }
-    case "DELETE_CARD": {
+    case 'DELETE_CARD': {
       const { cardId } = action.payload
       const { [cardId]: deletedCard, ...restOfCards } = state
       return restOfCards
     }
     // Find every card from the deleted list and remove it
-    case "DELETE_LIST": {
+    case 'DELETE_LIST': {
       const { cards: cardIds } = action.payload
       return Object.keys(state)
         .filter((cardId) => !cardIds.includes(cardId))
@@ -133,7 +133,7 @@ const reducers = combineReducers({
 const saveState = (state) => {
   try {
     const serializedState = JSON.stringify(state)
-    localStorage.setItem("state", serializedState)
+    localStorage.setItem('state', serializedState)
   } catch {
     // ignore write errors
   }
@@ -141,7 +141,7 @@ const saveState = (state) => {
 
 const loadState = () => {
   try {
-    const serializedState = localStorage.getItem("state")
+    const serializedState = localStorage.getItem('state')
     if (serializedState === null) {
       return undefined
     }
@@ -162,7 +162,7 @@ store.subscribe(
 
 console.log(store.getState())
 if (!store.getState().board.lists.length) {
-  console.log("SEED")
+  console.log('SEED')
   seed(store)
 }
 
