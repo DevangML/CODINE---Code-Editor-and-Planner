@@ -1,0 +1,11 @@
+.home {
+  margin-top: -9rem;
+  padding-top: 4rem;
+  background-color: #00bbf9;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}

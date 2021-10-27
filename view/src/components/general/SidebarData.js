@@ -45,7 +45,7 @@ export const SidebarData = [
     subNav: [
       {
         title: 'Project Planner',
-        path: '/board',
+        path: '/proj',
         icon: <IoIcons.IoIosPaper />,
         cName: 'sub-nav'
       },

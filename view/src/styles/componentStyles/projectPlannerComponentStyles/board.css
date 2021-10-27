@@ -2,6 +2,8 @@
   height: 92%;
   display: flex;
   overflow-x: auto;
+  background-color: transparent;
+  padding: 1rem;
 }
 
 .Add-List {
