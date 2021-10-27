@@ -1,8 +1,8 @@
-import React from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import * as IoIcons from 'react-icons/io';
-import * as RiIcons from 'react-icons/ri';
+import React from 'react'
+import * as FaIcons from 'react-icons/fa'
+import * as AiIcons from 'react-icons/ai'
+import * as IoIcons from 'react-icons/io'
+import * as RiIcons from 'react-icons/ri'
 
 export const SidebarData = [
   {
@@ -44,14 +44,14 @@ export const SidebarData = [
 
     subNav: [
       {
-        title: 'Minifier',
-        path: '/mini',
+        title: 'Project Planner',
+        path: '/board',
         icon: <IoIcons.IoIosPaper />,
         cName: 'sub-nav'
       },
       {
-        title: 'Beautifier',
-        path: '/beau',
+        title: 'To-Do List',
+        path: '/todo',
         icon: <IoIcons.IoIosPaper />,
         cName: 'sub-nav'
       },
@@ -68,6 +68,6 @@ export const SidebarData = [
     icon: <FaIcons.FaEnvelopeOpenText />,
 
     iconClosed: <RiIcons.RiArrowDownSFill />,
-    iconOpened: <RiIcons.RiArrowUpSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />
   }
-];
+]

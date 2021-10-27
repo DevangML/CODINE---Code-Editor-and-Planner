@@ -1,0 +1,24 @@
+.hero {
+  background-image: url('./assets/images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 22rem;
+  background-attachment: fixed;
+}
+
+.hero__item-1 {
+  font-size: 2rem;
+  color: #faeca0;
+  margin-top: -9rem;
+}
+
+.hero__item-2 {
+  font-size: 2rem;
+  color: #faeca0;
+}

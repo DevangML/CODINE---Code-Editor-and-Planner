@@ -1,0 +1,12 @@
+/* POP Compiler Section */
+
+.pop {
+    margin-top: -4rem;
+    background-color: #00bbf9;
+    height: 100vh;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }

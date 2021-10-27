@@ -1,0 +1,10 @@
+.main-1 {
+  height: 30rem;
+  background-color: #fcb045;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
