@@ -1,0 +1,7 @@
+.vanilla_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 6;
+}

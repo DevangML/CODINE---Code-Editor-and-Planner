@@ -8,7 +8,7 @@ import Pop from './pages/Pop'
 
 import ContactMe from './pages/ContactMe'
 import ProjectPlanner from './pages/ProjectPlanner'
-import { HashRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 // Dev Styles
 
@@ -27,6 +27,10 @@ import './styles/componentStyles/homeComponentStyles/mainOneStyles.css'
 import './styles/componentStyles/homeComponentStyles/mainTwoStyles.css'
 import './styles/pageStyles/projectPlanner.css'
 import './styles/pageStyles/vanilla.css'
+import './styles/componentStyles/vanillaComponentStyles/vanillaNormal.css'
+import './styles/componentStyles/vanillaComponentStyles/vanillaFluent.css'
+import './styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css'
+import './styles/pageStyles/contactMe.css'
 
 function App() {
 	return (
