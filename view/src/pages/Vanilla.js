@@ -104,6 +104,14 @@ export class Vanilla extends Component {
 					<h1 className='vanilla__header__item'>Vanilla Web Live Compiler</h1>
 				</header>
 				<main className='vanilla__main'>
+					<section className='vanilla__main__section-0'>
+						<button className='vanilla__main__section-0__item-1'>
+							Normal UI
+						</button>
+						<button className='vanilla__main__section-0__item-2'>
+							Fluent UI
+						</button>
+					</section>
 					<section className='vanilla__main__section-1'>
 						<section className='vanilla__main__section-1__sub-section-1'>
 							<div className='editor-header'>HTML</div>
