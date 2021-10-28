@@ -1,5 +1,5 @@
 .main-2 {
-  min-height: 100%;
+  min-height: 100vh;
   background-color: #faeca0;
   width: 100vw;
   display: flex;
@@ -8,4 +8,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  border-top-left-radius: 7vh;
+  border-top-right-radius: 7vh;
+  z-index: 2;
 }

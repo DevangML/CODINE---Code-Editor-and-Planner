@@ -1,5 +1,3 @@
-import '../../styles/componentStyles/projectPlannerComponentStyles/cardEditor.css'
-
 import React, { Component } from 'react'
 import TextareaAutosize from 'react-textarea-autosize'
 import EditButtons from './EditButtons'

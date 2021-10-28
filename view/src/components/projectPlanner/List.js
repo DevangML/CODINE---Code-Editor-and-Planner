@@ -1,5 +1,3 @@
-import '../../styles/componentStyles/projectPlannerComponentStyles/list.css'
-
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Droppable, Draggable } from 'react-beautiful-dnd'

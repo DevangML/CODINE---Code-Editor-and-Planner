@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/componentStyles/genralComponentStyles/dfooter.css'
+
 
 function Dfooter() {
 	return (

@@ -1,5 +1,3 @@
-import '../../styles/componentStyles/projectPlannerComponentStyles/editButtons.css'
-
 import React from 'react'
 
 const EditButtons = ({ handleSave, saveLabel, handleDelete, handleCancel }) => (

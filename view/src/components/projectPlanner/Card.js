@@ -1,5 +1,3 @@
-import '../../styles/componentStyles/projectPlannerComponentStyles/card.css'
-
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Draggable } from 'react-beautiful-dnd'

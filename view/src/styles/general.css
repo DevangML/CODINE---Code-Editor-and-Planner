@@ -11,8 +11,9 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   -webkit-font-smoothing: subpixel-antialiased;
-  cursor: url('./assets/icons/cursor.png'), url('./assets/icons/cursor.cur'),
-    pointer;
+  /* cursor: url('./assets/icons/cursor.png'), url('./assets/icons/cursor.cur'),
+    pointer; */
+  z-index: -100;
 }
 
 /* width */
@@ -35,4 +36,9 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@media only screen and (max-width: 600px) {
+  body{overflow: visible;}
+
 }

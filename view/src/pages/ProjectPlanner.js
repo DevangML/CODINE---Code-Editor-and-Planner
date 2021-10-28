@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Dfooter from '../components/general/Dfooter'
 import Board from '../components/projectPlanner/Board'
-import '../styles/pageStyles/projectPlanner.css'
+
 
 function ProjectPlanner() {
 	const [state, setState] = useState(0)
