@@ -1,3 +1,7 @@
+/* Font Import Section */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
 /* vanilla_fluent Web Section */
 
 .vanilla_fluent {
@@ -28,6 +32,7 @@
   padding-bottom: 0.5rem;
   color: #fafafacc;
   background-color: #253139;
+  font-family: 'Fira Code', monospace;
 }
 
 .vanilla_fluent__main__section-1__sub-section-1__codemirror,
@@ -98,7 +103,7 @@
   outline: none;
   z-index: -200;
   min-height: 60vh;
-  margin-bottom: 11vh;
+  margin-bottom: 20vh;
 }
 
 .vanilla_fluent__main__section-1__sub-section-1__item {
@@ -119,6 +124,7 @@
 
 .CodeMirror {
   min-height: 25vh;
+  font-family: 'Fira Code', monospace !important;
 }
 
 .vanilla_fluent__main__section-1__sub-section-1__item {

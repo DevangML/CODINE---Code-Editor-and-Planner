@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
 
 .hero {
   background-image: url('../../../assets/images/hero3.png');
@@ -16,14 +16,12 @@
 }
 
 .hero__item-1 {
-  font-family: 'Kaushan Script', cursive;
   font-size: 12vw;
   color: #faeca0;
   margin-top: -9rem;
 }
 
 .hero__item-2 {
-  font-family: 'Kaushan Script', cursive;
   font-size: 4vw;
   color: #faeca0;
 }

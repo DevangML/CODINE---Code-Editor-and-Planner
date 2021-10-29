@@ -1,11 +1,10 @@
+/* Font Imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+
 *:focus {
   outline: 0 !important;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
 
 html,
@@ -20,6 +19,12 @@ body {
   /* cursor: url('./assets/icons/cursor.png'), url('./assets/icons/cursor.cur'),
     pointer; */
   z-index: -100;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 /* width */

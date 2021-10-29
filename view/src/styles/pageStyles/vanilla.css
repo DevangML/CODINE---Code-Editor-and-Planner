@@ -13,6 +13,13 @@
   padding-top: 16vh;
   z-index: 8;
   overflow: hidden;
+  font-family: 'Kaushan Script', cursive;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .vanilla__header__item {
@@ -38,6 +45,7 @@
   .vanilla__header__item {
     font-size: 6vw;
   }
+
   .vanilla {
     padding-top: 14.5vh;
   }

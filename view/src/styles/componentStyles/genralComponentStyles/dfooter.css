@@ -16,22 +16,10 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  max-height: 7vh;
+  height: 14vh;
   border-top-left-radius: 7vh;
   border-top-right-radius: 7vh;
   position: absolute;
   bottom: 0;
   z-index: 3;
-}
-
-@media only screen and (max-width: 340px) {
-  .dfooter__item {
-    font-size: 1.2rem;
-  }
-}
-
-@media only screen and (max-width: 270px) {
-  .dfooter__item {
-    font-size: 1rem;
-  }
 }

@@ -18,21 +18,47 @@
   flex-direction: column;
   flex-wrap: wrap;
   color: #555;
-  background: #ecf0f3;
+  background: url('../../assets/images/contact.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 2rem;
   margin-top: -4rem;
 }
 
+.contact__container {
+  background: #e0e0e0;
+  box-shadow: inset -18px -18px 36px #b5b5b5,
+    inset 18px 18px 36px #ffffff;
+  padding: 2vw;
+  border-radius: 5vw;
+  min-width: 40vw;
+  max-width: 80vw;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .contact__section__item-1 {
-  /* background: url('../../assets/images/'); */
+  background: url('../../assets/images/logo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   margin: 0 auto;
   box-shadow:
-          /* logo shadow */ 0px 0px 2px #5f5f5f,
-    /* offset */ 0px 0px 0px 5px #ecf0f3, /*bottom right */ 8px 8px 15px #a7aaaf,
-    /* top left */ -8px -8px 15px #ffffff;
+    /* logo shadow */
+    0px 0px 2px #5f5f5f,
+    /* offset */
+    0px 0px 0px 5px #ecf0f3,
+    /*bottom right */
+    8px 8px 15px #a7aaaf,
+    /* top left */
+    -8px -8px 15px #ffffff;
 }
 
 .contact__section__item-2 {
@@ -43,7 +69,7 @@
 }
 
 .contact__section__sub-section {
-  max-width: 100%;
+  min-width: 100%;
   padding: 75px 5px 5px 5px;
   display: flex;
   flex-direction: column;
@@ -59,7 +85,8 @@
   font-size: 18px;
   color: #555;
   padding: 20px 10px 20px 5px;
-  max-width: 100%;
+  max-width: 90%;
+  min-width: 50%;
 }
 
 .contact__section__sub-section__item-1,
@@ -71,7 +98,7 @@
   box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
 
   max-width: 70%;
-  width: 44vw;
+  width: 100vw;
   word-wrap: break-word;
 }
 
@@ -84,7 +111,7 @@
   outline: none;
   border: none;
   cursor: pointer;
-  height: 60px;
+  max-height: 20vh;
   border-radius: 30px;
   font-size: 20px;
   font-weight: 700;
@@ -94,8 +121,7 @@
   background: #e0e0e0;
   box-shadow: inset 20px -20px 28px #b8b8b8, inset -20px 20px 28px #ffffff;
   transition: 0.5s;
-  max-width: 80%;
-  width: 29vw;
+  max-width: 20vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -109,4 +135,8 @@
 
 .contact__item:active {
   background: #1da88a;
+}
+
+@media only screen and (min-width:3600px) {
+  .contact__container{border-radius: 1vw;}
 }

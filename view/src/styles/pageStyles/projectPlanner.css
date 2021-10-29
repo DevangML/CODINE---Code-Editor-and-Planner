@@ -2,13 +2,16 @@
   background: #f7ff00;
   background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);
   background: linear-gradient(to right, #db36a4, #f7ff00);
-  min-height: 103vh;
+  min-height: 150vh;
   min-width: 100vw;
   margin-top: -10rem;
   padding-top: 10rem;
   background-size: cover;
   position: relative;
-  padding-bottom: 16rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  flex-wrap: wrap;
 }
 
 .proj__header__item {
@@ -20,8 +23,8 @@
     4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee,
     7px 6px 1px #cccccc;
   color: #444444;
-  font-size: 3rem;
-  margin-top: -3.7rem;
+  font-size: 10vw;
+  margin-top: -12vh;
 }
 
 .proj__button {
