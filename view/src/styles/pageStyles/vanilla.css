@@ -1,38 +1,43 @@
 .vanilla {
-  background-color: transparent;
-  min-height: 100vh;
+  background: #833ab4;
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  min-height: 111vh;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   margin-top: -18vh;
   padding-top: 16vh;
   z-index: 8;
   overflow: hidden;
-  position: relative;
-  min-height: 100vh;
 }
 
-
 .vanilla__header__item {
-  font-size: 7vh;
+  font-size: 7vw;
   color: #faeca0;
   text-shadow: -3px 0px 5px rgb(36, 36, 36);
   text-align: center;
 }
 
-@media only screen and (max-height:2160px) and (max-width:3840px)
- {
-  .vanilla{padding-top:13vh;}
-  .vanilla__header__item{font-size: 6vh;}
-
+@media only screen and (max-height: 2160px) and (max-width: 3840px) {
+  .vanilla {
+    padding-top: 13vh;
+  }
 }
 
-@media only screen and (max-height:1080px) and (max-width:1920px)
- {
-  .vanilla{padding-top:9vh;}
+@media only screen and (max-height: 1080px) and (max-width: 1920px) {
+  .vanilla {
+    padding-top: 9vh;
+  }
 }
 
-
-
+@media only screen and (max-width: 1400px) {
+  .vanilla__header__item {
+    font-size: 6vw;
+  }
+  .vanilla {
+    padding-top: 14.5vh;
+  }
+}

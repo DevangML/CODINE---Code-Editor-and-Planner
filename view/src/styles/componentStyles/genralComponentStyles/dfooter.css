@@ -1,8 +1,8 @@
 /*Dfooter Section*/
 
 .dfooter__item {
-  text-align:justify;
-  font-size: 4.5vw;
+  text-align: justify;
+  font-size: 4vw;
   color: rgb(250, 234, 92);
 }
 
@@ -15,11 +15,11 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
-  min-height: 8vh;
+  justify-content: center;
+  max-height: 7vh;
   border-top-left-radius: 7vh;
   border-top-right-radius: 7vh;
-  position: sticky;
+  position: absolute;
   bottom: 0;
   z-index: 3;
 }

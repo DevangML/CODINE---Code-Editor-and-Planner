@@ -12,7 +12,7 @@ export const SidebarData = [
   },
   {
     title: 'Editors',
-    path: '',
+    path: '/vanilla',
     icon: <AiIcons.AiFillHome />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -37,7 +37,7 @@ export const SidebarData = [
   },
   {
     title: 'Tools',
-    path: '',
+    path: '/proj',
     icon: <IoIcons.IoIosPaper />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
