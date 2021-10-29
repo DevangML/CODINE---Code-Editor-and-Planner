@@ -2,16 +2,15 @@
   background: #f7ff00;
   background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);
   background: linear-gradient(to right, #db36a4, #f7ff00);
-  min-height: 150vh;
+  height: 100vh;
   min-width: 100vw;
-  margin-top: -10rem;
-  padding-top: 10rem;
   background-size: cover;
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   gap: 2vh;
-  flex-wrap: wrap;
 }
 
 .proj__header__item {

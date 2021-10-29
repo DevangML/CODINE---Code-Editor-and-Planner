@@ -15,8 +15,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -50vh;
-  padding-top: 50vh;
   z-index: -1;
   position: relative;
   min-height: 100vh;
@@ -103,7 +101,7 @@
   outline: none;
   z-index: -200;
   min-height: 60vh;
-  margin-bottom: 20vh;
+  /* margin-bottom:50vh; */
 }
 
 .vanilla_fluent__main__section-1__sub-section-1__item {
