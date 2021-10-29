@@ -6,13 +6,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: -15vh;
-  padding-top: 15vh;
+  margin-top: -18vh;
+  padding-top: 16vh;
   z-index: 8;
   overflow: hidden;
   position: relative;
   min-height: 100vh;
 }
+
 
 .vanilla__header__item {
   font-size: 7vh;
@@ -20,3 +21,18 @@
   text-shadow: -3px 0px 5px rgb(36, 36, 36);
   text-align: center;
 }
+
+@media only screen and (max-height:2160px) and (max-width:3840px)
+ {
+  .vanilla{padding-top:13vh;}
+  .vanilla__header__item{font-size: 6vh;}
+
+}
+
+@media only screen and (max-height:1080px) and (max-width:1920px)
+ {
+  .vanilla{padding-top:9vh;}
+}
+
+
+

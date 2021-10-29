@@ -103,11 +103,8 @@ export class VanillaFluent extends Component {
         <main className="vanilla_fluent__main">
           <section className="vanilla_fluent__main__section-1">
             <section className="vanilla_fluent__main__section-1__sub-section-1">
-              <div className="vanilla_fluent__main__section-1__sub-section-1__editor-header">
-                HTML
-              </div>
+              <div className="editor-header">HTML</div>
               <CodeMirror
-                className="vanilla_fluent__main__section-1__sub-section-1__codemirror"
                 value={html}
                 options={{
                   mode: 'htmlmixed',
@@ -121,7 +118,6 @@ export class VanillaFluent extends Component {
             <section className="vanilla_fluent__main__section-1__sub-section-2">
               <div className="editor-header">CSS</div>
               <CodeMirror
-                className="vanilla_fluent__main__section-1__sub-section-2__codemirror"
                 value={css}
                 options={{
                   mode: 'css',
@@ -135,7 +131,6 @@ export class VanillaFluent extends Component {
             <section className="vanilla_fluent__main__section-1__sub-section-3">
               <div className="editor-header">JS</div>
               <CodeMirror
-                className="vanilla_fluent__main__section-1__sub-section-3__codemirror"
                 value={js}
                 options={{
                   mode: 'javascript',
