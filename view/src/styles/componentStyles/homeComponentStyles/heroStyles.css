@@ -12,7 +12,7 @@
   align-items: center;
   min-height: 100vh;
   margin-bottom: -5rem;
-  background-attachment: scroll;
+  background-attachment: fixed;
 }
 
 .hero__item-1 {

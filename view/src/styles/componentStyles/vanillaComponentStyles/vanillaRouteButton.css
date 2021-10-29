@@ -1,7 +1,22 @@
 .vanilla_button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 6;
+  gap: 1vw;
+}
+
+.vanilla_button__item-1,
+.vanilla_button__item-2 {
+  border-radius: 3vw;
+  padding-left: 1.2vw;
+  padding-right: 1.2vw;
+  background-color: rgb(56, 56, 56);
+  outline: none;
+  border: 4px solid rgb(56, 56, 56);
+}
+
+.vanilla_button__item-1__sub-item,
+.vanilla_button__item-2__sub-item {
 }

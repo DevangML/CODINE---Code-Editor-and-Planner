@@ -149,11 +149,6 @@ export class VanillaFluent extends Component {
             ></iframe>
           </section>
         </main>
-        <br />
-        <br />
-        <br />
-        <br />
-        <Dfooter />
       </section>
     )
   }

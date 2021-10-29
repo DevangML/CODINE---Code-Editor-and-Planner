@@ -2,12 +2,13 @@
   background: #833ab4;
   background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
-  min-height: 111vh;
+  min-height: 120vh;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  gap: 2vh;
   margin-top: -18vh;
   padding-top: 16vh;
   z-index: 8;

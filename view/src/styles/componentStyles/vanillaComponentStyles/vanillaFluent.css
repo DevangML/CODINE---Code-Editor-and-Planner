@@ -23,7 +23,7 @@
   content: attr(title);
   display: flex;
   align-items: center;
-  padding-left: 1.25rem;
+  padding-left: 3vw;
   font-size: 0.9rem;
   padding-bottom: 0.5rem;
   color: #fafafacc;
@@ -49,16 +49,17 @@
   justify-content: space-evenly;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2vh;
   padding: 1rem;
   margin: 1rem;
   min-height: 40vh;
+  margin-bottom: 3vh;
 }
 
 .vanilla_fluent__main__section-1__sub-section-1 {
   background: #253139;
   color: #fafafacc;
-  border-radius: 1rem;
+  border-radius: 1.5vw;
   padding: 0%;
   display: block;
   margin: auto;
@@ -68,7 +69,7 @@
 
 .vanilla_fluent__main__section-1__sub-section-2 {
   background: #ffffff;
-  border-radius: 1rem;
+  border-radius: 1.5vw;
   padding: 0%;
   display: block;
   margin: auto;
@@ -78,7 +79,7 @@
 
 .vanilla_fluent__main__section-1__sub-section-3 {
   background: #ffffff;
-  border-radius: 1rem;
+  border-radius: 1.5vw;
   padding: 0%;
   display: block;
   margin: auto;
@@ -97,6 +98,7 @@
   outline: none;
   z-index: -200;
   min-height: 60vh;
+  margin-bottom: 11vh;
 }
 
 .vanilla_fluent__main__section-1__sub-section-1__item {
@@ -115,8 +117,8 @@
   resize: none;
 }
 
-.CodeMirror{
-   min-height: 25vh;
+.CodeMirror {
+  min-height: 25vh;
 }
 
 .vanilla_fluent__main__section-1__sub-section-1__item {
@@ -255,11 +257,10 @@
   height: 70vh;
   outline: none;
   border: none;
-  border-radius: 1rem;
+  border-radius: 3vw;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
-  border-radius: 1rem;
   z-index: 0;
 }
 
