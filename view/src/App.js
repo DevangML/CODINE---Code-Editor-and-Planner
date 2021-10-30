@@ -1,4 +1,5 @@
 // import './app.css'
+
 import './styles/general.css'
 import Sidebar from './components/general/Sidebar'
 import Vanilla from './pages/Vanilla'

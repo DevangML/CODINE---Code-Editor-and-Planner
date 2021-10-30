@@ -6,6 +6,18 @@
   color: rgb(250, 234, 92);
 }
 
+@media only screen and (max-width:800px) {
+  .dfooter__item {
+    font-size: 6vw;
+  }
+}
+
+@media only screen and (max-width:500px) {
+  .dfooter__item {
+    font-size: 9vw;
+  }
+}
+
 .dfooter {
   min-width: 100vw;
   background: #232526;
