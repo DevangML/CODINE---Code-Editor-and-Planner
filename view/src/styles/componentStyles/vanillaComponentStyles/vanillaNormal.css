@@ -1,0 +1,23 @@
+.vanilla_normal {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+  padding-bottom: 20vh;
+  overflow-x: scroll;
+}
+
+.vanilla_normal__section-1 {
+  display: flex;
+  flex-direction: column;
+  min-width: 39vw;
+}
+
+.vanilla_normal__section-2__item {
+    min-width: 56vw;
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 0px;
+    background: #e0e0e0;
+    box-shadow: inset -25px -25px 50px #a6a6a6, inset 25px 25px 50px #ffffff;
+}

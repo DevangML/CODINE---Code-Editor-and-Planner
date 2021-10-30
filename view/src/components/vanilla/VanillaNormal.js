@@ -12,57 +12,57 @@ import 'codemirror/mode/css/css'
 import 'codemirror/mode/javascript/javascript'
 
 export class VanillaNormal extends Component {
-	constructor(props) {
-		super(props)
+  constructor(props) {
+    super(props)
 
-		this.state = {
-			id: '',
-			html: '',
-			css: '',
-			js: ''
-		}
+    this.state = {
+      id: '',
+      html: '',
+      css: '',
+      js: ''
+    }
 
-		this.iRef = React.createRef()
+    this.iRef = React.createRef()
 
-		this.pusher = new Pusher('84c1d9e5a99706636a37', {
-			cluster: 'ap2',
-			forceTLS: true
-		})
+    this.pusher = new Pusher('84c1d9e5a99706636a37', {
+      cluster: 'ap2',
+      forceTLS: true
+    })
 
-		this.channel = this.pusher.subscribe('Codex')
-	}
-	componentDidUpdate() {
-		this.runCode()
-	}
+    this.channel = this.pusher.subscribe('Codex')
+  }
+  componentDidUpdate() {
+    this.runCode()
+  }
 
-	componentDidMount() {
-		this.setState({
-			id: pushid()
-		})
+  componentDidMount() {
+    this.setState({
+      id: pushid()
+    })
 
-		this.channel.bind('text-update', (data) => {
-			const { id } = this.state
-			if (data.id === id) return
+    this.channel.bind('text-update', (data) => {
+      const { id } = this.state
+      if (data.id === id) return
 
-			this.setState({
-				html: data.html,
-				css: data.css,
-				js: data.js
-			})
-		})
-	}
+      this.setState({
+        html: data.html,
+        css: data.css,
+        js: data.js
+      })
+    })
+  }
 
-	syncUpdates = () => {
-		const data = { ...this.state }
+  syncUpdates = () => {
+    const data = { ...this.state }
 
-		axios.post('http://localhost:5000/vanilla', data).catch(console.error)
-	}
+    axios.post('http://localhost:5000/vanilla', data).catch(console.error)
+  }
 
-	runCode = () => {
-		const { html, css, js } = this.state
+  runCode = () => {
+    const { html, css, js } = this.state
 
-		const document = this.iRef.current.contentDocument
-		const documentContents = `
+    const document = this.iRef.current.contentDocument
+    const documentContents = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -84,80 +84,72 @@ export class VanillaNormal extends Component {
         </html>
       `
 
-		document.open()
-		document.write(documentContents)
-		document.close()
-	}
+    document.open()
+    document.write(documentContents)
+    document.close()
+  }
 
-	render() {
-		const { html, js, css } = this.state
-		const codeMirrorOptions = {
-			theme: 'material',
-			lineNumbers: true,
-			scrollbarStyle: null,
-			lineWrapping: true
-		}
+  render() {
+    const { html, js, css } = this.state
+    const codeMirrorOptions = {
+      theme: 'material',
+      lineNumbers: true,
+      scrollbarStyle: null,
+      lineWrapping: true
+    }
 
-		return (
-			<section className='vanilla_normal'>
-				
-				<main className='vanilla_normal__main'>
-					<section className='vanilla_normal__main__section-1'>
-						<section className='vanilla_normal__main__section-1__sub-section-1'>
-							<div className='editor-header'>HTML</div>
-							<CodeMirror
-								value={html}
-								options={{
-									mode: 'htmlmixed',
-									...codeMirrorOptions
-								}}
-								onBeforeChange={(editor, data, html) => {
-									this.setState({ html }, () => this.syncUpdates())
-								}}
-							/>
-						</section>
-						<section className='vanilla_normal__main__section-1__sub-section-2'>
-							<div className='editor-header'>CSS</div>
-							<CodeMirror
-								value={css}
-								options={{
-									mode: 'css',
-									...codeMirrorOptions
-								}}
-								onBeforeChange={(editor, data, css) => {
-									this.setState({ css }, () => this.syncUpdates())
-								}}
-							/>
-						</section>
-						<section className='vanilla_normal__main__section-1__sub-section-3'>
-							<div className='editor-header'>JS</div>
-							<CodeMirror
-								value={js}
-								options={{
-									mode: 'javascript',
-									...codeMirrorOptions
-								}}
-								onBeforeChange={(editor, data, js) => {
-									this.setState({ js }, () => this.syncUpdates())
-								}}
-							/>
-						</section>
-					</section>
-					<section className='vanilla_normal__main__section-2'>
-						<iframe
-							className='vanilla_normal__main__section-2__item'
-							ref={this.iRef}
-						></iframe>
-					</section>
-				</main>
-				<br />
-				<br />
-				<br />
-				<br />
-				<Dfooter />
-			</section>
-		)
-	}
+    return (
+      <section className="vanilla_normal">
+        <section className="vanilla_normal__section-1">
+          <section className="vanilla_normal__section-1__sub-section-1">
+            <div className="editor-header">HTML</div>
+            <CodeMirror
+              value={html}
+              options={{
+                mode: 'htmlmixed',
+                ...codeMirrorOptions
+              }}
+              onBeforeChange={(editor, data, html) => {
+                this.setState({ html }, () => this.syncUpdates())
+              }}
+            />
+          </section>
+          <section className="vanilla_normal__section-1__sub-section-2">
+            <div className="editor-header">CSS</div>
+            <CodeMirror
+              value={css}
+              options={{
+                mode: 'css',
+                ...codeMirrorOptions
+              }}
+              onBeforeChange={(editor, data, css) => {
+                this.setState({ css }, () => this.syncUpdates())
+              }}
+            />
+          </section>
+          <section className="vanilla_normal__section-1__sub-section-3">
+            <div className="editor-header">JS</div>
+            <CodeMirror
+              value={js}
+              options={{
+                mode: 'javascript',
+                ...codeMirrorOptions
+              }}
+              onBeforeChange={(editor, data, js) => {
+                this.setState({ js }, () => this.syncUpdates())
+              }}
+            />
+          </section>
+        </section>
+        <section className="vanilla_normal__section-2">
+          <iframe
+            className="vanilla_normal__section-2__item"
+            ref={this.iRef}
+          ></iframe>
+        </section>
+      </section>
+    )
+  }
 }
 
 export default VanillaNormal
