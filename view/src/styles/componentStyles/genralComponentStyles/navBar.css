@@ -40,7 +40,6 @@
   transition: all 0.4s 0.4s ease-in-out;
   transition-delay: 0ms;
   z-index: 401;
-
 }
 
 .navbar__nav__section {
@@ -73,7 +72,17 @@
 }
 
 .submenu__item-2 {
-  background: #414757;
+  background: #870000; 
+  background: -webkit-linear-gradient(
+    to right,
+    #190a05,
+    #870000
+  ); 
+  background: linear-gradient(
+    to right,
+    #190a05,
+    #870000
+  ); 
   height: 9.6vh;
   padding-left: 2.57vw;
   display: flex;
