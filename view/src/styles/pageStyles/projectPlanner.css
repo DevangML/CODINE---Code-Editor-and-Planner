@@ -10,7 +10,10 @@
   justify-content: flex-start;
   align-items: center;
   gap: 2vh;
-  padding-bottom: 35vh;
+  padding-bottom: 38vh;
+  margin-top: -18vh;
+  padding-top: 18vh;
+  margin-bottom: 8vh;
 }
 
 .proj__header__item {

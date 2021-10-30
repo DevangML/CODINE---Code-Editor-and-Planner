@@ -18,13 +18,16 @@
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+  margin-top: -13vh;
+  margin-bottom: -1vh;
 }
 
 .vanilla__header__item {
   font-size: 7vw;
   color: #faeca0;
-  text-shadow: -3px 0px 5px rgb(36, 36, 36);
+  text-shadow: -0.34vh 0vh 0.56vh rgb(36, 36, 36);
   text-align: center;
+  margin-top: -6vh;
 }
 
 @media only screen and (max-height: 2160px) and (max-width: 3840px) {

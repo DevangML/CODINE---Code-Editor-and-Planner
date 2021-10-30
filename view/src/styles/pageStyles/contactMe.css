@@ -5,7 +5,6 @@
 }
 
 .contact {
-  margin: 0;
   min-height: 100vh;
   max-width: 100vw;
   min-width: 20vw;
@@ -22,14 +21,14 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 2rem;
-  margin-top: -4rem;
+  padding: 3.6vw;
+  margin-top: -12.8vh;
 }
 
 .contact__container {
   background: #e0e0e0;
-  box-shadow: inset -18px -18px 36px #b5b5b5,
-    inset 18px 18px 36px #ffffff;
+  box-shadow: inset -2.02vh -2.02vh 4.04vh #b5b5b5,
+    inset 2.02vh 2.02vh 4.04vh #ffffff;
   padding: 2vw;
   border-radius: 5vw;
   min-width: 40vw;
@@ -45,32 +44,29 @@
   background: url('../../assets/images/logo.png');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
-  width: 100px;
-  height: 100px;
+  background-size: cover;
+  width: 10vw;
+  height: 10vh;
   border-radius: 50%;
+  padding: 10vw;
   margin: 0 auto;
   box-shadow:
-    /* logo shadow */
-    0px 0px 2px #5f5f5f,
-    /* offset */
-    0px 0px 0px 5px #ecf0f3,
-    /*bottom right */
-    8px 8px 15px #a7aaaf,
-    /* top left */
-    -8px -8px 15px #ffffff;
+    /* logo shadow */ 0vh 0vh 0.22vh #5f5f5f,
+    /* offset */ 0vh 0vh 0vh 0.56vh #ecf0f3,
+    /*bottom right */ 0.9vh 0.9vh 1.7vh #a7aaaf,
+    /* top left */ -0.9vh -0.9vh 1.7vh #ffffff;
 }
 
 .contact__section__item-2 {
   text-align: center;
-  font-size: 28px;
-  padding-top: 24px;
-  letter-spacing: 0.5px;
+  font-size: 3.14vw;
+  padding-top: 2.7vh;
+  letter-spacing: 0.056vw;
 }
 
 .contact__section__sub-section {
   min-width: 100%;
-  padding: 75px 5px 5px 5px;
+  padding: 8.4vw 0.56vw 0.56vw 0.56vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,9 +78,9 @@
   border: none;
   outline: none;
   background: none;
-  font-size: 18px;
+  font-size: 2.02vh;
   color: #555;
-  padding: 20px 10px 20px 5px;
+  padding: 2.25vw 1.12vw 2.25vw 0.56vw;
   max-width: 90%;
   min-width: 50%;
 }
@@ -93,9 +89,9 @@
 .contact__section__sub-section__item-2,
 .contact__section__sub-section__item-3,
 .contact__section__sub-section__item-4 {
-  margin-bottom: 30px;
-  border-radius: 25px;
-  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+  margin-bottom: 3.37vw;
+  border-radius: 2.8vw;
+  box-shadow: inset 0.9vw 0.9vw 0.9vw #cbced1, inset -0.9vw -0.9vw 0.9vw #ffffff;
 
   max-width: 70%;
   width: 100vw;
@@ -103,8 +99,8 @@
 }
 
 .contact__section__sub-section svg {
-  height: 22px;
-  margin: 0 10px -3px 25px;
+  height: 2.47vh;
+  margin: 0 1.12vw -0.34vw 2.8vw;
 }
 
 .contact__item {
@@ -112,14 +108,15 @@
   border: none;
   cursor: pointer;
   max-height: 20vh;
-  border-radius: 30px;
-  font-size: 20px;
+  border-radius: 3.37vw;
+  font-size: 2.24vh;
   font-weight: 700;
   font-family: 'Lato', sans-serif;
   color: rgb(92, 0, 0);
   text-align: center;
   background: #e0e0e0;
-  box-shadow: inset 20px -20px 28px #b8b8b8, inset -20px 20px 28px #ffffff;
+  box-shadow: inset 2.24vw -2.24vw 3.14vw #b8b8b8,
+    inset -2.24vw 2.24vw 3.14vw #ffffff;
   transition: 0.5s;
   max-width: 20vw;
   display: flex;
@@ -137,6 +134,8 @@
   background: #1da88a;
 }
 
-@media only screen and (min-width:3600px) {
-  .contact__container{border-radius: 1vw;}
+@media only screen and (min-width: 3600px) {
+  .contact__container {
+    border-radius: 1vw;
+  }
 }
