@@ -28,7 +28,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  min-height: 14vh;
+  min-height: fit-content;
   border-top-left-radius: 7vh;
   border-top-right-radius: 7vh;
   position: absolute;

@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 2vh;
+  gap: 5vh;
   z-index: 8;
   overflow: hidden;
   font-family: 'Kaushan Script', cursive;

@@ -25,7 +25,6 @@ const NavIcon = styled(Link)`
 	align-items: center;
 	border-radius: 5vw;
 	min-width: 8vw;
-	max-width: 11vw;
 	flex-shrink: 0;
 	background-color: #15161c;
 	padding: 0.26vw;
@@ -73,7 +72,7 @@ const Sidebar = () => {
 			<IconContext.Provider value={{ color: '#fff' }}>
 				<Nav>
 					<NavIcon to='#'>
-						<FaIcons.FaBars onClick={showSidebar} />
+						<FaIcons.FaBars style={{minWidth:'4vw'},{minHeight:'5vh'}} onClick={showSidebar} />
 					</NavIcon>
 				</Nav>
 				<SidebarNav sidebar={sidebar}>

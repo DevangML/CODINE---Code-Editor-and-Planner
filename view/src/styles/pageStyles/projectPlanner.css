@@ -2,15 +2,15 @@
   background: #f7ff00;
   background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);
   background: linear-gradient(to right, #db36a4, #f7ff00);
-  height: 100vh;
+  min-height: 100vh;
   min-width: 100vw;
-  background-size: cover;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   gap: 2vh;
+  padding-bottom: 35vh;
 }
 
 .proj__header__item {
@@ -29,17 +29,15 @@
 .proj__button {
   display: block;
   flex-basis: 33%;
-  border-radius: 5rem;
-  padding: 0.5rem;
-  width: 3rem;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  min-width: 27.73vw;
+  min-height: 11vh;
   outline: none;
   border: none;
   background-color: rosybrown;
-  margin-left: 1rem;
-  width: fit-content;
   display: block;
   margin: auto;
-
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
   background-image: -moz-linear-gradient(top, #3498db, #2980b9);
@@ -48,11 +46,10 @@
   background-image: linear-gradient(to bottom, #3498db, #2980b9);
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
-  border-radius: 28px;
+  border-radius: 20vh;
   font-family: Arial;
   color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
+  font-size: 3vh;
   text-decoration: none;
 }
 

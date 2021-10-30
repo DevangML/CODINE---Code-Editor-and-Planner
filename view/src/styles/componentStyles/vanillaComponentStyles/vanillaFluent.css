@@ -266,6 +266,13 @@
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   z-index: 0;
+  margin-bottom: 30vh;
+}
+
+@media only screen and (min-width:1900px) {
+  .vanilla_fluent__main__section-2__item {
+    margin-bottom: 50vh;
+  }
 }
 
 /* .vanilla_fluent__footer {}
