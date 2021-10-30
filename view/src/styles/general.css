@@ -2,17 +2,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
-
 *:focus {
   outline: 0 !important;
 }
 
 html,
 body {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   margin: 0;
-  padding: 0px;
+  padding: 0vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
   -webkit-font-smoothing: subpixel-antialiased;
@@ -29,7 +28,7 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 0.8rem;
+  width: 2.2vw;
 }
 
 /* Track */
@@ -40,8 +39,8 @@ body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #870000;
-  background: -webkit-linear-gradient(to right, #190A05, #870000);
-  background: linear-gradient(to right, #190A05, #870000);
+  background: -webkit-linear-gradient(to right, #190a05, #870000);
+  background: linear-gradient(to right, #190a05, #870000);
   border-radius: 2vw;
 }
 

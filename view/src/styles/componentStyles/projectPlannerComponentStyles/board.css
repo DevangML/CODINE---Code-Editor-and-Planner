@@ -4,6 +4,7 @@
   overflow-x: auto;
   background-color: transparent;
   padding: 1rem;
+  max-width: 98vw;
 }
 
 .Add-List {

@@ -1,10 +1,10 @@
 /* Feedback Section */
 
 .feed {
-  margin-top: -4rem;
+  margin-top: -0.45vh;
   background-color: #00bbf9;
   height: 100vh;
-  padding: 0.5rem;
+  padding: 0.9vw;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -127,11 +127,11 @@
 }
 
 .contact__item:hover {
-  background: #2fdbb6;
+  background: #f0f0f0a9;
 }
 
 .contact__item:active {
-  background: #1da88a;
+  background: #d8d8d8a9;
 }
 
 @media only screen and (min-width: 3600px) {

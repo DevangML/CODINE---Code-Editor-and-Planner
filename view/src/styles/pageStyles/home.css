@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  min-height: 109vh;
+  min-height: 100vh;
   z-index: -1;
   font-family: 'Kaushan Script', cursive;
   -webkit-user-select: none;

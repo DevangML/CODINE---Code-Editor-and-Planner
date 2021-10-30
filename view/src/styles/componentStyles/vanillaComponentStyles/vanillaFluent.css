@@ -21,13 +21,13 @@
 }
 
 .editor-header {
-  height: 2.5rem;
+  height: 4.5vh;
   content: attr(title);
   display: flex;
   align-items: center;
   padding-left: 3vw;
-  font-size: 0.9rem;
-  padding-bottom: 0.5rem;
+  font-size: 1.6vh;
+  padding-bottom: 0.9vh;
   color: #fafafacc;
   background-color: #253139;
   font-family: 'Fira Code', monospace;
@@ -53,8 +53,8 @@
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 2vh;
-  padding: 1rem;
-  margin: 1rem;
+  padding: 1.8vw;
+  margin: 1.8vw;
   min-height: 40vh;
   margin-bottom: 3vh;
 }
@@ -95,7 +95,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.8vw;
   background: rgba(red, green, rgba(0, 0, 255, 0), alpha);
   border-radius: 2vw;
   outline: none;
@@ -108,14 +108,14 @@
   width: 90%;
   min-height: 60vh;
   overflow: scroll;
-  margin: 0.5rem;
+  margin: 0.9vw;
   background: #ffffff;
   outline: none;
   border: none;
   font-family: Courier, sans-serif;
-  font-size: 0.65rem;
+  font-size: 1.17vh;
   border-radius: 20vh;
-  padding: 0.3rem;
+  padding: 0.54vw;
   word-wrap: break-word;
   resize: none;
 }
@@ -129,14 +129,14 @@
   width: 90%;
   min-height: 50vh;
   overflow: scroll;
-  margin: 0.5rem;
+  margin: 0.9vw;
   background: #ffffff;
   outline: none;
   border: none;
   font-family: Courier, sans-serif;
-  font-size: 0.65rem;
-  border-radius: 1rem;
-  padding: 0.3rem;
+  font-size: 1.17vh;
+  border-radius: 1.8vh;
+  padding: 0.54vw;
   word-wrap: break-word;
   resize: none;
 }
@@ -145,14 +145,14 @@
   width: 90%;
   min-height: 50vh;
   overflow: scroll;
-  margin: 0.5rem;
+  margin: 0.9vw;
   background: #ffffff;
   outline: none;
   border: none;
   font-family: Courier, sans-serif;
-  font-size: 0.65rem;
-  border-radius: 1rem;
-  padding: 0.3rem;
+  font-size: 1.17vh;
+  border-radius: 1.8vh;
+  padding: 0.54vw;
   word-wrap: break-word;
   resize: none;
 }
@@ -161,14 +161,14 @@
   width: 90%;
   min-height: 50vh;
   overflow: scroll;
-  margin: 0.5rem;
+  margin: 0.9vw;
   background: #ffffff;
   outline: none;
   border: none;
   font-family: Courier, sans-serif;
-  font-size: 0.65rem;
-  border-radius: 1rem;
-  padding: 0.3rem;
+  font-size: 1.17vh;
+  border-radius: 1.8vh;
+  padding: 0.54vw;
   word-wrap: break-word;
   resize: none;
 }
@@ -197,60 +197,60 @@
 
 .vanilla_fluent__main__section-1__sub-section-1__item::-webkit-scrollbar {
   width: 1em;
-  border-radius: 1rem;
+  border-radius: 1.8vh;
 }
 
 .vanilla_fluent__main__section-1__sub-section-2__item::-webkit-scrollbar {
   width: 1em;
-  border-radius: 1rem;
+  border-radius: 1.8vh;
 }
 
 .vanilla_fluent__main__section-1__sub-section-1__item::-webkit-scrollbar {
   width: 1em;
-  border-radius: 1rem;
+  border-radius: 1.8vh;
 }
 
 .vanilla_fluent__main__section-1__sub-section-2__item::-webkit-scrollbar {
   width: 1em;
-  border-radius: 1rem;
+  border-radius: 1.8vh;
 }
 
 .vanilla_fluent__main__section-1__sub-section-3__item::-webkit-scrollbar {
   width: 1em;
-  border-radius: 1rem;
+  border-radius: 1.8vh;
 }
 
 .vanilla_fluent__main__section-1__sub-section-1__item::-webkit-scrollbar-track {
-  border-radius: 1rem;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 1.8vh;
+  -webkit-box-shadow: inset 0 0 0.7vh rgba(0, 0, 0, 0.3);
 }
 
 .vanilla_fluent__main__section-1__sub-section-2__item::-webkit-scrollbar-track {
-  border-radius: 1rem;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 1.8vh;
+  -webkit-box-shadow: inset 0 0 0.7vh rgba(0, 0, 0, 0.3);
 }
 
 .vanilla_fluent__main__section-1__sub-section-3__item::-webkit-scrollbar-track {
-  border-radius: 1rem;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 1.8vh;
+  -webkit-box-shadow: inset 0 0 0.7vh rgba(0, 0, 0, 0.3);
 }
 
 .vanilla_fluent__main__section-1__sub-section-1__item::-webkit-scrollbar-thumb {
   background-color: darkgrey;
-  outline: 1px solid slategrey;
-  border-radius: 1rem;
+  outline: 0.11vh solid slategrey;
+  border-radius: 1.8vh;
 }
 
 .vanilla_fluent__main__section-1__sub-section-2__item::-webkit-scrollbar-thumb {
   background-color: darkgrey;
-  outline: 1px solid slategrey;
-  border-radius: 1rem;
+  outline: 0.11vh solid slategrey;
+  border-radius: 1.8vh;
 }
 
 .vanilla_fluent__main__section-1__sub-section-3__item::-webkit-scrollbar-thumb {
   background-color: darkgrey;
-  outline: 1px solid slategrey;
-  border-radius: 1rem;
+  outline: 0.11vh solid slategrey;
+  border-radius: 1.8vh;
 }
 
 .vanilla_fluent__main__section-2__item {
@@ -264,12 +264,12 @@
   border-radius: 3vw;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0.12vh);
   z-index: 0;
   margin-bottom: 30vh;
 }
 
-@media only screen and (min-width:1900px) {
+@media only screen and (min-width: 1900px) {
   .vanilla_fluent__main__section-2__item {
     margin-bottom: 50vh;
   }

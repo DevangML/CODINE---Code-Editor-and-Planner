@@ -52,8 +52,10 @@
   transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
-@media only screen and (max-width:1800px){
-  .proj__button{font-size: 2vh;}
+@media only screen and (max-width: 1800px) {
+  .proj__button {
+    font-size: 2vh;
+  }
 }
 
 .proj__button:focus {
@@ -64,7 +66,7 @@
   background: #000428;
   background: -webkit-linear-gradient(to right, #004e92e3, #000428);
   background: linear-gradient(to right, #004e92e3, #000428);
-  transform: perspective(1.05px) scale(1.05);
+  transform: perspective(0.11784511784511785vh) scale(1.05);
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
 }
