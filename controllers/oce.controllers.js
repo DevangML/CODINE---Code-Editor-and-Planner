@@ -1,6 +1,9 @@
-const contactSender = require("../models/oce.models")
-require("path")
-require("../databases/oce.dbs")
+const contactSender = require('../models/oce.models')
+require('path')
+require('../databases/oce.dbs')
+const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
+const { userAuthModel } = require('../models/oce.models')
 
 const ocePostFormData = async (req, res) => {
   // if(!req.body){
@@ -18,7 +21,7 @@ const ocePostFormData = async (req, res) => {
   try {
     const confirmation = await oceInstance.save()
     res.send(confirmation)
-    console.log("Form Sent")
+    console.log('Form Sent')
   } catch {
     res.send({ message: err })
   }
@@ -33,14 +36,80 @@ const oceVanillaController = async (req, res) => {
     useTLS: true
   })
 
-  pusher.trigger("editor", "code-update", {
+  pusher.trigger('editor', 'code-update', {
     ...req.body
   })
 
-  res.status(200).send("OK")
+  res.status(200).send('OK')
+}
+
+const oceAuthRegisterController = async (req, res) => {
+  const user = req.body
+
+  // Check if username or email has been taken by another user already
+  const takenUsername = await userAuthModel.findOne({ username: user.username })
+  const takenEmail = await userAuthModel.findOne({ email: user.email })
+
+  if (takenUsername || takenEmail) {
+    res.json({ message: 'Username and Email has already been taken' })
+  } else {
+    user.password = await bcrypt.hash(req.body.password, 10)
+    const dbUser = new userAuthModel({
+      username: user.username.toLowerCase(),
+      email: user.email.toLowerCase(),
+      password: user.password
+    })
+    dbUser.save()
+    res.json({ message: 'Success' })
+  }
+}
+
+const oceAuthLoginController = async (req, res) => {
+  const userLoggingIn = req.body
+
+  userAuthModel.findOne({ username: userLoggingIn.username }).then((dbUser) => {
+    if (!dbUser) {
+      return res.json({
+        message: 'Invalid username or password'
+      })
+    }
+    bcrypt
+      .compare(userLoggingIn.password, dbUser.password)
+      .then((isCorrect) => {
+        if (isCorrect) {
+          const payload = {
+            id: dbUser._id,
+            username: dbUser.username
+          }
+          jwt.sign(
+            payload,
+            process.env.JWT_SECRET,
+            { expiresIn: 86400 },
+            (err, token) => {
+              if (err) return res.json({ message: err })
+              return res.json({
+                message: 'Success',
+                token: 'Bearer' + token
+              })
+            }
+          )
+        } else {
+          return res.json({
+            message: 'Invalid username or password'
+          })
+        }
+      })
+  })
+}
+
+const oceCurrentUserController = async (req, res, next) => {
+  res.json({ isLoggenIn: true, username: req.user.username })
 }
 
 module.exports = {
   ocePostFormData,
-  oceVanillaController
+  oceVanillaController,
+  oceAuthRegisterController,
+  oceAuthLoginController,
+  oceCurrentUserController
 }

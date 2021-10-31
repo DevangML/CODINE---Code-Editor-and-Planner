@@ -2,14 +2,14 @@
   position: relative;
   cursor: pointer;
   background: white;
-  margin: 5px;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 1px 0 rgba(9, 45, 66, 0.25);
-  font-size: 15px;
+  margin: 0.56vw;
+  padding: 1.12vw;
+  border-radius: 0.56vw;
+  border: 0.11vh solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0.11vh 0 rgba(9, 45, 66, 0.25);
+  font-size: 1.7vh;
   overflow-wrap: break-word;
-  min-height: 18px;
+  min-height: 2.02vh;
 }
 
 .Card:hover {
@@ -18,8 +18,8 @@
 
 .Card-Icons {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 0.56vh;
+  right: 0.56vh;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -27,13 +27,13 @@
 
 .Card-Icon {
   cursor: pointer;
-  width: 24px;
-  height: 24px;
+  width: 2.7vw;
+  height: 2.7vw;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
-  margin: 1px;
+  border-radius: 0.56vh;
+  margin: 0.11vw;
   color: rgba(0, 0, 0, 0.5);
   background: #f5f6f7;
   opacity: 0.9;

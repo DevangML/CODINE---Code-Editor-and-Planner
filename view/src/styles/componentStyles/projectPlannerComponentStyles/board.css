@@ -3,25 +3,25 @@
   display: flex;
   overflow-x: auto;
   background-color: transparent;
-  padding: 1rem;
+  padding: 1.8vw;
   max-width: 98vw;
 }
 
 .Add-List {
-  width: 272px;
-  margin: 10px;
+  width: 30.5vw;
+  margin: 1.12vw;
   flex-shrink: 0;
 }
 
 .Add-List-Button {
   background-color: rgba(0, 0, 0, 0.12);
-  border-radius: 10px;
+  border-radius: 1.12vw;
   cursor: pointer;
   color: #fff;
   display: flex;
   align-items: center;
-  min-height: 32px;
-  padding: 5px 8px;
+  min-height: 3.6vh;
+  padding: 0.6vw 0.9vw;
   transition: background-color 85ms ease-in, opacity 40ms ease-in,
     border-color 85ms ease-in;
   height: fit-content;
@@ -32,5 +32,5 @@
 }
 
 .Add-List-Button ion-icon {
-  margin-right: 1px;
+  margin-right: 0.11vw;
 }

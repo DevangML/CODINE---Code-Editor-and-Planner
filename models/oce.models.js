@@ -1,20 +1,37 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose')
 
 let oceSchema = new mongoose.Schema({
   Name: {
-    type: String
+    type: String,
+    required: true
   },
   Email: {
-    type: String
+    type: String,
+    required: true
   },
   Phone: {
-    type: Number
+    type: Number,
+    required: true
   },
   Message: {
-    type: String
+    type: String,
+    required: true
   }
 })
 
-const contactSender = mongoose.model("contact", oceSchema)
+let oceAuthSchema = new mongoose.Schema(
+  {
+    username: {
+      type: String,
+      required: true
+    },
+    email: { type: String, required: true },
+    password: { type: String, required: true }
+  },
+  { timestamps: true }
+)
 
-module.exports = contactSender
+const contactSender = mongoose.model('contact', oceSchema)
+const userAuthModel = mongoose.model('auth', oceAuthSchema)
+
+module.exports = { contactSender, userAuthModel }
