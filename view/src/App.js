@@ -34,19 +34,21 @@ import './styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css'
 import './styles/pageStyles/contactMe.css'
 
 function App() {
-	return (
-		<Router>
-			<Sidebar />
-			<Switch>
-				<Route exact path='/' component={Home} />
-				<Route exact path='/vanilla' component={Vanilla} />
-				<Route exact path='/pop' component={Pop} />
-				<Route exact path='/oop' component={Oop} />
-				<Route exact path='/contact' component={ContactMe} />
-				<Route exact path='/proj' component={ProjectPlanner} />
-			</Switch>
-		</Router>
-	)
+  return (
+    <Router>
+      <Sidebar />
+      <Switch>
+        <Route exact path="/register" component={Register} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/vanilla" component={Vanilla} />
+        <Route exact path="/pop" component={Pop} />
+        <Route exact path="/oop" component={Oop} />
+        <Route exact path="/contact" component={ContactMe} />
+        <Route exact path="/proj" component={ProjectPlanner} />
+      </Switch>
+    </Router>
+  )
 }
 
 export default App

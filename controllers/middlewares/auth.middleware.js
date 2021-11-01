@@ -1,21 +1,65 @@
-function verifyJWT(req, res, next) {
-  const token = req.headers['x-access-token']?.split(' ')[1]
+const Validator = require('validator')
+const isEmpty = require('is-empty')
 
-  if (token) {
-    jwt.verify(token, process.env.PASSPORTSECRET, (err, decoded) => {
-      if (err)
-        return res.json({
-          isLoggedIn: false,
-          message: 'Failed to authenticate'
-        })
-      req.user = {}
-      req.user.id = decoded.id
-      req.user.username = decoded.username
-      next()
-    })
-  } else {
-    res.json({ message: 'Incorrect Token Given', isLoggenIn: false })
+// Login
+
+const validateLoginInput = (data) => {
+  let errors = {}
+  // Convert empty fields to an empty string so we can use validator functions
+  data.email = !isEmpty(data.email) ? data.email : ''
+  data.password = !isEmpty(data.password) ? data.password : ''
+  // Email checks
+  if (Validator.isEmpty(data.email)) {
+    errors.email = 'Email field is required'
+  } else if (!Validator.isEmail(data.email)) {
+    errors.email = 'Email is invalid'
+  }
+  // Password checks
+  if (Validator.isEmpty(data.password)) {
+    errors.password = 'Password field is required'
+  }
+  return {
+    errors,
+    isValid: isEmpty(errors)
   }
 }
 
-export default verifyJWT
+// Register
+
+const validateRegisterInput = (data) => {
+  let errors = {}
+  // Convert empty fields to an empty string so we can use validator functions
+  data.name = !isEmpty(data.name) ? data.name : ''
+  data.email = !isEmpty(data.email) ? data.email : ''
+  data.password = !isEmpty(data.password) ? data.password : ''
+  data.password2 = !isEmpty(data.password2) ? data.password2 : ''
+  // Name checks
+  if (Validator.isEmpty(data.name)) {
+    errors.name = 'Name field is required'
+  }
+  // Email checks
+  if (Validator.isEmpty(data.email)) {
+    errors.email = 'Email field is required'
+  } else if (!Validator.isEmail(data.email)) {
+    errors.email = 'Email is invalid'
+  }
+  // Password checks
+  if (Validator.isEmpty(data.password)) {
+    errors.password = 'Password field is required'
+  }
+  if (Validator.isEmpty(data.password2)) {
+    errors.password2 = 'Confirm password field is required'
+  }
+  if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
+    errors.password = 'Password must be at least 6 characters'
+  }
+  if (!Validator.equals(data.password, data.password2)) {
+    errors.password2 = 'Passwords must match'
+  }
+  return {
+    errors,
+    isValid: isEmpty(errors)
+  }
+}
+
+module.exports = { validateLoginInput, validateRegisterInput }
