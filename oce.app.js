@@ -5,7 +5,10 @@ const cors = require('cors')
 const path = require('path')
 require('dotenv').config({ path: '.env' })
 const compression = require('compression')
-const passport = require('./config/passport')
+const header_middleware = require('./controllers/middlewares/header')
+const postRouter = require('./Routes/post')
+const userRoutes = require('./Routes/user')
+const profileRoutes = require('./Routes/profile')
 
 // App Initialization
 const expressApp = express()
@@ -40,12 +43,26 @@ expressApp.get('*', (req, res) => {
 
 expressApp.use('/vanilla', oceVanillaRouter)
 
-// Authentication Code
-
-expressApp.use(passport.initialize())
-
-// Passport config
-
-require('./config/passport')(passport)
-
 module.exports = expressApp
+
+// Logic
+
+app.use(header_middleware)
+const directory = path.join(__dirname, './images')
+app.use('/images', express.static(directory))
+// app.use("/", express.static(path.join(__dirname, 'angular')));
+
+app.use('/api/posts', postRouter)
+app.use('/api/user', userRoutes)
+app.use('/api/profile', profileRoutes)
+
+app.get('/test', (req, res) => {
+  res.send('Hello World!')
+})
+
+// app.use((req, res, next) => {
+//     res.sendFile(path.join(__dirname, "angular", "index.html"))
+// });
+app.listen(PORT, (req, res) => {
+  console.log(`app is listening to PORT ${PORT}`)
+})

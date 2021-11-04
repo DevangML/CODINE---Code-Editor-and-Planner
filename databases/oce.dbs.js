@@ -1,15 +1,20 @@
-const mongoose = require("mongoose")
-require("path")
-require("dotenv").config({ path: ".env" })
+const mongoose = require('mongoose')
+require('path')
+require('dotenv').config({ path: '.env' })
+mongoose.Promise = global.Promise
 
-mongoose
-  .connect(process.env.DBURI, {
+let mong = mongoose.connect(
+  process.env.DBURI,
+  {
     useNewUrlParser: true,
+    useCreateIndex: true,
     useUnifiedTopology: true
-  })
-  .then(() => {
-    console.log("Mongodb Connected")
-  })
-  .catch((err) => {
-    console.log(err)
-  })
+  },
+  (err) => {
+    if (!err) {
+      console.log('MongoDB Connection Succeeded.')
+    } else {
+      console.log('Error in DB connection: ' + err)
+    }
+  }
+)

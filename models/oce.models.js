@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-let oceSchema = new mongoose.Schema({
+let oceContactModel = mongoose.model('Contact', {
   Name: {
     type: String,
     required: true
@@ -19,19 +19,36 @@ let oceSchema = new mongoose.Schema({
   }
 })
 
-let oceAuthSchema = new mongoose.Schema(
-  {
-    username: {
-      type: String,
-      required: true
-    },
-    email: { type: String, required: true },
-    password: { type: String, required: true }
+const oceProfileModel = mongoose.model('Profile', {
+  username: {
+    type: String,
+    required: true,
+    unique: true
   },
-  { timestamps: true }
-)
 
-const contactSender = mongoose.model('contact', oceSchema)
-const userAuthModel = mongoose.model('auth', oceAuthSchema)
+  bio: {
+    type: String,
+    required: true
+  },
+  imagePath: {
+    type: String,
+    required: true
+  },
 
-module.exports = { contactSender, userAuthModel }
+  creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
+})
+
+const oceAuthModel = mongoose.model('User', {
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+
+  password: {
+    type: String,
+    required: true
+  }
+})
+
+module.exports = { oceContactModel, oceProfileModel, oceAuthModel }
