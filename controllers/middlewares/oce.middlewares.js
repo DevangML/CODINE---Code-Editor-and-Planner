@@ -1,3 +1,5 @@
+const multer = require('multer')
+
 // Profile Middleware
 
 const MIME_TYPE_MAP = {

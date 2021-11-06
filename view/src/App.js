@@ -1,6 +1,8 @@
 // import './app.css'
 
 import './styles/general.css'
+import React, { useState, useCallback, useEffect } from 'react'
+import axios from 'axios'
 import Sidebar from './components/general/Sidebar'
 import Vanilla from './pages/Vanilla'
 import Home from './pages/Home'

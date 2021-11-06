@@ -1,6 +1,6 @@
 const express = require('express')
 const {
-  ocePostFormData,
+  oceContactPostController,
   oceVanillaController,
   oceAuthRegisterController,
   oceAuthLoginController,
@@ -8,21 +8,25 @@ const {
   oceProfilePutController,
   oceProfileGetController1,
   oceProfileGetController2,
+  oceProfileGetController3,
+  oceProfileGetController4,
   oceProfileGetController5,
-  oceUserPostController2,
-  oceUserPostController1
+  oceUserPostController1,
+  oceUserPostController2
 } = require('../controllers/oce.controllers')
-const ocePostRouter = express.Router()
+const oceContactRouter = express.Router()
 const oceVanillaRouter = express.Router()
 const oceAuthRouter = express.Router()
 const oceProfileRouter = express.Router()
 const oceUserRouter = express.Router()
 const storage = require('../controllers/middlewares/oce.middlewares')
+const checkAuth = require('../controllers/middlewares/check-auth')
+const multer = require('multer')
 
 // Routes here
 
 // Contact Routes
-oceContactPostRouter.post('/', oceContactPostController)
+oceContactRouter.post('/', oceContactPostController)
 
 // Vanilla Routes
 oceVanillaRouter.post('/', oceVanillaController)
@@ -62,7 +66,7 @@ oceUserRouter.post('/signup', oceUserPostController1)
 oceUserRouter.post('/login', oceUserPostController2)
 
 module.exports = {
-  ocePostRouter,
+  oceContactRouter,
   oceVanillaRouter,
   oceAuthRouter,
   oceProfileRouter,

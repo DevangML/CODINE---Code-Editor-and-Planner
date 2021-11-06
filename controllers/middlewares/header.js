@@ -1,6 +1,5 @@
 const express = require('express')
 const headers = new express.Router()
-const express = express()
 
 headers.use(express.json())
 headers.use(express.urlencoded({ extended: false }))

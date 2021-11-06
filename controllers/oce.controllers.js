@@ -1,10 +1,12 @@
-const contactSender = require('../models/oce.models')
+const {
+  oceContactModel,
+  oceProfileModel,
+  oceAuthModel
+} = require('../models/oce.models')
 require('path')
 require('../databases/oce.dbs')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-const Profile = require('../models/profile')
-const Post = require('../models/post')
 
 // Contact Controllers
 
@@ -14,7 +16,7 @@ const oceContactPostController = async (req, res) => {
   //   return
   // }
 
-  const oceInstance = new contactSender({
+  const oceInstance = new oceContactModel({
     Name: req.body.name,
     Email: req.body.email,
     Phone: req.body.phone,
@@ -128,7 +130,7 @@ const oceAuthLoginController = async (req, res, next) => {
 const oceProfilePostController = (req, res, next) => {
   const url = req.protocol + '://' + req.get('host')
   console.log(url)
-  const profile = new Profile({
+  const profile = new oceProfileModel({
     username: req.body.username,
     bio: req.body.bio,
     imagePath: url + '/images/' + req.file.filename,
@@ -168,7 +170,7 @@ const oceProfilePutController = (req, res, next) => {
     imagePath = url + '/images/' + req.file.filename
   }
 
-  const profile = new Profile({
+  const profile = new oceProfileModel({
     _id: req.body.id,
     username: req.body.username,
     bio: req.body.bio,
@@ -347,7 +349,7 @@ const oceUserPostController2 = (req, res, next) => {
 }
 
 module.exports = {
-  ocePostFormData,
+  oceContactPostController,
   oceVanillaController,
   oceAuthRegisterController,
   oceAuthLoginController,
