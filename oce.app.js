@@ -1,17 +1,10 @@
 // Import Section
 const express = require('express')
-const {
-  oceContactRouter,
-  oceVanillaRouter,
-  oceAuthRouter,
-  oceProfileRouter,
-  oceUserRouter
-} = require('./routes/oce.routes')
+const { oceContactRouter, oceVanillaRouter } = require('./routes/oce.routes')
 const cors = require('cors')
 const path = require('path')
 require('dotenv').config({ path: '.env' })
 const compression = require('compression')
-const header_middleware = require('./controllers/middlewares/header')
 
 // App Initialization
 const expressApp = express()
@@ -45,17 +38,5 @@ expressApp.get('*', (req, res) => {
 // Pusher Code
 
 expressApp.use('/vanilla', oceVanillaRouter)
-
-expressApp.use(header_middleware)
-const directory = path.join(__dirname, './images')
-expressApp.use('/images', express.static(directory))
-// app.use("/", express.static(path.join(__dirname, 'angular')));
-
-expressApp.use('/api/posts', oceAuthRouter)
-expressApp.use('/api/user', oceUserRouter)
-expressApp.use('/api/profile', oceProfileRouter)
-expressApp.get('/test', (req, res) => {
-  res.send('Hello World!')
-})
 
 module.exports = expressApp

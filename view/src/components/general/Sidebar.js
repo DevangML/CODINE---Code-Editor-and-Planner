@@ -40,7 +40,7 @@ const SidebarNav = styled.nav`
   background: #000428;
   background: -webkit-linear-gradient(to right, #004e92, #000428);
   background: linear-gradient(to right, #004e92, #000428);
-  min-width: 18vw;
+  min-width: 28vw;
   height: 100vh;
   display: flex;
   justify-content: flex-start;
@@ -54,11 +54,14 @@ const SidebarNav = styled.nav`
   transition-delay: 0ms;
   z-index: 401;
   margin-top: -8vh;
+  max-width: 35vw;
   min-height: 120vh;
   border-top-right-radius: 25vh;
   border-bottom-right-radius: 25vh;
   overflow: scroll;
-  ::-webkit-scrollbar { width: 0 !important };
+  ::-webkit-scrollbar {
+    width: 0 !important;
+  }
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
   @media only screen and (min-aspect-ratio: 10/3) {

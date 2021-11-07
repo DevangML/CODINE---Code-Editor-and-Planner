@@ -1,8 +1,6 @@
-import { combineReducers, createStore, applyMiddleware, compose } from 'redux'
+import { combineReducers, createStore } from 'redux'
 import throttle from 'lodash.throttle'
 import seed from './seed'
-import thunk from 'redux-thunk'
-import rootReducer from './reducers'
 
 const board = (state = { lists: [] }, action) => {
   switch (action.type) {
@@ -167,18 +165,5 @@ if (!store.getState().board.lists.length) {
   console.log('SEED')
   seed(store)
 }
-
-// Auth Part
-
-const initialState = {}
-const middleware = [thunk]
-const store = createStore(
-  rootReducer,
-  initialState,
-  compose(
-    applyMiddleware(...middleware),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
-)
 
 export default store

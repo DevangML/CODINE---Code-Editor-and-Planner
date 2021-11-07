@@ -1,4 +1,3 @@
-import Dfooter from '../general/Dfooter'
 import React, { Component } from 'react'
 import { Controlled as CodeMirror } from 'react-codemirror2'
 import Pusher from 'pusher-js'
@@ -146,6 +145,7 @@ export class VanillaFluent extends Component {
             <iframe
               className="vanilla_fluent__main__section-2__item"
               ref={this.iRef}
+              title='foutput'
             ></iframe>
           </section>
         </main>

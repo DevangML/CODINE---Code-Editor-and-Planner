@@ -19,36 +19,4 @@ let oceContactModel = mongoose.model('Contact', {
   }
 })
 
-const oceProfileModel = mongoose.model('Profile', {
-  username: {
-    type: String,
-    required: true,
-    unique: true
-  },
-
-  bio: {
-    type: String,
-    required: true
-  },
-  imagePath: {
-    type: String,
-    required: true
-  },
-
-  creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
-})
-
-const oceAuthModel = mongoose.model('User', {
-  email: {
-    type: String,
-    required: true,
-    unique: true
-  },
-
-  password: {
-    type: String,
-    required: true
-  }
-})
-
-module.exports = { oceContactModel, oceProfileModel, oceAuthModel }
+module.exports = { oceContactModel }

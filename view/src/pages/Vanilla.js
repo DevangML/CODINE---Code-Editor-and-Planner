@@ -3,7 +3,6 @@ import VanillaRouteButton from '../components/vanilla/VanillaRouteButton'
 import VanillaNormal from '../components/vanilla/VanillaNormal'
 import VanillaFluent from '../components/vanilla/VanillaFluent'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
 import Dfooter from '../components/general/Dfooter'
 
 function Vanilla() {

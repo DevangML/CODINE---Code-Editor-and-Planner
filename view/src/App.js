@@ -1,8 +1,5 @@
 // import './app.css'
-
-import './styles/general.css'
-import React, { useState, useCallback, useEffect } from 'react'
-import axios from 'axios'
+import React from 'react'
 import Sidebar from './components/general/Sidebar'
 import Vanilla from './pages/Vanilla'
 import Home from './pages/Home'
@@ -34,14 +31,13 @@ import './styles/componentStyles/vanillaComponentStyles/vanillaNormal.css'
 import './styles/componentStyles/vanillaComponentStyles/vanillaFluent.css'
 import './styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css'
 import './styles/pageStyles/contactMe.css'
+import './styles/general.css'
 
 function App() {
   return (
     <Router>
       <Sidebar />
       <Switch>
-        <Route exact path="/register" component={Register} />
-        <Route exact path="/login" component={Login} />
         <Route exact path="/" component={Home} />
         <Route exact path="/vanilla" component={Vanilla} />
         <Route exact path="/pop" component={Pop} />

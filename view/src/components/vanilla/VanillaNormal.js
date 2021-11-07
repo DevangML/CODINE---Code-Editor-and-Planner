@@ -1,4 +1,3 @@
-import Dfooter from '../general/Dfooter'
 import React, { Component } from 'react'
 import { Controlled as CodeMirror } from 'react-codemirror2'
 import Pusher from 'pusher-js'
@@ -145,6 +144,7 @@ export class VanillaNormal extends Component {
           <iframe
             className="vanilla_normal__section-2__item"
             ref={this.iRef}
+            title='noutput'
           ></iframe>
         </section>
       </section>
