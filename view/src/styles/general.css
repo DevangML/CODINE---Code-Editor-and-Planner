@@ -26,6 +26,26 @@ body {
   user-select: none;
 }
 
+.loading {
+  background: #0f2027; 
+  background: -webkit-linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  );
+  background: linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); 
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 2.2vw;

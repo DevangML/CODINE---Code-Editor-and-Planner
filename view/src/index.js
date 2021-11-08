@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import * as serviceWorker from './serviceWorker'
 import './index.css'
+import Loader from './components/general/Loader'
 
 const rootElement = document.getElementById('root')
 ReactDOM.render(
