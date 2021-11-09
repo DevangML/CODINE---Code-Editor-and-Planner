@@ -1,14 +1,13 @@
 // import './app.css'
 import React, { useEffect, useState } from 'react'
-import Sidebar from './components/general/Sidebar'
-import Vanilla from './pages/Vanilla'
-import Home from './pages/Home'
-import Oop from './pages/Oop'
-import Pop from './pages/Pop'
-
-import ContactMe from './pages/ContactMe'
-import ProjectPlanner from './pages/ProjectPlanner'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Sidebar from './pages/generalComponents/Sidebar'
+import Vanilla from './pages/vanilla/Vanilla'
+import Home from './pages/home/Home'
+import Oop from './pages/oop/Oop'
+import Pop from './pages/pop/Pop'
+import ContactMe from './pages/contactMe/ContactMe'
+import ProjectPlanner from './pages/projectPlanner/ProjectPlanner'
 
 // Dev Styles
 
@@ -80,7 +79,7 @@ function App() {
   return (
     <>
       {!completed ? (
-        <section className='loading'>
+        <section className="loading">
           {!loading ? (
             <Lottie options={defaultOptions1} height={700} width={700} />
           ) : (
