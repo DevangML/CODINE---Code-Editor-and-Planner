@@ -64,9 +64,16 @@ const SidebarNav = styled.nav`
   }
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
-  @media only screen and (min-aspect-ratio: 10/3) {
-    overflow-y: scroll;
+  -webkit-overflow-style: none;
+  overflow-y: scroll;
+
+  @media only screen and (max-aspect-ratio: 125/137) {
+    min-width: 50vw;
   }
+
+  @media only screen and (max-aspect-ratio: 62/137) {
+    min-width: 70vw;
+  }  
 `
 
 const SidebarWrap = styled.div`

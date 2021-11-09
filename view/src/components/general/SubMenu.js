@@ -11,10 +11,22 @@ const SidebarLink = styled(Link)`
   list-style: none;
   height: 9.66vh;
   text-decoration: none;
-  font-size: 3.9vh;
+  font-size: 2.9vh;
   @media only screen and (min-aspect-ratio: 10/3) {
     margin-bottom: -8vh;
     font-size: 5vh;
+  }
+
+  @media only screen and (max-aspect-ratio: 43/137) {
+    font-size: 2.2vh;
+  }
+
+  @media only screen and (max-aspect-ratio: 33/137) {
+    font-size: 1.5vh;
+  }
+
+  @media only screen and (max-aspect-ratio: 24/137) {
+    font-size: 1vh;
   }
 
   &:hover {

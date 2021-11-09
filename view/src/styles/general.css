@@ -27,19 +27,9 @@ body {
 }
 
 .loading {
-  background: #0f2027; 
-  background: -webkit-linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  );
-  background: linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); 
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -58,17 +48,17 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #870000;
-  background: -webkit-linear-gradient(to right, #190a05, #870000);
-  background: linear-gradient(to right, #190a05, #870000);
+  background: #000428;
+  background: -webkit-linear-gradient(to right, #004e92, #000428);
+  background: linear-gradient(to right, #004e92, #000428);
   border-radius: 2vw;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #870000;
-  background: -webkit-linear-gradient(to right, #190a05ec, #870000dc);
-  background: linear-gradient(to right, #190a05ec, #870000dc);
+  background: #000428;
+  background: -webkit-linear-gradient(to right, #004e92e1, #000428d0);
+  background: linear-gradient(to right, #004e92e1, #000428d0);
 }
 
 @media only screen and (max-width: 600px) {

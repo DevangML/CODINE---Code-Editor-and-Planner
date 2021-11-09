@@ -82,7 +82,7 @@ function App() {
       {!completed ? (
         <section className='loading'>
           {!loading ? (
-            <Lottie options={defaultOptions1} height={800} width={800} />
+            <Lottie options={defaultOptions1} height={700} width={700} />
           ) : (
             <Lottie options={defaultOptions2} height={400} width={400} />
           )}
