@@ -5,7 +5,8 @@
   "main": "oce.server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node oce.server.js"
+    "start": "node oce.server.js",
+    "lint": "eslint /**/*.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,9 +18,13 @@
     "express": "^4.17.1",
     "mongoose": "^6.0.12",
     "nodemon": "^2.0.14",
-    "pusher": "^5.0.0"
+    "pusher": "^5.0.0",
+    "redis": "^3.1.2"
   },
   "engines": {
     "node": "16.x"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0"
   }
 }

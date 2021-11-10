@@ -1,11 +1,11 @@
 import React from 'react'
 
 function Pop() {
-    return (
-        <section className="pop">
+	return (
+		<section className="pop">
 
-        </section>
-    )
+		</section>
+	)
 }
 
 export default Pop
