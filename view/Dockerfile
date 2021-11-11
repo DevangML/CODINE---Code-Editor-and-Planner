@@ -1,11 +1,20 @@
-# Pull Docker Hub base image
+# Dockerfile for React client
+
+# Build react client
 FROM node:16.13.0-alpine3.14
-# Set working directory
+
+# Working directory be app
 WORKDIR C:\Users\User\Documents\Projects\Devang\oce007\view
-# Install app dependencies
+
 COPY package*.json ./
-RUN yarn add -qy
-# Copy app to container
+
+###  Installing dependencies
+
+RUN yarn --silent
+
+# copy local files to app folder
 COPY . .
-# Run the "dev" script in package.json
-CMD ["yarn", "run", "dev"]
+
+EXPOSE 3000
+
+CMD ["yarn,"start"]

@@ -2,15 +2,15 @@ version: '3'
 services:
   client:
     build:
-      context: ./client
+      context: C:\\Users\\User\\Documents\\Projects\\Devang\\oce007\\view
       dockerfile: Dockerfile
     ports:
       - 3000:3000
     networks:
       - mern-network
     volumes:
-      - ./client/src:C:\Users\User\Documents\Projects\Devang\oce007\view\src
-      - ./client/public:C:\Users\User\Documents\Projects\Devang\oce007\view\public
+      - C:\\Users\\User\\Documents\\Projects\\Devang\\oce007\\view\\src
+      - C:\\Users\\User\\Documents\\Projects\\Devang\\oce007\\view\\public
     depends_on:
       - server
     environment:
@@ -22,17 +22,17 @@ services:
 
   server:
     build:
-      context: ./server
+      context: C:\\Users\\User\\Documents\\Projects\\Devang\\oce007
       dockerfile: Dockerfile
     ports:
       - 5000:5000
     networks:
       - mern-network
     volumes:
-      - ./server:C:\Users\User\Documents\Projects\Devang\oce007
+      - C:\\Users\\User\\Documents\\Projects\\Devang\\oce007
     environment:
       - CLIENT=http://localhost:3000
-    command: nodemon -L ./server/oce.server.js
+    command: nodemon -L C:\\Users\\User\\Documents\\Projects\\Devang\\oce007\\oce.server.js
 
 networks:
   mern-network:

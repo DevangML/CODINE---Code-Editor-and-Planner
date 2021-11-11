@@ -1,12 +1,22 @@
-# Pull Docker Hub base image
+#  Dockerfile for Node Express Backend
+
 FROM node:16.13.0-alpine3.14
-# Set working directory
-WORKDIR C:\Users\User\Documents\Projects\Devang\oce007
-# Install app dependencies
+
+# Create App Directory
+
+WORKDIR C:\Users\User\Documents\Projects\Devang\oce-docker
+
+# Install Dependencies
 COPY package*.json ./
-RUN yarn add -qyg nodemon@2.0.14
-RUN npm add -qy
-# Copy app to container
+
+# RUN yarn add -qyg nodemon@2.0.14
+# RUN yarn add -qy
+RUN yarn --silent
+
+# Copy app source code
 COPY . .
-# Run the "dev" script in package.json
-CMD ["yarn", "run", "dev"]
+
+# Exports
+EXPOSE 5000
+
+CMD ["yarn","dev"]
