@@ -1,6 +1,5 @@
 // import './app.css'
 import React, { useEffect, useState } from 'react'
-import environment from './enviroments/base'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Sidebar from './pages/generalComponents/Sidebar'
 import Vanilla from './pages/vanilla/Vanilla'
@@ -37,8 +36,6 @@ import './styles/componentStyles/vanillaComponentStyles/vanillaFluent.css'
 import './styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css'
 import './styles/pageStyles/contactMe.css'
 import './styles/general.css'
-
-console.log('Environment is: ' + environment)
 
 // Loader Section
 

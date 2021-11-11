@@ -13,6 +13,7 @@
     "axios": "^0.24.0",
     "babel-eslint": "^10.1.0",
     "codemirror": "^5.63.3",
+    "customize-cra": "^1.0.0",
     "i18next": "^21.4.2",
     "i18next-browser-languagedetector": "^6.1.2",
     "lodash.throttle": "^4.1.1",
@@ -41,16 +42,10 @@
   "scripts": {
     "server": "nodemon",
     "lint": "eslint src/**/*.js",
-    "start": "react-scripts start",
-    "eject": "react-scripts eject",
-    "---------- DEVELOPMENT ---------------------------------------------------------------------------------": "",
-    "dev": "cross-env CLIENT_ENV=development craco start FAST_REFRESH=true",
-    "---------- PRODUCTION ----------------------------------------------------------------------------------": "",
-    "prod": "cross-env CLIENT_ENV=production craco start FAST_REFRESH=true",
-    "build": "cross-env CLIENT_ENV=production craco build",
-    "---------- TESTING -------------------------------------------------------------------------------------": "",
-    "test": "cross-env CLIENT_ENV=test craco test",
-    "--------------------------------------------------------------------------------------------------------": ""
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -71,9 +66,6 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "^6.4.0",
-    "craco-preact": "^1.1.0",
-    "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.0",
     "eslint-config-preact": "^1.2.0",
