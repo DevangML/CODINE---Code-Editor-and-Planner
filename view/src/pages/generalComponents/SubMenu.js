@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const SidebarLink = styled(Link)`
   display: flex;
@@ -47,11 +47,11 @@ const SidebarLink = styled(Link)`
     border-left: 0.644vh solid #632ce4;
     cursor: pointer;
   }
-`
+`;
 
 const SidebarLabel = styled.span`
   margin-left: 1.29vw;
-`
+`;
 
 const DropdownLink = styled(Link)`
   background: #0f2027;
@@ -71,39 +71,37 @@ const DropdownLink = styled(Link)`
     color: white;
     cursor: pointer;
   }
-`
+`;
 
-const SubMenu = ({ item }) => {
-	const [subnav, setSubnav] = useState(false)
+const SubMenu = function ({ item }) {
+  const [subnav, setSubnav] = useState(false);
 
-	const showSubnav = () => setSubnav(!subnav)
+  const showSubnav = () => setSubnav(!subnav);
 
-	return (
-		<>
-			<SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
-				<div>
-					{item.icon}
-					<SidebarLabel>{item.title}</SidebarLabel>
-				</div>
-				<div>
-					{item.subNav && subnav
-						? item.iconOpened
-						: item.subNav
-							? item.iconClosed
-							: null}
-				</div>
-			</SidebarLink>
-			{subnav &&
-        item.subNav.map((item, index) => {
-        	return (
-        		<DropdownLink to={item.path} key={index}>
-        			{item.icon}
-        			<SidebarLabel>{item.title}</SidebarLabel>
-        		</DropdownLink>
-        	)
-        })}
-		</>
-	)
-}
+  return (
+    <>
+      <SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
+        <div>
+          {item.icon}
+          <SidebarLabel>{item.title}</SidebarLabel>
+        </div>
+        <div>
+          {item.subNav && subnav
+					  ? item.iconOpened
+					  : item.subNav
+					    ? item.iconClosed
+					    : null}
+        </div>
+      </SidebarLink>
+      {subnav
+        && item.subNav.map((item, index) => (
+          <DropdownLink to={item.path} key={index}>
+            {item.icon}
+            <SidebarLabel>{item.title}</SidebarLabel>
+          </DropdownLink>
+        	))}
+    </>
+  );
+};
 
-export default SubMenu
+export default SubMenu;

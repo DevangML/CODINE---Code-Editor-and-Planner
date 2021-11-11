@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
-import * as FaIcons from 'react-icons/fa'
-import * as AiIcons from 'react-icons/ai'
-import { SidebarData } from './SidebarData'
-import SubMenu from './SubMenu'
-import { IconContext } from 'react-icons/lib'
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
+import { IconContext } from 'react-icons/lib';
+import styled from 'styled-components';
+import { SidebarData } from './SidebarData';
+import SubMenu from './SubMenu';
 
 const Nav = styled.div`
   height: 12.9vh;
@@ -14,7 +14,7 @@ const Nav = styled.div`
   justify-content: flex-start;
   align-items: center;
   background-color: transparent;
-`
+`;
 
 const NavIcon = styled(Link)`
   font-size: 3.1vh;
@@ -32,7 +32,7 @@ const NavIcon = styled(Link)`
   padding: 0.26vw;
   z-index: 400;
   margin-top: 7vh;
-`
+`;
 
 const SidebarNav = styled.nav`
   display: flex;
@@ -74,41 +74,37 @@ const SidebarNav = styled.nav`
   @media only screen and (max-aspect-ratio: 62/137) {
     min-width: 70vw;
   }  
-`
+`;
 
 const SidebarWrap = styled.div`
   width: 100%;
-`
+`;
 
-const Sidebar = () => {
-	const [sidebar, setSidebar] = useState(false)
+const Sidebar = function () {
+  const [sidebar, setSidebar] = useState(false);
 
-	const showSidebar = () => setSidebar(!sidebar)
+  const showSidebar = () => setSidebar(!sidebar);
 
-	return (
-		<>
-			<IconContext.Provider value={{ color: '#fff' }}>
-				<Nav>
-					<NavIcon to="#">
-						<FaIcons.FaBars
-							style={({ minWidth: '4vw' }, { minHeight: '5vh' })}
-							onClick={showSidebar}
-						/>
-					</NavIcon>
-				</Nav>
-				<SidebarNav sidebar={sidebar}>
-					<SidebarWrap>
-						<NavIcon to="#">
-							<AiIcons.AiOutlineClose onClick={showSidebar} />
-						</NavIcon>
-						{SidebarData.map((item, index) => {
-							return <SubMenu item={item} key={index} />
-						})}
-					</SidebarWrap>
-				</SidebarNav>
-			</IconContext.Provider>
-		</>
-	)
-}
+  return (
+    <IconContext.Provider value={{ color: '#fff' }}>
+      <Nav>
+        <NavIcon to="#">
+          <FaIcons.FaBars
+            style={({ minWidth: '4vw' }, { minHeight: '5vh' })}
+            onClick={showSidebar}
+          />
+        </NavIcon>
+      </Nav>
+      <SidebarNav sidebar={sidebar}>
+        <SidebarWrap>
+          <NavIcon to="#">
+            <AiIcons.AiOutlineClose onClick={showSidebar} />
+          </NavIcon>
+          {SidebarData.map((item, index) => <SubMenu item={item} key={index} />)}
+        </SidebarWrap>
+      </SidebarNav>
+    </IconContext.Provider>
+  );
+};
 
-export default Sidebar
+export default Sidebar;

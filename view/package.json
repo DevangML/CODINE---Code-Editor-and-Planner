@@ -40,12 +40,17 @@
   },
   "scripts": {
     "server": "nodemon",
-    "start": "cross-env CLIENT_ENV=development craco start",
-    "build": "cross-env CLIENT_ENV=production craco build",
-    "prod": "cross-env CLIENT_ENV=production craco start",
-    "test": "craco test",
+    "lint": "eslint src/**/*.js",
+    "start": "react-scripts start",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js"
+    "---------- DEVELOPMENT ---------------------------------------------------------------------------------": "",
+    "dev": "cross-env CLIENT_ENV=development craco start FAST_REFRESH=true",
+    "---------- PRODUCTION ----------------------------------------------------------------------------------": "",
+    "prod": "cross-env CLIENT_ENV=production craco start FAST_REFRESH=true",
+    "build": "cross-env CLIENT_ENV=production craco build",
+    "---------- TESTING -------------------------------------------------------------------------------------": "",
+    "test": "cross-env CLIENT_ENV=test craco test",
+    "--------------------------------------------------------------------------------------------------------": ""
   },
   "eslintConfig": {
     "extends": [
@@ -68,8 +73,11 @@
   "devDependencies": {
     "@craco/craco": "^6.4.0",
     "craco-preact": "^1.1.0",
-    "eslint": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^19.0.0",
     "eslint-config-preact": "^1.2.0",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-react": "^7.27.0",
     "serve": "^12.0.1",
     "webpack-cli": "^4.9.1",

@@ -1,11 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-function Pop() {
-	return (
-		<section className="pop">
+const Pop = function () {
+  return (
+    <section className="pop" />
+  );
+};
 
-		</section>
-	)
-}
-
-export default Pop
+export default Pop;

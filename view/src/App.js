@@ -1,5 +1,6 @@
 // import './app.css'
 import React, { useEffect, useState } from 'react'
+import environment from './enviroments/base'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Sidebar from './pages/generalComponents/Sidebar'
 import Vanilla from './pages/vanilla/Vanilla'
@@ -8,9 +9,11 @@ import Oop from './pages/oop/Oop'
 import Pop from './pages/pop/Pop'
 import ContactMe from './pages/contactMe/ContactMe'
 import ProjectPlanner from './pages/projectPlanner/ProjectPlanner'
-import environment from 'environment'
+import * as location from './1055-world-locations.json'
+import * as success from './1127-success.json'
+import Lottie from 'react-lottie'
 
-console.log(environment)
+
 
 // Dev Styles
 
@@ -35,75 +38,73 @@ import './styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css'
 import './styles/pageStyles/contactMe.css'
 import './styles/general.css'
 
+console.log('Environment is: ' + environment)
+
 // Loader Section
 
-import * as location from './1055-world-locations.json'
-import * as success from './1127-success.json'
-import Lottie from 'react-lottie'
-
 const defaultOptions1 = {
-	loop: true,
-	autoplay: true,
-	animationData: location.default,
-	rendererSettings: {
-		preserveAspectRatio: 'xMidYMid slice'
-	}
+  loop: true,
+  autoplay: true,
+  animationData: location.default,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice'
+  }
 }
 
 const defaultOptions2 = {
-	loop: true,
-	autoplay: true,
-	animationData: success.default,
-	rendererSettings: {
-		preserveAspectRatio: 'xMidYMid slice'
-	}
+  loop: true,
+  autoplay: true,
+  animationData: success.default,
+  rendererSettings: {
+    preserveAspectRatio: 'xMidYMid slice'
+  }
 }
 
-function App() {
-	const [data, setData] = useState([])
-	const [loading, setloading] = useState(undefined)
-	const [completed, setcompleted] = useState(undefined)
+const App = function () {
+  const [data, setData] = useState([])
+  const [loading, setloading] = useState(undefined)
+  const [completed, setcompleted] = useState(undefined)
 
-	useEffect(() => {
-		setTimeout(() => {
-			fetch('https://jsonplaceholder.typicode.com/posts')
-				.then((response) => response.json())
-				.then((json) => {
-					console.log(json)
-					setData(json)
-					setloading(true)
+  useEffect(() => {
+    setTimeout(() => {
+      fetch('https://jsonplaceholder.typicode.com/posts')
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json)
+          setData(json)
+          setloading(true)
 
-					setTimeout(() => {
-						setcompleted(true)
-					}, 1000)
-				})
-		}, 2000)
-	}, [])
-	return (
-		<>
-			{!completed ? (
-				<section className="loading">
-					{!loading ? (
-						<Lottie options={defaultOptions1} height={700} width={700} />
-					) : (
-						<Lottie options={defaultOptions2} height={400} width={400} />
-					)}
-				</section>
-			) : (
-				<Router>
-					<Sidebar />
-					<Switch>
-						<Route exact path="/" to component={Home} />
-						<Route exact path="/vanilla" to component={Vanilla} />
-						<Route exact path="/pop" to component={Pop} />
-						<Route exact path="/oop" to component={Oop} />
-						<Route exact path="/contact" to component={ContactMe} />
-						<Route exact path="/proj" to component={ProjectPlanner} />
-					</Switch>
-				</Router>
-			)}
-		</>
-	)
+          setTimeout(() => {
+            setcompleted(true)
+          }, 1000)
+        })
+    }, 2000)
+  }, [])
+  return (
+    <>
+      {!completed ? (
+        <section className="loading">
+          {!loading ? (
+            <Lottie options={defaultOptions1} height={700} width={700} />
+          ) : (
+            <Lottie options={defaultOptions2} height={400} width={400} />
+          )}
+        </section>
+      ) : (
+        <Router>
+          <Sidebar />
+          <Switch>
+            <Route exact path="/" to component={Home} />
+            <Route exact path="/vanilla" to component={Vanilla} />
+            <Route exact path="/pop" to component={Pop} />
+            <Route exact path="/oop" to component={Oop} />
+            <Route exact path="/contact" to component={ContactMe} />
+            <Route exact path="/proj" to component={ProjectPlanner} />
+          </Switch>
+        </Router>
+      )}
+    </>
+  )
 }
 
 export default App

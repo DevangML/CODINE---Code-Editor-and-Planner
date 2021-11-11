@@ -1,0 +1,43 @@
+version: '3'
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    networks:
+      - mern-network
+    volumes:
+      - ./client/src:C:\Users\User\Documents\Projects\Devang\oce007\view\src
+      - ./client/public:C:\Users\User\Documents\Projects\Devang\oce007\view\public
+    depends_on:
+      - server
+    environment:
+      - REACT_APP_SERVER=http://localhost:5000
+      - CHOKIDAR_USEPOLLING=true
+    command: yarn start
+    stdin_open: true
+    tty: true
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - 5000:5000
+    networks:
+      - mern-network
+    volumes:
+      - ./server:C:\Users\User\Documents\Projects\Devang\oce007
+    environment:
+      - CLIENT=http://localhost:3000
+    command: nodemon -L ./server/oce.server.js
+
+networks:
+  mern-network:
+    driver: bridge
+
+volumes:
+  mongo-data:
+    driver: local
