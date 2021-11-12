@@ -4,7 +4,7 @@
 FROM node:16.13.0-alpine3.14
 
 # Working directory be app
-WORKDIR C:\Users\User\Documents\Projects\Devang\oce007\view
+WORKDIR /home/devangm/Desktop/repos/Devang/oce007/view
 
 COPY package*.json ./
 
