@@ -4,6 +4,7 @@ const { oceContactRouter, oceVanillaRouter } = require('./routes/oce.routes')
 const cors = require('cors')
 const path = require('path')
 require('dotenv').config({ path: '.env' })
+const __dirname = path.resolve()
 const compression = require('compression')
 const redis = require('redis')
 
