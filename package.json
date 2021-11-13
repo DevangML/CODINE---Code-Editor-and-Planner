@@ -21,9 +21,6 @@
     "pusher": "^5.0.0",
     "redis": "^3.1.2"
   },
-  "engines": {
-    "node": "16.x"
-  },
   "devDependencies": {
     "eslint": "^8.2.0"
   }

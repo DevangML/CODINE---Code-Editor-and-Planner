@@ -4,7 +4,7 @@ FROM node:16.13.0-alpine3.14
 
 # Create App Directory
 
-WORKDIR C:\Users\User\Documents\Projects\Devang\oce-docker
+WORKDIR /home/devangm/Desktop/repos/Devang/oce007
 
 # Install Dependencies
 COPY package*.json ./

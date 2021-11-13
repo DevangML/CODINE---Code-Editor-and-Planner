@@ -3,41 +3,29 @@ version: '3.7'
 services:
   server:
     build:
-      context: ./server
+      context: /home/devangm/Desktop/repos/Devang/Docker/Server
       dockerfile: Dockerfile
     image: codex-server
     container_name: codex-server
     command: yarn dev
     volumes:
-      - ./server/:/usr/src/app
-      - /usr/src/app/node_modules
+      - /home/devangm/Desktop/repos/Devang/oce007/node_modules
     ports:
       - '5000:5000'
-    depends_on:
-      - mongo
-    env_file: ./server/.env
+    env_file: ./.env
     environment:
       - NODE_ENV=development
     networks:
       - app-network
-  mongo:
-    image: mongo
-    volumes:
-      - data-volume:/data/db
-    ports:
-      - '27017:27017'
-    networks:
-      - app-network
   client:
     build:
-      context: ./client
+      context: /home/devangm/Desktop/repos/Devang/Docker/Client
       dockerfile: Dockerfile
-    image: myapp-client
-    container_name: myapp-react-client
-    command: npm start
+    image: codex-client
+    container_name: codex-client
+    command: yarn start
     volumes:
-      - ./client/:/usr/app
-      - /usr/app/node_modules
+      - /home/devangm/Desktop/repos/Devang/oce007/view/node_modules
     depends_on:
       - server
     ports:
