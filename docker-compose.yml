@@ -1,43 +1,56 @@
-version: '3'
-services:
-  client:
-    build:
-      context: C:\\Users\\User\\Documents\\Projects\\Devang\\oce007\\view
-      dockerfile: Dockerfile
-    ports:
-      - 3000:3000
-    networks:
-      - mern-network
-    volumes:
-      - C:\\Users\\User\\Documents\\Projects\\Devang\\oce007\\view\\src
-      - C:\\Users\\User\\Documents\\Projects\\Devang\\oce007\\view\\public
-    depends_on:
-      - server
-    environment:
-      - REACT_APP_SERVER=http://localhost:5000
-      - CHOKIDAR_USEPOLLING=true
-    command: yarn start
-    stdin_open: true
-    tty: true
+version: '3.7'
 
+services:
   server:
     build:
-      context: C:\\Users\\User\\Documents\\Projects\\Devang\\oce007
+      context: ./server
       dockerfile: Dockerfile
-    ports:
-      - 5000:5000
-    networks:
-      - mern-network
+    image: codex-server
+    container_name: codex-server
+    command: yarn dev
     volumes:
-      - C:\\Users\\User\\Documents\\Projects\\Devang\\oce007
+      - ./server/:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - '5000:5000'
+    depends_on:
+      - mongo
+    env_file: ./server/.env
     environment:
-      - CLIENT=http://localhost:3000
-    command: nodemon -L C:\\Users\\User\\Documents\\Projects\\Devang\\oce007\\oce.server.js
+      - NODE_ENV=development
+    networks:
+      - app-network
+  mongo:
+    image: mongo
+    volumes:
+      - data-volume:/data/db
+    ports:
+      - '27017:27017'
+    networks:
+      - app-network
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    image: myapp-client
+    container_name: myapp-react-client
+    command: npm start
+    volumes:
+      - ./client/:/usr/app
+      - /usr/app/node_modules
+    depends_on:
+      - server
+    ports:
+      - '3000:3000'
+    networks:
+      - app-network
 
 networks:
-  mern-network:
+  app-network:
     driver: bridge
 
 volumes:
-  mongo-data:
+  data-volume:
+  node_modules:
+  web-root:
     driver: local
