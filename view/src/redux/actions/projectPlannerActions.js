@@ -1,6 +1,9 @@
 import shortid from 'shortid';
 import { ADD_LIST, ADD_CARD } from './projectPlannerTypes';
 
+const firstListId = shortid.generate();
+const secondListId = shortid.generate();
+
 export const addFirstList = (firstListId) => ({
   type: ADD_LIST,
   payload: {

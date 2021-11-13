@@ -1,4 +1,8 @@
-import { ADD_LIST, DELETE_LIST, MOVE_LIST } from '../actions/projectPlannerTypes';
+import {
+  ADD_LIST,
+  DELETE_LIST,
+  MOVE_LIST,
+} from '../actions/projectPlannerTypes';
 
 const boardReducer = (state = { lists: [] }, action) => {
   switch (action.type) {
