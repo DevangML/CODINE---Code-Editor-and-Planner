@@ -5,7 +5,9 @@ import {
   CHANGE_CARD_TEXT,
 } from '../actions/projectPlannerTypes';
 
-const cardsByIdReducer = (action, state = {}) => {
+const initialState = {};
+
+const cardsByIdReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_CARD: {
       const { cardText, cardId } = action.payload;
@@ -26,8 +28,11 @@ const cardsByIdReducer = (action, state = {}) => {
       return Object.keys(state)
         .filter((cardId) => !cardIds.includes(cardId))
         .reduce(
-          (newState, cardId) => ({ ...newState, [cardId]: state[cardId] }),
-          {},
+          (newState, cardId) => ({
+            ...newState,
+            [cardId]: state[cardId],
+          }),
+          {}
         );
     }
     default:

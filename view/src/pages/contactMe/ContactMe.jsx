@@ -12,27 +12,46 @@ export class ContactMe extends Component {
       message: '',
     };
 
-    this.handleInputs = (e) => {
-      this.setState({ [e.target.name]: e.target.value });
+    this.onNameChange = (e) => {
+      this.setState({ name: e.target.value });
+    };
+
+    this.onEmailChange = (e) => {
+      this.setState({ email: e.target.value });
+    };
+
+    this.onPhoneChange = (e) => {
+      this.setState({ phone: e.target.value });
+    };
+
+    this.onMsgChange = (e) => {
+      this.setState({ message: e.target.value });
     };
 
     this.handleSubmit = (e) => {
       e.preventDefault();
-      console.log(this.state);
-      axios
-        .post(url, this.state)
+      axios({
+        method: 'POST',
+        url: url,
+        data: this.state,
+      })
         .then((response) => {
-          console.log(response);
+          console.log('success');
         })
-        .catch((error) => {
-          console.log(error);
+        .catch((err) => {
+          console.log(err);
         });
     };
 
-    const url = 'http://localhost:5000/form/post';
+    const url = 'http://localhost:5000/contact/post';
   }
 
   render() {
+    const onNameChange = this.onNameChange;
+    const onEmailChange = this.onEmailChange;
+    const onPhoneChange = this.onPhoneChange;
+    const onMsgChange = this.onMsgChange;
+    const handleSubmit = this.handleSubmit;
     return (
       <section className="contact">
         <section className="contact__container">
@@ -41,7 +60,7 @@ export class ContactMe extends Component {
           <form
             className="contact__section__sub-section"
             autoComplete="off"
-            onSubmit={this.handleSubmit.bind(this)}
+            onSubmit={handleSubmit}
           >
             <section className="contact__section__sub-section__item-1">
               <svg fill="#999" viewBox="0 0 1024 1024">
@@ -54,7 +73,7 @@ export class ContactMe extends Component {
                 type="text"
                 className="contact__section__sub-section__item-1_mod-2"
                 placeholder="Name"
-                onChange={this.handleInputs.bind(this)}
+                onChange={onNameChange}
               />
             </section>
             <section className="contact__section__sub-section__item-2">
@@ -65,7 +84,7 @@ export class ContactMe extends Component {
                 />
               </svg>
               <input
-                onChange={this.handleInputs.bind(this)}
+                onChange={onEmailChange}
                 type="email"
                 className="contact__section__sub-section__item-1_mod-2"
                 placeholder="Email"
@@ -80,7 +99,7 @@ export class ContactMe extends Component {
               </svg>
               <input
                 type="tel"
-                onChange={this.handleInputs.bind(this)}
+                onChange={onPhoneChange}
                 className="contact__section__sub-section__item-1_mod-2"
                 placeholder="Phone Number"
               />
@@ -94,12 +113,12 @@ export class ContactMe extends Component {
               </svg>
               <input
                 type="text"
-                onChange={this.handleInputs.bind(this)}
+                onChange={onMsgChange}
                 className="contact__section__sub-section__item-1_mod-2"
                 placeholder="Message"
               />
             </section>
-            <input type="submit" value="send" className="contact__item" />
+            <input type="submit" className="contact__item" />
           </form>
         </section>
       </section>

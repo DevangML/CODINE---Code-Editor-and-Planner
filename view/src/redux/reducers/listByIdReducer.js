@@ -7,7 +7,9 @@ import {
   DELETE_CARD,
 } from '../actions/projectPlannerTypes';
 
-const listsByIdReducer = (action, state = {}) => {
+const initialState = {};
+
+const listsByIdReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_LIST: {
       const { listId, listTitle } = action.payload;
@@ -32,13 +34,15 @@ const listsByIdReducer = (action, state = {}) => {
       const { listId, cardId } = action.payload;
       return {
         ...state,
-        [listId]: { ...state[listId], cards: [...state[listId].cards, cardId] },
+        [listId]: {
+          ...state[listId],
+          cards: [...state[listId].cards, cardId],
+        },
       };
     }
     case MOVE_CARD: {
-      const {
-        oldCardIndex, newCardIndex, sourceListId, destListId,
-      } = action.payload;
+      const { oldCardIndex, newCardIndex, sourceListId, destListId } =
+        action.payload;
       // Move within the same list
       if (sourceListId === destListId) {
         const newCards = Array.from(state[sourceListId].cards);
