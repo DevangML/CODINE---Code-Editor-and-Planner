@@ -4,7 +4,7 @@ import {
   MOVE_LIST,
 } from '../actions/projectPlannerTypes';
 
-const boardReducer = (state = { lists: [] }, action) => {
+const boardReducer = (action, state = { lists: [] }) => {
   switch (action.type) {
     case ADD_LIST: {
       const { listId } = action.payload;

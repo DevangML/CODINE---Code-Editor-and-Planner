@@ -1,8 +1,11 @@
 import {
-  DELETE_LIST, ADD_CARD, DELETE_CARD, CHANGE_CARD_TEXT,
+  DELETE_LIST,
+  ADD_CARD,
+  DELETE_CARD,
+  CHANGE_CARD_TEXT,
 } from '../actions/projectPlannerTypes';
 
-const cardsByIdReducer = (state = {}, action) => {
+const cardsByIdReducer = (action, state = {}) => {
   switch (action.type) {
     case ADD_CARD: {
       const { cardText, cardId } = action.payload;
