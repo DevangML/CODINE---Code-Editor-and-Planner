@@ -1,20 +1,20 @@
-const express = require('express')
+const express = require('express');
 const {
   oceContactPostController,
-  oceVanillaController
-} = require('../controllers/oce.controllers')
-const oceContactRouter = express.Router()
-const oceVanillaRouter = express.Router()
+  oceVanillaController,
+} = require('../controllers/oce.controllers');
+const oceContactRouter = express.Router();
+const oceVanillaRouter = express.Router();
 
 // Routes here
 
 // Contact Routes
-oceContactRouter.post('/', oceContactPostController)
+oceContactRouter.post('/post', oceContactPostController);
 
 // Vanilla Routes
-oceVanillaRouter.post('/', oceVanillaController)
+oceVanillaRouter.post('/', oceVanillaController);
 
 module.exports = {
   oceContactRouter,
-  oceVanillaRouter
-}
+  oceVanillaRouter,
+};

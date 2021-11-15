@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+  server:
+    build:
+      context: /home/devangm/Desktop/repos/Devang/Docker/Server
+      dockerfile: Dockerfile
+    image: codex-server
+    container_name: codex-server
+    command: yarn dev
+    volumes:
+      - /home/devangm/Desktop/repos/Devang/oce007/node_modules
+    ports:
+      - '5000:5000'
+    env_file: ./.env
+    environment:
+      - NODE_ENV=development
+    networks:
+      - app-network
+  client:
+    build:
+      context: /home/devangm/Desktop/repos/Devang/Docker/Client
+      dockerfile: Dockerfile
+    image: codex-client
+    container_name: codex-client
+    command: yarn start
+    volumes:
+      - /home/devangm/Desktop/repos/Devang/oce007/view/node_modules
+    depends_on:
+      - server
+    ports:
+      - '3000:3000'
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  data-volume:
+  node_modules:
+  web-root:
+    driver: local

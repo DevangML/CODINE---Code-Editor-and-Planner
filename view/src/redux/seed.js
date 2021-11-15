@@ -1,29 +1,22 @@
-import shortid from 'shortid'
 import {
-	addFirstCard,
-	addFirstList,
-	addSecondCard,
-	addSecondList,
-	addSubCardOne,
-	addSubCardTwo
-} from './actions/projectPlannerActions'
+  addFirstCard,
+  addFirstList,
+  addSecondCard,
+  addSecondList,
+  addSubCardOne,
+  addSubCardTwo,
+} from './actions/projectPlannerActions';
 
 export default function seed(store) {
-	console.log('Insert first list')
-	const firstListId = shortid.generate()
+  store.dispatch(addFirstList);
 
-	store.dispatch(addFirstList)
+  store.dispatch(addFirstCard);
 
-	store.dispatch(addFirstCard)
+  store.dispatch(addSecondCard);
 
-	store.dispatch(addSecondCard)
+  store.dispatch(addSecondList);
 
-	console.log('Insert second list')
-	const secondListId = shortid.generate()
+  store.dispatch(addSubCardOne);
 
-	store.dispatch(addSecondList)
-
-	store.dispatch(addSubCardOne)
-
-	store.dispatch(addSubCardTwo)
+  store.dispatch(addSubCardTwo);
 }

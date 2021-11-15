@@ -1,22 +1,24 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
-let oceContactModel = mongoose.model('Contact', {
+let oceContactSchema = new mongoose.Schema({
   Name: {
     type: String,
-    required: true
+    required: true,
   },
   Email: {
     type: String,
-    required: true
+    required: true,
   },
   Phone: {
     type: Number,
-    required: true
+    required: true,
   },
   Message: {
     type: String,
-    required: true
-  }
-})
+    required: true,
+  },
+});
 
-module.exports = { oceContactModel }
+const oceContactModel = mongoose.model('contact', oceContactSchema);
+
+module.exports = { oceContactModel };
