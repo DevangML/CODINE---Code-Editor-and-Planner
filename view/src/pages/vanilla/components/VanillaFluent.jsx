@@ -54,7 +54,7 @@ export class VanillaFluent extends Component {
     syncUpdates = () => {
         const data = { ...this.state };
 
-        axios.post('http://localhost:5000/vanilla', data).catch(console.error);
+        axios.post('http://localhost:5000/vanilla', data).catch(error);
     };
 
     runCode = () => {

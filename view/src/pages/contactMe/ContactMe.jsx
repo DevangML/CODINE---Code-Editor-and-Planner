@@ -35,11 +35,11 @@ export class ContactMe extends Component {
         url: url,
         data: this.state,
       })
-        .then((response) => {
-          console.log('success');
+        .then(() => {
+          alert('Thank You For Contacting Us');
         })
         .catch((err) => {
-          console.log(err);
+          alert(`Error reaching servers : $err`);
         });
     };
 
