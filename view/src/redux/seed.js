@@ -1,22 +1,54 @@
-import {
-  addFirstCard,
-  addFirstList,
-  addSecondCard,
-  addSecondList,
-  addSubCardOne,
-  addSubCardTwo,
-} from './actions/projectPlannerActions';
+import shortid from 'shortid';
+import { ADD_CARD, ADD_LIST } from './actions/projectPlannerTypes';
 
 export default function seed(store) {
-  store.dispatch(addFirstList);
+  const firstListId = shortid.generate();
 
-  store.dispatch(addFirstCard);
+  store.dispatch({
+    type: ADD_LIST,
+    payload: { listId: firstListId, listTitle: 'First list' },
+  });
 
-  store.dispatch(addSecondCard);
+  store.dispatch({
+    type: ADD_CARD,
+    payload: {
+      listId: firstListId,
+      cardId: shortid.generate(),
+      cardText: 'First card',
+    },
+  });
 
-  store.dispatch(addSecondList);
+  store.dispatch({
+    type: ADD_CARD,
+    payload: {
+      listId: firstListId,
+      cardId: shortid.generate(),
+      cardText: 'Second card',
+    },
+  });
 
-  store.dispatch(addSubCardOne);
+  const secondListId = shortid.generate();
 
-  store.dispatch(addSubCardTwo);
+  store.dispatch({
+    type: ADD_LIST,
+    payload: { listId: secondListId, listTitle: 'Second list' },
+  });
+
+  store.dispatch({
+    type: ADD_CARD,
+    payload: {
+      listId: secondListId,
+      cardId: shortid.generate(),
+      cardText: 'Card 1',
+    },
+  });
+
+  store.dispatch({
+    type: ADD_CARD,
+    payload: {
+      listId: secondListId,
+      cardId: shortid.generate(),
+      cardText: 'Card 2',
+    },
+  });
 }

@@ -1,8 +1,7 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore} from 'redux';
 import throttle from 'lodash.throttle';
 import seed from './seed';
 import rootReducer from './reducers/rootReducer';
-import thunk from 'redux-thunk';
 
 const saveState = (state) => {
   try {
@@ -26,7 +25,7 @@ const loadState = () => {
 };
 
 const persistedState = loadState();
-const store = createStore(rootReducer, persistedState, applyMiddleware(thunk));
+const store = createStore(rootReducer, persistedState);
 
 store.subscribe(
   throttle(() => {

@@ -2,3 +2,4 @@ node_modules
 .dockerignore
 Dockerfile
 npm-debug.log
+docker-compose.yml
