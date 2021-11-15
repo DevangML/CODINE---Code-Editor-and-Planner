@@ -1,7 +1,8 @@
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import throttle from 'lodash.throttle';
 import seed from './seed';
 import rootReducer from './reducers/rootReducer';
+import thunk from 'redux-thunk';
 
 const saveState = (state) => {
   try {
@@ -25,12 +26,12 @@ const loadState = () => {
 };
 
 const persistedState = loadState();
-const store = createStore(rootReducer, persistedState);
+const store = createStore(rootReducer, persistedState, applyMiddleware(thunk));
 
 store.subscribe(
   throttle(() => {
     saveState(store.getState());
-  }, 1000),
+  }, 1000)
 );
 
 if (!store.getState().board.lists.length) {
