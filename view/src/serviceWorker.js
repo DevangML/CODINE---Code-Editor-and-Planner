@@ -23,8 +23,6 @@ window.self.addEventListener('fetch', (event) => {
       return fetch(event.request);
     })
   );
-});
-
 // Update a service worker
 window.self.addEventListener('activate', (event) => {
   var cacheWhitelist = ['pwa-task-manager'];
