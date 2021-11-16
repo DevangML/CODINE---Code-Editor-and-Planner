@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "CODEX",
+  "short_name": "CODEX",
+  "name": "CODEX - Code Editor and Planner",
   "icons": [
     {
       "src": "favicon.ico",
