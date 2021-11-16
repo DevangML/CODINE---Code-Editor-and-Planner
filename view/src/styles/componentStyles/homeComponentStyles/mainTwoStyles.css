@@ -13,18 +13,19 @@
   z-index: 2;
   margin-top: -5vh;
   padding: 2vw;
+  padding-bottom: 15vh;
 }
 
 .main-2__item-1 {
-  font-size: 12vh;
+  font-size: 13vh;
 }
 .main-2__item-2 {
-  font-size: 6vh;
+  font-size: 5vh;
   text-align: center;
   font-family: 'Courgette', cursive;
 }
 .main-2__item-3 {
-  font-size: 5vh;
+  font-size: 4vh;
   text-align: center;
   font-family: 'Courgette', cursive;
 }

@@ -9,8 +9,9 @@
 
 html,
 body {
-  width: 100vw;
-  height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
   margin: 0;
   padding: 0vw;
   overflow-x: hidden;

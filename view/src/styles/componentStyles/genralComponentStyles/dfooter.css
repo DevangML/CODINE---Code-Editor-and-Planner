@@ -1,9 +1,10 @@
 /*Dfooter Section*/
 
 .dfooter__item {
-  text-align: justify;
+  text-align: center;
   font-size: 4vw;
   color: rgb(250, 234, 92);
+  min-width: 100vw;
 }
 
 @media only screen and (max-width:800px) {
@@ -19,7 +20,7 @@
 }
 
 .dfooter {
-  min-width: 100vw;
+  width: 100vw;
   background: #232526;
   background: -webkit-linear-gradient(to right, #414345, #232526);
   background: linear-gradient(to right, #414345, #232526);
@@ -34,4 +35,6 @@
   position: absolute;
   bottom: 0;
   z-index: 7;
+  min-height: 12vh;
+  max-height: 15vh;
 }
