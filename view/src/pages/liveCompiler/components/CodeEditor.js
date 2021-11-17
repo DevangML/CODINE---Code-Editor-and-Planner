@@ -11,27 +11,28 @@ const CodeEditor = ({ value, onCodeChange, programmingLanguage }) => {
     console.log('code editor loaded');
   };
   return (
-    <AceEditor
-      className="codeEditor"
-      placeholder="Code goes here"
-      mode={programmingLanguage}
-      theme="monokai"
-      name="editor"
-      onLoad={onLoad}
-      onChange={onCodeChange}
-      fontSize={14}
-      value={value}
-      showPrintMargin={true}
-      showGutter={true}
-      highlightActiveLine={true}
-      setOptions={{
-        enableBasicAutocompletion: false,
-        enableLiveAutocompletion: true,
-        enableSnippets: false,
-        showLineNumbers: true,
-        tabSize: 2,
-      }}
-    />
+    <section className="aceEditor">
+      <AceEditor
+        className="codeEditor"
+        placeholder="Code goes here"
+        mode={programmingLanguage}
+        theme="monokai"
+        name="editor"
+        onLoad={onLoad}
+        onChange={onCodeChange}
+        value={value}
+        showPrintMargin={true}
+        showGutter={true}
+        highlightActiveLine={true}
+        setOptions={{
+          enableBasicAutocompletion: false,
+          enableLiveAutocompletion: true,
+          enableSnippets: false,
+          showLineNumbers: true,
+          tabSize: 2,
+        }}
+      />
+    </section>
   );
 };
 
