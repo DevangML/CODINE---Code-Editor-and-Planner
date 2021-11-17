@@ -1,6 +1,10 @@
 // Import Section
 const express = require('express');
-const { oceContactRouter, oceVanillaRouter } = require('./routes/oce.routes');
+const {
+  oceContactRouter,
+  oceVanillaRouter,
+  oceLiveCompilerRouter,
+} = require('./routes/oce.routes');
 const cors = require('cors');
 const path = require('path');
 require('dotenv').config({ path: '.env' });
@@ -32,7 +36,7 @@ expressApp.use(express.urlencoded({ extended: true }));
 // 	console.error(error)
 // })
 
-// Post Route
+// Contact Route Initializers
 expressApp.use('/contact', oceContactRouter);
 
 // Static view configuration
@@ -44,8 +48,12 @@ expressApp.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './view/build/index.html'));
 });
 
-// Pusher Code
+// Vanilla Route Initializers
 
 expressApp.use('/vanilla', oceVanillaRouter);
+
+// LiveCompiler Route Initializers
+
+expressApp.use('/', oceLiveCompilerRouter);
 
 module.exports = expressApp;

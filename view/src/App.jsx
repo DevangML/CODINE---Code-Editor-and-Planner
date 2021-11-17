@@ -2,15 +2,17 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Lottie from 'react-lottie';
+import * as location from './1055-world-locations.json';
+import * as success from './1127-success.json';
+
+// Component Imports
+
 import Sidebar from './pages/generalComponents/Sidebar';
 import Vanilla from './pages/vanilla/Vanilla';
 import Home from './pages/home/Home';
-import Oop from './pages/oop/Oop';
-import Pop from './pages/pop/Pop';
 import ContactMe from './pages/contactMe/ContactMe';
 import ProjectPlanner from './pages/projectPlanner/ProjectPlanner';
-import * as location from './1055-world-locations.json';
-import * as success from './1127-success.json';
+import LiveCompiler from './pages/liveCompiler/LiveCompiler';
 
 // Dev Styles
 
@@ -33,6 +35,7 @@ import './styles/componentStyles/vanillaComponentStyles/vanillaNormal.css';
 import './styles/componentStyles/vanillaComponentStyles/vanillaFluent.css';
 import './styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css';
 import './styles/pageStyles/contactMe.css';
+import './styles/pageStyles/liveCompiler.css';
 import './styles/general.css';
 
 // Loader Section
@@ -56,6 +59,7 @@ const defaultOptions2 = {
 };
 
 const App = function () {
+  // state hooks
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(undefined);
   const [completed, setcompleted] = useState(undefined);
@@ -90,8 +94,7 @@ const App = function () {
           <Switch>
             <Route exact path="/" to component={Home} />
             <Route exact path="/vanilla" to component={Vanilla} />
-            <Route exact path="/pop" to component={Pop} />
-            <Route exact path="/oop" to component={Oop} />
+            <Route exact path="/compiler" to component={LiveCompiler} />
             <Route exact path="/contact" to component={ContactMe} />
             <Route exact path="/proj" to component={ProjectPlanner} />
           </Switch>

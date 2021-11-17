@@ -1,6 +1,11 @@
 const { oceContactModel } = require('../models/oce.models');
 require('path');
+const dotenv = require('dotenv');
+dotenv.config();
 require('../databases/oce.dbs');
+var request = require('request');
+var clientSecret = process.env.CLIENT_SECRET;
+var clientId = process.env.CLIENT_ID;
 
 // Contact Controllers
 
@@ -48,7 +53,33 @@ const oceVanillaController = async (req, res) => {
   res.status(200).send('OK');
 };
 
+const oceLiveCompilerPostController = async (req, res) => {
+  if (req.body.language == 'python') req.body.language = 'python3';
+  var program = {
+    script: req.body.code,
+    language: req.body.language,
+    stdin: req.body.input,
+    versionIndex: '0',
+    clientSecret,
+    clientId,
+  };
+  request(
+    {
+      url: 'https://api.jdoodle.com/v1/execute',
+      method: 'POST',
+      json: program,
+    },
+    function (error, response, body) {
+      console.log('error:', error);
+      console.log('statusCode:', response && response.statusCode);
+      console.log('body:', body);
+      return res.status(201).send(body);
+    }
+  );
+};
+
 module.exports = {
   oceContactPostController,
   oceVanillaController,
+  oceLiveCompilerPostController,
 };
