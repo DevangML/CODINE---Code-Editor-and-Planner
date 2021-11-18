@@ -1,4 +1,10 @@
 {
-  "prettier.jsxSingleQuote": true,
-  "editor.detectIndentation": false
+  "files.eol": "\n",
+  "editor.formatOnSave": true,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "files.autoSave": "afterDelay",
+  "editor.fontFamily": "'Operator Mono Lig', Consolas,'Operator Mono Lig',monospace",
+  "editor.tabSize": 2
 }
