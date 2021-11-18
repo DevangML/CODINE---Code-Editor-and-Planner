@@ -4,6 +4,7 @@ import InputEditor from './components/InputEditor';
 import OutputLogs from './components/OutputLogs';
 import Header from './components/Header';
 import axios from 'axios';
+import Dfooter from 'pages/generalComponents/Dfooter';
 
 function LiveCompiler() {
   const [language, setLanguage] = useState('java');
@@ -38,15 +39,18 @@ function LiveCompiler() {
         runCode={() => runCode()}
         onChangeLanguage={({ value }) => setLanguage(value)}
       />
-      <CodeEditor
-        value={code}
-        onCodeChange={(text) => setCode(text)}
-        programmingLanguage={language}
-      />
-      <section className="optionSegment">
-        <InputEditor value={input} onInputChange={(text) => setInput(text)} />
-        <OutputLogs value={outputLogs} />
+      <section className="editorContainer">
+        <CodeEditor
+          value={code}
+          onCodeChange={(text) => setCode(text)}
+          programmingLanguage={language}
+        />
+        <section className="optionSegment">
+          <InputEditor value={input} onInputChange={(text) => setInput(text)} />
+          <OutputLogs value={outputLogs} />
+        </section>
       </section>
+      <Dfooter />
     </section>
   );
 }

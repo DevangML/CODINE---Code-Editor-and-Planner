@@ -1,94 +1,175 @@
 .liveCompiler {
+  background: #833ab4;
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  position: relative;
+  padding: 10vh;
+  margin-top: -15vh;
+  min-height: 100vh;
+  font-family: 'Kaushan Script', cursive;
+}
+
+.compilerHeader__item-1 {
+  font-size: 12vh !important;
+  color: #faeca0;
+  text-shadow: -0.34vh 0vh 0.56vh rgb(36, 36, 36);
+}
+.compilerHeader__item-2 {
+  font-size: 4vh !important;
+  color: #faeca0;
+  text-shadow: -0.34vh 0vh 0.56vh rgb(36, 36, 36);
+}
+
+@media screen and (max-width: 330px) {
+  .compilerHeader__item-1 {
+    font-size: 8vh !important;
+  }
+  .compilerHeader__item-2 {
+    font-size: 3vh !important;
+  }
+}
+
+@media screen and (max-width: 230px) {
+  .compilerHeader__item-1 {
+    font-size: 7vh !important;
+  }
+  .compilerHeader__item-2 {
+    font-size: 2.5vh !important;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  .compilerHeader__item-1 {
+    font-size: 6vh !important;
+  }
+  .compilerHeader__item-2 {
+    font-size: 2vh !important;
+  }
 }
 
 pre {
   background: #f7f7f7;
-  padding: 10px 20px;
-  border-radius: 2px;
-  border: 1px solid #ccc;
+  padding: 1.11vh 3.12vw;
+  border-radius: 0.22vh;
+  border: 0.11vh solid #ccc;
 }
 
 .optionSegment {
   display: flex;
   flex-direction: row;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  width: 80vw;
+  padding-bottom: 20vh;
 }
 
 .compilerHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  width: 100%;
+  max-width: 100vw;
   margin-top: -10vh;
 }
 .compilerHeader__section {
   text-align: left;
-  margin-bottom: 2px;
+  margin-bottom: 0.22vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.editorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
 }
 
 .customButton {
   background-color: #4caf50;
   border: none;
   color: white;
-  padding: 12px 30px;
+  padding: 1.34vh 4.68vw;
   text-align: center;
   text-decoration: none;
   display: inline-flex;
-  font-size: 14px;
-  margin-left: 5px;
+  font-size: 3vh;
+  margin-left: 0.78vw;
+}
+
+.aceEditor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 100vw;
 }
 
 .inputEditor,
 .outputLogs {
   min-width: 40vw !important;
-  margin-top: 20px;
+  margin-top: 2.23vh;
   display: inline-block;
   min-height: 20vh !important;
   max-height: 25vh !important;
-  border-radius: 3vh !important;
+  padding: 2vw !important;
+  max-width: 80vw !important;
+  font-size: 2.5vh !important;
 }
 
 .codeEditor {
   margin-top: 2vh !important;
-  min-width: 80vw !important;
+  min-width: 90vw !important;
+  max-width: 92vw !important;
   min-height: 40vh !important;
-  border-radius: 3vh !important;
+  font-size: 2.5vh !important;
 }
 
 .nm {
   display: inline-flex;
   float: left;
-  height: 40px;
+  height: 4.46vh;
 }
 pre code {
-  line-height: 20px;
+  line-height: 2.23vh;
 }
 
 .result {
-  padding: 8px 0;
+  padding: 1.25vw 0;
 }
 
 .arrow-closed,
 .arrow-open {
   border: solid #999;
-  border-width: 0 2px 2px 0;
+  border-width: 0 0.22vw 0.22vw 0;
   display: inline-block;
-  padding: 4px;
+  padding: 0.45vw;
   position: absolute;
-  right: 10px;
+  right: 1.12vw;
 }
 
 .arrow-closed {
-  top: 10px;
+  top: 1.11vh;
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
 
 .arrow-open {
-  top: 14px;
+  top: 1.56vh;
   transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
 }
@@ -101,56 +182,69 @@ pre code {
   position: relative;
   overflow: hidden;
   background-color: white;
-  border: 1px solid rgb(105, 46, 46);
-  border-radius: 2px;
+  border: 0.11vh solid rgb(105, 46, 46);
+  border-radius: 0.22vh;
   box-sizing: border-box;
   color: #333;
   cursor: default;
   outline: none;
-  padding: 8px 52px 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 200ms ease;
+  font-size: 4vh;
+  min-width: 15vw;
+  max-width:18vw;
+  min-height: 5vh;
+  padding-right: 7vw;
+  padding-left: 6vw;
 }
 
 .Dropdown-control:hover {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0.11vw 0 rgba(0, 0, 0, 0.06);
 }
 
 .Dropdown-arrow {
   border-color: #999 transparent transparent;
   border-style: solid;
-  border-width: 5px 5px 0;
+  border-width: 0.78vw 0.78vw 0;
   content: ' ';
   display: block;
   height: 0;
   margin-top: -ceil(2.5);
   position: absolute;
-  right: 10px;
-  top: 14px;
+  right: 1.56vw;
+  top: 1.56vh;
   width: 0;
 }
 
 .is-open .Dropdown-arrow {
   border-color: transparent transparent #999;
-  border-width: 0 5px 5px;
+  border-width: 0 0.78vw 0.78vw;
 }
 
 .Dropdown-menu {
   background-color: white;
-  border: 1px solid #ccc;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  border: 0.1vw solid #ccc;
+  box-shadow: 0 0.1vw 0 rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
-  margin-top: -1px;
-  max-height: 200px;
+  margin-top: -0.07vw;
+  max-height: 22.32vh;
   overflow-y: auto;
   position: absolute;
   top: 100%;
-  width: 100px;
+  width: 100%;
   z-index: 1000;
   -webkit-overflow-scrolling: touch;
+  overflow: -moz-scrollbars-none;
+}
+
+.Dropdown-menu::-webkit-scrollbar {
+  width: 0 !important;
 }
 
 .Dropdown-menu .Dropdown-group > .Dropdown-title {
-  padding: 8px 10px;
+  padding: 0.89vh 1.56vw;
   color: rgba(51, 51, 51, 1.2);
   font-weight: bold;
   text-transform: capitalize;
@@ -161,12 +255,14 @@ pre code {
   color: rgba(51, 51, 51, 0.8);
   cursor: pointer;
   display: block;
-  padding: 8px 10px;
+  padding: 0.89vh 1.56vw;
+  font-size: 3vh;
+  text-align: justify;
 }
 
 .Dropdown-option:last-child {
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 0.31vw;
+  border-bottom-left-radius: 0.31vw;
 }
 
 .Dropdown-option:hover {
@@ -184,5 +280,5 @@ pre code {
   color: #ccc;
   cursor: default;
   display: block;
-  padding: 8px 10px;
+  padding: 0.89vh 1.56vw;
 }
