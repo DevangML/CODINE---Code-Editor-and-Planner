@@ -13,35 +13,45 @@
   padding: 10vh;
   margin-top: -15vh;
   min-height: 100vh;
+  font-family: 'Kaushan Script', cursive;
 }
 
 .compilerHeader__item-1 {
   font-size: 12vh !important;
+  color: #faeca0;
+  text-shadow: -0.34vh 0vh 0.56vh rgb(36, 36, 36);
 }
 .compilerHeader__item-2 {
   font-size: 4vh !important;
+  color: #faeca0;
+  text-shadow: -0.34vh 0vh 0.56vh rgb(36, 36, 36);
 }
 
 @media screen and (max-width: 330px) {
   .compilerHeader__item-1 {
     font-size: 8vh !important;
   }
-  .compilerHeader__item-2{font-size: 3vh !important;}
+  .compilerHeader__item-2 {
+    font-size: 3vh !important;
+  }
 }
 
 @media screen and (max-width: 230px) {
   .compilerHeader__item-1 {
     font-size: 7vh !important;
   }
-  .compilerHeader__item-2{font-size: 2.5vh !important;}
+  .compilerHeader__item-2 {
+    font-size: 2.5vh !important;
+  }
 }
-
 
 @media screen and (max-width: 200px) {
   .compilerHeader__item-1 {
     font-size: 6vh !important;
   }
-  .compilerHeader__item-2{font-size: 2vh !important;}
+  .compilerHeader__item-2 {
+    font-size: 2vh !important;
+  }
 }
 
 pre {
@@ -78,6 +88,7 @@ pre {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 2vw;
 }
 
 .editorContainer {
@@ -96,7 +107,7 @@ pre {
   text-align: center;
   text-decoration: none;
   display: inline-flex;
-  font-size: 1.56vh;
+  font-size: 3vh;
   margin-left: 0.78vw;
 }
 
@@ -177,8 +188,16 @@ pre code {
   color: #333;
   cursor: default;
   outline: none;
-  padding: 1.25vw 8.125vw 1.25vw 1.56vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: all 200ms ease;
+  font-size: 4vh;
+  min-width: 15vw;
+  max-width:18vw;
+  min-height: 5vh;
+  padding-right: 7vw;
+  padding-left: 6vw;
 }
 
 .Dropdown-control:hover {
@@ -209,14 +228,19 @@ pre code {
   border: 0.1vw solid #ccc;
   box-shadow: 0 0.1vw 0 rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
-  margin-top: -0.1vw;
+  margin-top: -0.07vw;
   max-height: 22.32vh;
   overflow-y: auto;
   position: absolute;
   top: 100%;
-  width: 11.16vw;
+  width: 100%;
   z-index: 1000;
   -webkit-overflow-scrolling: touch;
+  overflow: -moz-scrollbars-none;
+}
+
+.Dropdown-menu::-webkit-scrollbar {
+  width: 0 !important;
 }
 
 .Dropdown-menu .Dropdown-group > .Dropdown-title {
@@ -232,6 +256,8 @@ pre code {
   cursor: pointer;
   display: block;
   padding: 0.89vh 1.56vw;
+  font-size: 3vh;
+  text-align: justify;
 }
 
 .Dropdown-option:last-child {

@@ -12,9 +12,9 @@ const Header = ({ onChangeLanguage, value, runCode, status }) => {
   ];
   return (
     <section className="compilerHeader">
-      <h2 className="compilerHeader__item-1">You Code Compiler</h2>
+      <h2 className="compilerHeader__item-1">Live Code Editor</h2>
       <p className="compilerHeader__item-2">
-        A Simplistic open-source programming IDE
+        A Simple Code Editor (Based on Jdoodle API)
       </p>
       <section className="compilerHeader__section">
         <DropDown
