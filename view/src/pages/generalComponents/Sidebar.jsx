@@ -23,7 +23,7 @@ const NavIcon = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5vw;
+  border-radius: 50%;
   min-width: 8vw;
   flex-shrink: 0;
   background: #000428;
@@ -32,6 +32,17 @@ const NavIcon = styled(Link)`
   padding: 0.26vw;
   z-index: 400;
   margin-top: 7vh;
+
+  @media screen and (max-width: 800px) {
+    min-width: 13vw;
+    min-height: 9vh;
+    border-radius: 50%;
+  }
+  @media screen and (max-width: 600px) {
+    min-width: 20vw;
+    min-height: 9vh;
+    border-radius: 50%;
+  }
 `;
 
 const SidebarNav = styled.nav`

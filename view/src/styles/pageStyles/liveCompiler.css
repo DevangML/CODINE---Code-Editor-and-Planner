@@ -22,6 +22,28 @@
   font-size: 4vh !important;
 }
 
+@media screen and (max-width: 330px) {
+  .compilerHeader__item-1 {
+    font-size: 8vh !important;
+  }
+  .compilerHeader__item-2{font-size: 3vh !important;}
+}
+
+@media screen and (max-width: 230px) {
+  .compilerHeader__item-1 {
+    font-size: 7vh !important;
+  }
+  .compilerHeader__item-2{font-size: 2.5vh !important;}
+}
+
+
+@media screen and (max-width: 200px) {
+  .compilerHeader__item-1 {
+    font-size: 6vh !important;
+  }
+  .compilerHeader__item-2{font-size: 2vh !important;}
+}
+
 pre {
   background: #f7f7f7;
   padding: 1.11vh 3.12vw;
