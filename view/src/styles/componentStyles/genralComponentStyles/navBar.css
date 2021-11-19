@@ -27,8 +27,6 @@
   z-index: 400;
 }
 
-
-
 .navbar__nav {
   background: #15171c;
   width: 40vw;
@@ -74,17 +72,19 @@
 }
 
 .submenu__item-2 {
-  background: #870000; 
-  background: -webkit-linear-gradient(
-    to right,
-    #190a05,
-    #870000
-  ); 
-  background: linear-gradient(
-    to right,
-    #190a05,
-    #870000
-  ); 
+  background: #870000;
+  background:
+    linear-gradient(
+      to right,
+      #190a05,
+      #870000
+    );
+  background:
+    linear-gradient(
+      to right,
+      #190a05,
+      #870000
+    );
   height: 9.6vh;
   padding-left: 2.57vw;
   display: flex;

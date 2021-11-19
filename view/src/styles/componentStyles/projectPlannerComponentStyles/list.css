@@ -6,7 +6,7 @@
   margin: 1.12vw;
   margin-right: 0;
   border-radius: 1.12vw;
-  border: 0.11vw solid rgba(0, 0, 0, 0.12);
+  border: 0.11vw solid rgb(0 0 0 / 12%);
 }
 
 .List-Title {
@@ -25,7 +25,7 @@
 }
 
 .Toggle-Add-Card:hover {
-  background-color: rgba(9, 45, 66, 0.13);
+  background-color: rgb(9 45 66 / 13%);
   color: #17394d;
   text-decoration: underline;
 }

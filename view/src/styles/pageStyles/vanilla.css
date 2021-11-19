@@ -1,6 +1,6 @@
 .vanilla {
   background: #833ab4;
-  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   min-height: 100vh;
   position: relative;
@@ -11,12 +11,12 @@
   gap: 5vh;
   z-index: 8;
   overflow: hidden;
-  font-family: 'Kaushan Script', cursive;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
+  font-family: "Kaushan Script", cursive;
+  user-select: none;
+  user-select: none;
+  user-select: none;
+  user-select: none;
+  user-select: none;
   user-select: none;
   margin-top: -13vh;
   margin-bottom: -1vh;
@@ -26,7 +26,7 @@
 .vanilla__header__item {
   font-size: 7vw;
   color: #faeca0;
-  text-shadow: -0.34vh 0vh 0.56vh rgb(36, 36, 36);
+  text-shadow: -0.34vh 0 0.56vh rgb(36 36 36);
   text-align: center;
   margin-top: -6vh;
 }

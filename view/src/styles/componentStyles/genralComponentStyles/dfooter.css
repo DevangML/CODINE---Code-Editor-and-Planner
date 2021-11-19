@@ -1,19 +1,19 @@
-/*Dfooter Section*/
+/* Dfooter Section */
 
 .dfooter__item {
   text-align: center;
   font-size: 4vw;
-  color: rgb(250, 234, 92);
+  color: rgb(250 234 92);
   min-width: 100vw;
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width: 800px) {
   .dfooter__item {
     font-size: 6vw;
   }
 }
 
-@media only screen and (max-width:500px) {
+@media only screen and (max-width: 500px) {
   .dfooter__item {
     font-size: 9vw;
   }
@@ -22,7 +22,7 @@
 .dfooter {
   width: 100vw;
   background: #232526;
-  background: -webkit-linear-gradient(to right, #414345, #232526);
+  background: linear-gradient(to right, #414345, #232526);
   background: linear-gradient(to right, #414345, #232526);
   display: flex;
   flex-direction: column;

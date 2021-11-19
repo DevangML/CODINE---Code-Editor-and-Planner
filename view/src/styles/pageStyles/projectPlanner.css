@@ -1,6 +1,6 @@
 .proj {
   background: #f7ff00;
-  background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);
+  background: linear-gradient(to right, #db36a4, #f7ff00);
   background: linear-gradient(to right, #db36a4, #f7ff00);
   min-height: 100vh;
   min-width: 100vw;
@@ -17,13 +17,22 @@
 
 .proj__header__item {
   text-align: center;
-  color: #444444;
-  text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px #eeeeee, 2px 1px 1px #cccccc,
-    1px 2px 1px #eeeeee, 3px 2px 1px #cccccc, 2px 3px 1px #eeeeee,
-    4px 3px 1px #cccccc, 3px 4px 1px #eeeeee, 5px 4px 1px #cccccc,
-    4px 5px 1px #eeeeee, 6px 5px 1px #cccccc, 5px 6px 1px #eeeeee,
-    7px 6px 1px #cccccc;
-  color: #444444;
+  color: #444;
+  text-shadow:
+    1px 0 1px #ccc,
+    0 1px 1px #eee,
+    2px 1px 1px #ccc,
+    1px 2px 1px #eee,
+    3px 2px 1px #ccc,
+    2px 3px 1px #eee,
+    4px 3px 1px #ccc,
+    3px 4px 1px #eee,
+    5px 4px 1px #ccc,
+    4px 5px 1px #eee,
+    6px 5px 1px #ccc,
+    5px 6px 1px #eee,
+    7px 6px 1px #ccc;
+  color: #444;
   font-size: 10vw;
   margin-top: -12vh;
 }
@@ -41,13 +50,13 @@
   display: block;
   margin: auto;
   background: #000428;
-  background: -webkit-linear-gradient(to right, #004e92, #000428);
   background: linear-gradient(to right, #004e92, #000428);
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
+  background: linear-gradient(to right, #004e92, #000428);
+  border-radius: 28;
+  border-radius: 28;
   border-radius: 20vh;
   font-family: Arial;
-  color: #ffffff;
+  color: #fff;
   font-size: 3vh;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
@@ -65,7 +74,7 @@
 
 .proj__button:hover {
   background: #000428;
-  background: -webkit-linear-gradient(to right, #004e92e3, #000428);
+  background: linear-gradient(to right, #004e92e3, #000428);
   background: linear-gradient(to right, #004e92e3, #000428);
   transform: perspective(0.11784511784511785vh) scale(1.05);
   text-decoration: none;

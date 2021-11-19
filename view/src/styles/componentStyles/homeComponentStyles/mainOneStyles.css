@@ -21,27 +21,32 @@
   font-size: 15vh;
   text-align: center;
 }
+
 .main-1__item-2 {
   font-size: 6vh;
   text-align: center;
-  font-family: 'Courgette', cursive;
+  font-family: "Courgette", cursive;
 }
+
 .main-1__item-3 {
   font-size: 5vh;
   text-align: center;
-  font-family: 'Courgette', cursive;
+  font-family: "Courgette", cursive;
 }
 
 @media screen and (max-width: 650px) {
   .main-1__item-1 {
     font-size: 12vh;
   }
+
   .main-1__item-2 {
     font-size: 4vh;
   }
+
   .main-1__item-3 {
     font-size: 3.8vh;
   }
+
   .main-1 {
     margin-bottom: -30vh;
   }
@@ -51,12 +56,15 @@
   .main-1__item-1 {
     font-size: 9vh;
   }
+
   .main-1__item-2 {
     font-size: 3.5vh;
   }
+
   .main-1__item-3 {
     font-size: 2.8vh;
   }
+
   .main-1 {
     margin-bottom: -35vh;
   }
@@ -72,9 +80,11 @@
   .main-1__item-1 {
     font-size: 4vh;
   }
+
   .main-1__item-2 {
     font-size: 3vh;
   }
+
   .main-1 {
     margin-bottom: -34vh;
   }
@@ -84,6 +94,7 @@
   .main-1__item-1 {
     font-size: 3vh;
   }
+
   .main-1 {
     margin-bottom: -25vh;
   }

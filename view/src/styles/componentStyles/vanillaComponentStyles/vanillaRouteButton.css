@@ -14,29 +14,27 @@
   border-radius: 3vw;
   padding-left: 1.2vw;
   padding-right: 1.2vw;
-  background-color: rgb(56, 56, 56);
+  background-color: rgb(56 56 56);
   outline: none;
-  border: 0.45vw solid rgb(56, 56, 56);
+  border: 0.45vw solid rgb(56 56 56);
   min-width: 22vw;
   min-height: 12vh;
 }
 
-.vanilla_button__item-1>a,
-.vanilla_button__item-2>a {
-  color: rgb(255, 232, 104);
+.vanilla_button__item-1 > a,
+.vanilla_button__item-2 > a {
+  color: rgb(255 232 104);
   font-size: 3vw;
 }
 
-@media only screen and (max-width:1100px) {
-
+@media only screen and (max-width: 1100px) {
   .vanilla_button__item-1,
   .vanilla_button__item-2 {
     min-height: 10vh;
   }
 }
 
-@media only screen and (max-width:800px) {
-
+@media only screen and (max-width: 800px) {
   .vanilla_button__item-1,
   .vanilla_button__item-2 {
     min-height: 6vh;

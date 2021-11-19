@@ -46,8 +46,12 @@
   },
   "scripts": {
     "server": "nodemon",
-    "lint": "eslint --ext .js --ext .jsx src ",
-    "lintfix": "eslint --ext .js --ext .jsx src --fix --cache",
+    "mlint": "eslint --ext .js --ext .jsx src ",
+    "mlintfix": "eslint --ext .js --ext .jsx src --fix --cache",
+    "tlint": "eslint ./**/*.js ./**/*.jsx",
+    "tlintfix": "eslint ./**/*.js ./**/*.jsx --fix --cache",
+    "slint": "stylelint ./**/*.css",
+    "slintfix": "stylelint ./**/*.css --fix --cache",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
@@ -83,6 +87,8 @@
     "prettier": "^2.4.1",
     "replace": "^1.2.1",
     "serve": ">=13.0.2",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard": "^24.0.0",
     "webpack-cli": ">=4.9.1",
     "yarn-upgrade-all": ">=0.5.4"
   }

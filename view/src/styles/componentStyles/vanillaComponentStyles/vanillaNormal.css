@@ -18,8 +18,9 @@
   height: 100%;
   border: none;
   outline: none;
-  border-radius: 0vw;
+  border-radius: 0;
   background: #e0e0e0;
-  box-shadow: inset -2.8vh -2.8vh 5.6vh #a6a6a6,
-    inset 2.81vh 2.81vh 5.61vh #ffffff;
+  box-shadow:
+    inset -2.8vh -2.8vh 5.6vh #a6a6a6,
+    inset 2.81vh 2.81vh 5.61vh #fff;
 }

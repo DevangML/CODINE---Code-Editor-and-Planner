@@ -1,12 +1,12 @@
 /* Font Import Section */
 
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
 
 /* vanilla_fluent Web Section */
 
 .vanilla_fluent {
   background: #833ab4;
-  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   background-position: center;
   background-repeat: no-repeat;
@@ -30,7 +30,7 @@
   padding-bottom: 0.9vh;
   color: #fafafacc;
   background-color: #253139;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }
 
 .vanilla_fluent__main__section-1__sub-section-1__codemirror,
@@ -71,7 +71,7 @@
 }
 
 .vanilla_fluent__main__section-1__sub-section-2 {
-  background: #ffffff;
+  background: #fff;
   border-radius: 1.5vw;
   padding: 0%;
   display: block;
@@ -81,7 +81,7 @@
 }
 
 .vanilla_fluent__main__section-1__sub-section-3 {
-  background: #ffffff;
+  background: #fff;
   border-radius: 1.5vw;
   padding: 0%;
   display: block;
@@ -96,11 +96,12 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 1.8vw;
-  background: rgba(red, green, rgba(0, 0, 255, 0), alpha);
+  background: rgb(red green rgb(0 0 255 / 0%) / alpha);
   border-radius: 2vw;
   outline: none;
   z-index: -200;
   min-height: 60vh;
+
   /* margin-bottom:50vh; */
 }
 
@@ -109,7 +110,7 @@
   min-height: 60vh;
   overflow: scroll;
   margin: 0.9vw;
-  background: #ffffff;
+  background: #fff;
   outline: none;
   border: none;
   font-family: Courier, sans-serif;
@@ -122,7 +123,7 @@
 
 .CodeMirror {
   min-height: 25vh;
-  font-family: 'Fira Code', monospace !important;
+  font-family: "Fira Code", monospace !important;
 }
 
 .vanilla_fluent__main__section-1__sub-section-1__item {
@@ -130,7 +131,7 @@
   min-height: 50vh;
   overflow: scroll;
   margin: 0.9vw;
-  background: #ffffff;
+  background: #fff;
   outline: none;
   border: none;
   font-family: Courier, sans-serif;
@@ -146,7 +147,7 @@
   min-height: 50vh;
   overflow: scroll;
   margin: 0.9vw;
-  background: #ffffff;
+  background: #fff;
   outline: none;
   border: none;
   font-family: Courier, sans-serif;
@@ -162,7 +163,7 @@
   min-height: 50vh;
   overflow: scroll;
   margin: 0.9vw;
-  background: #ffffff;
+  background: #fff;
   outline: none;
   border: none;
   font-family: Courier, sans-serif;
@@ -222,17 +223,17 @@
 
 .vanilla_fluent__main__section-1__sub-section-1__item::-webkit-scrollbar-track {
   border-radius: 1.8vh;
-  -webkit-box-shadow: inset 0 0 0.7vh rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0.7vh rgb(0 0 0 / 30%);
 }
 
 .vanilla_fluent__main__section-1__sub-section-2__item::-webkit-scrollbar-track {
   border-radius: 1.8vh;
-  -webkit-box-shadow: inset 0 0 0.7vh rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0.7vh rgb(0 0 0 / 30%);
 }
 
 .vanilla_fluent__main__section-1__sub-section-3__item::-webkit-scrollbar-track {
   border-radius: 1.8vh;
-  -webkit-box-shadow: inset 0 0 0.7vh rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 0.7vh rgb(0 0 0 / 30%);
 }
 
 .vanilla_fluent__main__section-1__sub-section-1__item::-webkit-scrollbar-thumb {
@@ -263,7 +264,7 @@
   border: none;
   border-radius: 3vw;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgb(255 255 255 / 40%);
   backdrop-filter: blur(0.12vh);
   z-index: 0;
   margin-bottom: 30vh;
@@ -276,5 +277,5 @@
 }
 
 /* .vanilla_fluent__footer {}
-  
+
   .vanilla_fluent__footer__item {} */

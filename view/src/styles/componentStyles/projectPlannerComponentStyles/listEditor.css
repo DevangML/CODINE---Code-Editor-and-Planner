@@ -9,11 +9,11 @@
   margin: 0.11vw 0.34vw;
   font-size: 2.58vh;
   border-radius: 0.56vw;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgb(0 0 0 / 50%);
 }
 
 .List-Title-Edit ion-icon:hover {
-  background: rgba(211, 211, 211, 1);
+  background: rgb(211 211 211 / 100%);
 }
 
 .List-Title-Textarea {
