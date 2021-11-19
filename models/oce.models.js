@@ -19,7 +19,7 @@ const oceContactSchema = new mongoose.Schema({
   },
 });
 
-const oceContactModel = mongoose.model('contact', oceContactSchema);
+const OceContactModel = mongoose.model('contact', oceContactSchema);
 
 const oceToDoSchema = new mongoose.Schema({
   task: {
@@ -32,6 +32,6 @@ const oceToDoSchema = new mongoose.Schema({
   },
 });
 
-const oceToDoModel = mongoose.model('toDo', oceToDoSchema);
+const OceToDoModel = mongoose.model('toDo', oceToDoSchema);
 
-module.exports = { oceContactModel, oceToDoModel };
+module.exports = { OceContactModel, OceToDoModel };

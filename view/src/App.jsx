@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Lottie from 'react-lottie';
+import ToDoList from 'pages/toDoList/ToDoList';
 import * as location from './1055-world-locations.json';
 import * as success from './1127-success.json';
 
@@ -13,7 +14,6 @@ import Home from './pages/home/Home';
 import ContactMe from './pages/contactMe/ContactMe';
 import ProjectPlanner from './pages/projectPlanner/ProjectPlanner';
 import LiveCompiler from './pages/liveCompiler/LiveCompiler';
-import ToDoList from 'pages/toDoList/ToDoList';
 
 // Dev Styles
 

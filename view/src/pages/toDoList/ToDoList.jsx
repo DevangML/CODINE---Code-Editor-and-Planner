@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import {
+  Paper, TextField, Checkbox, Button,
+} from '@material-ui/core';
 import Tasks from './components/tasks';
-import { Paper, TextField } from '@material-ui/core';
-import { Checkbox, Button } from '@material-ui/core';
 
 export class ToDoList extends Component {
   state = { tasks: [], currentTask: '' };

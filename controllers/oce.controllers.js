@@ -4,7 +4,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 require('../databases/oce.dbs');
 const request = require('request');
-const { oceContactModel, oceToDoModel } = require('../models/oce.models');
+const { OceContactModel, OceToDoModel } = require('../models/oce.models');
 
 const clientSecret = process.env.CLIENT_SECRET;
 const clientId = process.env.CLIENT_ID;
@@ -21,7 +21,7 @@ const oceContactPostController = async (req, res) => {
     return;
   }
 
-  const oceInstance = new oceContactModel({
+  const oceInstance = new OceContactModel({
     Name: req.body.name,
     Email: req.body.email,
     Phone: req.body.phone,
@@ -70,18 +70,13 @@ const oceLiveCompilerPostController = async (req, res) => {
       method: 'POST',
       json: program,
     },
-    (error, response, body) => {
-      console.log('error:', error);
-      console.log('statusCode:', response && response.statusCode);
-      console.log('body:', body);
-      return res.status(201).send(body);
-    },
+    (error, response, body) => res.status(201).send(body),
   );
 };
 
 const oceToDoListGetController = async (req, res) => {
   try {
-    const tasks = await oceToDoModel.find();
+    const tasks = await OceToDoModel.find();
     res.send(tasks);
   } catch (error) {
     res.send(error);
@@ -90,7 +85,7 @@ const oceToDoListGetController = async (req, res) => {
 
 const oceToDoListPostController = async (req, res) => {
   try {
-    const task = await new oceToDoModel(req.body).save();
+    const task = await new OceToDoModel(req.body).save();
     res.send(task);
   } catch (error) {
     res.send(error);
@@ -99,7 +94,7 @@ const oceToDoListPostController = async (req, res) => {
 
 const oceToDoListPutController = async (req, res) => {
   try {
-    const task = await oceToDoModel.findOneAndUpdate(
+    const task = await OceToDoModel.findOneAndUpdate(
       { _id: req.params.id },
       req.body,
     );
@@ -111,7 +106,7 @@ const oceToDoListPutController = async (req, res) => {
 
 const oceToDoListDeleteController = async (req, res) => {
   try {
-    const task = await oceToDoModel.findByIdAndDelete(req.params.id);
+    const task = await OceToDoModel.findByIdAndDelete(req.params.id);
     res.send(task);
   } catch (error) {
     res.send(error);
