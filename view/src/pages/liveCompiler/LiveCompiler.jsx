@@ -14,7 +14,7 @@ const LiveCompiler = function() {
   const [status, setStatus] = useState('Run');
 
   // run button callback
-  const url = 'http://localhost:5000/runCode';
+  const url = 'http://localhost:5000/compiler/runCode';
 
   const runCode = () => {
     setStatus('Loading...');

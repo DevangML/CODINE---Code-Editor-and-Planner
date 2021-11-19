@@ -1,5 +1,6 @@
 require('path');
 const dotenv = require('dotenv');
+const Pusher = require('pusher');
 
 dotenv.config();
 require('../databases/oce.dbs');
@@ -12,10 +13,10 @@ const clientId = process.env.CLIENT_ID;
 
 const oceContactPostController = async (req, res) => {
   if (
-    !req.body.name
-    || !req.body.email
-    || !req.body.phone
-    || !req.body.message
+    !req.body.name ||
+    !req.body.email ||
+    !req.body.phone ||
+    !req.body.message
   ) {
     res.send({ message: 'Content cannot be empty' });
     return;
@@ -54,6 +55,8 @@ const oceVanillaController = async (req, res) => {
   res.status(200).send('OK');
 };
 
+// LiveCompiler Controllers
+
 const oceLiveCompilerPostController = async (req, res) => {
   if (req.body.language === 'python') req.body.language = 'python3';
   const program = {
@@ -61,8 +64,8 @@ const oceLiveCompilerPostController = async (req, res) => {
     language: req.body.language,
     stdin: req.body.input,
     versionIndex: '0',
-    clientSecret,
     clientId,
+    clientSecret,
   };
   request(
     {
@@ -70,9 +73,13 @@ const oceLiveCompilerPostController = async (req, res) => {
       method: 'POST',
       json: program,
     },
-    (error, response, body) => res.status(201).send(body),
+    function (body) {
+      return res.status(201).send(body);
+    }
   );
 };
+
+// ToDo List Controllers
 
 const oceToDoListGetController = async (req, res) => {
   try {
@@ -96,7 +103,7 @@ const oceToDoListPutController = async (req, res) => {
   try {
     const task = await OceToDoModel.findOneAndUpdate(
       { _id: req.params.id },
-      req.body,
+      req.body
     );
     res.send(task);
   } catch (error) {
