@@ -3,11 +3,12 @@ require('path');
 require('dotenv').config({ path: '.env' });
 mongoose.Promise = global.Promise;
 
-let mong = () => {
-  mongoose.connect(process.env.DBURI, {
+const mong = async () => {
+  const connectionParams = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  });
+  };
+  await mongoose.connect(process.env.DBURI, connectionParams);
 };
 
 module.exports = mong;

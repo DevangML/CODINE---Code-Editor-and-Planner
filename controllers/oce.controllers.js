@@ -1,12 +1,11 @@
-const { oceContactModel } = require('../models/oce.models');
+const { oceContactModel, oceToDoModel } = require('../models/oce.models');
 require('path');
 const dotenv = require('dotenv');
 dotenv.config();
 require('../databases/oce.dbs');
-var request = require('request');
-var clientSecret = process.env.CLIENT_SECRET;
-var clientId = process.env.CLIENT_ID;
-
+const request = require('request');
+const clientSecret = process.env.CLIENT_SECRET;
+const clientId = process.env.CLIENT_ID;
 // Contact Controllers
 
 const oceContactPostController = async (req, res) => {
@@ -78,8 +77,51 @@ const oceLiveCompilerPostController = async (req, res) => {
   );
 };
 
+const oceToDoListGetController = async (req, res) => {
+  try {
+    const tasks = await oceToDoModel.find();
+    res.send(tasks);
+  } catch (error) {
+    res.send(error);
+  }
+};
+
+const oceToDoListPostController = async (req, res) => {
+  try {
+    const task = await new oceToDoModel(req.body).save();
+    res.send(task);
+  } catch (error) {
+    res.send(error);
+  }
+};
+
+const oceToDoListPutController = async (req, res) => {
+  try {
+    const task = await oceToDoModel.findOneAndUpdate(
+      { _id: req.params.id },
+      req.body
+    );
+    res.send(task);
+  } catch (error) {
+    res.send(error);
+  }
+};
+
+const oceToDoListDeleteController = async (req, res) => {
+  try {
+    const task = await oceToDoModel.findByIdAndDelete(req.params.id);
+    res.send(task);
+  } catch (error) {
+    res.send(error);
+  }
+};
+
 module.exports = {
   oceContactPostController,
   oceVanillaController,
   oceLiveCompilerPostController,
+  oceToDoListGetController,
+  oceToDoListPostController,
+  oceToDoListPutController,
+  oceToDoListDeleteController,
 };

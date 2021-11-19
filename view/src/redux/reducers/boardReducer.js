@@ -5,10 +5,10 @@ import {
 } from '../actions/projectPlannerTypes';
 
 const initialState = {
-        lists: [] 
-}
+  lists: [],
+};
 
-const boardReducer = ( state = initialState, action) => {
+const boardReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_LIST: {
       const { listId } = action.payload;

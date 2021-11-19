@@ -1,4 +1,4 @@
-import { createStore} from 'redux';
+import { createStore } from 'redux';
 import throttle from 'lodash.throttle';
 import seed from './seed';
 import rootReducer from './reducers/rootReducer';

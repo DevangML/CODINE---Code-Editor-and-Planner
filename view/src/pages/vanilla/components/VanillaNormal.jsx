@@ -98,10 +98,10 @@ export class VanillaNormal extends Component {
     };
 
     return (
-      <section className="vanilla_normal">
-        <section className="vanilla_normal__section-1">
-          <section className="vanilla_normal__section-1__sub-section-1">
-            <div className="editor-header">HTML</div>
+      <section className='vanilla_normal'>
+        <section className='vanilla_normal__section-1'>
+          <section className='vanilla_normal__section-1__sub-section-1'>
+            <div className='editor-header'>HTML</div>
             <CodeMirror
               value={html}
               options={{
@@ -113,8 +113,8 @@ export class VanillaNormal extends Component {
               }}
             />
           </section>
-          <section className="vanilla_normal__section-1__sub-section-2">
-            <div className="editor-header">CSS</div>
+          <section className='vanilla_normal__section-1__sub-section-2'>
+            <div className='editor-header'>CSS</div>
             <CodeMirror
               value={css}
               options={{
@@ -126,8 +126,8 @@ export class VanillaNormal extends Component {
               }}
             />
           </section>
-          <section className="vanilla_normal__section-1__sub-section-3">
-            <div className="editor-header">JS</div>
+          <section className='vanilla_normal__section-1__sub-section-3'>
+            <div className='editor-header'>JS</div>
             <CodeMirror
               value={js}
               options={{
@@ -140,11 +140,11 @@ export class VanillaNormal extends Component {
             />
           </section>
         </section>
-        <section className="vanilla_normal__section-2">
+        <section className='vanilla_normal__section-2'>
           <iframe
-            className="vanilla_normal__section-2__item"
+            className='vanilla_normal__section-2__item'
             ref={this.iRef}
-            title="noutput"
+            title='noutput'
           ></iframe>
         </section>
       </section>

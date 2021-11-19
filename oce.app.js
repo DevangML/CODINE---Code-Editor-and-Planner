@@ -9,6 +9,7 @@ const {
   oceContactRouter,
   oceVanillaRouter,
   oceLiveCompilerRouter,
+  oceToDoListRouter,
 } = require('./routes/oce.routes');
 // const redis = require('redis')
 
@@ -59,6 +60,6 @@ expressApp.use('/compiler', oceLiveCompilerRouter);
 
 // To-Do List Routes Initializers
 
-expressApp.use('/todo', oceToDoRouter);
+expressApp.use('/todo', oceToDoListRouter);
 
 module.exports = expressApp;
