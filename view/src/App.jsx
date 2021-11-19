@@ -13,6 +13,7 @@ import Home from './pages/home/Home';
 import ContactMe from './pages/contactMe/ContactMe';
 import ProjectPlanner from './pages/projectPlanner/ProjectPlanner';
 import LiveCompiler from './pages/liveCompiler/LiveCompiler';
+import ToDoList from 'pages/toDoList/ToDoList';
 
 // Dev Styles
 
@@ -36,6 +37,7 @@ import './styles/componentStyles/vanillaComponentStyles/vanillaFluent.css';
 import './styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css';
 import './styles/pageStyles/contactMe.css';
 import './styles/pageStyles/liveCompiler.css';
+import './styles/pageStyles/toDoList.css'
 import './styles/general.css';
 
 // Loader Section
@@ -81,7 +83,7 @@ const App = function () {
   return (
     <>
       {!completed ? (
-        <section className="loading">
+        <section className='loading'>
           {!loading ? (
             <Lottie options={defaultOptions1} height={700} width={700} />
           ) : (
@@ -92,11 +94,12 @@ const App = function () {
         <Router>
           <Sidebar />
           <Switch>
-            <Route exact path="/" to component={Home} />
-            <Route exact path="/vanilla" to component={Vanilla} />
-            <Route exact path="/compiler" to component={LiveCompiler} />
-            <Route exact path="/contact" to component={ContactMe} />
-            <Route exact path="/proj" to component={ProjectPlanner} />
+            <Route exact path='/' to component={Home} />
+            <Route exact path='/vanilla' to component={Vanilla} />
+            <Route exact path='/compiler' to component={LiveCompiler} />
+            <Route exact path='/contact' to component={ContactMe} />
+            <Route exact path='/proj' to component={ProjectPlanner} />
+            <Route exact path='/todo' to component={ToDoList} />
           </Switch>
         </Router>
       )}

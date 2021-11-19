@@ -5,16 +5,16 @@ import Main2 from './components/Main2';
 import Dfooter from '../generalComponents/Dfooter';
 
 const Home = function () {
-    return (
-        <section className="home">
-            <HeroSection />
-            <main className="home__main">
-                <Main1 />
-                <Main2 />
-            </main>
-            <Dfooter />
-        </section>
-    );
+  return (
+    <section className="home">
+      <HeroSection />
+      <main className="home__main">
+        <Main1 />
+        <Main2 />
+      </main>
+      <Dfooter />
+    </section>
+  );
 };
 
 export default Home;

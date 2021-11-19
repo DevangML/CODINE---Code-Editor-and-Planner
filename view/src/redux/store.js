@@ -30,7 +30,7 @@ const store = createStore(rootReducer, persistedState);
 store.subscribe(
   throttle(() => {
     saveState(store.getState());
-  }, 1000)
+  }, 1000),
 );
 
 if (!store.getState().board.lists.length) {

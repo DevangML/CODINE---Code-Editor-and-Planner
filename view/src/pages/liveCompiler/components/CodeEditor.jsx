@@ -6,7 +6,7 @@ import 'ace-builds/src-noconflict/mode-java';
 import 'ace-builds/src-noconflict/mode-python';
 import 'ace-builds/src-noconflict/theme-monokai';
 
-const CodeEditor = ({ value, onCodeChange, programmingLanguage }) => {
+const CodeEditor = function({ value, onCodeChange, programmingLanguage }) {
   const onLoad = () => {
     console.log('code editor loaded');
   };
@@ -21,9 +21,9 @@ const CodeEditor = ({ value, onCodeChange, programmingLanguage }) => {
         onLoad={onLoad}
         onChange={onCodeChange}
         value={value}
-        showPrintMargin={true}
-        showGutter={true}
-        highlightActiveLine={true}
+        showPrintMargin
+        showGutter
+        highlightActiveLine
         setOptions={{
           enableBasicAutocompletion: false,
           enableLiveAutocompletion: true,
@@ -34,6 +34,6 @@ const CodeEditor = ({ value, onCodeChange, programmingLanguage }) => {
       />
     </section>
   );
-};
+}
 
 export default CodeEditor;

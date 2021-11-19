@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import Tasks from './components/tasks';
+import { Paper, TextField } from '@material-ui/core';
+import { Checkbox, Button } from '@material-ui/core';
 
 export class ToDoList extends Component {
   state = { tasks: [], currentTask: '' };
+
   render() {
     const { tasks } = this.state;
     return (
-      <div className='App flex'>
-        <Paper elevation={3} className='container'>
+      <div className='toDo flex'>
+        <Paper elevation={3} className='tdcontainer'>
           <div className='heading'>TO-DO</div>
           <form
             onSubmit={this.handleSubmit}
@@ -18,7 +22,7 @@ export class ToDoList extends Component {
               size='small'
               style={{ width: '80%' }}
               value={this.state.currentTask}
-              required={true}
+              required
               onChange={this.handleChange}
               placeholder='Add New TO-DO'
             />

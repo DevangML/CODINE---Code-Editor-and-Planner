@@ -6,7 +6,7 @@ import 'ace-builds/src-noconflict/mode-java';
 import 'ace-builds/src-noconflict/mode-python';
 import 'ace-builds/src-noconflict/theme-monokai';
 
-const InputEditor = ({ value, onInputChange }) => {
+const InputEditor = function({ value, onInputChange }) {
   const onLoad = () => {
     console.log('input editor loaded');
   };
@@ -21,8 +21,8 @@ const InputEditor = ({ value, onInputChange }) => {
       onChange={onInputChange}
       fontSize={14}
       value={value}
-      showPrintMargin={true}
-      showGutter={true}
+      showPrintMargin
+      showGutter
       setOptions={{
         enableBasicAutocompletion: false,
         enableLiveAutocompletion: true,
@@ -32,6 +32,6 @@ const InputEditor = ({ value, onInputChange }) => {
       }}
     />
   );
-};
+}
 
 export default InputEditor;

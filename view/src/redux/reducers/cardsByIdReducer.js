@@ -32,7 +32,7 @@ const cardsByIdReducer = (state = initialState, action) => {
             ...newState,
             [cardId]: state[cardId],
           }),
-          {}
+          {},
         );
     }
     default:

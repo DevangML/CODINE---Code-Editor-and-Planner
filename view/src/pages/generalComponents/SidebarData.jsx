@@ -50,11 +50,6 @@ export const SidebarData = [
         icon: <IoIcons.IoIosPaper />,
         cName: 'sub-nav',
       },
-      {
-        title: 'Componentor',
-        path: '/comp',
-        icon: <IoIcons.IoIosPaper />,
-      },
     ],
   },
   {

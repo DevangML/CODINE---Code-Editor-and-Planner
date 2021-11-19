@@ -10,8 +10,7 @@ class Board extends Component {
     addingList: false,
   };
 
-  toggleAddingList = () =>
-    this.setState({ addingList: !this.state.addingList });
+  toggleAddingList = () => this.setState({ addingList: !this.state.addingList });
 
   handleDragEnd = ({ source, destination, type }) => {
     // dropped outside the allowed zones
@@ -36,8 +35,8 @@ class Board extends Component {
 
     // Move card
     if (
-      source.index !== destination.index ||
-      source.droppableId !== destination.droppableId
+      source.index !== destination.index
+      || source.droppableId !== destination.droppableId
     ) {
       dispatch({
         type: 'MOVE_CARD',
@@ -57,24 +56,24 @@ class Board extends Component {
 
     return (
       <DragDropContext onDragEnd={this.handleDragEnd}>
-        <Droppable droppableId='board' direction='horizontal' type='COLUMN'>
+        <Droppable droppableId="board" direction="horizontal" type="COLUMN">
           {(provided, _snapshot) => (
-            <div className='Board' ref={provided.innerRef}>
-              {board.lists.map((listId, index) => {
-                return <List listId={listId} key={listId} index={index} />;
-              })}
+            <div className="Board" ref={provided.innerRef}>
+              {board.lists.map((listId, index) => <List listId={listId} key={listId} index={index} />)}
 
               {provided.placeholder}
 
-              <div className='Add-List'>
+              <div className="Add-List">
                 {addingList ? (
                   <AddList toggleAddingList={this.toggleAddingList} />
                 ) : (
                   <div
                     onClick={this.toggleAddingList}
-                    className='Add-List-Button'
+                    className="Add-List-Button"
                   >
-                    <ion-icon name='add' /> Add a list
+                    <ion-icon name="add" />
+                    {' '}
+                    Add a list
                   </div>
                 )}
               </div>

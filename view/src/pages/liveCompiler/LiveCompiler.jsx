@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import Dfooter from 'pages/generalComponents/Dfooter';
 import CodeEditor from './components/CodeEditor';
 import InputEditor from './components/InputEditor';
 import OutputLogs from './components/OutputLogs';
 import Header from './components/Header';
-import axios from 'axios';
-import Dfooter from 'pages/generalComponents/Dfooter';
 
-function LiveCompiler() {
+const LiveCompiler = function() {
   const [language, setLanguage] = useState('java');
   const [code, setCode] = useState('');
   const [input, setInput] = useState('');
@@ -22,7 +22,7 @@ function LiveCompiler() {
       if (res.data.memory && res.data.cpuTime) {
         setOutputLogs('');
         setOutputLogs(
-          `Memory Used: ${res.data.memory} \nCPU Time: ${res.data.cpuTime} \n${res.data.output} `
+          `Memory Used: ${res.data.memory} \nCPU Time: ${res.data.cpuTime} \n${res.data.output} `,
         );
       } else {
         setOutputLogs(`${res.data.output} `);

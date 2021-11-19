@@ -2,7 +2,9 @@
 import React from 'react';
 import DropDown from 'react-dropdown';
 
-const Header = ({ onChangeLanguage, value, runCode, status }) => {
+const Header = function({
+  onChangeLanguage, value, runCode, status,
+}) {
   const options = [
     { value: 'java', label: 'Java' },
     { value: 'python', label: 'Python 3' },
@@ -26,7 +28,7 @@ const Header = ({ onChangeLanguage, value, runCode, status }) => {
         />
         <button
           onClick={() => runCode()}
-          disabled={status === 'Run' ? false : true}
+          disabled={status !== 'Run'}
           className="customButton"
         >
           {status}
@@ -34,6 +36,6 @@ const Header = ({ onChangeLanguage, value, runCode, status }) => {
       </section>
     </section>
   );
-};
+}
 
 export default Header;

@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 
+import shortid from 'shortid';
 import Card from './Card';
 import CardEditor from './CardEditor';
 import ListEditor from './ListEditor';
-
-import shortid from 'shortid';
 
 class List extends Component {
   state = {
@@ -15,8 +14,7 @@ class List extends Component {
     addingCard: false,
   };
 
-  toggleAddingCard = () =>
-    this.setState({ addingCard: !this.state.addingCard });
+  toggleAddingCard = () => this.setState({ addingCard: !this.state.addingCard });
 
   addCard = async (cardText) => {
     const { listId, dispatch } = this.props;
@@ -31,8 +29,7 @@ class List extends Component {
     });
   };
 
-  toggleEditingTitle = () =>
-    this.setState({ editingTitle: !this.state.editingTitle });
+  toggleEditingTitle = () => this.setState({ editingTitle: !this.state.editingTitle });
 
   handleChangeTitle = (e) => this.setState({ title: e.target.value });
 
@@ -70,7 +67,7 @@ class List extends Component {
             ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
-            className='List'
+            className="List"
           >
             {editingTitle ? (
               <ListEditor
@@ -82,16 +79,16 @@ class List extends Component {
                 deleteList={this.deleteList}
               />
             ) : (
-              <div className='List-Title' onClick={this.toggleEditingTitle}>
+              <div className="List-Title" onClick={this.toggleEditingTitle}>
                 {list.title}
               </div>
             )}
 
             <Droppable droppableId={list._id}>
               {(provided, _snapshot) => (
-                <div ref={provided.innerRef} className='Lists-Cards'>
-                  {list.cards &&
-                    list.cards.map((cardId, index) => (
+                <div ref={provided.innerRef} className="Lists-Cards">
+                  {list.cards
+                    && list.cards.map((cardId, index) => (
                       <Card
                         key={cardId}
                         cardId={cardId}
@@ -110,10 +107,12 @@ class List extends Component {
                     />
                   ) : (
                     <div
-                      className='Toggle-Add-Card'
+                      className="Toggle-Add-Card"
                       onClick={this.toggleAddingCard}
                     >
-                      <ion-icon name='add' /> Add a card
+                      <ion-icon name="add" />
+                      {' '}
+                      Add a card
                     </div>
                   )}
                 </div>

@@ -32,7 +32,7 @@ export class ContactMe extends Component {
       e.preventDefault();
       axios({
         method: 'POST',
-        url: url,
+        url,
         data: this.state,
       })
         .then(() => {
@@ -47,11 +47,11 @@ export class ContactMe extends Component {
   }
 
   render() {
-    const onNameChange = this.onNameChange;
-    const onEmailChange = this.onEmailChange;
-    const onPhoneChange = this.onPhoneChange;
-    const onMsgChange = this.onMsgChange;
-    const handleSubmit = this.handleSubmit;
+    const {onNameChange} = this;
+    const {onEmailChange} = this;
+    const {onPhoneChange} = this;
+    const {onMsgChange} = this;
+    const {handleSubmit} = this;
     return (
       <section className="contact">
         <section className="contact__container">

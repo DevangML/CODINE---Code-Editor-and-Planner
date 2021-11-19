@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ListEditor from './ListEditor';
 import shortid from 'shortid';
+import ListEditor from './ListEditor';
 import EditButtons from './EditButtons';
 
 class AddList extends Component {
@@ -28,7 +28,7 @@ class AddList extends Component {
     const { title } = this.state;
 
     return (
-      <div className='Add-List-Editor'>
+      <div className="Add-List-Editor">
         <ListEditor
           title={title}
           handleChangeTitle={this.handleChangeTitle}
@@ -38,7 +38,7 @@ class AddList extends Component {
 
         <EditButtons
           handleSave={this.createList}
-          saveLabel={'Add list'}
+          saveLabel="Add list"
           handleCancel={toggleAddingList}
         />
       </div>
