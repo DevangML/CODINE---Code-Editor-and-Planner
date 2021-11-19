@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 require('path');
 require('dotenv').config({ path: '.env' });
+
 mongoose.Promise = global.Promise;
 
 const mong = async () => {

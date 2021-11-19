@@ -1,19 +1,21 @@
-const { oceContactModel, oceToDoModel } = require('../models/oce.models');
 require('path');
 const dotenv = require('dotenv');
+
 dotenv.config();
 require('../databases/oce.dbs');
 const request = require('request');
+const { oceContactModel, oceToDoModel } = require('../models/oce.models');
+
 const clientSecret = process.env.CLIENT_SECRET;
 const clientId = process.env.CLIENT_ID;
 // Contact Controllers
 
 const oceContactPostController = async (req, res) => {
   if (
-    !req.body.name ||
-    !req.body.email ||
-    !req.body.phone ||
-    !req.body.message
+    !req.body.name
+    || !req.body.email
+    || !req.body.phone
+    || !req.body.message
   ) {
     res.send({ message: 'Content cannot be empty' });
     return;
@@ -53,8 +55,8 @@ const oceVanillaController = async (req, res) => {
 };
 
 const oceLiveCompilerPostController = async (req, res) => {
-  if (req.body.language == 'python') req.body.language = 'python3';
-  var program = {
+  if (req.body.language === 'python') req.body.language = 'python3';
+  const program = {
     script: req.body.code,
     language: req.body.language,
     stdin: req.body.input,
@@ -68,12 +70,12 @@ const oceLiveCompilerPostController = async (req, res) => {
       method: 'POST',
       json: program,
     },
-    function (error, response, body) {
+    (error, response, body) => {
       console.log('error:', error);
       console.log('statusCode:', response && response.statusCode);
       console.log('body:', body);
       return res.status(201).send(body);
-    }
+    },
   );
 };
 
@@ -99,7 +101,7 @@ const oceToDoListPutController = async (req, res) => {
   try {
     const task = await oceToDoModel.findOneAndUpdate(
       { _id: req.params.id },
-      req.body
+      req.body,
     );
     res.send(task);
   } catch (error) {
