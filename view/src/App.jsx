@@ -1,19 +1,19 @@
 // import './app.css'
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Lottie from 'react-lottie';
-import ToDoList from 'pages/toDoList/ToDoList';
 import * as location from './1055-world-locations.json';
 import * as success from './1127-success.json';
 
 // Component Imports
 
-import Sidebar from './pages/generalComponents/Sidebar';
+import Sidebar from './navigation/Sidebar';
 import Vanilla from './pages/vanilla/Vanilla';
 import Home from './pages/home/Home';
 import ContactMe from './pages/contactMe/ContactMe';
 import ProjectPlanner from './pages/projectPlanner/ProjectPlanner';
 import LiveCompiler from './pages/liveCompiler/LiveCompiler';
+import ToDoList from 'pages/toDoList/ToDoList';
 
 // Dev Styles
 
@@ -37,7 +37,7 @@ import './styles/componentStyles/vanillaComponentStyles/vanillaFluent.css';
 import './styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css';
 import './styles/pageStyles/contactMe.css';
 import './styles/pageStyles/liveCompiler.css';
-import './styles/pageStyles/toDoList.css'
+import './styles/pageStyles/toDoList.css';
 import './styles/general.css';
 
 // Loader Section
