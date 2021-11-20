@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import {useState} from 'react';
 import { connect } from 'react-redux';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 import List from './List';
 import AddList from './AddList';
 
-class Board extends Component {
-  state = {
-    addingList: false,
-  };
+const Board = function () {
+  const [addingList, setAddingList] = useState(false);
 
-  toggleAddingList = () => this.setState({ addingList: !this.state.addingList });
+  const toggleAddingList = () => this.setState({ addingList: !this.state.addingList });
 
   handleDragEnd = ({ source, destination, type }) => {
     // dropped outside the allowed zones

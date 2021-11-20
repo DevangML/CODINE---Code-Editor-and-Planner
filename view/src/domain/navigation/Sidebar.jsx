@@ -99,7 +99,7 @@ const Sidebar = function () {
   return (
     <IconContext.Provider value={{ color: '#fff' }}>
       <Nav>
-        <NavIcon to="#">
+        <NavIcon to='#'>
           <FaIcons.FaBars
             style={({ minWidth: '4vw' }, { minHeight: '5vh' })}
             onClick={showSidebar}
@@ -108,7 +108,7 @@ const Sidebar = function () {
       </Nav>
       <SidebarNav sidebar={sidebar}>
         <SidebarWrap>
-          <NavIcon to="#">
+          <NavIcon to='#'>
             <AiIcons.AiOutlineClose onClick={showSidebar} />
           </NavIcon>
           {SidebarData.map((item, index) => (

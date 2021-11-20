@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
+import {useState} from 'react';
 import { connect } from 'react-redux';
 import shortid from 'shortid';
 import ListEditor from './ListEditor';
 import EditButtons from './EditButtons';
 
-class AddList extends Component {
-  state = {
-    title: '',
-  };
+const AddList = function (props) {
 
-  handleChangeTitle = (e) => this.setState({ title: e.target.value });
+  const [title, setTitle] = useState('');
 
-  createList = async () => {
-    const { title } = this.state;
-    const { dispatch } = this.props;
+  const handleChangeTitle = (e) => setTitle(e.target.value);
 
-    this.props.toggleAddingList();
+  let createList = async () => {
+    const { dispatch } = props;
+
+    props.toggleAddingList();
 
     dispatch({
       type: 'ADD_LIST',
@@ -23,9 +21,7 @@ class AddList extends Component {
     });
   };
 
-  render() {
-    const { toggleAddingList } = this.props;
-    const { title } = this.state;
+  const { toggleAddingList } = props;
 
     return (
       <div className="Add-List-Editor">
