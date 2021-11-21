@@ -6,17 +6,17 @@ import 'ace-builds/src-noconflict/mode-java';
 import 'ace-builds/src-noconflict/mode-python';
 import 'ace-builds/src-noconflict/theme-monokai';
 
-const OutputLogs = function({ value }) {
+const OutputLogs = function ({ value }) {
   const onLoad = () => {
     console.log('output editor loaded');
   };
   return (
     <AceEditor
-      className="outputLogs"
-      placeholder="Output Logs"
-      mode="python"
-      theme="monokai"
-      name="outputlogs"
+      className='outputLogs'
+      placeholder='Output Logs'
+      mode='python'
+      theme='monokai'
+      name='outputlogs'
       onLoad={onLoad}
       fontSize={14}
       value={value}
@@ -31,6 +31,6 @@ const OutputLogs = function({ value }) {
       }}
     />
   );
-}
+};
 
 export default OutputLogs;

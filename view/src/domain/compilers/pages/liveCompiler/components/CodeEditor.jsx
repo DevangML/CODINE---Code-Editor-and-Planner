@@ -6,18 +6,18 @@ import 'ace-builds/src-noconflict/mode-java';
 import 'ace-builds/src-noconflict/mode-python';
 import 'ace-builds/src-noconflict/theme-monokai';
 
-const CodeEditor = function({ value, onCodeChange, programmingLanguage }) {
+const CodeEditor = function ({ value, onCodeChange, programmingLanguage }) {
   const onLoad = () => {
     console.log('code editor loaded');
   };
   return (
-    <section className="aceEditor">
+    <section className='aceEditor'>
       <AceEditor
-        className="codeEditor"
-        placeholder="Code goes here"
+        className='codeEditor'
+        placeholder='Code goes here'
         mode={programmingLanguage}
-        theme="monokai"
-        name="editor"
+        theme='monokai'
+        name='editor'
         onLoad={onLoad}
         onChange={onCodeChange}
         value={value}
@@ -34,6 +34,6 @@ const CodeEditor = function({ value, onCodeChange, programmingLanguage }) {
       />
     </section>
   );
-}
+};
 
 export default CodeEditor;

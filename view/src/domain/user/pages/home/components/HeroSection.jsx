@@ -3,20 +3,15 @@ import Typed from 'react-typed';
 
 const HeroSection = function () {
   return (
-    <section className="hero">
+    <section className='hero'>
       <br />
       <br />
       <br />
       <br />
       <br />
-      <h1 className="hero__item-1">CODEX</h1>
+      <h1 className='hero__item-1'>CODEX</h1>
       <br />
-      <Typed
-        strings={['Coding Web App']}
-        typeSpeed={44}
-        loop
-        className="hero__item-2"
-      />
+      <Typed strings={['Coding Web App']} typeSpeed={44} loop className='hero__item-2' />
     </section>
   );
 };

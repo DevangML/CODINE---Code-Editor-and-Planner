@@ -67,7 +67,7 @@ class List extends Component {
             ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
-            className="List"
+            className='List'
           >
             {editingTitle ? (
               <ListEditor
@@ -79,40 +79,26 @@ class List extends Component {
                 deleteList={this.deleteList}
               />
             ) : (
-              <div className="List-Title" onClick={this.toggleEditingTitle}>
+              <div className='List-Title' onClick={this.toggleEditingTitle}>
                 {list.title}
               </div>
             )}
 
             <Droppable droppableId={list._id}>
               {(provided, _snapshot) => (
-                <div ref={provided.innerRef} className="Lists-Cards">
-                  {list.cards
-                    && list.cards.map((cardId, index) => (
-                      <Card
-                        key={cardId}
-                        cardId={cardId}
-                        index={index}
-                        listId={list._id}
-                      />
+                <div ref={provided.innerRef} className='Lists-Cards'>
+                  {list.cards &&
+                    list.cards.map((cardId, index) => (
+                      <Card key={cardId} cardId={cardId} index={index} listId={list._id} />
                     ))}
 
                   {provided.placeholder}
 
                   {addingCard ? (
-                    <CardEditor
-                      onSave={this.addCard}
-                      onCancel={this.toggleAddingCard}
-                      adding
-                    />
+                    <CardEditor onSave={this.addCard} onCancel={this.toggleAddingCard} adding />
                   ) : (
-                    <div
-                      className="Toggle-Add-Card"
-                      onClick={this.toggleAddingCard}
-                    >
-                      <ion-icon name="add" />
-                      {' '}
-                      Add a card
+                    <div className='Toggle-Add-Card' onClick={this.toggleAddingCard}>
+                      <ion-icon name='add' /> Add a card
                     </div>
                   )}
                 </div>

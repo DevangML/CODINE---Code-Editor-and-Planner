@@ -14,11 +14,12 @@ class Card extends Component {
 
   endHover = () => this.setState({ hover: false });
 
-  startEditing = () => this.setState({
-    hover: false,
-    editing: true,
-    text: this.props.card.text,
-  });
+  startEditing = () =>
+    this.setState({
+      hover: false,
+      editing: true,
+      text: this.props.card.text,
+    });
 
   endEditing = () => this.setState({ hover: false, editing: false });
 
@@ -56,14 +57,14 @@ class Card extends Component {
               ref={provided.innerRef}
               {...provided.draggableProps}
               {...provided.dragHandleProps}
-              className="Card"
+              className='Card'
               onMouseEnter={this.startHover}
               onMouseLeave={this.endHover}
             >
               {hover && (
-                <div className="Card-Icons">
-                  <div className="Card-Icon" onClick={this.startEditing}>
-                    <ion-icon name="create" />
+                <div className='Card-Icons'>
+                  <div className='Card-Icon' onClick={this.startEditing}>
+                    <ion-icon name='create' />
                   </div>
                 </div>
               )}

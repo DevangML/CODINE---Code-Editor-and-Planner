@@ -7,15 +7,15 @@ import Dfooter from '../../parts/Dfooter';
 
 const Vanilla = function () {
   return (
-    <section className="vanilla">
-      <header className="vanilla__header">
-        <h1 className="vanilla__header__item">Vanilla Web Live Compiler</h1>
+    <section className='vanilla'>
+      <header className='vanilla__header'>
+        <h1 className='vanilla__header__item'>Vanilla Web Live Compiler</h1>
       </header>
       <Router>
         <VanillaRouteButton />
         <Switch>
-          <Route exact path="/nvanilla" to component={VanillaNormal} />
-          <Route exact path="/fvanilla" to component={VanillaFluent} />
+          <Route exact path='/nvanilla' to component={VanillaNormal} />
+          <Route exact path='/fvanilla' to component={VanillaFluent} />
         </Switch>
       </Router>
       <Dfooter />

@@ -85,13 +85,7 @@ const SubMenu = function ({ item }) {
           {item.icon}
           <SidebarLabel>{item.title}</SidebarLabel>
         </div>
-        <div>
-          {item.subNav && subnav
-            ? item.iconOpened
-            : item.subNav
-            ? item.iconClosed
-            : null}
-        </div>
+        <div>{item.subNav && subnav ? item.iconOpened : item.subNav ? item.iconClosed : null}</div>
       </SidebarLink>
       {subnav &&
         item.subNav.map((item, index) => (

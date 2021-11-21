@@ -12,12 +12,7 @@ const clientId = process.env.CLIENT_ID;
 // Contact Controllers
 
 const oceContactPostController = async (req, res) => {
-  if (
-    !req.body.name ||
-    !req.body.email ||
-    !req.body.phone ||
-    !req.body.message
-  ) {
+  if (!req.body.name || !req.body.email || !req.body.phone || !req.body.message) {
     res.send({ message: 'Content cannot be empty' });
     return;
   }
@@ -101,10 +96,7 @@ const oceToDoListPostController = async (req, res) => {
 
 const oceToDoListPutController = async (req, res) => {
   try {
-    const task = await OceToDoModel.findOneAndUpdate(
-      { _id: req.params.id },
-      req.body
-    );
+    const task = await OceToDoModel.findOneAndUpdate({ _id: req.params.id }, req.body);
     res.send(task);
   } catch (error) {
     res.send(error);

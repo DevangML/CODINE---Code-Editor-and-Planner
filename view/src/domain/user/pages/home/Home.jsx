@@ -6,9 +6,9 @@ import Dfooter from '../../parts/Dfooter';
 
 const Home = function () {
   return (
-    <section className="home">
+    <section className='home'>
       <HeroSection />
-      <main className="home__main">
+      <main className='home__main'>
         <Main1 />
         <Main2 />
       </main>

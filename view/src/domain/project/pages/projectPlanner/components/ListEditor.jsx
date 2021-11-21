@@ -33,17 +33,17 @@ class ListEditor extends Component {
     const { title, handleChangeTitle, deleteList } = this.props;
 
     return (
-      <div className="List-Title-Edit" ref={this.ref}>
+      <div className='List-Title-Edit' ref={this.ref}>
         <TextareaAutosize
           autoFocus
-          className="List-Title-Textarea"
-          placeholder="Enter list title..."
+          className='List-Title-Textarea'
+          placeholder='Enter list title...'
           value={title}
           onChange={handleChangeTitle}
           onKeyDown={this.onEnter}
           style={{ width: deleteList ? 220 : 245 }}
         />
-        {deleteList && <ion-icon name="trash" onClick={deleteList} />}
+        {deleteList && <ion-icon name='trash' onClick={deleteList} />}
       </div>
     );
   }

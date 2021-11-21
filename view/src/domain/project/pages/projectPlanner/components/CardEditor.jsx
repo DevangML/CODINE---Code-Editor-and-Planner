@@ -20,17 +20,15 @@ class CardEditor extends Component {
 
   render() {
     const { text } = this.state;
-    const {
-      onSave, onCancel, onDelete, adding,
-    } = this.props;
+    const { onSave, onCancel, onDelete, adding } = this.props;
 
     return (
-      <div className="Edit-Card">
-        <div className="Card">
+      <div className='Edit-Card'>
+        <div className='Card'>
           <TextareaAutosize
             autoFocus
-            className="Edit-Card-Textarea"
-            placeholder="Enter the text for this card..."
+            className='Edit-Card-Textarea'
+            placeholder='Enter the text for this card...'
             value={text}
             onChange={this.handleChangeText}
             onKeyDown={this.onEnter}

@@ -6,16 +6,16 @@ const ProjectPlanner = function () {
   const [state, setState] = useState(0);
 
   return (
-    <section className="proj">
-      <header className="proj__header">
-        <h1 className="proj__header__item">Project Manager</h1>
+    <section className='proj'>
+      <header className='proj__header'>
+        <h1 className='proj__header__item'>Project Manager</h1>
       </header>
       <br />
-      <main className="proj__main">
-        <button className="proj__button" onClick={() => setState(state + 1)}>
+      <main className='proj__main'>
+        <button className='proj__button' onClick={() => setState(state + 1)}>
           Click Here To Start Planning Projects
         </button>
-        <section className="boardWrapper">
+        <section className='boardWrapper'>
           {state > 0 && <Board />}
           {state > 1 && <Board />}
           {state > 2 && <Board />}

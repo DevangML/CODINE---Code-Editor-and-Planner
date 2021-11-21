@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Paper, TextField, Checkbox, Button,
-} from '@material-ui/core';
+import { Paper, TextField, Checkbox, Button } from '@material-ui/core';
 import Tasks from './components/tasks';
 
 export class ToDoList extends Component {
@@ -13,11 +11,7 @@ export class ToDoList extends Component {
       <div className='toDo flex'>
         <Paper elevation={3} className='tdcontainer'>
           <div className='heading'>TO-DO</div>
-          <form
-            onSubmit={this.handleSubmit}
-            className='flex'
-            style={{ margin: '15px 0' }}
-          >
+          <form onSubmit={this.handleSubmit} className='flex' style={{ margin: '15px 0' }}>
             <TextField
               variant='outlined'
               size='small'
@@ -27,12 +21,7 @@ export class ToDoList extends Component {
               onChange={this.handleChange}
               placeholder='Add New TO-DO'
             />
-            <Button
-              style={{ height: '40px' }}
-              color='primary'
-              variant='outlined'
-              type='submit'
-            >
+            <Button style={{ height: '40px' }} color='primary' variant='outlined' type='submit'>
               Add task
             </Button>
           </form>
@@ -44,13 +33,8 @@ export class ToDoList extends Component {
                   onClick={() => this.handleUpdate(task._id)}
                   color='primary'
                 />
-                <div className={task.completed ? 'task line_through' : 'task'}>
-                  {task.task}
-                </div>
-                <Button
-                  onClick={() => this.handleDelete(task._id)}
-                  color='secondary'
-                >
+                <div className={task.completed ? 'task line_through' : 'task'}>{task.task}</div>
+                <Button onClick={() => this.handleDelete(task._id)} color='secondary'>
                   delete
                 </Button>
               </Paper>
