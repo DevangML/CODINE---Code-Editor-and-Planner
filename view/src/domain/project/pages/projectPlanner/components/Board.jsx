@@ -5,7 +5,7 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import List from './List';
 import AddList from './AddList';
 
-const Board = function () {
+const Board = function (props) {
   const [addingList, setAddingList] = useState(false);
 
   const toggleAddingList = () => this.setState({ addingList: !this.state.addingList });
@@ -14,7 +14,7 @@ const Board = function () {
     // dropped outside the allowed zones
     if (!destination) return;
 
-    const { dispatch } = this.props;
+    const { dispatch } = props;
 
     // Move list
     if (type === 'COLUMN') {
