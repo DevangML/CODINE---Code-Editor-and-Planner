@@ -7,13 +7,13 @@ import * as success from './1127-success.json';
 
 // Component Imports
 
-import Sidebar from './navigation/Sidebar';
-import Vanilla from './pages/vanilla/Vanilla';
-import Home from './pages/home/Home';
-import ContactMe from './pages/contactMe/ContactMe';
-import ProjectPlanner from './pages/projectPlanner/ProjectPlanner';
-import LiveCompiler from './pages/liveCompiler/LiveCompiler';
-import ToDoList from 'pages/toDoList/ToDoList';
+import Sidebar from './domain/navigation/Sidebar';
+import Vanilla from './domain/compilers/pages/vanilla/Vanilla';
+import Home from './domain/user/pages/home/Home';
+import ContactMe from './domain/user/pages/contactMe/ContactMe';
+import ProjectPlanner from './domain/project/pages/projectPlanner/ProjectPlanner';
+import LiveCompiler from './domain/compilers/pages/liveCompiler/LiveCompiler';
+import ToDoList from './domain/project/pages/toDoList/ToDoList';
 
 // Dev Styles
 

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import boardReducer from './boardReducer';
-import cardsByIdReducer from './cardsByIdReducer';
-import listsByIdReducer from './listByIdReducer';
+import boardReducer from './projectPlannerReducers/boardReducer';
+import cardsByIdReducer from './projectPlannerReducers/cardsByIdReducer';
+import listsByIdReducer from './projectPlannerReducers/listByIdReducer';
 
 const rootReducer = combineReducers({
   board: boardReducer,
