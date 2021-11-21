@@ -1,34 +1,30 @@
-import React, { Component } from 'react';
-import { Controlled as CodeMirror } from 'react-codemirror2';
-import Pusher from 'pusher-js';
-import pushid from 'pushid';
-import axios from 'axios';
+import { useState } from "react";
+import { Controlled as CodeMirror } from "react-codemirror2";
+import Pusher from "pusher-js";
+import pushid from "pushid";
+import axios from "axios";
 
-import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/material.css';
-import 'codemirror/mode/htmlmixed/htmlmixed';
-import 'codemirror/mode/css/css';
-import 'codemirror/mode/javascript/javascript';
+import "codemirror/lib/codemirror.css";
+import "codemirror/theme/material.css";
+import "codemirror/mode/htmlmixed/htmlmixed";
+import "codemirror/mode/css/css";
+import "codemirror/mode/javascript/javascript";
 
-export class VanillaFluent extends Component {
-  constructor(props) {
-    super(props);
+const VanillaFluent = function () {
 
-    this.state = {
-      id: '',
-      html: '',
-      css: '',
-      js: '',
-    };
+  const [id, setId] = useState('')
+  const [html, setHtml] = useState('')
+  const [css, setCss] = useState('')
+  const [js,setJs] = useState('')
 
     this.iRef = React.createRef();
 
-    this.pusher = new Pusher('84c1d9e5a99706636a37', {
-      cluster: 'ap2',
+    this.pusher = new Pusher("84c1d9e5a99706636a37", {
+      cluster: "ap2",
       forceTLS: true,
     });
 
-    this.channel = this.pusher.subscribe('Codex');
+    this.channel = this.pusher.subscribe("Codex");
   }
 
   componentDidUpdate() {
@@ -40,7 +36,7 @@ export class VanillaFluent extends Component {
       id: pushid(),
     });
 
-    this.channel.bind('text-update', (data) => {
+    this.channel.bind("text-update", (data) => {
       const { id } = this.state;
       if (data.id === id) return;
 
@@ -55,7 +51,7 @@ export class VanillaFluent extends Component {
   syncUpdates = () => {
     const data = { ...this.state };
 
-    axios.post('http://localhost:5000/vanilla', data);
+    axios.post("http://localhost:5000/vanilla", data);
   };
 
   runCode = () => {
@@ -92,7 +88,7 @@ export class VanillaFluent extends Component {
   render() {
     const { html, js, css } = this.state;
     const codeMirrorOptions = {
-      theme: 'material',
+      theme: "material",
       lineNumbers: true,
       scrollbarStyle: null,
       lineWrapping: true,
@@ -107,7 +103,7 @@ export class VanillaFluent extends Component {
               <CodeMirror
                 value={html}
                 options={{
-                  mode: 'htmlmixed',
+                  mode: "htmlmixed",
                   ...codeMirrorOptions,
                 }}
                 onBeforeChange={(editor, data, html) => {
@@ -120,7 +116,7 @@ export class VanillaFluent extends Component {
               <CodeMirror
                 value={css}
                 options={{
-                  mode: 'css',
+                  mode: "css",
                   ...codeMirrorOptions,
                 }}
                 onBeforeChange={(editor, data, css) => {
@@ -133,7 +129,7 @@ export class VanillaFluent extends Component {
               <CodeMirror
                 value={js}
                 options={{
-                  mode: 'javascript',
+                  mode: "javascript",
                   ...codeMirrorOptions,
                 }}
                 onBeforeChange={(editor, data, js) => {

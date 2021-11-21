@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint \"**/*.js\"",
     "lintfix": "eslint  \"**/*.js\" --fix --cache",
+    "prettier": "prettier --write \"**/*.js\" \"**/*.jsx\"",
     "start": "nodemon -L oce.server.js"
   },
   "author": "",

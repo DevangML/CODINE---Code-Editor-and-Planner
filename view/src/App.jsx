@@ -1,44 +1,44 @@
 // import './app.css'
-import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Lottie from 'react-lottie';
-import * as location from './1055-world-locations.json';
-import * as success from './1127-success.json';
+import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Lottie from "react-lottie";
+import * as location from "./1055-world-locations.json";
+import * as success from "./1127-success.json";
 
 // Component Imports
 
-import Sidebar from './navigation/Sidebar';
-import Vanilla from './pages/vanilla/Vanilla';
-import Home from './pages/home/Home';
-import ContactMe from './pages/contactMe/ContactMe';
-import ProjectPlanner from './pages/projectPlanner/ProjectPlanner';
-import LiveCompiler from './pages/liveCompiler/LiveCompiler';
-import ToDoList from 'pages/toDoList/ToDoList';
+import Sidebar from "./navigation/Sidebar";
+import Vanilla from "./pages/vanilla/Vanilla";
+import Home from "./pages/home/Home";
+import ContactMe from "./pages/contactMe/ContactMe";
+import ProjectPlanner from "./pages/projectPlanner/ProjectPlanner";
+import LiveCompiler from "./pages/liveCompiler/LiveCompiler";
+import ToDoList from "pages/toDoList/ToDoList";
 
 // Dev Styles
 
-import './styles/componentStyles/genralComponentStyles/dfooter.css';
-import './styles/componentStyles/genralComponentStyles/navBar.css';
-import './styles/componentStyles/projectPlannerComponentStyles/addList.css';
-import './styles/componentStyles/projectPlannerComponentStyles/board.css';
-import './styles/componentStyles/projectPlannerComponentStyles/card.css';
-import './styles/componentStyles/projectPlannerComponentStyles/cardEditor.css';
-import './styles/componentStyles/projectPlannerComponentStyles/editButtons.css';
-import './styles/componentStyles/projectPlannerComponentStyles/list.css';
-import './styles/componentStyles/projectPlannerComponentStyles/listEditor.css';
-import './styles/pageStyles/home.css';
-import './styles/componentStyles/homeComponentStyles/heroStyles.css';
-import './styles/componentStyles/homeComponentStyles/mainOneStyles.css';
-import './styles/componentStyles/homeComponentStyles/mainTwoStyles.css';
-import './styles/pageStyles/projectPlanner.css';
-import './styles/pageStyles/vanilla.css';
-import './styles/componentStyles/vanillaComponentStyles/vanillaNormal.css';
-import './styles/componentStyles/vanillaComponentStyles/vanillaFluent.css';
-import './styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css';
-import './styles/pageStyles/contactMe.css';
-import './styles/pageStyles/liveCompiler.css';
-import './styles/pageStyles/toDoList.css';
-import './styles/general.css';
+import "./styles/componentStyles/genralComponentStyles/dfooter.css";
+import "./styles/componentStyles/genralComponentStyles/navBar.css";
+import "./styles/componentStyles/projectPlannerComponentStyles/addList.css";
+import "./styles/componentStyles/projectPlannerComponentStyles/board.css";
+import "./styles/componentStyles/projectPlannerComponentStyles/card.css";
+import "./styles/componentStyles/projectPlannerComponentStyles/cardEditor.css";
+import "./styles/componentStyles/projectPlannerComponentStyles/editButtons.css";
+import "./styles/componentStyles/projectPlannerComponentStyles/list.css";
+import "./styles/componentStyles/projectPlannerComponentStyles/listEditor.css";
+import "./styles/pageStyles/home.css";
+import "./styles/componentStyles/homeComponentStyles/heroStyles.css";
+import "./styles/componentStyles/homeComponentStyles/mainOneStyles.css";
+import "./styles/componentStyles/homeComponentStyles/mainTwoStyles.css";
+import "./styles/pageStyles/projectPlanner.css";
+import "./styles/pageStyles/vanilla.css";
+import "./styles/componentStyles/vanillaComponentStyles/vanillaNormal.css";
+import "./styles/componentStyles/vanillaComponentStyles/vanillaFluent.css";
+import "./styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css";
+import "./styles/pageStyles/contactMe.css";
+import "./styles/pageStyles/liveCompiler.css";
+import "./styles/pageStyles/toDoList.css";
+import "./styles/general.css";
 
 // Loader Section
 
@@ -47,7 +47,7 @@ const defaultOptions1 = {
   autoplay: true,
   animationData: location.default,
   rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice',
+    preserveAspectRatio: "xMidYMid slice",
   },
 };
 
@@ -56,7 +56,7 @@ const defaultOptions2 = {
   autoplay: true,
   animationData: success.default,
   rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice',
+    preserveAspectRatio: "xMidYMid slice",
   },
 };
 
@@ -68,7 +68,7 @@ const App = function () {
 
   useEffect(() => {
     setTimeout(() => {
-      fetch('https://jsonplaceholder.typicode.com/posts')
+      fetch("https://jsonplaceholder.typicode.com/posts")
         .then((response) => response.json())
         .then((json) => {
           setData(json);
@@ -83,7 +83,7 @@ const App = function () {
   return (
     <>
       {!completed ? (
-        <section className='loading'>
+        <section className="loading">
           {!loading ? (
             <Lottie options={defaultOptions1} height={700} width={700} />
           ) : (
@@ -94,12 +94,12 @@ const App = function () {
         <Router>
           <Sidebar />
           <Switch>
-            <Route exact path='/' to component={Home} />
-            <Route exact path='/vanilla' to component={Vanilla} />
-            <Route exact path='/compiler' to component={LiveCompiler} />
-            <Route exact path='/contact' to component={ContactMe} />
-            <Route exact path='/proj' to component={ProjectPlanner} />
-            <Route exact path='/todo' to component={ToDoList} />
+            <Route exact path="/" to component={Home} />
+            <Route exact path="/vanilla" to component={Vanilla} />
+            <Route exact path="/compiler" to component={LiveCompiler} />
+            <Route exact path="/contact" to component={ContactMe} />
+            <Route exact path="/proj" to component={ProjectPlanner} />
+            <Route exact path="/todo" to component={ToDoList} />
           </Switch>
         </Router>
       )}
