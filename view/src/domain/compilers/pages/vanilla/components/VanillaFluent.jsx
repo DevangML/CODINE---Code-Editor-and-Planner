@@ -1,51 +1,21 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
-import Pusher from 'pusher-js';
-import pushid from 'pushid';
-import axios from 'axios';
-
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 import 'codemirror/mode/htmlmixed/htmlmixed';
 import 'codemirror/mode/css/css';
 import 'codemirror/mode/javascript/javascript';
+import useVanilla from '../../../../../hooks/useVanilla';
+import { syncUpdates } from '../../../services/vanillaServices';
 
 const VanillaFluent = function () {
-  const pusher = new Pusher('84c1d9e5a99706636a37', {
-    cluster: 'ap2',
-    forceTLS: true,
-  });
-
-  const [id, setId] = useState('');
-  const [html, setHtml] = useState('');
-  const [css, setCss] = useState('');
-  const [js, setJs] = useState('');
+  const { html, css, js, iRef } = useVanilla;
 
   useEffect(() => {
     runCode();
   }, []);
 
-  useEffect(() => {
-    setId(pushid());
-  }, []);
-
-  useEffect(() => {
-    const channel = pusher.subscribe('Codex');
-    channel.bind('code-update', (data) => {
-      if (data.id === id) return;
-      setHtml(data.html);
-      setCss(data.css);
-      setJs(data.js);
-    });
-  }, [data]);
-
-  const iRef = useRef(null);
-
-  const syncUpdates = () => {
-    const data = { id: id, html: html, css: css, js: js };
-
-    axios.post('http://localhost:5000/vanilla', data);
-  };
+  syncUpdates();
 
   const runCode = () => {
     const document = iRef.current.contentDocument;
@@ -82,6 +52,7 @@ const VanillaFluent = function () {
     scrollbarStyle: null,
     lineWrapping: true,
   };
+
   return (
     <section className='vanilla_fluent'>
       <main className='vanilla_fluent__main'>

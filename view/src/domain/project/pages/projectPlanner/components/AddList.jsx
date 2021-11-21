@@ -27,13 +27,13 @@ const AddList = function (props) {
       <div className="Add-List-Editor">
         <ListEditor
           title={title}
-          handleChangeTitle={this.handleChangeTitle}
+          handleChangeTitle={handleChangeTitle}
           onClickOutside={toggleAddingList}
-          saveList={this.createList}
+          saveList={createList}
         />
 
         <EditButtons
-          handleSave={this.createList}
+          handleSave={createList}
           saveLabel="Add list"
           handleCancel={toggleAddingList}
         />

@@ -10,7 +10,7 @@ const Board = function (props) {
 
   const toggleAddingList = () => this.setState({ addingList: !this.state.addingList });
 
-  handleDragEnd = ({ source, destination, type }) => {
+  const handleDragEnd = ({ source, destination, type }) => {
     // dropped outside the allowed zones
     if (!destination) return;
 
@@ -48,12 +48,10 @@ const Board = function (props) {
     }
   };
 
-  render() {
-    const { board } = this.props;
-    const { addingList } = this.state;
+    const { board } = props;
 
     return (
-      <DragDropContext onDragEnd={this.handleDragEnd}>
+      <DragDropContext onDragEnd={handleDragEnd}>
         <Droppable droppableId="board" direction="horizontal" type="COLUMN">
           {(provided, _snapshot) => (
             <div className="Board" ref={provided.innerRef}>
@@ -63,10 +61,10 @@ const Board = function (props) {
 
               <div className="Add-List">
                 {addingList ? (
-                  <AddList toggleAddingList={this.toggleAddingList} />
+                  <AddList toggleAddingList={toggleAddingList} />
                 ) : (
                   <div
-                    onClick={this.toggleAddingList}
+                    onClick={toggleAddingList}
                     className="Add-List-Button"
                   >
                     <ion-icon name="add" />

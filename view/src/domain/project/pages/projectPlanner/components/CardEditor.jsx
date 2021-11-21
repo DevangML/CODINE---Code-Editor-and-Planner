@@ -10,12 +10,11 @@ const CardEditor = function (props) {
   const onEnter = (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
-      this.props.onSave(text);
+      props.onSave(text);
     }
   };
 
-  const { text } = this.state;
-  const { onSave, onCancel, onDelete, adding } = this.props;
+  const { onSave, onCancel, onDelete, adding } = props;
 
   return (
     <div className='Edit-Card'>
@@ -25,8 +24,8 @@ const CardEditor = function (props) {
           className='Edit-Card-Textarea'
           placeholder='Enter the text for this card...'
           value={text}
-          onChange={this.handleChangeText}
-          onKeyDown={this.onEnter}
+          onChange={handleChangeText}
+          onKeyDown={onEnter}
         />
       </div>
       <EditButtons

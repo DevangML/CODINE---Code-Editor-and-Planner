@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { useState } from 'react';
 import { connect } from 'react-redux';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 
@@ -7,19 +7,17 @@ import Card from './Card';
 import CardEditor from './CardEditor';
 import ListEditor from './ListEditor';
 
-class List extends Component {
-  state = {
-    editingTitle: false,
-    title: this.props.list.title,
-    addingCard: false,
-  };
+const List = function () {
+  const [editingTitle, setEditingTitle] = useState(false);
+  const [title, setTitle] = useState(props.list.title);
+  const [addingCard, setAddingCard] = useState(false);
 
-  toggleAddingCard = () => this.setState({ addingCard: !this.state.addingCard });
+  const toggleAddingCard = () => this.setState({ addingCard: !this.state.addingCard });
 
-  addCard = async (cardText) => {
-    const { listId, dispatch } = this.props;
+  const addCard = async (cardText) => {
+    const { listId, dispatch } = props;
 
-    this.toggleAddingCard();
+    toggleAddingCard();
 
     const cardId = shortid.generate();
 
@@ -29,15 +27,14 @@ class List extends Component {
     });
   };
 
-  toggleEditingTitle = () => this.setState({ editingTitle: !this.state.editingTitle });
+  const toggleEditingTitle = () => this.setState({ editingTitle: !this.state.editingTitle });
 
-  handleChangeTitle = (e) => this.setState({ title: e.target.value });
+  const handleChangeTitle = (e) => setTitle(e.target.value);
 
-  editListTitle = async () => {
-    const { listId, dispatch } = this.props;
-    const { title } = this.state;
+  const editListTitle = async () => {
+    const { listId, dispatch } = props;
 
-    this.toggleEditingTitle();
+    toggleEditingTitle();
 
     dispatch({
       type: 'CHANGE_LIST_TITLE',
@@ -45,8 +42,8 @@ class List extends Component {
     });
   };
 
-  deleteList = async () => {
-    const { listId, list, dispatch } = this.props;
+  const deleteList = async () => {
+    const { listId, list, dispatch } = props;
 
     if (window.confirm('Are you sure to delete this list?')) {
       dispatch({
@@ -56,60 +53,55 @@ class List extends Component {
     }
   };
 
-  render() {
-    const { list, index } = this.props;
-    const { editingTitle, addingCard, title } = this.state;
+  return (
+    <Draggable draggableId={list._id} index={index}>
+      {(provided, snapshot) => (
+        <div
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          className='List'
+        >
+          {editingTitle ? (
+            <ListEditor
+              list={list}
+              title={title}
+              handleChangeTitle={handleChangeTitle}
+              saveList={editListTitle}
+              onClickOutside={editListTitle}
+              deleteList={deleteList}
+            />
+          ) : (
+            <div className='List-Title' onClick={toggleEditingTitle}>
+              {list.title}
+            </div>
+          )}
 
-    return (
-      <Draggable draggableId={list._id} index={index}>
-        {(provided, snapshot) => (
-          <div
-            ref={provided.innerRef}
-            {...provided.draggableProps}
-            {...provided.dragHandleProps}
-            className='List'
-          >
-            {editingTitle ? (
-              <ListEditor
-                list={list}
-                title={title}
-                handleChangeTitle={this.handleChangeTitle}
-                saveList={this.editListTitle}
-                onClickOutside={this.editListTitle}
-                deleteList={this.deleteList}
-              />
-            ) : (
-              <div className='List-Title' onClick={this.toggleEditingTitle}>
-                {list.title}
+          <Droppable droppableId={list._id}>
+            {(provided, _snapshot) => (
+              <div ref={provided.innerRef} className='Lists-Cards'>
+                {list.cards &&
+                  list.cards.map((cardId, index) => (
+                    <Card key={cardId} cardId={cardId} index={index} listId={list._id} />
+                  ))}
+
+                {provided.placeholder}
+
+                {addingCard ? (
+                  <CardEditor onSave={addCard} onCancel={toggleAddingCard} adding />
+                ) : (
+                  <div className='Toggle-Add-Card' onClick={toggleAddingCard}>
+                    <ion-icon name='add' /> Add a card
+                  </div>
+                )}
               </div>
             )}
-
-            <Droppable droppableId={list._id}>
-              {(provided, _snapshot) => (
-                <div ref={provided.innerRef} className='Lists-Cards'>
-                  {list.cards &&
-                    list.cards.map((cardId, index) => (
-                      <Card key={cardId} cardId={cardId} index={index} listId={list._id} />
-                    ))}
-
-                  {provided.placeholder}
-
-                  {addingCard ? (
-                    <CardEditor onSave={this.addCard} onCancel={this.toggleAddingCard} adding />
-                  ) : (
-                    <div className='Toggle-Add-Card' onClick={this.toggleAddingCard}>
-                      <ion-icon name='add' /> Add a card
-                    </div>
-                  )}
-                </div>
-              )}
-            </Droppable>
-          </div>
-        )}
-      </Draggable>
-    );
-  }
-}
+          </Droppable>
+        </div>
+      )}
+    </Draggable>
+  );
+};
 
 const mapStateToProps = (state, ownProps) => ({
   list: state.listsById[ownProps.listId],
