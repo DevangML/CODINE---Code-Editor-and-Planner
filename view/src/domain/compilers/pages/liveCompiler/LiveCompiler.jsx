@@ -1,15 +1,33 @@
-import Dfooter from 'parts/Dfooter';
+import Dfooter from '../../../common/parts/Dfooter';
 import CodeEditor from './components/CodeEditor';
 import InputEditor from './components/InputEditor';
 import OutputLogs from './components/OutputLogs';
 import Header from './components/Header';
-import useLiveCompiler from '../../../../hooks/useLiveCompiler';
-import { runCode } from '../../services/liveCompilerServices';
+import axios from 'axios';
+import { useState } from 'react';
 
 const LiveCompiler = function () {
-  const {
-    language, setLanguage, code, setCode, input, setInput, outputLogs, stat,
-  } = useLiveCompiler();
+  const [language, setLanguage] = useState('java');
+  const [code, setCode] = useState('');
+  const [input, setInput] = useState('');
+  const [outputLogs, setOutputLogs] = useState('');
+  const [stat, setStat] = useState('Run');
+  const compilerUrl = 'api/post';
+
+  const runCode = () => {
+    setStat('Loading...');
+    axios.post(compilerUrl, { language, code, input }).then((res) => {
+      if (res.data.memory && res.data.cpuTime) {
+        setOutputLogs('');
+        setOutputLogs(
+          `Memory Used: ${res.data.memory} \nCPU Time: ${res.data.cpuTime} \n${res.data.output} `
+        );
+      } else {
+        setOutputLogs(`${res.data.output} `);
+      }
+      setStat('Run');
+    });
+  };
   return (
     <section className='liveCompiler'>
       {' '}

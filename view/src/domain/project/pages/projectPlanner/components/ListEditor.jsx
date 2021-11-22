@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
 const ListEditor = function (props) {
-  ref = useRef(null);
+  const ref = useRef(null);
 
   const onEnter = (e) => {
     if (e.keyCode === 13) {
@@ -25,9 +25,12 @@ const ListEditor = function (props) {
     document.addEventListener('click', handleClick, false);
   }, []);
 
-  useEffect(() => () => {
-    document.removeEventListener('click', handleClick, false);
-  }, []);
+  useEffect(
+    () => () => {
+      document.removeEventListener('click', handleClick, false);
+    },
+    []
+  );
 
   const { title, handleChangeTitle, deleteList } = props;
 

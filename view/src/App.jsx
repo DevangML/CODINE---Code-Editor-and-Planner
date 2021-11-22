@@ -1,4 +1,4 @@
-// import './app.css'
+import './app.css';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Lottie from 'react-lottie';
@@ -14,10 +14,6 @@ import ContactMe from './domain/user/pages/contactMe/ContactMe';
 import ProjectPlanner from './domain/project/pages/projectPlanner/ProjectPlanner';
 import LiveCompiler from './domain/compilers/pages/liveCompiler/LiveCompiler';
 import ToDoList from './domain/project/pages/toDoList/ToDoList';
-
-// Dev Styles
-
-
 
 // Loader Section
 

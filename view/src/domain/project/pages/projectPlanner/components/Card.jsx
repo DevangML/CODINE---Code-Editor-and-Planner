@@ -79,4 +79,8 @@ const Card = function (props) {
   );
 };
 
+const mapStateToProps = (state, ownProps) => ({
+  card: state.cardsById[ownProps.cardId],
+});
+
 export default connect(mapStateToProps)(Card);

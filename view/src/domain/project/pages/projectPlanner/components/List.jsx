@@ -12,7 +12,7 @@ import Card from './Card';
 import CardEditor from './CardEditor';
 import ListEditor from './ListEditor';
 
-const List = function () {
+const List = function (props) {
   const [editingTitle, setEditingTitle] = useState(false);
   const [title, setTitle] = useState(props.list.title);
   const [addingCard, setAddingCard] = useState(false);
@@ -58,6 +58,7 @@ const List = function () {
     }
   };
 
+  const { list, index } = props;
   return (
     <Draggable draggableId={list._id} index={index}>
       {(provided, snapshot) => (
@@ -85,8 +86,8 @@ const List = function () {
           <Droppable droppableId={list._id}>
             {(provided, _snapshot) => (
               <div ref={provided.innerRef} className='Lists-Cards'>
-                {list.cards
-                  && list.cards.map((cardId, index) => (
+                {list.cards &&
+                  list.cards.map((cardId, index) => (
                     <Card key={cardId} cardId={cardId} index={index} listId={list._id} />
                   ))}
 
