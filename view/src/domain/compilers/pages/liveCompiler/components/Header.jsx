@@ -2,7 +2,9 @@
 import React from 'react';
 import DropDown from 'react-dropdown';
 
-const Header = function ({ onChangeLanguage, value, runCode, status }) {
+const Header = function ({
+  onChangeLanguage, value, runCode, status,
+}) {
   const options = [
     { value: 'java', label: 'Java' },
     { value: 'python', label: 'Python 3' },

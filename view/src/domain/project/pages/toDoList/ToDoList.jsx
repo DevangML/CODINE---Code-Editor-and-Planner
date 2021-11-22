@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Paper, TextField, Checkbox, Button } from '@material-ui/core';
-import { addTask, getTasks, updateTask, deleteTask } from '../../../services/taskServices';
+import {
+  Paper, TextField, Checkbox, Button,
+} from '@material-ui/core';
+import {
+  addTask, getTasks, updateTask, deleteTask,
+} from '../../services/toDoListServices/taskServices';
 
 const ToDoList = function () {
   const [tasks, setTasks] = useState([]);

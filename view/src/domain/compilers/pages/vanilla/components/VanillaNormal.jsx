@@ -9,7 +9,9 @@ import useVanilla from '../../../../../hooks/useVanilla';
 import { syncUpdates } from '../../../services/vanillaServices';
 
 const VanillaNormal = function () {
-  const { html, css, js, iRef } = useVanilla;
+  const {
+    html, css, js, iRef,
+  } = useVanilla;
 
   useEffect(() => {
     runCode();

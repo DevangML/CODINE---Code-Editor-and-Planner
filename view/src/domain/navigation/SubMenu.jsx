@@ -87,8 +87,8 @@ const SubMenu = function ({ item }) {
         </div>
         <div>{item.subNav && subnav ? item.iconOpened : item.subNav ? item.iconClosed : null}</div>
       </SidebarLink>
-      {subnav &&
-        item.subNav.map((item, index) => (
+      {subnav
+        && item.subNav.map((item, index) => (
           <DropdownLink to={item.path} key={index}>
             {item.icon}
             <SidebarLabel>{item.title}</SidebarLabel>

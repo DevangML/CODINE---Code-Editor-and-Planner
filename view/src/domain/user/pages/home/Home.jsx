@@ -1,8 +1,7 @@
-import React from 'react';
 import HeroSection from './components/HeroSection';
 import Main1 from './components/Main1';
 import Main2 from './components/Main2';
-import Dfooter from '../../parts/Dfooter';
+import Dfooter from '../../../common/parts/Dfooter';
 
 const Home = function () {
   return (

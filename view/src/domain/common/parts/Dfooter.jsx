@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Dfooter = function () {
   return (
     <section className='dfooter'>

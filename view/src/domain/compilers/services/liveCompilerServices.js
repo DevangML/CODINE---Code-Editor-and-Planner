@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const { language, code, input, setOutputLogs, setStat } = useLiveCompiler();
+const {
+  language, code, input, setOutputLogs, setStat,
+} = useLiveCompiler();
 
 export function runCode() {
   setStat('Loading...');
@@ -8,7 +10,7 @@ export function runCode() {
     if (res.data.memory && res.data.cpuTime) {
       setOutputLogs('');
       setOutputLogs(
-        `Memory Used: ${res.data.memory} \nCPU Time: ${res.data.cpuTime} \n${res.data.output} `
+        `Memory Used: ${res.data.memory} \nCPU Time: ${res.data.cpuTime} \n${res.data.output} `,
       );
     } else {
       setOutputLogs(`${res.data.output} `);

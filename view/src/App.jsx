@@ -17,28 +17,7 @@ import ToDoList from './domain/project/pages/toDoList/ToDoList';
 
 // Dev Styles
 
-import './styles/componentStyles/genralComponentStyles/dfooter.css';
-import './styles/componentStyles/genralComponentStyles/navBar.css';
-import './styles/componentStyles/projectPlannerComponentStyles/addList.css';
-import './styles/componentStyles/projectPlannerComponentStyles/board.css';
-import './styles/componentStyles/projectPlannerComponentStyles/card.css';
-import './styles/componentStyles/projectPlannerComponentStyles/cardEditor.css';
-import './styles/componentStyles/projectPlannerComponentStyles/editButtons.css';
-import './styles/componentStyles/projectPlannerComponentStyles/list.css';
-import './styles/componentStyles/projectPlannerComponentStyles/listEditor.css';
-import './styles/pageStyles/home.css';
-import './styles/componentStyles/homeComponentStyles/heroStyles.css';
-import './styles/componentStyles/homeComponentStyles/mainOneStyles.css';
-import './styles/componentStyles/homeComponentStyles/mainTwoStyles.css';
-import './styles/pageStyles/projectPlanner.css';
-import './styles/pageStyles/vanilla.css';
-import './styles/componentStyles/vanillaComponentStyles/vanillaNormal.css';
-import './styles/componentStyles/vanillaComponentStyles/vanillaFluent.css';
-import './styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css';
-import './styles/pageStyles/contactMe.css';
-import './styles/pageStyles/liveCompiler.css';
-import './styles/pageStyles/toDoList.css';
-import './styles/general.css';
+
 
 // Loader Section
 

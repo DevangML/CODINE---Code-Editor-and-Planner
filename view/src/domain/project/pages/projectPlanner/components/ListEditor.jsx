@@ -25,10 +25,8 @@ const ListEditor = function (props) {
     document.addEventListener('click', handleClick, false);
   }, []);
 
-  useEffect(() => {
-    return () => {
-      document.removeEventListener('click', handleClick, false);
-    };
+  useEffect(() => () => {
+    document.removeEventListener('click', handleClick, false);
   }, []);
 
   const { title, handleChangeTitle, deleteList } = props;

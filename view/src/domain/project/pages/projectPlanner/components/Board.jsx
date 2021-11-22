@@ -1,6 +1,7 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import { connect } from 'react-redux';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import { MOVE_LIST, MOVE_CARD } from '../../../../../redux/actions/projectPlannerTypes';
 
 import List from './List';
 import AddList from './AddList';
@@ -21,7 +22,7 @@ const Board = function (props) {
       // Prevent update if nothing has changed
       if (source.index !== destination.index) {
         dispatch({
-          type: 'MOVE_LIST',
+          type: MOVE_LIST,
           payload: {
             oldListIndex: source.index,
             newListIndex: destination.index,
@@ -32,12 +33,9 @@ const Board = function (props) {
     }
 
     // Move card
-    if (
-      source.index !== destination.index
-      || source.droppableId !== destination.droppableId
-    ) {
+    if (source.index !== destination.index || source.droppableId !== destination.droppableId) {
       dispatch({
-        type: 'MOVE_CARD',
+        type: MOVE_CARD,
         payload: {
           sourceListId: source.droppableId,
           destListId: destination.droppableId,
@@ -48,38 +46,34 @@ const Board = function (props) {
     }
   };
 
-    const { board } = props;
+  const { board } = props;
 
-    return (
-      <DragDropContext onDragEnd={handleDragEnd}>
-        <Droppable droppableId="board" direction="horizontal" type="COLUMN">
-          {(provided, _snapshot) => (
-            <div className="Board" ref={provided.innerRef}>
-              {board.lists.map((listId, index) => <List listId={listId} key={listId} index={index} />)}
+  return (
+    <DragDropContext onDragEnd={handleDragEnd}>
+      <Droppable droppableId='board' direction='horizontal' type='COLUMN'>
+        {(provided, _snapshot) => (
+          <div className='Board' ref={provided.innerRef}>
+            {board.lists.map((listId, index) => (
+              <List listId={listId} key={listId} index={index} />
+            ))}
 
-              {provided.placeholder}
+            {provided.placeholder}
 
-              <div className="Add-List">
-                {addingList ? (
-                  <AddList toggleAddingList={toggleAddingList} />
-                ) : (
-                  <div
-                    onClick={toggleAddingList}
-                    className="Add-List-Button"
-                  >
-                    <ion-icon name="add" />
-                    {' '}
-                    Add a list
-                  </div>
-                )}
-              </div>
+            <div className='Add-List'>
+              {addingList ? (
+                <AddList toggleAddingList={toggleAddingList} />
+              ) : (
+                <div onClick={toggleAddingList} className='Add-List-Button'>
+                  <ion-icon name='add' /> Add a list
+                </div>
+              )}
             </div>
-          )}
-        </Droppable>
-      </DragDropContext>
-    );
-  }
-}
+          </div>
+        )}
+      </Droppable>
+    </DragDropContext>
+  );
+};
 
 const mapStateToProps = (state) => ({ board: state.board });
 

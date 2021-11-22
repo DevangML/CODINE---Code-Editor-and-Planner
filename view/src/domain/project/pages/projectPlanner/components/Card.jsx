@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import { Draggable } from 'react-beautiful-dnd';
-
+import { CHANGE_CARD_TEXT, DELETE_CARD } from '../../../../../redux/actions/projectPlannerTypes';
 import CardEditor from './CardEditor';
 
 const Card = function (props) {
@@ -30,7 +30,7 @@ const Card = function (props) {
     endEditing();
 
     dispatch({
-      type: 'CHANGE_CARD_TEXT',
+      type: CHANGE_CARD_TEXT,
       payload: { cardId: card._id, cardText: text },
     });
   };
@@ -40,7 +40,7 @@ const Card = function (props) {
 
     if (window.confirm('Are you sure to delete this card?')) {
       dispatch({
-        type: 'DELETE_CARD',
+        type: DELETE_CARD,
         payload: { cardId: card._id, listId },
       });
     }

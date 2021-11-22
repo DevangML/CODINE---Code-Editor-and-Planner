@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import VanillaRouteButton from './components/VanillaRouteButton';
 import VanillaNormal from './components/VanillaNormal';
 import VanillaFluent from './components/VanillaFluent';
-import Dfooter from '../../parts/Dfooter';
+import Dfooter from '../../../common/parts/Dfooter';
 
 const Vanilla = function () {
   return (

@@ -1,6 +1,8 @@
 import React from 'react';
 
-const EditButtons = function ({ handleSave, saveLabel, handleDelete, handleCancel }) {
+const EditButtons = function ({
+  handleSave, saveLabel, handleDelete, handleCancel,
+}) {
   return (
     <div className='Edit-Buttons'>
       <div

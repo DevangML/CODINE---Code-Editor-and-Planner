@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Dfooter from '../../parts/Dfooter';
+import { useState } from 'react';
+import Dfooter from '../../../common/parts/Dfooter';
 import Board from './components/Board';
 
 const ProjectPlanner = function () {

@@ -7,8 +7,9 @@ import useLiveCompiler from '../../../../hooks/useLiveCompiler';
 import { runCode } from '../../services/liveCompilerServices';
 
 const LiveCompiler = function () {
-  const { language, setLanguage, code, setCode, input, setInput, outputLogs, stat } =
-    useLiveCompiler();
+  const {
+    language, setLanguage, code, setCode, input, setInput, outputLogs, stat,
+  } = useLiveCompiler();
   return (
     <section className='liveCompiler'>
       {' '}

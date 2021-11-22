@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
-
 import shortid from 'shortid';
+import {
+  ADD_CARD,
+  CHANGE_LIST_TITLE,
+  DELETE_LIST,
+} from '../../../../../redux/actions/projectPlannerTypes';
+
 import Card from './Card';
 import CardEditor from './CardEditor';
 import ListEditor from './ListEditor';
@@ -22,7 +27,7 @@ const List = function () {
     const cardId = shortid.generate();
 
     dispatch({
-      type: 'ADD_CARD',
+      type: ADD_CARD,
       payload: { cardText, cardId, listId },
     });
   };
@@ -37,7 +42,7 @@ const List = function () {
     toggleEditingTitle();
 
     dispatch({
-      type: 'CHANGE_LIST_TITLE',
+      type: CHANGE_LIST_TITLE,
       payload: { listId, listTitle: title },
     });
   };
@@ -47,7 +52,7 @@ const List = function () {
 
     if (window.confirm('Are you sure to delete this list?')) {
       dispatch({
-        type: 'DELETE_LIST',
+        type: DELETE_LIST,
         payload: { listId, cards: list.cards },
       });
     }
@@ -80,8 +85,8 @@ const List = function () {
           <Droppable droppableId={list._id}>
             {(provided, _snapshot) => (
               <div ref={provided.innerRef} className='Lists-Cards'>
-                {list.cards &&
-                  list.cards.map((cardId, index) => (
+                {list.cards
+                  && list.cards.map((cardId, index) => (
                     <Card key={cardId} cardId={cardId} index={index} listId={list._id} />
                   ))}
 
