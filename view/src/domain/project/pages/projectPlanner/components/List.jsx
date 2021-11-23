@@ -17,7 +17,7 @@ const List = function (props) {
   const [title, setTitle] = useState(props.list.title);
   const [addingCard, setAddingCard] = useState(false);
 
-  const toggleAddingCard = () => this.setState({ addingCard: !this.state.addingCard });
+  const toggleAddingCard = () => setAddingCard({ addingCard: !addingCard });
 
   const addCard = async (cardText) => {
     const { listId, dispatch } = props;
@@ -32,7 +32,7 @@ const List = function (props) {
     });
   };
 
-  const toggleEditingTitle = () => this.setState({ editingTitle: !this.state.editingTitle });
+  const toggleEditingTitle = () => setEditingTitle({ editingTitle: !editingTitle });
 
   const handleChangeTitle = (e) => setTitle(e.target.value);
 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Main2 = function () {
   return (
     <section className='main-2'>

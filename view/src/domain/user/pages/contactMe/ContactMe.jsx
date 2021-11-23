@@ -7,6 +7,8 @@ const ContactMe = function () {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
 
+  const url = 'http://localhost:5000/contact/post';
+
   const onNameChange = (e) => {
     setName(e.target.value);
   };
@@ -28,17 +30,16 @@ const ContactMe = function () {
     axios({
       method: 'POST',
       url,
-      data: { Name: name, Email: email, Phone: phone, Message: message },
-    })
-      .then(() => {
-        alert('Thank You For Contacting Us');
-      })
-      .catch((err) => {
-        alert(`Error reaching servers : $err`);
-      });
+      data: {
+        Name: name,
+        Email: email,
+        Phone: phone,
+        Message: message,
+      },
+    }).then(() => {
+      alert('Thank You For Contacting Us');
+    });
   };
-
-  const url = 'http://localhost:5000/contact/post';
 
   return (
     <section className='contact'>

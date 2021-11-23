@@ -1,5 +1,3 @@
-import React from 'react';
-
 const EditButtons = function ({
   handleSave, saveLabel, handleDelete, handleCancel,
 }) {

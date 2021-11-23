@@ -1,5 +1,4 @@
 // Library Imports
-import React from 'react';
 import DropDown from 'react-dropdown';
 
 const Header = function ({

@@ -2,14 +2,13 @@ import { useState } from 'react';
 import { connect } from 'react-redux';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import { MOVE_LIST, MOVE_CARD } from '../../../../../redux/actions/projectPlannerTypes';
-
 import List from './List';
 import AddList from './AddList';
 
 const Board = function (props) {
   const [addingList, setAddingList] = useState(false);
 
-  const toggleAddingList = () => this.setState({ addingList: !this.state.addingList });
+  const toggleAddingList = () => setAddingList({ addingList: !addingList });
 
   const handleDragEnd = ({ source, destination, type }) => {
     // dropped outside the allowed zones

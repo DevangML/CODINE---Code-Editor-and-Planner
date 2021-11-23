@@ -13,10 +13,6 @@ const VanillaFluent = function () {
 
   const iRef = useRef();
 
-  useEffect(() => {
-    runCode();
-  }, [html, css, js]);
-
   const runCode = () => {
     if (!iRef.current) return;
 
@@ -46,6 +42,10 @@ const VanillaFluent = function () {
     document.write(documentContents);
     document.close();
   };
+
+  useEffect(() => {
+    runCode();
+  }, [html, css, js]);
 
   const codeMirrorOptions = {
     theme: 'material',

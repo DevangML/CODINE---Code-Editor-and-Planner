@@ -1,5 +1,3 @@
-// Library Imports
-import React from 'react';
 import AceEditor from 'react-ace';
 
 import 'ace-builds/src-noconflict/mode-java';
@@ -7,9 +5,6 @@ import 'ace-builds/src-noconflict/mode-python';
 import 'ace-builds/src-noconflict/theme-monokai';
 
 const CodeEditor = function ({ value, onCodeChange, programmingLanguage }) {
-  const onLoad = () => {
-    console.log('code editor loaded');
-  };
   return (
     <section className='aceEditor'>
       <AceEditor
@@ -18,7 +13,6 @@ const CodeEditor = function ({ value, onCodeChange, programmingLanguage }) {
         mode={programmingLanguage}
         theme='monokai'
         name='editor'
-        onLoad={onLoad}
         onChange={onCodeChange}
         value={value}
         showPrintMargin

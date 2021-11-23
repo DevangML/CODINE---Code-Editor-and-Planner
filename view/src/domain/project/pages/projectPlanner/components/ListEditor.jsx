@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
 const ListEditor = function (props) {
@@ -29,7 +29,7 @@ const ListEditor = function (props) {
     () => () => {
       document.removeEventListener('click', handleClick, false);
     },
-    []
+    [],
   );
 
   const { title, handleChangeTitle, deleteList } = props;

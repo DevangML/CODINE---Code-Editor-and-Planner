@@ -1,4 +1,4 @@
-import {  useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
@@ -12,10 +12,6 @@ const VanillaNormal = function () {
   const [js, setJs] = useState('');
 
   const iRef = useRef();
-
-  useEffect(() => {
-    runCode();
-  }, [html, css, js]);
 
   const runCode = () => {
     if (!iRef.current) return;
@@ -46,6 +42,10 @@ const VanillaNormal = function () {
     document.write(documentContents);
     document.close();
   };
+
+  useEffect(() => {
+    runCode();
+  }, [html, css, js]);
 
   const codeMirrorOptions = {
     theme: 'material',

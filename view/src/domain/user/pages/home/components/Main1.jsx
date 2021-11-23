@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Main1 = function () {
   return (
     <section className='main-1' data-aos='fade-up'>

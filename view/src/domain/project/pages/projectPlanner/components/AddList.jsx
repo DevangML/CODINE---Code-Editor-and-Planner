@@ -10,7 +10,7 @@ const AddList = function (props) {
 
   const handleChangeTitle = (e) => setTitle(e.target.value);
 
-  let createList = async () => {
+  const createList = async () => {
     const { dispatch } = props;
 
     props.toggleAddingList();

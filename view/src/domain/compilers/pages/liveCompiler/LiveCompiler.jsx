@@ -1,10 +1,10 @@
+import axios from 'axios';
+import { useState } from 'react';
 import Dfooter from '../../../common/parts/Dfooter';
 import CodeEditor from './components/CodeEditor';
 import InputEditor from './components/InputEditor';
 import OutputLogs from './components/OutputLogs';
 import Header from './components/Header';
-import axios from 'axios';
-import { useState } from 'react';
 
 const LiveCompiler = function () {
   const [language, setLanguage] = useState('java');
@@ -12,7 +12,7 @@ const LiveCompiler = function () {
   const [input, setInput] = useState('');
   const [outputLogs, setOutputLogs] = useState('');
   const [stat, setStat] = useState('Run');
-  const compilerUrl = 'api/post';
+  const compilerUrl = 'http://localhost:5000/compiler/runCode';
 
   const runCode = () => {
     setStat('Loading...');
