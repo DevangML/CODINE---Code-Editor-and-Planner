@@ -1,37 +1,113 @@
-.toDo {
-  width: 100vw;
-  height: 100vh;
-  background: #f5f5f5;
-}
-
-.heading {
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.flex {
+.tmain {
+  margin: 0 auto;
+  min-width: 100vw;
+  min-height: 105vh;
+  margin-top: -15vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+  background: #f12711;
+  background: -webkit-linear-gradient(to right, #f5af19, #f12711);
+  background: linear-gradient(to right, #f5af19, #f12711);
+  padding: 1vh;
+  padding-bottom: 2vh;
 }
 
-.tdcontainer {
-  width: 500px;
-  min-height: 300px;
-  padding: 10px;
+.tmain__item-1 {
+  font-size: 7vw;
+  color: #faeca0;
+  text-shadow: -0.34vh 0 0.56vh rgb(36 36 36);
+  text-align: center;
+  font-family: 'Kaushan Script', cursive;
 }
 
-.task_container {
-  margin: 10px 0;
+.content {
+  border: 0.56vh #c0c0ff solid;
+  border-radius: 3vh;
+  font-size: 3vh;
+  background-color: #f0f0f0;
+  padding: 2.24vh;
+  min-height: 70vh;
+  min-width: 70vw;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow: -moz-scrollbars-none;
+}
+
+.content::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.tasks__input {
+  font-size: 3vh !important;
+}
+
+table {
+  width: 100%;
+}
+td:first-child {
+  width: 100%;
+}
+td:last-child {
+  min-width: 19vw;
+}
+th {
+  text-align: left;
+}
+tr:nth-child(even) {
+  background-color: #ffffff;
+}
+input,
+button {
+  font-size: 2.2vh;
+  padding: 0.56vh;
+  border-radius: 0.56vh;
+  border: 0.22vh #c0c0c0 solid;
+  min-height: 5vh;
+  min-width: 20vw;
+}
+button {
   cursor: pointer;
+  font-size: 2.5vh;
+}
+button.add {
+  background-color: #0080ff;
+  color: #ffffff;
+  font-size: 2.5vh;
+}
+
+button.edit {
+  background-color: #20a0b0;
+  color: #ffffff;
+  font-size: 2.5vh;
+}
+
+button.delete {
+  background-color: #e04040;
+  color: #ffffff;
+  font-size: 2.5vh;
+}
+
+button.save {
+  background-color: #30b040;
+  color: #ffffff;
+  font-size: 2.5vh;
+}
+
+button.back {
+  background-color: #707080;
+  color: #ffffff;
+  font-size: 2.5vh;
 }
 
 .task {
-  flex-grow: 1;
-  margin-left: 10px;
+  cursor: pointer;
+}
+.completed {
+  text-decoration: line-through;
 }
 
-.line_through {
-  text-decoration: line-through;
+.not-completed {
+  font-size: 2.5vh !important;
 }

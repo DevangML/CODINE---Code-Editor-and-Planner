@@ -25,3 +25,4 @@ type C:\Users\User\Documents\Projects\Devang\oce007\view\src\domain\user\styles\
 type C:\Users\User\Documents\Projects\Devang\oce007\view\src\domain\user\styles\componentStyles\homeComponentStyles\mainTwoStyles.css >> C:\Users\User\Documents\Projects\Devang\oce007\view\src\app.css
 type C:\Users\User\Documents\Projects\Devang\oce007\view\src\domain\user\styles\pageStyles\contactMe.css >> C:\Users\User\Documents\Projects\Devang\oce007\view\src\app.css
 type C:\Users\User\Documents\Projects\Devang\oce007\view\src\domain\user\styles\pageStyles\home.css >> C:\Users\User\Documents\Projects\Devang\oce007\view\src\app.css
+type C:\Users\User\Documents\Projects\Devang\oce007\view\src\domain\project\toDoList\styles\pageStyles\toDoList.css >> C:\Users\User\Documents\Projects\Devang\oce007\view\src\app.css

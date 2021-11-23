@@ -58,13 +58,13 @@ const DropdownLink = styled(Link)`
   background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
   background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
   height: 12.66vh;
-  padding-left: 4.7vw;
+  padding-left: 5.7vw;
   padding-right: 1vw;
   display: flex;
   align-items: center;
   text-decoration: none;
   color: #f5f5f5;
-  font-size: 3vw;
+  font-size: 2vw;
   margin-bottom: -2vh;
   &:hover {
     background: #632ce4;
