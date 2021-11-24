@@ -13,11 +13,12 @@ const VanillaFluent = function () {
 
   const iRef = useRef();
 
-  const runCode = () => {
-    if (!iRef.current) return;
+  useEffect(() => {
+    const runCode = () => {
+      if (!iRef.current) return;
 
-    const document = iRef.current.contentDocument;
-    const documentContents = `
+      const document = iRef.current.contentDocument;
+      const documentContents = `
       <!DOCTYPE html>
       <html lang="en">
       <head>
@@ -38,12 +39,10 @@ const VanillaFluent = function () {
       </html>
     `;
 
-    document.open();
-    document.write(documentContents);
-    document.close();
-  };
-
-  useEffect(() => {
+      document.open();
+      document.write(documentContents);
+      document.close();
+    };
     runCode();
   }, [html, css, js]);
 

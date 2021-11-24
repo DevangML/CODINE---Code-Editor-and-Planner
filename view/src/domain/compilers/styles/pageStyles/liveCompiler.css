@@ -10,10 +10,10 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding: 10vh;
+  padding-top: 15vh;
   margin-top: -15vh;
   min-height: 100vh;
-  font-family: "Kaushan Script", cursive;
+  font-family: 'Kaushan Script', cursive;
 }
 
 .compilerHeader__item-1 {
@@ -28,9 +28,37 @@
   text-shadow: -0.34vh 0 0.56vh rgb(36 36 36);
 }
 
-@media screen and (max-width: 330px) {
+@media only screen and (max-width: 620px) {
   .compilerHeader__item-1 {
     font-size: 8vh !important;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .compilerHeader__item-1 {
+    font-size: 6vh !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .compilerHeader__item-1 {
+    font-size: 5vh !important;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .compilerHeader__item-1 {
+    font-size: 4vh !important;
+  }
+
+  .compilerHeader__item-2 {
+    font-size: 3.5vh !important;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .compilerHeader__item-1 {
+    font-size: 3.2vh !important;
   }
 
   .compilerHeader__item-2 {
@@ -38,23 +66,13 @@
   }
 }
 
-@media screen and (max-width: 230px) {
-  .compilerHeader__item-1 {
-    font-size: 7vh !important;
-  }
-
-  .compilerHeader__item-2 {
-    font-size: 2.5vh !important;
-  }
-}
-
 @media screen and (max-width: 200px) {
   .compilerHeader__item-1 {
-    font-size: 6vh !important;
+    font-size: 3vh !important;
   }
 
   .compilerHeader__item-2 {
-    font-size: 2vh !important;
+    font-size: 2.8vh !important;
   }
 }
 
@@ -108,12 +126,14 @@ pre {
   background-color: #4caf50;
   border: none;
   color: white;
-  padding: 1.34vh 4.68vw;
+  padding: 2vh;
   text-align: center;
+  border-radius: 1.5vh;
   text-decoration: none;
-  display: inline-flex;
   font-size: 3vh;
   margin-left: 0.78vw;
+  max-width: 2vw !important;
+  overflow: hidden;
 }
 
 .aceEditor {
@@ -189,8 +209,9 @@ pre code {
   overflow: hidden;
   background-color: white;
   border: 0.11vh solid rgb(105 46 46);
-  border-radius: 0.22vh;
+  border-radius: 1.5vh;
   box-sizing: border-box;
+  margin-top: -1.3vh;
   color: #333;
   cursor: default;
   outline: none;
@@ -198,10 +219,10 @@ pre code {
   align-items: center;
   justify-content: center;
   transition: all 200ms ease;
-  font-size: 4vh;
-  min-width: 15vw;
-  max-width: 18vw;
-  min-height: 5vh;
+  font-size: 3vh;
+  min-width: 18vw;
+  max-width: 25vw;
+  min-height: 7vh;
   padding-right: 7vw;
   padding-left: 6vw;
 }
@@ -214,7 +235,7 @@ pre code {
   border-color: #999 transparent transparent;
   border-style: solid;
   border-width: 0.78vw 0.78vw 0;
-  content: " ";
+  content: ' ';
   display: block;
   height: 0;
   margin-top: -ceil(2.5);

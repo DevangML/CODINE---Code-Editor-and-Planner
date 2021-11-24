@@ -1,7 +1,7 @@
 /* Font Imports */
 
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Kaushan+Script&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Kaushan+Script&display=swap');
 
 *:focus {
   outline: 0 !important;
@@ -28,11 +28,15 @@ body {
   user-select: none;
 }
 
+body {
+  overflow: hidden;
+}
+
 .loading {
   background: #0f2027;
   background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
   background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;

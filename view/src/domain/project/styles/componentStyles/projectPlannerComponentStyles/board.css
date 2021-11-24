@@ -1,10 +1,26 @@
 .Board {
   height: 92%;
   display: flex;
-  overflow-x: auto;
   background-color: transparent;
   padding: 1.8vw;
   max-width: 98vw;
+  overflow-x: auto;
+}
+
+.Board::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.Board::-webkit-scrollbar-button {
+  width: 0 !important;
+}
+
+.Board::-webkit-scrollbar-thumb {
+  width: 0 !important;
+}
+
+.Board::-webkit-scrollbar-track {
+  width: 0 !important;
 }
 
 .Add-List {
@@ -22,10 +38,7 @@
   align-items: center;
   min-height: 3.6vh;
   padding: 0.6vw 0.9vw;
-  transition:
-    background-color 85ms ease-in,
-    opacity 40ms ease-in,
-    border-color 85ms ease-in;
+  transition: background-color 85ms ease-in, opacity 40ms ease-in, border-color 85ms ease-in;
   height: fit-content;
 }
 

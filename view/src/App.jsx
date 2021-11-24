@@ -1,4 +1,4 @@
-import './app.css';
+// import './app.css';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Lottie from 'react-lottie';
@@ -14,6 +14,32 @@ import ContactMe from './domain/user/pages/contactMe/ContactMe';
 import ProjectPlanner from './domain/project/pages/projectPlanner/ProjectPlanner';
 import LiveCompiler from './domain/compilers/pages/liveCompiler/LiveCompiler';
 import ToDoList from './domain/project/pages/toDoList/ToDoList';
+
+// Dev Styles
+
+import './domain/common/styles/general.css';
+import './domain/common/styles/partStyles/dfooter.css';
+import './domain/common/styles/partStyles/loader.css';
+import './domain/compilers/styles/pageStyles/liveCompiler.css';
+import './domain/compilers/styles/pageStyles/vanilla.css';
+import './domain/compilers/styles/componentStyles/vanillaComponentStyles/vanillaFluent.css';
+import './domain/compilers/styles/componentStyles/vanillaComponentStyles/vanillaNormal.css';
+import './domain/compilers/styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css';
+import './domain/navigation/styles/pageStyles/navBar.css';
+import './domain/project/styles/pageStyles/projectPlanner.css';
+import './domain/project/styles/pageStyles/toDoList.css';
+import './domain/project/styles/componentStyles/projectPlannerComponentStyles/addList.css';
+import './domain/project/styles/componentStyles/projectPlannerComponentStyles/board.css';
+import './domain/project/styles/componentStyles/projectPlannerComponentStyles/card.css';
+import './domain/project/styles/componentStyles/projectPlannerComponentStyles/cardEditor.css';
+import './domain/project/styles/componentStyles/projectPlannerComponentStyles/editButtons.css';
+import './domain/project/styles/componentStyles/projectPlannerComponentStyles/list.css';
+import './domain/project/styles/componentStyles/projectPlannerComponentStyles/listEditor.css';
+import './domain/user/styles/pageStyles/contactMe.css';
+import './domain/user/styles/pageStyles/home.css';
+import './domain/user/styles/componentStyles/homeComponentStyles/heroStyles.css';
+import './domain/user/styles/componentStyles/homeComponentStyles/mainOneStyles.css';
+import './domain/user/styles/componentStyles/homeComponentStyles/mainTwoStyles.css';
 
 // Loader Section
 
@@ -37,6 +63,7 @@ const defaultOptions2 = {
 
 const App = function () {
   // state hooks
+  // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(undefined);
   const [completed, setcompleted] = useState(undefined);
@@ -54,7 +81,7 @@ const App = function () {
           }, 1000);
         });
     }, 2000);
-  }, []);
+  }, [setData]);
   return (
     <>
       {!completed ? (

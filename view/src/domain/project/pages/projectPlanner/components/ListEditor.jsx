@@ -11,26 +11,21 @@ const ListEditor = function (props) {
     }
   };
 
-  const handleClick = (e) => {
-    const node = ref.current;
-
-    if (node.contains(e.target)) {
-      return;
-    }
-
-    props.onClickOutside();
-  };
-
   useEffect(() => {
-    document.addEventListener('click', handleClick, false);
-  }, []);
+    const handleClick = (e) => {
+      const node = ref.current;
 
-  useEffect(
-    () => () => {
+      if (node.contains(e.target)) {
+        return;
+      }
+
+      props.onClickOutside();
+    };
+    document.addEventListener('click', handleClick, false);
+    return () => {
       document.removeEventListener('click', handleClick, false);
-    },
-    [],
-  );
+    };
+  }, [props]);
 
   const { title, handleChangeTitle, deleteList } = props;
 
