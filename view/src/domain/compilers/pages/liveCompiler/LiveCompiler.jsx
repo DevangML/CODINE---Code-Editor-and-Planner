@@ -20,7 +20,7 @@ const LiveCompiler = function () {
       if (res.data.memory && res.data.cpuTime) {
         setOutputLogs('');
         setOutputLogs(
-          `Memory Used: ${res.data.memory} \nCPU Time: ${res.data.cpuTime} \n${res.data.output} `
+          `Memory Used: ${res.data.memory} \nCPU Time: ${res.data.cpuTime} \n${res.data.output} `,
         );
       } else {
         setOutputLogs(`${res.data.output} `);

@@ -8,23 +8,29 @@ export default class TaskItem extends Component {
       isEditing: false,
     };
   }
+
   setEditingState = (isEditing) => {
-    this.setState({ isEditing: isEditing });
+    this.setState({ isEditing });
   };
+
   toggleTask = () => {
     this.props.toggleTask(this.props.id);
   };
+
   deleteTask = () => {
     this.props.deleteTask(this.props.id);
   };
+
   handleChange = (event) => {
     this.setState({ task: event.target.value });
   };
+
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.editTask(this.props.id, this.state.task);
     this.setState({ isEditing: false });
   };
+
   render() {
     return (
       <tr>
