@@ -1,5 +1,21 @@
 {
-    "spellright.language": ["en"],
-    "spellright.documentTypes": ["markdown", "latex", "plaintext"],
-    "files.eol": "\n"
+  "files.eol": "\n",
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+  "editor.fontFamily": "'Operator Mono Lig', Consolas,'Operator Mono Lig',monospace",
+  "editor.tabSize": 2,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.fixAll.eslint": true
+  },
+  "javascript.format.enable": false
 }

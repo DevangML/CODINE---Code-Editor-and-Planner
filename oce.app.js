@@ -1,10 +1,15 @@
 // Import Section
 const express = require('express');
-const { oceContactRouter, oceVanillaRouter } = require('./routes/oce.routes');
 const cors = require('cors');
 const path = require('path');
 require('dotenv').config({ path: '.env' });
 const compression = require('compression');
+const {
+  oceContactRouter,
+  oceVanillaRouter,
+  oceLiveCompilerRouter,
+  oceToDoListRouter,
+} = require('./routes/oce.routes');
 // const redis = require('redis')
 
 // App Initialization
@@ -15,7 +20,7 @@ const expressApp = express();
 expressApp.use(compression());
 
 // CORS Setup
-var corsOptions = {
+const corsOptions = {
   origin: 'http://localhost:3000',
 };
 expressApp.use(cors(corsOptions));
@@ -29,10 +34,10 @@ expressApp.use(express.urlencoded({ extended: true }));
 // const client = redis.createClient(6379)
 
 // client.on('error', (error) => {
-// 	console.error(error)
+// console.error(error)
 // })
 
-// Post Route
+// Contact Route Initializers
 expressApp.use('/contact', oceContactRouter);
 
 // Static view configuration
@@ -44,8 +49,16 @@ expressApp.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './view/build/index.html'));
 });
 
-// Pusher Code
+// Vanilla Routes Initializers
 
 expressApp.use('/vanilla', oceVanillaRouter);
+
+// LiveCompiler Routes Initializers
+
+expressApp.use('/compiler', oceLiveCompilerRouter);
+
+// To-Do List Routes Initializers
+
+expressApp.use('/todo', oceToDoListRouter);
 
 module.exports = expressApp;

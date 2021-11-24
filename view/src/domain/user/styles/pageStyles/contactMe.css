@@ -1,0 +1,137 @@
+/* Contact Me Section */
+
+* {
+  box-sizing: border-box;
+}
+
+.contact {
+  min-height: 100vh;
+  max-width: 100vw;
+  min-width: 20vw;
+  overflow: hidden;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: #555;
+  background: url('../../../../assets/images/contact1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 3.6vw;
+  margin-top: -12.8vh;
+  padding-top: 16vh;
+}
+
+.contact__container {
+  background: #e0e0e0;
+  box-shadow: inset -2.02vh -2.02vh 4.04vh #b5b5b5, inset 2.02vh 2.02vh 4.04vh #fff;
+  padding: 2vw;
+  border-radius: 5vw;
+  min-width: 40vw;
+  max-width: 80vw;
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contact__section__item-1 {
+  background: url('../../../../assets/images/logo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 10vw;
+  height: 10vh;
+  border-radius: 50%;
+  padding: 10vw;
+  margin: 0 auto;
+  box-shadow:
+    /* logo shadow */ 0 0 0.22vh #5f5f5f, /* offset */ 0 0 0 0.56vh #ecf0f3,
+    /*bottom right */ 0.9vh 0.9vh 1.7vh #a7aaaf, /* top left */ -0.9vh -0.9vh 1.7vh #fff;
+}
+
+.contact__section__item-2 {
+  text-align: center;
+  font-size: 3.14vw;
+  padding-top: 2.7vh;
+  letter-spacing: 0.056vw;
+}
+
+.contact__section__sub-section {
+  min-width: 100%;
+  padding: 8.4vw 0.56vw 0.56vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact__section__sub-section input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 2.02vh;
+  color: #555;
+  padding: 2.25vw 1.12vw 2.25vw 0.56vw;
+  max-width: 90%;
+  min-width: 50%;
+}
+
+.contact__section__sub-section__item-1,
+.contact__section__sub-section__item-2,
+.contact__section__sub-section__item-3,
+.contact__section__sub-section__item-4 {
+  margin-bottom: 3.37vw;
+  border-radius: 2.8vw;
+  box-shadow: inset 0.9vw 0.9vw 0.9vw #cbced1, inset -0.9vw -0.9vw 0.9vw #fff;
+  max-width: 70%;
+  width: 100vw;
+  word-wrap: break-word;
+}
+
+.contact__section__sub-section svg {
+  height: 2.47vh;
+  margin: 0 1.12vw -0.34vw 2.8vw;
+}
+
+.contact__item {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  max-height: 20vh;
+  border-radius: 3.37vw;
+  font-size: 2.24vh;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: rgb(92 0 0);
+  text-align: center;
+  background: #e0e0e0;
+  box-shadow: inset 2.24vw -2.24vw 3.14vw #b8b8b8, inset -2.24vw 2.24vw 3.14vw #fff;
+  transition: 0.5s;
+  max-width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact__item:hover {
+  background: #f0f0f0a9;
+}
+
+.contact__item:active {
+  background: #d8d8d8a9;
+}
+
+@media only screen and (min-width: 3600px) {
+  .contact__container {
+    border-radius: 1vw;
+  }
+}

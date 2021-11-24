@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-let oceContactSchema = new mongoose.Schema({
+const oceContactSchema = new mongoose.Schema({
   Name: {
     type: String,
     required: true,
@@ -19,6 +19,19 @@ let oceContactSchema = new mongoose.Schema({
   },
 });
 
-const oceContactModel = mongoose.model('contact', oceContactSchema);
+const OceContactModel = mongoose.model('contact', oceContactSchema);
 
-module.exports = { oceContactModel };
+const oceToDoSchema = new mongoose.Schema({
+  task: {
+    type: String,
+    required: true,
+  },
+  completed: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+const OceToDoModel = mongoose.model('toDo', oceToDoSchema);
+
+module.exports = { OceContactModel, OceToDoModel };

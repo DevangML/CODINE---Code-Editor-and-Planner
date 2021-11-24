@@ -3,29 +3,29 @@ version: '3.7'
 services:
   server:
     build:
-      context: /home/devangm/Desktop/repos/Devang/Docker/Server
+      context: /home/Devang/Desktop/Projects/oce007
       dockerfile: Dockerfile
-    image: codex-server
+    image: server
     container_name: codex-server
-    command: yarn dev
+    command: yarn start
     volumes:
-      - /home/devangm/Desktop/repos/Devang/oce007/node_modules
+      - /home/Devang/Desktop/Projects/oce007/node_modules
     ports:
       - '5000:5000'
-    env_file: ./.env
-    environment:
-      - NODE_ENV=development
+    # env_file: ./server/.env
+    # environment:
+    #   - NODE_ENV=development
     networks:
       - app-network
   client:
     build:
-      context: /home/devangm/Desktop/repos/Devang/Docker/Client
+      context: /home/Devang/Desktop/Projects/oce007/view
       dockerfile: Dockerfile
-    image: codex-client
+    image: client
     container_name: codex-client
     command: yarn start
     volumes:
-      - /home/devangm/Desktop/repos/Devang/oce007/view/node_modules
+      - /home/Devang/Desktop/Projects/oce007/view/node_modules
     depends_on:
       - server
     ports:

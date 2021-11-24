@@ -1,21 +1,23 @@
-const { oceContactModel } = require('../models/oce.models');
 require('path');
-require('../databases/oce.dbs');
+const dotenv = require('dotenv');
+const Pusher = require('pusher');
 
+dotenv.config();
+require('../databases/oce.dbs');
+const request = require('request');
+const { OceContactModel, OceToDoModel } = require('../models/oce.models');
+
+const clientSecret = process.env.CLIENT_SECRET;
+const clientId = process.env.CLIENT_ID;
 // Contact Controllers
 
 const oceContactPostController = async (req, res) => {
-  if (
-    !req.body.name ||
-    !req.body.email ||
-    !req.body.phone ||
-    !req.body.message
-  ) {
+  if (!req.body.name || !req.body.email || !req.body.phone || !req.body.message) {
     res.send({ message: 'Content cannot be empty' });
     return;
   }
 
-  const oceInstance = new oceContactModel({
+  const oceInstance = new OceContactModel({
     Name: req.body.name,
     Email: req.body.email,
     Phone: req.body.phone,
@@ -48,7 +50,72 @@ const oceVanillaController = async (req, res) => {
   res.status(200).send('OK');
 };
 
+// LiveCompiler Controllers
+
+const oceLiveCompilerPostController = async (req, res) => {
+  if (req.body.language == 'python') req.body.language = 'python3';
+  const program = {
+    script: req.body.code,
+    language: req.body.language,
+    stdin: req.body.input,
+    versionIndex: '0',
+    clientId,
+    clientSecret,
+  };
+  request(
+    {
+      url: 'https://api.jdoodle.com/v1/execute',
+      method: 'POST',
+      json: program,
+    },
+    (error, response, body) => res.status(201).send(body)
+  );
+};
+
+// ToDo List Controllers
+
+const oceToDoListGetController = async (req, res) => {
+  try {
+    const tasks = await OceToDoModel.find();
+    res.send(tasks);
+  } catch (error) {
+    res.send(error);
+  }
+};
+
+const oceToDoListPostController = async (req, res) => {
+  try {
+    const task = await new OceToDoModel(req.body).save();
+    res.send(task);
+  } catch (error) {
+    res.send(error);
+  }
+};
+
+const oceToDoListPutController = async (req, res) => {
+  try {
+    const task = await OceToDoModel.findOneAndUpdate({ _id: req.params.id }, req.body);
+    res.send(task);
+  } catch (error) {
+    res.send(error);
+  }
+};
+
+const oceToDoListDeleteController = async (req, res) => {
+  try {
+    const task = await OceToDoModel.findByIdAndDelete(req.params.id);
+    res.send(task);
+  } catch (error) {
+    res.send(error);
+  }
+};
+
 module.exports = {
   oceContactPostController,
   oceVanillaController,
+  oceLiveCompilerPostController,
+  oceToDoListGetController,
+  oceToDoListPostController,
+  oceToDoListPutController,
+  oceToDoListDeleteController,
 };

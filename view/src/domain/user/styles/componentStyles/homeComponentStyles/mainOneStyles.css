@@ -1,0 +1,101 @@
+.main-1 {
+  min-height: 100vh;
+  background-color: #fcb045;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  margin-bottom: -7.97vh;
+  border-top-left-radius: 7vh;
+  border-top-right-radius: 7vh;
+  z-index: 1;
+  padding-bottom: 10vh;
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+
+.main-1__item-1 {
+  font-size: 15vh;
+  text-align: center;
+}
+
+.main-1__item-2 {
+  font-size: 6vh;
+  text-align: center;
+  font-family: "Courgette", cursive;
+}
+
+.main-1__item-3 {
+  font-size: 5vh;
+  text-align: center;
+  font-family: "Courgette", cursive;
+}
+
+@media screen and (max-width: 650px) {
+  .main-1__item-1 {
+    font-size: 12vh;
+  }
+
+  .main-1__item-2 {
+    font-size: 4vh;
+  }
+
+  .main-1__item-3 {
+    font-size: 3.8vh;
+  }
+
+  .main-1 {
+    margin-bottom: -30vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main-1__item-1 {
+    font-size: 9vh;
+  }
+
+  .main-1__item-2 {
+    font-size: 3.5vh;
+  }
+
+  .main-1__item-3 {
+    font-size: 2.8vh;
+  }
+
+  .main-1 {
+    margin-bottom: -35vh;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .main-1__item-1 {
+    font-size: 6.5vh;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .main-1__item-1 {
+    font-size: 4vh;
+  }
+
+  .main-1__item-2 {
+    font-size: 3vh;
+  }
+
+  .main-1 {
+    margin-bottom: -34vh;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .main-1__item-1 {
+    font-size: 3vh;
+  }
+
+  .main-1 {
+    margin-bottom: -25vh;
+  }
+}
