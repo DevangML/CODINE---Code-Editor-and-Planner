@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 
 export default class CreateTask extends Component {
   constructor(props) {
@@ -22,14 +22,14 @@ export default class CreateTask extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <input
-          type="text"
-          placeholder="Enter task"
+          type='text'
+          placeholder='Enter task'
           value={this.state.task}
           onChange={this.handleChange}
           autoFocus
           className='tasks__input'
         />
-        <button class="add" type="submit">
+        <button class='add' type='submit'>
           Add
         </button>
       </form>

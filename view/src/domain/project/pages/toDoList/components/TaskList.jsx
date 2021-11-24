@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import TaskItem from './TaskItem';
 
 export default class TaskList extends Component {

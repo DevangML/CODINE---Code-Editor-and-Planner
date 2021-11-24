@@ -8,19 +8,30 @@
 }
 
 .Board::-webkit-scrollbar {
-  width: 0 !important;
+  width: 3vw;
 }
 
-.Board::-webkit-scrollbar-button {
-  width: 0 !important;
-}
-
-.Board::-webkit-scrollbar-thumb {
-  width: 0 !important;
-}
-
+/* Track */
 .Board::-webkit-scrollbar-track {
-  width: 0 !important;
+  background: darkslategray;
+  box-shadow: inset 0 0 5px #dddddd;
+  border-radius:3vw;
+}
+
+/* Handle */
+.Board::-webkit-scrollbar-thumb {
+  background: #8e2de2;
+  background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2);
+  background: linear-gradient(to right, #4a00e0, #8e2de2);
+  border-radius: 2vw;
+  height: 5vh;
+}
+
+/* Handle on hover */
+.Board::-webkit-scrollbar-thumb:hover {
+  background: #8e2de2;
+  background: -webkit-linear-gradient(to right, #4b00e0e5, #8d2de2ef);
+  background: linear-gradient(to right, #4b00e0e5, #8d2de2ef);
 }
 
 .Add-List {
