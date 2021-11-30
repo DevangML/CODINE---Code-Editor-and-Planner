@@ -14,6 +14,7 @@ import ContactMe from './domain/user/pages/contactMe/ContactMe';
 import ProjectPlanner from './domain/project/pages/projectPlanner/ProjectPlanner';
 import LiveCompiler from './domain/compilers/pages/liveCompiler/LiveCompiler';
 import ToDoList from './domain/project/pages/toDoList/ToDoList';
+import Auth from './domain/auth/pages/Auth';
 
 // Dev Styles
 
@@ -102,6 +103,7 @@ const App = function () {
             <Route exact path='/contact' to component={ContactMe} />
             <Route exact path='/proj' to component={ProjectPlanner} />
             <Route exact path='/todo' to component={ToDoList} />
+            <Route exact path='/auth' to component={Auth} />
           </Switch>
         </Router>
       )}
