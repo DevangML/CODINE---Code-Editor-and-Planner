@@ -41,9 +41,7 @@ const listsByIdReducer = (state = initialState, action) => {
       };
     }
     case MOVE_CARD: {
-      const {
-        oldCardIndex, newCardIndex, sourceListId, destListId,
-      } = action.payload;
+      const { oldCardIndex, newCardIndex, sourceListId, destListId } = action.payload;
       // Move within the same list
       if (sourceListId === destListId) {
         const newCards = Array.from(state[sourceListId].cards);

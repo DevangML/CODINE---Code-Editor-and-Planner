@@ -14,9 +14,7 @@ const CardEditor = function (props) {
     }
   };
 
-  const {
-    onSave, onCancel, onDelete, adding,
-  } = props;
+  const { onSave, onCancel, onDelete, adding } = props;
 
   return (
     <div className='Edit-Card'>

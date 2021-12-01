@@ -86,8 +86,8 @@ const List = function (props) {
           <Droppable droppableId={list._id}>
             {(provided, _snapshot) => (
               <div ref={provided.innerRef} className='Lists-Cards'>
-                {list.cards
-                  && list.cards.map((cardId, index) => (
+                {list.cards &&
+                  list.cards.map((cardId, index) => (
                     <Card key={cardId} cardId={cardId} index={index} listId={list._id} />
                   ))}
 

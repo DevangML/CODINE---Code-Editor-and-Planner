@@ -1,38 +1,45 @@
-import { Avatar, Button, Paper, Grid, Typography, Container } from '@material-ui/core';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { useState } from 'react';
-import useStyles from '../styles/styles';
 import Input from '../templates/Input';
 
 const Auth = () => {
-  const classes = useStyles();
   const isSignup = true;
   const [showPassword, setShowPassword] = useState(false);
   const handleSubmit = () => {};
   const handleChange = () => {};
   const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
   return (
-    <Container component='main' maxWidth='xs'>
-      <Paper className={classes.paper} elevation={3}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography variant='h5'>{isSignup ? 'Sign Up' : 'Sign In'}</Typography>
-        <form className={classes.form} onSubmit={handleSubmit}>
-          <Grid container spacing={2}>
+    <section className='auth'>
+      <section className='auth__section-1'>
+        <section className='auth__section-1__sub-section-1'>
+          <img src='' className='auth__section-1__sub-section-1__item-1' />
+        </section>
+        <h5 className='auth__section-1__sub-section-1__item-2'>
+          {isSignup ? 'Sign Up' : 'Sign In'}
+        </h5>
+        <form onSubmit={handleSubmit} className='auth__section-1__item-1'>
+          <section className='auth__section-1__item-1__section-1'>
             {isSignup && (
               <>
                 <Input
                   name='firstName'
                   label='First Name'
                   handleChange={handleChange}
+                  type='text'
                   autofocus
                   half
+                  className='auth__section-1__item-1__section-1__item-1'
                 />
-                <Input name='firstName' label='First Name' handleChange={handleChange} half />
+                <Input
+                  name='lastName'
+                  label='Last Name'
+                  handleChange={handleChange}
+                  half
+                  type='text'
+                  className='auth__section-1__item-1__section-1__item-2'
+                />
               </>
             )}
-            <Input names='email' label='Email Address' handleChange={handleChange} />
+            <Input name='email' label='Email Address' handleChange={handleChange} type='email' />
             <Input
               name='password'
               label='Password'
@@ -48,19 +55,11 @@ const Auth = () => {
                 type='password'
               />
             )}
-          </Grid>
-          <Button
-            type='submit'
-            fullWidth
-            variant='contained'
-            color='primary'
-            className={classes.submit}
-          >
-            {isSignup ? 'Sign Up' : 'Sign In'}
-          </Button>
+          </section>
+          <button type='submit'>{isSignup ? 'Sign Up' : 'Sign In'}</button>
         </form>
-      </Paper>
-    </Container>
+      </section>
+    </section>
   );
 };
 

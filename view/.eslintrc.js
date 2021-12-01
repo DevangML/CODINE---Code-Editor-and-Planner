@@ -3,7 +3,8 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['airbnb-base', 'preact'],
+  extends: ['airbnb-base', 'preact', 'prettier'],
+  plugins: ['prettier'],
   parserOptions: {
     ecmaVersion: 13,
     sourceType: 'module',
@@ -16,6 +17,7 @@ module.exports = {
     'no-nested-ternary': 0,
     'no-underscore-dangle': 0,
     'no-unused-vars': 0,
+    'prettier/prettier': ['error'],
   },
   root: true,
   settings: {
