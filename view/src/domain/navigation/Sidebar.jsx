@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { IconContext } from 'react-icons/lib';
@@ -109,15 +109,16 @@ const Sidebar = function () {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
   const dispatch = useDispatch();
   const history = useHistory();
+  const location = useLocation();
   console.log(user);
 
-  // useEffect(() => {
-  //   const token = user?.token;
+  useEffect(() => {
+    const token = user?.token;
 
-  //   // JWT ...
+    // JWT ...
 
-  //   setUser(JSON.parse(localStorage.getItem('profile')));
-  // }, []);
+    setUser(JSON.parse(localStorage.getItem('profile')));
+  }, [location]);
 
   const logout = () => {
     dispatch({ type: LOGOUT });
