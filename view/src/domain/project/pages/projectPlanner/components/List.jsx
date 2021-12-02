@@ -6,7 +6,7 @@ import {
   ADD_CARD,
   CHANGE_LIST_TITLE,
   DELETE_LIST,
-} from '../../../../../redux/actions/projectPlannerTypes';
+} from '../../../../../redux/constants/projectPlannerTypes';
 
 import Card from './Card';
 import CardEditor from './CardEditor';

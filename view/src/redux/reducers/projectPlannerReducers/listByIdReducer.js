@@ -5,7 +5,7 @@ import {
   ADD_CARD,
   MOVE_CARD,
   DELETE_CARD,
-} from '../../actions/projectPlannerTypes';
+} from '../../constants/projectPlannerTypes';
 
 const initialState = {};
 

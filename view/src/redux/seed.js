@@ -1,5 +1,5 @@
 import shortid from 'shortid';
-import { ADD_CARD, ADD_LIST } from './actions/projectPlannerTypes';
+import { ADD_CARD, ADD_LIST } from './constants/projectPlannerTypes';
 
 export default function seed(store) {
   const firstListId = shortid.generate();

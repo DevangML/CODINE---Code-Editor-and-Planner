@@ -1,25 +1,18 @@
-function Input({ name, handleChange, label, autoFocus, type, handleShowPassword }) {
+function Input({ name, handleChange, placeholder, autoFocus, type, handleShowPassword }) {
   return (
-    <section>
+    <section className='form__group'>
       <input
+        className='form__field'
         name={name}
         onChane={handleChange}
         required
-        label={label}
         autofocus={autoFocus}
         type={type}
-        // InputProps={
-        //   name === 'password' && {
-        //     endAdornment: (
-        //       <InputAdornment position='end'>
-        //         <IconButton onClick={handleShowPassword}>
-        //           {type === 'password' ? <Visibility /> : <VisibilityOff />}
-        //         </IconButton>
-        //       </InputAdornment>
-        //     ),
-        //   }
-        // }
+        placeholder={placeholder}
       />
+      <label for={name} className='form__label'>
+        {placeholder}
+      </label>
     </section>
   );
 }

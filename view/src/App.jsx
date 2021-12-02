@@ -41,6 +41,8 @@ import './domain/user/styles/pageStyles/home.css';
 import './domain/user/styles/componentStyles/homeComponentStyles/heroStyles.css';
 import './domain/user/styles/componentStyles/homeComponentStyles/mainOneStyles.css';
 import './domain/user/styles/componentStyles/homeComponentStyles/mainTwoStyles.css';
+import './domain/auth/styles/auth.css';
+import './domain/auth/styles/input.css';
 
 // Loader Section
 

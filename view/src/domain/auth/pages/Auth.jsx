@@ -1,17 +1,45 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { GoogleLogin } from 'react-google-login';
+import { useDispatch } from 'react-redux';
+import { AUTH } from '../../../redux/constants/authTypes';
 import Input from '../templates/Input';
+import Icon from '../styles/Icon';
+
+require('path');
+require('dotenv').config({ path: '.env' });
 
 const Auth = () => {
-  const isSignup = true;
+  const [isSignup, setIsSignup] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const history = useHistory();
   const handleSubmit = () => {};
   const handleChange = () => {};
   const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
+  const dispatch = useDispatch();
+  const switchMode = () => {
+    setIsSignup((prevIsSignUp) => !prevIsSignUp);
+    handleShowPassword(false);
+  };
+  const googleSuccess = async (res) => {
+    const result = res?.profileObj;
+    const token = res?.tokenId;
+
+    try {
+      dispatch({ type: AUTH, data: { result, token } });
+      history.push('/');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const googleFailure = (err) => {
+    console.log('fail', err);
+  };
   return (
     <section className='auth'>
       <section className='auth__section-1'>
         <section className='auth__section-1__sub-section-1'>
-          <img src='' className='auth__section-1__sub-section-1__item-1' />
+          <div className='auth__section-1__sub-section-1__item-1'>&nbsp;</div>
         </section>
         <h5 className='auth__section-1__sub-section-1__item-2'>
           {isSignup ? 'Sign Up' : 'Sign In'}
@@ -22,41 +50,71 @@ const Auth = () => {
               <>
                 <Input
                   name='firstName'
-                  label='First Name'
+                  placeholder='First Name'
                   handleChange={handleChange}
                   type='text'
-                  autofocus
-                  half
                   className='auth__section-1__item-1__section-1__item-1'
                 />
                 <Input
                   name='lastName'
-                  label='Last Name'
+                  placeholder='Last Name'
                   handleChange={handleChange}
-                  half
                   type='text'
                   className='auth__section-1__item-1__section-1__item-2'
                 />
               </>
             )}
-            <Input name='email' label='Email Address' handleChange={handleChange} type='email' />
+            <Input
+              name='email'
+              placeholder='Email Address'
+              handleChange={handleChange}
+              type='email'
+              className='auth__section-1__item-1__section-1__item-3'
+            />
             <Input
               name='password'
-              label='Password'
+              placeholder='Password'
               handleChange={handleChange}
               type={showPassword ? 'text' : 'password'}
               handleShowPassword={handleShowPassword}
+              className='auth__section-1__item-1__section-1__item-4'
             />
             {isSignup && (
               <Input
                 name='confirmPassword'
-                label='Repeat Password'
+                placeholder='Repeat Password'
                 handleChange={handleChange}
                 type='password'
+                className='auth__section-1__item-1__section-1__item-4'
               />
             )}
           </section>
-          <button type='submit'>{isSignup ? 'Sign Up' : 'Sign In'}</button>
+          <button type='submit' className='auth__section-1__item-1__sub-item-2'>
+            {isSignup ? 'Sign Up' : 'Sign In'}
+          </button>
+          <br />
+          {/*eslint-disable */}
+          <GoogleLogin
+            clientId={process.env.REACT_APP_GCID}
+            onSuccess={googleSuccess}
+            onFailure={googleFailure}
+            coockiePolicy='single_host_origin'
+            render={(renderProps) => (
+              <button
+                className='auth__section-1__item-1__sub-item-1'
+                onClick={renderProps.onClick}
+                disabled={renderProps.disabled}
+                startIcon={<Icon />}
+              >
+                Google Sign In
+              </button>
+            )}
+          />
+          {/* eslint-enable */}
+          <br />
+          <button className='auth__section-1__item-1__sub-item-3' onClick={switchMode}>
+            {isSignup ? 'Already have an account? Sign In' : "Don't have an account Sign Up"}
+          </button>
         </form>
       </section>
     </section>
