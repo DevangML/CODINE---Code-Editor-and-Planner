@@ -2,7 +2,7 @@ import { useState } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import EditButtons from './EditButtons';
 
-const CardEditor = function (props) {
+const CardEditor = (props) => {
   const [text, setText] = useState(props.text || '');
 
   const handleChangeText = (e) => setText(e.target.value);

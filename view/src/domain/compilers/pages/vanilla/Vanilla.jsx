@@ -4,22 +4,20 @@ import VanillaNormal from './components/VanillaNormal';
 import VanillaFluent from './components/VanillaFluent';
 import Dfooter from '../../../common/parts/Dfooter';
 
-const Vanilla = function () {
-  return (
-    <section className='vanilla'>
-      <header className='vanilla__header'>
-        <h1 className='vanilla__header__item'>Vanilla Web Live Compiler</h1>
-      </header>
-      <Router>
-        <VanillaRouteButton />
-        <Switch>
-          <Route exact path='/nvanilla' to component={VanillaNormal} />
-          <Route exact path='/fvanilla' to component={VanillaFluent} />
-        </Switch>
-      </Router>
-      <Dfooter />
-    </section>
-  );
-};
+const Vanilla = () => (
+  <section className='vanilla'>
+    <header className='vanilla__header'>
+      <h1 className='vanilla__header__item'>Vanilla Web Live Compiler</h1>
+    </header>
+    <Router>
+      <VanillaRouteButton />
+      <Switch>
+        <Route exact path='/nvanilla' to component={VanillaNormal} />
+        <Route exact path='/fvanilla' to component={VanillaFluent} />
+      </Switch>
+    </Router>
+    <Dfooter />
+  </section>
+);
 
 export default Vanilla;

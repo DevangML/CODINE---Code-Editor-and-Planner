@@ -105,7 +105,7 @@ const Logout = styled.button`
   max-width: 20%;
 `;
 
-const Sidebar = function () {
+const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
   const dispatch = useDispatch();

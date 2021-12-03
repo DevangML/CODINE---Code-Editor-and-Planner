@@ -15,7 +15,7 @@ const oceContactRouter = express.Router();
 const oceVanillaRouter = express.Router();
 const oceLiveCompilerRouter = express.Router();
 const oceToDoListRouter = express.Router();
-const oceAuthRouter = express.Router;
+const oceAuthRouter = express.Router();
 
 // Routes here
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { contactPost } from '../../../../api/index';
 
-const ContactMe = function () {
+const ContactMe = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');

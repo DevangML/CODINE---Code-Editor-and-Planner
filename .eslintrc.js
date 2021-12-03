@@ -4,10 +4,10 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ["airbnb-base"],
+  extends: ['airbnb-base'],
   parserOptions: {
     ecmaVersion: 13,
   },
-  rules: {},
+  rules: { 'no-underscore-dangle': 0 },
   root: true,
 };
