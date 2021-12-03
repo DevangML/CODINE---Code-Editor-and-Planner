@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const oceContactSchema = new mongoose.Schema({
   Name: {
@@ -19,7 +19,7 @@ const oceContactSchema = new mongoose.Schema({
   },
 });
 
-const OceContactModel = mongoose.model('contact', oceContactSchema);
+const OceContactModel = mongoose.model("contact", oceContactSchema);
 
 const oceToDoSchema = new mongoose.Schema({
   task: {
@@ -32,7 +32,7 @@ const oceToDoSchema = new mongoose.Schema({
   },
 });
 
-const OceToDoModel = mongoose.model('toDo', oceToDoSchema);
+const OceToDoModel = mongoose.model("toDo", oceToDoSchema);
 
 const oceAuthSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -41,6 +41,6 @@ const oceAuthSchema = new mongoose.Schema({
   id: { type: String },
 });
 
-const OceAuthModel = mongoose.model('User', oceAuthSchema);
+const OceAuthModel = mongoose.model("User", oceAuthSchema);
 
 module.exports = { OceContactModel, OceToDoModel, OceAuthModel };

@@ -1,7 +1,7 @@
-const http = require('http');
-const dotenv = require('dotenv');
-const expressApp = require('./oce.app');
-const mong = require('./databases/oce.dbs');
+const http = require("http");
+const dotenv = require("dotenv");
+const expressApp = require("./oce.app");
+const mong = require("./databases/oce.dbs");
 
 dotenv.config();
 

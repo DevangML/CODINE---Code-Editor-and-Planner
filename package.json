@@ -5,9 +5,6 @@
   "main": "oce.server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint \"**/*.js\"",
-    "lintfix": "eslint  \"**/*.js\" --fix --cache",
-    "prettier": "prettier --write \"**/*.js\"",
     "start": "node oce.server.js",
     "heroku-postbuild": "YARN_CONFIG_PRODUCTION=false yarn --prefix view && yarn run build --prefix view"
   },
@@ -26,16 +23,6 @@
     "pusher": "^5.0.0",
     "redis": "^3.1.2",
     "request": "^2.88.2"
-  },
-  "devDependencies": {
-    "env-cmd": "^10.1.0",
-    "eslint": "^8.3.0",
-    "eslint-config-airbnb": "^19.0.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-markdown": "^2.2.1",
-    "prettier": "^2.5.0",
-    "yarn-upgrade-all": "^0.5.4"
   },
   "engines": {
     "node": "16.13.1"
