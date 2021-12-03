@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node oce.server.js",
-    "heroku-postbuild": "YARN_CONFIG_PRODUCTION=false yarn --prefix view && yarn run build --prefix view"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix view && npm run build --prefix view"
   },
   "author": "",
   "license": "ISC",
