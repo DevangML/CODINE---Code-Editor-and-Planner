@@ -1,3 +1,6 @@
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
 require('path');
 const dotenv = require('dotenv');
 const Pusher = require('pusher');
@@ -5,14 +8,19 @@ const Pusher = require('pusher');
 dotenv.config();
 require('../databases/oce.dbs');
 const request = require('request');
-const { OceContactModel, OceToDoModel } = require('../models/oce.models');
+const { OceContactModel, OceToDoModel, OceAuthModel } = require('../models/oce.models');
 
 const clientSecret = process.env.CLIENT_SECRET;
 const clientId = process.env.CLIENT_ID;
 // Contact Controllers
 
 const oceContactPostController = async (req, res) => {
-  if (!req.body.name || !req.body.email || !req.body.phone || !req.body.message) {
+  if (
+    !req.body.name
+    || !req.body.email
+    || !req.body.phone
+    || !req.body.message
+  ) {
     res.send({ message: 'Content cannot be empty' });
     return;
   }
@@ -68,7 +76,7 @@ const oceLiveCompilerPostController = async (req, res) => {
       method: 'POST',
       json: program,
     },
-    (error, response, body) => res.status(201).send(body)
+    (error, response, body) => res.status(201).send(body),
   );
 };
 
@@ -94,7 +102,10 @@ const oceToDoListPostController = async (req, res) => {
 
 const oceToDoListPutController = async (req, res) => {
   try {
-    const task = await OceToDoModel.findOneAndUpdate({ _id: req.params.id }, req.body);
+    const task = await OceToDoModel.findOneAndUpdate(
+      { _id: req.params.id },
+      req.body,
+    );
     res.send(task);
   } catch (error) {
     res.send(error);
@@ -110,6 +121,54 @@ const oceToDoListDeleteController = async (req, res) => {
   }
 };
 
+// Authentication Controllers
+
+const oceAuthSignInController = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const existingUser = await User.findOne({ email });
+
+    if (!existingUser) return res.status(404).json({ message: 'User doesn\'t exist' });
+
+    const isPassCorrect = await bcrypt.compare(password, existingUser.password);
+
+    if (!isPassCorrect) return res.status(400).json({ message: 'Invalid credentials' });
+
+    // eslint-disable-next-line no-underscore-dangle
+    const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, 'test', { expiresIn: '1h' });
+
+    res.status(200).json({ result: existingUser, token });
+  } catch {
+    res.status(500).json({ message: 'Something went wrong' });
+  }
+};
+
+const oceAuthSignUpController = async (req, res) => {
+  const {
+    email, password, confirmPassword, firstName, lastName,
+  } = req.body;
+
+  try {
+    const existingUser = await User.findOne({ email });
+    if (existingUser) return res.status(400).json({ message: 'User already exists' });
+
+    if (password !== confirmPassword) {
+      return res.status(400).json({ message: 'Passwords do not match' });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 12);
+
+    const result = await User.create({ email, password: hashedPassword, name: `${firstName} ${lastName}` });
+
+    const token = jwt.sign({ email: result.email, id: result._id }, 'test', { expiresIn: '1h' });
+
+    res.status(200).json({ result, token });
+  } catch (error) {
+    res.status(500).json({ message: 'Something went wrong' });
+  }
+};
+
 module.exports = {
   oceContactPostController,
   oceVanillaController,
@@ -118,4 +177,6 @@ module.exports = {
   oceToDoListPostController,
   oceToDoListPutController,
   oceToDoListDeleteController,
+  oceAuthSignInController,
+  oceAuthSignUpController,
 };

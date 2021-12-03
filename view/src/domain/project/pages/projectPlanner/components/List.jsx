@@ -6,7 +6,7 @@ import {
   ADD_CARD,
   CHANGE_LIST_TITLE,
   DELETE_LIST,
-} from '../../../../../redux/actions/projectPlannerTypes';
+} from '../../../../../redux/constants/projectPlannerTypes';
 
 import Card from './Card';
 import CardEditor from './CardEditor';
@@ -86,8 +86,8 @@ const List = function (props) {
           <Droppable droppableId={list._id}>
             {(provided, _snapshot) => (
               <div ref={provided.innerRef} className='Lists-Cards'>
-                {list.cards
-                  && list.cards.map((cardId, index) => (
+                {list.cards &&
+                  list.cards.map((cardId, index) => (
                     <Card key={cardId} cardId={cardId} index={index} listId={list._id} />
                   ))}
 

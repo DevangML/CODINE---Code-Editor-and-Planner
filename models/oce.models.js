@@ -34,4 +34,13 @@ const oceToDoSchema = new mongoose.Schema({
 
 const OceToDoModel = mongoose.model('toDo', oceToDoSchema);
 
-module.exports = { OceContactModel, OceToDoModel };
+const oceAuthSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  password: { type: String, required: true },
+  id: { type: String },
+});
+
+const OceAuthModel = mongoose.model('User', oceAuthSchema);
+
+module.exports = { OceContactModel, OceToDoModel, OceAuthModel };

@@ -31,17 +31,9 @@ const SidebarLink = styled(Link)`
   }
 
   &:hover {
-    background: #870000; /* fallback for old browsers */
-    background: -webkit-linear-gradient(
-      to right,
-      #190a05,
-      #870000
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #190a05,
-      #870000
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #870000;
+    background: -webkit-linear-gradient(to right, #190a05, #870000);
+    background: linear-gradient(to right, #190a05, #870000);
 
     color: white;
     border-left: 0.644vh solid #632ce4;
@@ -87,8 +79,8 @@ const SubMenu = function ({ item }) {
         </div>
         <div>{item.subNav && subnav ? item.iconOpened : item.subNav ? item.iconClosed : null}</div>
       </SidebarLink>
-      {subnav
-        && item.subNav.map((item, index) => (
+      {subnav &&
+        item.subNav.map((item, index) => (
           <DropdownLink to={item.path} key={index}>
             {item.icon}
             <SidebarLabel>{item.title}</SidebarLabel>

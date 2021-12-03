@@ -1,0 +1,58 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+.form__group {
+  position: relative;
+  padding: 2.35vw 0 0;
+  margin-top: 1.12vh;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 0.11vh solid #d2d2d2;
+  outline: 0;
+  font-size: 1.79vh;
+  color: #212121;
+  padding: 1.09vw 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+  color: transparent;
+  font-size: 2vh;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 2.2vh;
+  cursor: text;
+  top: 2.24vh;
+}
+
+label,
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1.35vh;
+  color: #9b9b9b;
+}
+
+.form__field:focus ~ .form__label {
+  color: #009788;
+}
+
+.form__field:focus {
+  padding-bottom: 0.67vh;
+  border-bottom: 0.22vh solid #009788;
+}
+
+.form__label {
+  font-size: 4vh;
+}

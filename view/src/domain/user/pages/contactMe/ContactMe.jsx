@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import axios from 'axios';
+import { contactPost } from '../../../../api/index';
 
 const ContactMe = function () {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
-
-  const url = 'http://localhost:5000/contact/post';
 
   const onNameChange = (e) => {
     setName(e.target.value);
@@ -27,18 +25,7 @@ const ContactMe = function () {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios({
-      method: 'POST',
-      url,
-      data: {
-        Name: name,
-        Email: email,
-        Phone: phone,
-        Message: message,
-      },
-    }).then(() => {
-      alert('Thank You For Contacting Us');
-    });
+    contactPost();
   };
 
   return (

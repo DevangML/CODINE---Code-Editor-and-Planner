@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useHistory, useLocation } from 'react-router';
+import decode from 'jwt-decode';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { IconContext } from 'react-icons/lib';
 import styled from 'styled-components';
 import SidebarData from './SidebarData';
 import SubMenu from './SubMenu';
+import { LOGOUT } from '../../redux/constants/authTypes';
 
 const Nav = styled.div`
   height: 12.9vh;
@@ -55,7 +59,7 @@ const SidebarNav = styled.nav`
   height: 100vh;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   position: fixed;
   top: 0;
   overflow: hidden;
@@ -91,8 +95,43 @@ const SidebarWrap = styled.div`
   width: 100%;
 `;
 
+const Logout = styled.button`
+  background: #6100c2;
+  box-shadow: inset 15px -15px 39px #490092, inset -15px 15px 39px #7900f3;
+  outline: none;
+  border: none;
+  border-radius: 3vh;
+  color: gold;
+  max-width: 20%;
+`;
+
 const Sidebar = function () {
   const [sidebar, setSidebar] = useState(false);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const location = useLocation();
+  console.log(user);
+
+  const logout = () => {
+    dispatch({ type: LOGOUT });
+    history.push('/');
+    setUser(null);
+  };
+
+  useEffect(() => {
+    const token = user?.token;
+
+    if (token) {
+      const decodedToken = decode(token);
+
+      if (decodedToken.exp * 1000 < new Date().getTime()) {
+        logout();
+      }
+    }
+
+    setUser(JSON.parse(localStorage.getItem('profile')));
+  }, [location]);
 
   const showSidebar = () => setSidebar(!sidebar);
 
@@ -115,6 +154,7 @@ const Sidebar = function () {
             <SubMenu item={item} key={index} />
           ))}
         </SidebarWrap>
+        <Logout onClick={logout}>Logout</Logout>
       </SidebarNav>
     </IconContext.Provider>
   );

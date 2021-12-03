@@ -7,12 +7,15 @@ const {
   oceToDoListPostController,
   oceToDoListPutController,
   oceToDoListDeleteController,
+  oceAuthSignInController,
+  oceAuthSignUpController,
 } = require('../controllers/oce.controllers');
 
 const oceContactRouter = express.Router();
 const oceVanillaRouter = express.Router();
 const oceLiveCompilerRouter = express.Router();
 const oceToDoListRouter = express.Router();
+const oceAuthRouter = express.Router;
 
 // Routes here
 
@@ -32,9 +35,15 @@ oceToDoListRouter.get('/', oceToDoListGetController);
 oceToDoListRouter.put('/:id', oceToDoListPutController);
 oceToDoListRouter.delete('/:id', oceToDoListDeleteController);
 
+// Authentication Routes
+
+oceAuthRouter.post('/signin', oceAuthSignInController);
+oceAuthRouter.post('/signup', oceAuthSignUpController);
+
 module.exports = {
   oceContactRouter,
   oceVanillaRouter,
   oceLiveCompilerRouter,
   oceToDoListRouter,
+  oceAuthRouter,
 };

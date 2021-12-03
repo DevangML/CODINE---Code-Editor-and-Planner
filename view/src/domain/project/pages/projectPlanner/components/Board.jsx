@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-import { MOVE_LIST, MOVE_CARD } from '../../../../../redux/actions/projectPlannerTypes';
+import { MOVE_LIST, MOVE_CARD } from '../../../../../redux/constants/projectPlannerTypes';
 import List from './List';
 import AddList from './AddList';
 
