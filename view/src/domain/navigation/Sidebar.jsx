@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
+import decode from 'jwt-decode';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { IconContext } from 'react-icons/lib';
@@ -112,19 +113,25 @@ const Sidebar = function () {
   const location = useLocation();
   console.log(user);
 
-  useEffect(() => {
-    const token = user?.token;
-
-    // JWT ...
-
-    setUser(JSON.parse(localStorage.getItem('profile')));
-  }, [location]);
-
   const logout = () => {
     dispatch({ type: LOGOUT });
     history.push('/');
     setUser(null);
   };
+
+  useEffect(() => {
+    const token = user?.token;
+
+    if (token) {
+      const decodedToken = decode(token);
+
+      if (decodedToken.exp * 1000 < new Date().getTime()) {
+        logout();
+      }
+    }
+
+    setUser(JSON.parse(localStorage.getItem('profile')));
+  }, [location]);
 
   const showSidebar = () => setSidebar(!sidebar);
 
