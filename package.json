@@ -36,5 +36,8 @@
     "eslint-plugin-markdown": "^2.2.1",
     "prettier": "^2.5.0",
     "yarn-upgrade-all": "^0.5.4"
+  },
+  "engines": {
+    "node": ">=16.13.1"
   }
 }
