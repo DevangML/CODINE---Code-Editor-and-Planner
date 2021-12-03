@@ -8,7 +8,8 @@
     "lint": "eslint \"**/*.js\"",
     "lintfix": "eslint  \"**/*.js\" --fix --cache",
     "prettier": "prettier --write \"**/*.js\"",
-    "start": "nodemon -L oce.server.js"
+    "start": "node oce.server.js",
+    "heroku-postbuild": "YARN_CONFIG_PRODUCTION=false yarn --prefix view && yarn run build --prefix view"
   },
   "author": "",
   "license": "ISC",

@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-import {
-  addFirstCard,
-  addFirstList,
-  addSecondCard,
-  addSecondList,
-  addSubCardOne,
-  addSubCardTwo,
-} from './actions/projectPlannerActions';
-
-export default function seed(store) {
-  store.dispatch(addFirstList);
-
-  store.dispatch(addFirstCard);
-
-  store.dispatch(addSecondCard);
-
-  store.dispatch(addSecondList);
-
-  store.dispatch(addSubCardOne);
-
-  store.dispatch(addSubCardTwo);
-=======
 import shortid from 'shortid';
 import { ADD_CARD, ADD_LIST } from './constants/projectPlannerTypes';
 
@@ -74,5 +51,4 @@ export default function seed(store) {
       cardText: 'Card 2',
     },
   });
->>>>>>> origin/development
 }

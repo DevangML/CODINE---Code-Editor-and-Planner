@@ -88,7 +88,7 @@ const App = function () {
   return (
     <>
       {!completed ? (
-        <section className='loading'>
+        <section className="loading">
           {!loading ? (
             <Lottie options={defaultOptions1} height={700} width={700} />
           ) : (
@@ -99,13 +99,13 @@ const App = function () {
         <Router>
           <Sidebar />
           <Switch>
-            <Route exact path='/' to component={Home} />
-            <Route exact path='/vanilla' to component={Vanilla} />
-            <Route exact path='/compiler' to component={LiveCompiler} />
-            <Route exact path='/contact' to component={ContactMe} />
-            <Route exact path='/proj' to component={ProjectPlanner} />
-            <Route exact path='/todo' to component={ToDoList} />
-            <Route exact path='/auth' to component={Auth} />
+            <Route exact path="/" to component={Home} />
+            <Route exact path="/vanilla" to component={Vanilla} />
+            <Route exact path="/compiler" to component={LiveCompiler} />
+            <Route exact path="/contact" to component={ContactMe} />
+            <Route exact path="/proj" to component={ProjectPlanner} />
+            <Route exact path="/todo" to component={ToDoList} />
+            <Route exact path="/auth" to component={Auth} />
           </Switch>
         </Router>
       )}

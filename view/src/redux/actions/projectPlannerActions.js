@@ -1,5 +1,5 @@
 import shortid from 'shortid';
-import { ADD_LIST, ADD_CARD } from './projectPlannerTypes';
+import { ADD_LIST, ADD_CARD } from '../constants/projectPlannerTypes';
 
 export const addFirstList = (firstListId = shortid.generate()) => ({
   type: ADD_LIST,

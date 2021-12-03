@@ -9,24 +9,6 @@
 
 html,
 body {
-<<<<<<< HEAD:view/src/styles/general.css
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0vw;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: subpixel-antialiased;
-  /* cursor: url('./assets/icons/cursor.png'), url('./assets/icons/cursor.cur'),
-    pointer; */
-  z-index: -100;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-=======
   width: 100%;
   min-height: 100vh;
   margin: 0;
@@ -48,7 +30,6 @@ body {
 
 body {
   overflow: hidden;
->>>>>>> origin/development:view/src/domain/common/styles/general.css
 }
 
 .loading {

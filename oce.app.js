@@ -42,13 +42,12 @@ expressApp.use(express.urlencoded({ extended: true }));
 expressApp.use('/contact', oceContactRouter);
 
 // Static view configuration
-
-expressApp.use(express.static(path.resolve(__dirname, './view/build')));
-
-// Catch all requests that don't match any route
-expressApp.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './view/build/index.html'));
-});
+if (process.env.NODE_ENV === 'production') {
+  expressApp.use(express.static('view/build'));
+  expressApp.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'view', 'build', 'index.html'));
+  });
+}
 
 // Vanilla Routes Initializers
 

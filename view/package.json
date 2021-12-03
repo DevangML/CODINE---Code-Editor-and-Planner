@@ -15,6 +15,7 @@
     "axios": "^0.24.0",
     "browserslist": "^4.18.1",
     "codemirror": "^5.64.0",
+    "csp-html-webpack-plugin": "^5.1.0",
     "customize-cra": "^1.0.0",
     "jwt-decode": "^3.1.2",
     "lodash.throttle": "^4.1.1",
@@ -65,33 +66,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "csp-html-webpack-plugin": "^5.1.0",
-    "eslint": "^8.3.0",
-    "eslint-config-airbnb": "^19.0.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-preact": "^1.2.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-airbnb-base": "^0.0.1-security",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^27.3.1",
-    "prettier": "^2.5.0",
-    "replace": "^1.2.1",
-    "serve": "^13.0.2",
-    "stylelint": "^14.1.0",
-    "stylelint-config-standard": "^24.0.0",
-    "webpack-cli": "^4.9.1",
-    "yarn-upgrade-all": "^0.5.4"
-  },
-  "proxy": "http://localhost:5000",
-  "yarn-upgrade-all": {
-    "ignore": [
-      "react-router",
-      "react-router-dom"
     ]
   }
 }
