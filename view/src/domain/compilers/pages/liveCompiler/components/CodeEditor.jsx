@@ -1,5 +1,4 @@
 import AceEditor from 'react-ace';
-/* eslint-disable import/no-extraneous-dependencies */
 import 'ace-builds/src-noconflict/mode-java';
 import 'ace-builds/src-noconflict/mode-python';
 import 'ace-builds/src-noconflict/theme-monokai';

@@ -65,11 +65,7 @@ const oceVanillaController = async (req, res) => {
 // LiveCompiler Controllers
 
 const oceLiveCompilerPostController = async (req, res) => {
-<<<<<<< HEAD
-  if (req.body.language === "python") req.body.language = "python3";
-=======
   if (req.body.language === 'python') req.body.language = 'python3';
->>>>>>> origin/development
   const program = {
     script: req.body.code,
     language: req.body.language,

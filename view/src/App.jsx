@@ -66,7 +66,6 @@ const defaultOptions2 = {
 
 const App = () => {
   // state hooks
-  // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(undefined);
   const [completed, setcompleted] = useState(undefined);
@@ -82,13 +81,14 @@ const App = () => {
           setTimeout(() => {
             setcompleted(true);
           }, 1000);
-        });
+        })
+        .catch((err) => console.log(err));
     }, 2000);
   }, [setData]);
   return (
     <>
       {!completed ? (
-        <section className="loading">
+        <section className='loading'>
           {!loading ? (
             <Lottie options={defaultOptions1} height={700} width={700} />
           ) : (
@@ -99,13 +99,13 @@ const App = () => {
         <Router>
           <Sidebar />
           <Switch>
-            <Route exact path="/" to component={Home} />
-            <Route exact path="/vanilla" to component={Vanilla} />
-            <Route exact path="/compiler" to component={LiveCompiler} />
-            <Route exact path="/contact" to component={ContactMe} />
-            <Route exact path="/proj" to component={ProjectPlanner} />
-            <Route exact path="/todo" to component={ToDoList} />
-            <Route exact path="/auth" to component={Auth} />
+            <Route exact path='/' to component={Home} />
+            <Route exact path='/vanilla' to component={Vanilla} />
+            <Route exact path='/compiler' to component={LiveCompiler} />
+            <Route exact path='/contact' to component={ContactMe} />
+            <Route exact path='/proj' to component={ProjectPlanner} />
+            <Route exact path='/todo' to component={ToDoList} />
+            <Route exact path='/auth' to component={Auth} />
           </Switch>
         </Router>
       )}
