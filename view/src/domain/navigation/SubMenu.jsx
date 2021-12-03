@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+/* eslint-disable no-nested-ternary */
+
 const SidebarLink = styled(Link)`
   display: flex;
   color: #e1e9fc;
@@ -65,7 +67,7 @@ const DropdownLink = styled(Link)`
   }
 `;
 
-const SubMenu = function ({ item }) {
+const SubMenu = ({ item }) => {
   const [subnav, setSubnav] = useState(false);
 
   const showSubnav = () => setSubnav(!subnav);

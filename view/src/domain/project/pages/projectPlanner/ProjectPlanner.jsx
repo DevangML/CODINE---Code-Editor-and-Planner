@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Dfooter from '../../../common/parts/Dfooter';
 import Board from './components/Board';
 
-const ProjectPlanner = function () {
+const ProjectPlanner = () => {
   const [state, setState] = useState(0);
 
   return (

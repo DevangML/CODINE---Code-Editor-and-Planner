@@ -12,7 +12,7 @@ import Card from './Card';
 import CardEditor from './CardEditor';
 import ListEditor from './ListEditor';
 
-const List = function (props) {
+const List = (props) => {
   const [editingTitle, setEditingTitle] = useState(false);
   const [title, setTitle] = useState(props.list.title);
   const [addingCard, setAddingCard] = useState(false);

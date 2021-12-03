@@ -64,7 +64,7 @@ const defaultOptions2 = {
   },
 };
 
-const App = function () {
+const App = () => {
   // state hooks
   // eslint-disable-next-line no-unused-vars
   const [data, setData] = useState([]);

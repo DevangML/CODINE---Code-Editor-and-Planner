@@ -1,18 +1,17 @@
-/* eslint no-underscore-dangle: 0 */
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-require("path");
-const dotenv = require("dotenv");
-const Pusher = require("pusher");
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+require('path');
+const dotenv = require('dotenv');
+const Pusher = require('pusher');
 
 dotenv.config();
-require("../databases/oce.dbs");
-const request = require("request");
+require('../databases/oce.dbs');
+const request = require('request');
 const {
   OceContactModel,
   OceToDoModel,
   OceAuthModel,
-} = require("../models/oce.models");
+} = require('../models/oce.models');
 
 const clientSecret = process.env.CLIENT_SECRET;
 const clientId = process.env.CLIENT_ID;
@@ -66,7 +65,11 @@ const oceVanillaController = async (req, res) => {
 // LiveCompiler Controllers
 
 const oceLiveCompilerPostController = async (req, res) => {
+<<<<<<< HEAD
   if (req.body.language === "python") req.body.language = "python3";
+=======
+  if (req.body.language === 'python') req.body.language = 'python3';
+>>>>>>> origin/development
   const program = {
     script: req.body.code,
     language: req.body.language,
@@ -135,8 +138,7 @@ const oceAuthSignInController = async (req, res) => {
   try {
     const existingUser = await OceAuthModel.findOne({ email });
 
-    if (!existingUser)
-      return res.status(404).json({ message: "User doesn't exist" });
+    if (!existingUser) return res.status(404).json({ message: "User doesn't exist" });
 
     const isPassCorrect = await bcrypt.compare(password, existingUser.password);
 
@@ -146,8 +148,8 @@ const oceAuthSignInController = async (req, res) => {
     // eslint-disable-next-line no-underscore-dangle
     const token = jwt.sign(
       { email: existingUser.email, id: existingUser._id },
-      "test",
-      { expiresIn: "1h" }
+      'test',
+      { expiresIn: '1h' },
     );
 
     res.status(200).json({ result: existingUser, token });
@@ -162,8 +164,7 @@ const oceAuthSignUpController = async (req, res) => {
 
   try {
     const existingUser = await OceAuthModel.findOne({ email });
-    if (existingUser)
-      return res.status(400).json({ message: "User already exists" });
+    if (existingUser) return res.status(400).json({ message: 'User already exists' });
 
     if (password !== confirmPassword) {
       return res.status(400).json({ message: "Passwords do not match" });
@@ -177,8 +178,8 @@ const oceAuthSignUpController = async (req, res) => {
       name: `${firstName} ${lastName}`,
     });
 
-    const token = jwt.sign({ email: result.email, id: result._id }, "test", {
-      expiresIn: "1h",
+    const token = jwt.sign({ email: result.email, id: result._id }, 'test', {
+      expiresIn: '1h',
     });
 
     res.status(200).json({ result, token });

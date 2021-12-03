@@ -4,7 +4,7 @@ import { Draggable } from 'react-beautiful-dnd';
 import { CHANGE_CARD_TEXT, DELETE_CARD } from '../../../../../redux/constants/projectPlannerTypes';
 import CardEditor from './CardEditor';
 
-const Card = function (props) {
+const Card = (props) => {
   const [hover, setHover] = useState(false);
   const [editing, setEditing] = useState(false);
   // eslint-disable-next-line no-unused-vars

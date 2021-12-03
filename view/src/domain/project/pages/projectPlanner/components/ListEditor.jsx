@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
-const ListEditor = function (props) {
+const ListEditor = (props) => {
   const ref = useRef(null);
 
   const onEnter = (e) => {

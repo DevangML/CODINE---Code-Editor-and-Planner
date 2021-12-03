@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-require("path");
-require("dotenv").config({ path: ".env" });
+const mongoose = require('mongoose');
+require('path');
+require('dotenv').config({ path: '.env' });
 
 mongoose.Promise = global.Promise;
 

@@ -7,7 +7,7 @@ import OutputLogs from './components/OutputLogs';
 import Header from './components/Header';
 import { compilerPost } from '../../../../api';
 
-const LiveCompiler = function () {
+const LiveCompiler = () => {
   const [language, setLanguage] = useState('java');
   const [code, setCode] = useState('');
   const [input, setInput] = useState('');
