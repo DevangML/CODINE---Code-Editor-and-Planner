@@ -1,5 +1,4 @@
 // Library Imports
-/* eslint-disable import/no-extraneous-dependencies */
 import AceEditor from 'react-ace';
 
 import 'ace-builds/src-noconflict/mode-java';

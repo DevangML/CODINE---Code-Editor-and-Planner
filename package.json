@@ -5,7 +5,7 @@
   "main": "oce.server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node oce.server.js"
+    "start": "nodemon -L oce.server.js"
   },
   "author": "",
   "license": "ISC",
