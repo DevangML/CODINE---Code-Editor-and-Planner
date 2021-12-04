@@ -1,11 +1,10 @@
-import axios from 'axios';
 import { useState } from 'react';
 import Dfooter from '../../../common/parts/Dfooter';
 import CodeEditor from './components/CodeEditor';
 import InputEditor from './components/InputEditor';
 import OutputLogs from './components/OutputLogs';
 import Header from './components/Header';
-import { compilerPost } from '../../../../api';
+import { API } from '../../../../api/index';
 
 const LiveCompiler = () => {
   const [language, setLanguage] = useState('java');
@@ -16,7 +15,17 @@ const LiveCompiler = () => {
 
   const runCode = () => {
     setStat('Loading...');
-    compilerPost();
+    API.post('/compiler/runCode', { language, code, input }).then((res) => {
+      if (res.data.memory && res.data.cpuTime) {
+        setOutputLogs('');
+        setOutputLogs(
+          `Memory Used: ${res.data.memory} \nCPU Time: ${res.data.cpuTime} \n${res.data.output} `
+        );
+      } else {
+        setOutputLogs(`${res.data.output} `);
+      }
+      setStat('Run');
+    });
   };
   return (
     <section className='liveCompiler'>

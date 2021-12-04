@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { contactPost } from '../../../../api/index';
+import { API } from '../../../../api/index';
 
 const ContactMe = () => {
   const [name, setName] = useState('');
@@ -25,7 +25,14 @@ const ContactMe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    contactPost();
+    API.post('/contact/post', {
+      Name: name,
+      Email: email,
+      Phone: phone,
+      Message: message,
+    }).then(() => {
+      alert('Thank You For Contacting Us');
+    });
   };
 
   return (
@@ -33,7 +40,11 @@ const ContactMe = () => {
       <section className='contact__container'>
         <section className='contact__section__item-1' />
         <section className='contact__section__item-2'>Contact Me</section>
-        <form className='contact__section__sub-section' autoComplete='off' onSubmit={handleSubmit}>
+        <form
+          className='contact__section__sub-section'
+          autoComplete='off'
+          onSubmit={handleSubmit}
+        >
           <section className='contact__section__sub-section__item-1'>
             <svg fill='#999' viewBox='0 0 1024 1024'>
               <path

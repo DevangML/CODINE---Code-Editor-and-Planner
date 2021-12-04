@@ -1,16 +1,16 @@
 // Import Section
-const express = require("express");
-const cors = require("cors");
-const path = require("path");
-require("dotenv").config({ path: ".env" });
-const compression = require("compression");
+const express = require('express');
+const cors = require('cors');
+const path = require('path');
+require('dotenv').config({ path: '.env' });
+const compression = require('compression');
 const {
   oceContactRouter,
   oceVanillaRouter,
   oceLiveCompilerRouter,
   oceToDoListRouter,
   oceAuthRouter,
-} = require("./routes/oce.routes");
+} = require('./routes/oce.routes');
 // const redis = require('redis')
 
 // App Initialization
@@ -22,7 +22,7 @@ expressApp.use(compression());
 
 // CORS Setup
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: 'https://codex7.herokuapp.com',
 };
 expressApp.use(cors(corsOptions));
 
@@ -39,30 +39,29 @@ expressApp.use(express.urlencoded({ extended: true }));
 // })
 
 // Contact Route Initializers
-expressApp.use("/contact", oceContactRouter);
+expressApp.use('/contact', oceContactRouter);
 
 // Static view configuration
 
-  expressApp.use(express.static("view/build"));
-  expressApp.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "view", "build", "index.html"));
-  });
-
+expressApp.use(express.static('view/build'));
+expressApp.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'view', 'build', 'index.html'));
+});
 
 // Vanilla Routes Initializers
 
-expressApp.use("/vanilla", oceVanillaRouter);
+expressApp.use('/vanilla', oceVanillaRouter);
 
 // LiveCompiler Routes Initializers
 
-expressApp.use("/compiler", oceLiveCompilerRouter);
+expressApp.use('/compiler', oceLiveCompilerRouter);
 
 // To-Do List Routes Initializers
 
-expressApp.use("/todo", oceToDoListRouter);
+expressApp.use('/todo', oceToDoListRouter);
 
 // Authentication Routes Initializers
 
-expressApp.use("/user", oceAuthRouter);
+expressApp.use('/user', oceAuthRouter);
 
 module.exports = expressApp;
