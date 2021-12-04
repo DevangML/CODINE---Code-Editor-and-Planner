@@ -25,15 +25,12 @@ const ContactMe = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    API.post(
-      '/contact/post',
-      (contactData = {
-        Name: name,
-        Email: email,
-        Phone: phone,
-        Message: message,
-      })
-    ).then(() => {
+    API.post('/contact/post', {
+      Name: name,
+      Email: email,
+      Phone: phone,
+      Message: message,
+    }).then(() => {
       alert('Thank You For Contacting Us');
     });
   };

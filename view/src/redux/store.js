@@ -1,12 +1,13 @@
-import { createStore } from "redux";
-import throttle from "lodash.throttle";
-import seed from "./seed";
-import rootReducer from "./reducers/rootReducer";
+import { createStore, applyMiddleware } from 'redux';
+import throttle from 'lodash.throttle';
+import thunk from 'redux-thunk';
+import seed from './seed';
+import rootReducer from './reducers/rootReducer';
 
 const saveState = (state) => {
   try {
     const serializedState = JSON.stringify(state);
-    localStorage.setItem("state", serializedState);
+    localStorage.setItem('state', serializedState);
   } catch {
     // ignore write errors
   }
@@ -14,7 +15,7 @@ const saveState = (state) => {
 
 const loadState = () => {
   try {
-    const serializedState = localStorage.getItem("state");
+    const serializedState = localStorage.getItem('state');
     if (serializedState === null) {
       return undefined;
     }
@@ -25,7 +26,7 @@ const loadState = () => {
 };
 
 const persistedState = loadState();
-const store = createStore(rootReducer, persistedState);
+const store = createStore(rootReducer, persistedState, applyMiddleware(thunk));
 
 store.subscribe(
   throttle(() => {
