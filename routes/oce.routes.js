@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require('express');
 const {
   oceContactPostController,
   oceVanillaController,
@@ -9,7 +9,7 @@ const {
   oceToDoListDeleteController,
   oceAuthSignInController,
   oceAuthSignUpController,
-} = require("../controllers/oce.controllers");
+} = require('../controllers/oce.controllers');
 
 const oceContactRouter = express.Router();
 const oceVanillaRouter = express.Router();
@@ -20,25 +20,25 @@ const oceAuthRouter = express.Router();
 // Routes here
 
 // Contact Routes
-oceContactRouter.post("/post", oceContactPostController);
+oceContactRouter.post('/post', oceContactPostController);
 
 // Vanilla Routes
-oceVanillaRouter.post("/", oceVanillaController);
+oceVanillaRouter.post('/', oceVanillaController);
 
 // LiveCompiler Routes
-oceLiveCompilerRouter.post("/runCode", oceLiveCompilerPostController);
+oceLiveCompilerRouter.post('/runCode', oceLiveCompilerPostController);
 
 // To-Do List Routes
 
-oceToDoListRouter.post("/", oceToDoListPostController);
-oceToDoListRouter.get("/", oceToDoListGetController);
-oceToDoListRouter.put("/:id", oceToDoListPutController);
-oceToDoListRouter.delete("/:id", oceToDoListDeleteController);
+oceToDoListRouter.post('/', oceToDoListPostController);
+oceToDoListRouter.get('/', oceToDoListGetController);
+oceToDoListRouter.put('/:id', oceToDoListPutController);
+oceToDoListRouter.delete('/:id', oceToDoListDeleteController);
 
 // Authentication Routes
 
-oceAuthRouter.post("/signin", oceAuthSignInController);
-oceAuthRouter.post("/signup", oceAuthSignUpController);
+oceAuthRouter.post('/signin', oceAuthSignInController);
+oceAuthRouter.post('/signup', oceAuthSignUpController);
 
 module.exports = {
   oceContactRouter,

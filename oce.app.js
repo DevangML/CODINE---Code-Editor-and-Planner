@@ -22,7 +22,7 @@ expressApp.use(compression());
 
 // CORS Setup
 const corsOptions = {
-  origin: 'https://codex7.herokuapp.com',
+  origin: 'http://localhost:3000',
 };
 expressApp.use(cors(corsOptions));
 

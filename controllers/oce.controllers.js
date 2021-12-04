@@ -7,11 +7,7 @@ const Pusher = require('pusher');
 dotenv.config();
 require('../databases/oce.dbs');
 const request = require('request');
-const {
-  OceContactModel,
-  OceToDoModel,
-  OceAuthModel,
-} = require('../models/oce.models');
+const { OceContactModel, OceToDoModel, OceAuthModel } = require('../models/oce.models');
 
 const clientSecret = process.env.CLIENT_SECRET;
 const clientId = process.env.CLIENT_ID;
@@ -19,14 +15,10 @@ const clientId = process.env.CLIENT_ID;
 // Contact Controllers
 
 const oceContactPostController = async (req, res) => {
-  if (
-    !req.body.name ||
-    !req.body.email ||
-    !req.body.phone ||
-    !req.body.message
-  ) {
-    res.send({ message: "Content cannot be empty" });
-    return;
+  if (!req.body.name || !req.body.email || !req.body.phone || !req.body.message) {
+    res.status(400).json({
+      error: 'Insufficient inputs',
+    });
   }
 
   const oceInstance = new OceContactModel({
@@ -40,7 +32,7 @@ const oceContactPostController = async (req, res) => {
     const confirmation = await oceInstance.save();
     res.send(confirmation);
   } catch (err) {
-    await res.send({ message: err });
+    await res.status(500);
   }
 };
 
@@ -55,11 +47,11 @@ const oceVanillaController = async (req, res) => {
     useTLS: true,
   });
 
-  pusher.trigger("editor", "code-update", {
+  pusher.trigger('editor', 'code-update', {
     ...req.body,
   });
 
-  res.status(200).send("OK");
+  res.status(200).send('OK');
 };
 
 // LiveCompiler Controllers
@@ -70,14 +62,14 @@ const oceLiveCompilerPostController = async (req, res) => {
     script: req.body.code,
     language: req.body.language,
     stdin: req.body.input,
-    versionIndex: "0",
+    versionIndex: '0',
     clientId,
     clientSecret,
   };
   request(
     {
-      url: "https://api.jdoodle.com/v1/execute",
-      method: "POST",
+      url: 'https://api.jdoodle.com/v1/execute',
+      method: 'POST',
       json: program,
     },
     (error, response, body) => res.status(201).send(body)
@@ -106,10 +98,7 @@ const oceToDoListPostController = async (req, res) => {
 
 const oceToDoListPutController = async (req, res) => {
   try {
-    const task = await OceToDoModel.findOneAndUpdate(
-      { _id: req.params.id },
-      req.body
-    );
+    const task = await OceToDoModel.findOneAndUpdate({ _id: req.params.id }, req.body);
     res.send(task);
   } catch (error) {
     res.send(error);
@@ -138,21 +127,17 @@ const oceAuthSignInController = async (req, res) => {
 
     const isPassCorrect = await bcrypt.compare(password, existingUser.password);
 
-    if (!isPassCorrect)
-      return res.status(400).json({ message: "Invalid credentials" });
+    if (!isPassCorrect) return res.status(400).json({ message: 'Invalid credentials' });
 
     // eslint-disable-next-line no-underscore-dangle
-    const token = jwt.sign(
-      { email: existingUser.email, id: existingUser._id },
-      'test',
-      { expiresIn: '1h' },
-    );
+    const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, 'test', {
+      expiresIn: '1h',
+    });
 
     res.status(200).json({ result: existingUser, token });
   } catch {
-    res.status(500).json({ message: "Something went wrong" });
+    res.status(500).json({ message: 'Something went wrong' });
   }
-  return null;
 };
 
 const oceAuthSignUpController = async (req, res) => {
@@ -163,7 +148,7 @@ const oceAuthSignUpController = async (req, res) => {
     if (existingUser) return res.status(400).json({ message: 'User already exists' });
 
     if (password !== confirmPassword) {
-      return res.status(400).json({ message: "Passwords do not match" });
+      return res.status(400).json({ message: 'Passwords do not match' });
     }
 
     const hashedPassword = await bcrypt.hash(password, 12);
@@ -180,9 +165,8 @@ const oceAuthSignUpController = async (req, res) => {
 
     res.status(200).json({ result, token });
   } catch (error) {
-    res.status(500).json({ message: "Something went wrong" });
+    console.log(error);
   }
-  return null;
 };
 
 module.exports = {

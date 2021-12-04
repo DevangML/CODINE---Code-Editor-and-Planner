@@ -23,16 +23,25 @@ const ContactMe = () => {
     setMessage(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const data = { name, email, phone, message };
+
+  const resetForm = () => {
+    setName('');
+    setEmail('');
+    setPhone('');
+    setMessage('');
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    API.post('/contact/post', {
-      Name: name,
-      Email: email,
-      Phone: phone,
-      Message: message,
-    }).then(() => {
-      alert('Thank You For Contacting Us');
-    });
+    API.post('/contact/post', data)
+      .then((res) => {
+        console.log(res);
+        resetForm();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -40,11 +49,7 @@ const ContactMe = () => {
       <section className='contact__container'>
         <section className='contact__section__item-1' />
         <section className='contact__section__item-2'>Contact Me</section>
-        <form
-          className='contact__section__sub-section'
-          autoComplete='off'
-          onSubmit={handleSubmit}
-        >
+        <form className='contact__section__sub-section' autoComplete='off' onSubmit={handleSubmit}>
           <section className='contact__section__sub-section__item-1'>
             <svg fill='#999' viewBox='0 0 1024 1024'>
               <path

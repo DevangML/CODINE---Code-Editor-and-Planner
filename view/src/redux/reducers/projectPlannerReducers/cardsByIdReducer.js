@@ -3,7 +3,7 @@ import {
   ADD_CARD,
   DELETE_CARD,
   CHANGE_CARD_TEXT,
-} from "../../constants/projectPlannerTypes";
+} from '../../constants/projectPlannerTypes';
 
 const initialState = {};
 
