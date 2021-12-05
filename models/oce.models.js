@@ -40,12 +40,14 @@ const oceToDoSchema = new mongoose.Schema({
 const OceToDoModel = mongoose.model('toDo', oceToDoSchema);
 
 const oceAuthSchema = new mongoose.Schema({
-  name: { type: String, required: true, trim: true, default: null },
-  email: { type: String, required: true, trim: true, unique: true },
-  password: { type: String, required: true, trim: true },
-  id: { type: String, trim: true },
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  confirmPassword: { type: String, required: true },
+  id: { type: String },
 });
 
-const OceAuthModel = mongoose.model('User', oceAuthSchema);
+const OceAuthModel = mongoose.model('user', oceAuthSchema);
 
 module.exports = { OceContactModel, OceToDoModel, OceAuthModel };

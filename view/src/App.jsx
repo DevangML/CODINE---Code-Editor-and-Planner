@@ -1,5 +1,6 @@
 // import './app.css';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Lottie from 'react-lottie';
 import * as location from './1055-world-locations.json';
@@ -15,6 +16,7 @@ import ProjectPlanner from './domain/project/pages/projectPlanner/ProjectPlanner
 import LiveCompiler from './domain/compilers/pages/liveCompiler/LiveCompiler';
 import ToDoList from './domain/project/pages/toDoList/ToDoList';
 import Auth from './domain/auth/pages/Auth';
+import { loadUser } from './store/actions/authActions';
 
 // Dev Styles
 
@@ -69,6 +71,7 @@ const App = () => {
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(undefined);
   const [completed, setcompleted] = useState(undefined);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setTimeout(() => {
@@ -85,6 +88,11 @@ const App = () => {
         .catch((err) => console.log(err));
     }, 2000);
   }, [setData]);
+
+  useEffect(() => {
+    dispatch(loadUser());
+  }, [dispatch]);
+
   return (
     <>
       {!completed ? (

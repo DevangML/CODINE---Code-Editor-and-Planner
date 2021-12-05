@@ -3,9 +3,9 @@ import { useHistory } from 'react-router-dom';
 import { GoogleLogin } from 'react-google-login';
 import { useDispatch } from 'react-redux';
 import { AUTH } from '../../../redux/constants/authTypes';
-import { signup, signin } from '../../../redux/actions/authActions';
 import Input from '../templates/Input';
 import Icon from '../styles/Icon';
+import { signin, signup } from '../../../redux/actions/authActions';
 
 require('path');
 require('dotenv').config({ path: '.env' });
@@ -18,6 +18,18 @@ const Auth = () => {
   const [formData, setFormData] = useState(initialState);
   const dispatch = useDispatch();
   const history = useHistory();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+  const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
+
+  const switchMode = () => {
+    setFormData(initialState);
+    setIsSignup((prevIsSignUp) => !prevIsSignUp);
+    setShowPassword(false);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isSignup) {
@@ -26,15 +38,7 @@ const Auth = () => {
       dispatch(signin(formData, history));
     }
   };
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-  const handleShowPassword = () => setShowPassword((prevShowPassword) => !prevShowPassword);
 
-  const switchMode = () => {
-    setIsSignup((prevIsSignUp) => !prevIsSignUp);
-    setShowPassword(false);
-  };
   const googleSuccess = async (res) => {
     const result = res?.profileObj;
     const token = res?.tokenId;
@@ -46,6 +50,7 @@ const Auth = () => {
       console.log(err);
     }
   };
+
   const googleFailure = (err) => {
     console.log('fail', err);
   };

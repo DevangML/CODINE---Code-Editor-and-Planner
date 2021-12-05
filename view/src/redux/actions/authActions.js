@@ -1,9 +1,11 @@
+/* eslint-disable no-constant-condition */
+
 import { AUTH } from '../constants/authTypes';
-import * as api from '../../api/index';
+import { API } from '../../api/index';
 
 export const signin = (formData, history) => async (dispatch) => {
   try {
-    const { data } = await api.signin(formData);
+    const { data } = await API.post('/user/signin', formData);
 
     dispatch({ type: AUTH, data });
 
@@ -15,8 +17,7 @@ export const signin = (formData, history) => async (dispatch) => {
 
 export const signup = (formData, history) => async (dispatch) => {
   try {
-    const { data } = await api.signup(formData);
-
+    const { data } = await API.post('/user/signup', formData);
     dispatch({ type: AUTH, data });
 
     history.push('/');

@@ -118,10 +118,14 @@ const oceToDoListDeleteController = async (req, res) => {
 // Authentication Controllers
 
 const oceAuthSignInController = async (req, res) => {
-  const { email, password } = req.body;
+  const oceSignInInstance = new OceAuthModel({
+    email: req.body.email,
+    password: req.body.password,
+    id,
+  });
 
   try {
-    const existingUser = await OceAuthModel.findOne({ email });
+    const existingUser = await oceSignInInstance.findOne({ email });
 
     if (!existingUser) return res.status(404).json({ message: "User doesn't exist" });
 
@@ -130,6 +134,7 @@ const oceAuthSignInController = async (req, res) => {
     if (!isPassCorrect) return res.status(400).json({ message: 'Invalid credentials' });
 
     // eslint-disable-next-line no-underscore-dangle
+
     const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, 'test', {
       expiresIn: '1h',
     });
@@ -141,10 +146,18 @@ const oceAuthSignInController = async (req, res) => {
 };
 
 const oceAuthSignUpController = async (req, res) => {
-  const { email, password, confirmPassword, firstName, lastName } = req.body;
+  const oceSignUpInstance = new OceAuthModel({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: req.body.password,
+    confirmPassword: req.body.confirmPassword,
+    id,
+  });
 
   try {
-    const existingUser = await OceAuthModel.findOne({ email });
+    const existingUser = await oceSignUpInstance.findOne({ email });
+
     if (existingUser) return res.status(400).json({ message: 'User already exists' });
 
     if (password !== confirmPassword) {
@@ -153,7 +166,7 @@ const oceAuthSignUpController = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 12);
 
-    const result = await OceAuthModel.create({
+    const result = await oceSignUpInstance.create({
       email,
       password: hashedPassword,
       name: `${firstName} ${lastName}`,
@@ -163,8 +176,10 @@ const oceAuthSignUpController = async (req, res) => {
       expiresIn: '1h',
     });
 
-    res.status(200).json({ result, token });
+    res.status(201).json({ result, token });
   } catch (error) {
+    res.status(500).json({ message: 'Something went wrong', error });
+
     console.log(error);
   }
 };
