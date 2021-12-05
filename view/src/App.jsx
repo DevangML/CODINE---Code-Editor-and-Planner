@@ -1,8 +1,8 @@
 // import './app.css';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Lottie from 'react-lottie';
+import setAuthToken from './redux/utils/setAuthToken';
 import * as location from './1055-world-locations.json';
 import * as success from './1127-success.json';
 
@@ -15,8 +15,10 @@ import ContactMe from './domain/user/pages/contactMe/ContactMe';
 import ProjectPlanner from './domain/project/pages/projectPlanner/ProjectPlanner';
 import LiveCompiler from './domain/compilers/pages/liveCompiler/LiveCompiler';
 import ToDoList from './domain/project/pages/toDoList/ToDoList';
-import Auth from './domain/auth/pages/Auth';
-import { loadUser } from './store/actions/authActions';
+import Login from './domain/auth/pages/Login';
+import Register from './domain/auth/pages/Register';
+import store from './redux/store';
+import { loadUser } from './redux/actions/authActions';
 
 // Dev Styles
 
@@ -66,12 +68,17 @@ const defaultOptions2 = {
   },
 };
 
+// Auth Section
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
+
 const App = () => {
   // state hooks
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(undefined);
   const [completed, setcompleted] = useState(undefined);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     setTimeout(() => {
@@ -90,8 +97,8 @@ const App = () => {
   }, [setData]);
 
   useEffect(() => {
-    dispatch(loadUser());
-  }, [dispatch]);
+    store.dispatch(loadUser());
+  }, []);
 
   return (
     <>
@@ -113,7 +120,8 @@ const App = () => {
             <Route exact path='/contact' to component={ContactMe} />
             <Route exact path='/proj' to component={ProjectPlanner} />
             <Route exact path='/todo' to component={ToDoList} />
-            <Route exact path='/auth' to component={Auth} />
+            <Route exact path='/register' component={Register} />
+            <Route exact path='/login' component={Login} />
           </Switch>
         </Router>
       )}

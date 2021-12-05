@@ -1,4 +1,6 @@
 const express = require('express');
+const auth = require('../middlewares/auth');
+const { check } = require('express-validator');
 const {
   oceContactPostController,
   oceVanillaController,
@@ -7,8 +9,9 @@ const {
   oceToDoListPostController,
   oceToDoListPutController,
   oceToDoListDeleteController,
-  oceAuthSignInController,
-  oceAuthSignUpController,
+  oceAuthRegisterController,
+  oceAuthLoadingController,
+  oceAuthLoginController,
 } = require('../controllers/oce.controllers');
 
 const oceContactRouter = express.Router();
@@ -37,8 +40,35 @@ oceToDoListRouter.delete('/:id', oceToDoListDeleteController);
 
 // Authentication Routes
 
-oceAuthRouter.post('/signin', oceAuthSignInController);
-oceAuthRouter.post('/signup', oceAuthSignUpController);
+// @route   POST /users
+// @desc    Register user
+// @access  Public
+oceAuthRouter.post(
+  '/',
+  [
+    check('name', 'Name is required').not().isEmpty(),
+    check('email', 'Please include a valid email').isEmail(),
+    check('password', 'Please enter password with 6 or more characters').isLength({ min: 6 }),
+  ],
+  oceAuthRegisterController
+);
+
+// @route   GET /users/auth
+// @desc    Get user by token/ Loading user
+// @access  Private
+oceAuthRouter.get('/auth', auth, oceAuthLoadingController);
+
+// @route   POST /users/auth
+// @desc    Authentication user & get token/ Login user
+// @access  Public
+oceAuthRouter.post(
+  '/auth',
+  [
+    check('email', 'Please include a valid email').isEmail(),
+    check('password', 'Password is required').exists(),
+  ],
+  oceAuthLoginController
+);
 
 module.exports = {
   oceContactRouter,

@@ -9,7 +9,11 @@ const mong = async () => {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   };
-  await mongoose.connect(process.env.DBURI, connectionParams);
+  try {
+    await mongoose.connect(process.env.DBURI, connectionParams);
+  } catch (err) {
+    process.exit(1);
+  }
 };
 
 module.exports = mong;

@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken');
 require('path');
 const dotenv = require('dotenv');
 const Pusher = require('pusher');
+const { validationResult } = require('express-validator');
+var jwtSecret = 'mysecrettoken';
 
 dotenv.config();
 require('../databases/oce.dbs');
@@ -117,70 +119,99 @@ const oceToDoListDeleteController = async (req, res) => {
 
 // Authentication Controllers
 
-const oceAuthSignInController = async (req, res) => {
-  const oceSignInInstance = new OceAuthModel({
-    email: req.body.email,
-    password: req.body.password,
-    id,
-  });
+const oceAuthRegisterController = async (req, res) => {
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
 
+    const { name, email, password } = req.body;
+
+    try {
+      // See if user exists
+      let user = await User.findOne({ email });
+
+      if (user) {
+        res.status(400).json({ errors: [{ msg: 'User already exists' }] });
+      }
+      user = new User({
+        name,
+        email,
+        password,
+      });
+
+      //Encrypt Password
+      const salt = await bcrypt.genSalt(10);
+
+      user.password = await bcrypt.hash(password, salt);
+
+      await user.save();
+
+      //Return jsonwebtoken
+      const payload = {
+        user: {
+          id: user.id,
+        },
+      };
+
+      jwt.sign(payload, jwtSecret, { expiresIn: 360000 }, (err, token) => {
+        if (err) throw err;
+        res.json({ token });
+      });
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send('Server error');
+    }
+  };
+};
+
+const oceAuthLoadingController = async (req, res) => {
   try {
-    const existingUser = await oceSignInInstance.findOne({ email });
-
-    if (!existingUser) return res.status(404).json({ message: "User doesn't exist" });
-
-    const isPassCorrect = await bcrypt.compare(password, existingUser.password);
-
-    if (!isPassCorrect) return res.status(400).json({ message: 'Invalid credentials' });
-
-    // eslint-disable-next-line no-underscore-dangle
-
-    const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, 'test', {
-      expiresIn: '1h',
-    });
-
-    res.status(200).json({ result: existingUser, token });
-  } catch {
-    res.status(500).json({ message: 'Something went wrong' });
+    const user = await User.findById(req.user.id).select('-password');
+    res.json(user);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server Error');
   }
 };
 
-const oceAuthSignUpController = async (req, res) => {
-  const oceSignUpInstance = new OceAuthModel({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
-    email: req.body.email,
-    password: req.body.password,
-    confirmPassword: req.body.confirmPassword,
-    id,
-  });
+const oceAuthLoginController = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const { email, password } = req.body;
 
   try {
-    const existingUser = await oceSignUpInstance.findOne({ email });
+    // See if user exists
+    let user = await User.findOne({ email });
 
-    if (existingUser) return res.status(400).json({ message: 'User already exists' });
-
-    if (password !== confirmPassword) {
-      return res.status(400).json({ message: 'Passwords do not match' });
+    if (!user) {
+      return res.status(400).json({ errors: [{ msg: 'Invalid Credentials' }] });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 12);
+    const isMatch = await bcrypt.compare(password, user.password);
 
-    const result = await oceSignUpInstance.create({
-      email,
-      password: hashedPassword,
-      name: `${firstName} ${lastName}`,
+    if (!isMatch) {
+      return res.status(400).json({ errors: [{ msg: 'Invalid Credentials' }] });
+    }
+
+    //Return jsonwebtoken
+    const payload = {
+      user: {
+        id: user.id,
+      },
+    };
+
+    jwt.sign(payload, jwtSecret, { expiresIn: '5 days' }, (err, token) => {
+      if (err) throw err;
+      res.json({ token });
     });
-
-    const token = jwt.sign({ email: result.email, id: result._id }, 'test', {
-      expiresIn: '1h',
-    });
-
-    res.status(201).json({ result, token });
-  } catch (error) {
-    res.status(500).json({ message: 'Something went wrong', error });
-
-    console.log(error);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
   }
 };
 
@@ -192,6 +223,7 @@ module.exports = {
   oceToDoListPostController,
   oceToDoListPutController,
   oceToDoListDeleteController,
-  oceAuthSignInController,
-  oceAuthSignUpController,
+  oceAuthRegisterController,
+  oceAuthLoadingController,
+  oceAuthLoginController,
 };

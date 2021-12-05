@@ -15,6 +15,11 @@ module.exports = {
     'no-unused-vars': 0,
     'prettier/prettier': ['error'],
     'import/no-extraneous-dependencies': 0,
+    'import/no-unresolved': 0,
+    'import/extensions': 0,
+    'import/named': 0,
+    'consistent-return': 0,
+    'no-case-declarations': 0,
   },
   root: true,
   settings: {

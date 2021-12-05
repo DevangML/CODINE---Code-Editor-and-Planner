@@ -1,27 +1,104 @@
-/* eslint-disable no-constant-condition */
+import axios from 'axios';
+import setAlert from './alertActions';
+import {
+  REGISTER_SUCCESS,
+  REGISTER_FAIL,
+  USER_LOADED,
+  AUTH_ERROR,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  LOGOUT,
+} from '../constants/authTypes';
+import setAuthToken from '../utils/setAuthToken';
 
-import { AUTH } from '../constants/authTypes';
-import { API } from '../../api/index';
+// Load User
+export const loadUser = () => async (dispatch) => {
+  if (localStorage.token) {
+    setAuthToken(localStorage.token);
+  }
 
-export const signin = (formData, history) => async (dispatch) => {
   try {
-    const { data } = await API.post('/user/signin', formData);
+    const res = await axios.get('http://localhost:5000/user/auth');
 
-    dispatch({ type: AUTH, data });
-
-    history.push('/');
+    dispatch({
+      type: USER_LOADED,
+      payload: res.data,
+    });
   } catch (err) {
-    console.log(err);
+    dispatch({
+      type: AUTH_ERROR,
+    });
   }
 };
 
-export const signup = (formData, history) => async (dispatch) => {
-  try {
-    const { data } = await API.post('/user/signup', formData);
-    dispatch({ type: AUTH, data });
+// Register User
+export const register =
+  ({ name, email, password }) =>
+  async (dispatch) => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
 
-    history.push('/');
+    const body = JSON.stringify({ name, email, password });
+
+    try {
+      const res = await axios.post('http://localhost:5000/user/', body, config);
+
+      dispatch({
+        type: REGISTER_SUCCESS,
+        payload: res.data,
+      });
+
+      dispatch(loadUser());
+    } catch (err) {
+      const { errors } = err.response.data;
+
+      if (errors) {
+        errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+      }
+
+      dispatch({
+        type: REGISTER_FAIL,
+      });
+    }
+  };
+
+// Login User
+export const login = (email, password) => async (dispatch) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  const body = JSON.stringify({ email, password });
+
+  try {
+    const res = await axios.post('http://localhost:5000/user/auth', body, config);
+
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: res.data,
+    });
+
+    dispatch(loadUser());
   } catch (err) {
-    console.log(err);
+    const { errors } = err.response.data;
+
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+    }
+
+    dispatch({
+      type: LOGIN_FAIL,
+    });
   }
+};
+
+// Logout / Clear Profile
+
+export const logout = () => (dispatch) => {
+  dispatch({ type: LOGOUT });
 };

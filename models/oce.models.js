@@ -45,7 +45,11 @@ const oceAuthSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   confirmPassword: { type: String, required: true },
-  id: { type: String },
+  avatar: { type: String },
+  date: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
 const OceAuthModel = mongoose.model('user', oceAuthSchema);
