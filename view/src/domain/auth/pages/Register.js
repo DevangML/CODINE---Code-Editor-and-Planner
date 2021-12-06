@@ -1,38 +1,14 @@
-import { useState } from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { register } from '../../../redux/actions/authActions';
 import Alert from '../../layouts/Alert';
 import setAlert from '../../../redux/actions/alertActions';
+import useRegister from '../hooks/useRegister';
 
-const Register = ({ setAlert, register, isAuthenticated }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: '',
-    password2: '',
-  });
-
-  const { name, email, password, password2 } = formData;
-
-  const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
-
-  const onSubmit = async (e) => {
-    console.log('Form data', e);
-    e.preventDefault();
-    if (password !== password2) {
-      setAlert('Password do not match', 'danger');
-    } else {
-      register({ name, email, password });
-    }
-  };
-
-  // Redirect if logged in
-  // if (localStorage.token) {
-  //   return <Redirect to='/' />;
-  // }
-
+const Register = () => {
+  const { formData, onChange, onSubmit } = useRegister();
+  const { names, email, password, password2 } = formData;
   return (
     <div className='register-form'>
       <h1 className='heading'>Sign Up</h1>
@@ -47,7 +23,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             type='text'
             placeholder='Name'
             name='name'
-            value={name}
+            value={names}
             onChange={(e) => onChange(e)}
           />
         </div>

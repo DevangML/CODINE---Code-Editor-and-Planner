@@ -1,31 +1,13 @@
-import { Fragment, useState } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { login } from '../../../redux/actions/authActions';
+import useLogin from '../hooks/useLogin';
 import Alert from '../../layouts/Alert';
+import { login } from '../../../redux/actions/authActions';
 
-const Login = ({ login, isAuthenticated }) => {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  });
-
+const Login = () => {
+  const { onChange, onSubmit, formData } = useLogin();
   const { email, password } = formData;
-
-  const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
-
-  const onSubmit = async (e) => {
-    e.preventDefault();
-
-    login(email, password);
-  };
-
-  // Redirect if logged in
-  // if (isAuthenticated) {
-  //   return <Redirect to='/home' />;
-  // }
-
   return (
     <div className='login-form'>
       <h1 className='heading'>Sign In</h1>

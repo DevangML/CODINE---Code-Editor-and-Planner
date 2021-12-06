@@ -1,36 +1,13 @@
-import { useState } from 'react';
 import Dfooter from '../../../common/parts/Dfooter';
 import CodeEditor from './components/CodeEditor';
 import InputEditor from './components/InputEditor';
 import OutputLogs from './components/OutputLogs';
 import Header from './components/Header';
-import { API } from '../../../../api/index';
+import useLiveCompiler from '../../hooks/useLiveCompiler';
 
 const LiveCompiler = () => {
-  const [language, setLanguage] = useState('java');
-  const [code, setCode] = useState('');
-  const [input, setInput] = useState('');
-  const [outputLogs, setOutputLogs] = useState('');
-  const [stat, setStat] = useState('Run');
-
-  const runCode = () => {
-    setStat('Loading...');
-    API.post('/compiler/runCode', { language, code, input })
-      .then((res) => {
-        if (res.data.memory && res.data.cpuTime) {
-          setOutputLogs('');
-          setOutputLogs(
-            `Memory Used: ${res.data.memory} \nCPU Time: ${res.data.cpuTime} \n${res.data.output} `
-          );
-        } else {
-          setOutputLogs(`${res.data.output} `);
-        }
-        setStat('Run');
-      })
-      .catch((err) => {
-        console.log('Live Compiler Frontend error: ', err);
-      });
-  };
+  const { setLanguage, setCode, setInput, input, code, language, outputLogs, stat, runCode } =
+    useLiveCompiler();
   return (
     <section className='liveCompiler'>
       {' '}

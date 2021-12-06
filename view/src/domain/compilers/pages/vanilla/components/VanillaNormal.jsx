@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
+import { useEffect } from 'react';
+import useVanilla from '../../../hooks/useVanilla';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 import 'codemirror/mode/htmlmixed/htmlmixed';
@@ -7,44 +8,7 @@ import 'codemirror/mode/css/css';
 import 'codemirror/mode/javascript/javascript';
 
 const VanillaNormal = () => {
-  const [html, setHtml] = useState('');
-  const [css, setCss] = useState('');
-  const [js, setJs] = useState('');
-
-  const iRef = useRef();
-
-  useEffect(() => {
-    const runCode = () => {
-      if (!iRef.current) return;
-
-      const document = iRef.current.contentDocument;
-      const documentContents = `
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-        <style>
-          ${css}
-        </style>
-      </head>
-      <body>
-        ${html}
-      </body>
-      <script type="text/javascript">
-         ${js}
-      </script>
-      </html>
-    `;
-
-      document.open();
-      document.write(documentContents);
-      document.close();
-    };
-    runCode();
-  }, [html, css, js]);
+  const { html, setHtml, css, setCss, js, setJs, iRef, runCode } = useVanilla();
 
   const codeMirrorOptions = {
     theme: 'material',
@@ -52,6 +16,10 @@ const VanillaNormal = () => {
     scrollbarStyle: null,
     lineWrapping: true,
   };
+
+  useEffect(() => {
+    runCode();
+  }, [html, css, js]);
 
   return (
     <section className='vanilla_normal'>

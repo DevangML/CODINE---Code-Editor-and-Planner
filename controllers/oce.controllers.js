@@ -5,12 +5,10 @@ const dotenv = require('dotenv');
 const Pusher = require('pusher');
 const { validationResult } = require('express-validator');
 var jwtSecret = 'mysecrettoken';
-
 dotenv.config();
 require('../databases/oce.dbs');
 const request = require('request');
 const { OceContactModel, OceToDoModel, OceAuthModel } = require('../models/oce.models');
-
 const clientSecret = process.env.CLIENT_SECRET;
 const clientId = process.env.CLIENT_ID;
 
