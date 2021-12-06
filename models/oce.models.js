@@ -40,11 +40,9 @@ const oceToDoSchema = new mongoose.Schema({
 const OceToDoModel = mongoose.model('toDo', oceToDoSchema);
 
 const oceAuthSchema = new mongoose.Schema({
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
+  name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  confirmPassword: { type: String, required: true },
   avatar: { type: String },
   date: {
     type: Date,

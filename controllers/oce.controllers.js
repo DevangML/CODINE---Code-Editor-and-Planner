@@ -120,55 +120,53 @@ const oceToDoListDeleteController = async (req, res) => {
 // Authentication Controllers
 
 const oceAuthRegisterController = async (req, res) => {
-  async (req, res) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
+  const { name, email, password } = req.body;
+
+  try {
+    // See if user exists
+    let user = await OceAuthModel.findOne({ email });
+
+    if (user) {
+      res.status(400).json({ errors: [{ msg: 'User already exists' }] });
     }
+    user = new OceAuthModel({
+      name,
+      email,
+      password,
+    });
 
-    const { name, email, password } = req.body;
+    //Encrypt Password
+    const salt = await bcrypt.genSalt(10);
 
-    try {
-      // See if user exists
-      let user = await User.findOne({ email });
+    user.password = await bcrypt.hash(password, salt);
 
-      if (user) {
-        res.status(400).json({ errors: [{ msg: 'User already exists' }] });
-      }
-      user = new User({
-        name,
-        email,
-        password,
-      });
+    await user.save();
 
-      //Encrypt Password
-      const salt = await bcrypt.genSalt(10);
+    //Return jsonwebtoken
+    const payload = {
+      user: {
+        id: user.id,
+      },
+    };
 
-      user.password = await bcrypt.hash(password, salt);
-
-      await user.save();
-
-      //Return jsonwebtoken
-      const payload = {
-        user: {
-          id: user.id,
-        },
-      };
-
-      jwt.sign(payload, jwtSecret, { expiresIn: 360000 }, (err, token) => {
-        if (err) throw err;
-        res.json({ token });
-      });
-    } catch (err) {
-      console.error(err.message);
-      res.status(500).send('Server error');
-    }
-  };
+    jwt.sign(payload, jwtSecret, { expiresIn: 360000 }, (err, token) => {
+      if (err) throw err;
+      res.json({ token });
+    });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error');
+  }
 };
 
 const oceAuthLoadingController = async (req, res) => {
   try {
-    const user = await User.findById(req.user.id).select('-password');
+    const user = await OceAuthModel.findById(req.user.id).select('-password');
     res.json(user);
   } catch (err) {
     console.error(err.message);
@@ -186,7 +184,7 @@ const oceAuthLoginController = async (req, res) => {
 
   try {
     // See if user exists
-    let user = await User.findOne({ email });
+    let user = await OceAuthModel.findOne({ email });
 
     if (!user) {
       return res.status(400).json({ errors: [{ msg: 'Invalid Credentials' }] });

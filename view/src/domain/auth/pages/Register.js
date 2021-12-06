@@ -29,9 +29,9 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   };
 
   // Redirect if logged in
-  if (isAuthenticated) {
-    return <Redirect to='/' />;
-  }
+  // if (localStorage.token) {
+  //   return <Redirect to='/' />;
+  // }
 
   return (
     <div className='register-form'>

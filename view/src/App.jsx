@@ -1,6 +1,8 @@
 // import './app.css';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Lottie from 'react-lottie';
 import setAuthToken from './redux/utils/setAuthToken';
 import * as location from './1055-world-locations.json';
@@ -15,10 +17,9 @@ import ContactMe from './domain/user/pages/contactMe/ContactMe';
 import ProjectPlanner from './domain/project/pages/projectPlanner/ProjectPlanner';
 import LiveCompiler from './domain/compilers/pages/liveCompiler/LiveCompiler';
 import ToDoList from './domain/project/pages/toDoList/ToDoList';
-import Login from './domain/auth/pages/Login';
-import Register from './domain/auth/pages/Register';
 import store from './redux/store';
 import { loadUser } from './redux/actions/authActions';
+import Landing from './domain/layouts/Landing';
 
 // Dev Styles
 
@@ -45,8 +46,8 @@ import './domain/user/styles/pageStyles/home.css';
 import './domain/user/styles/componentStyles/homeComponentStyles/heroStyles.css';
 import './domain/user/styles/componentStyles/homeComponentStyles/mainOneStyles.css';
 import './domain/user/styles/componentStyles/homeComponentStyles/mainTwoStyles.css';
-import './domain/auth/styles/auth.css';
 import './domain/auth/styles/input.css';
+import './domain/layouts/styles/landing.css';
 
 // Loader Section
 
@@ -74,12 +75,11 @@ if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 
-const App = () => {
+const App = ({ isAuthenticated }) => {
   // state hooks
   const [data, setData] = useState([]);
   const [loading, setloading] = useState(undefined);
   const [completed, setcompleted] = useState(undefined);
-
   useEffect(() => {
     setTimeout(() => {
       fetch('https://jsonplaceholder.typicode.com/posts')
@@ -111,22 +111,36 @@ const App = () => {
           )}
         </section>
       ) : (
-        <Router>
-          <Sidebar />
-          <Switch>
-            <Route exact path='/' to component={Home} />
-            <Route exact path='/vanilla' to component={Vanilla} />
-            <Route exact path='/compiler' to component={LiveCompiler} />
-            <Route exact path='/contact' to component={ContactMe} />
-            <Route exact path='/proj' to component={ProjectPlanner} />
-            <Route exact path='/todo' to component={ToDoList} />
-            <Route exact path='/register' component={Register} />
-            <Route exact path='/login' component={Login} />
-          </Switch>
-        </Router>
+        <>
+          {localStorage.token ? (
+            <Router>
+              <Sidebar />
+              <Switch>
+                <Route exact path='/' to component={Home} />
+                <Route exact path='/vanilla' to component={Vanilla} />
+                <Route exact path='/compiler' to component={LiveCompiler} />
+                <Route exact path='/contact' to component={ContactMe} />
+                <Route exact path='/proj' to component={ProjectPlanner} />
+                <Route exact path='/todo' to component={ToDoList} />
+              </Switch>
+            </Router>
+          ) : (
+            <Router>
+              <Route exact path='/' to component={Landing} />
+            </Router>
+          )}
+        </>
       )}
     </>
   );
 };
 
-export default App;
+App.propTypes = {
+  isAuthenticated: PropTypes.bool,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps)(App);
