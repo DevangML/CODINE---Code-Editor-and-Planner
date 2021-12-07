@@ -1,14 +1,29 @@
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { register } from '../../../redux/actions/authActions';
 import Alert from '../../layouts/Alert';
 import setAlert from '../../../redux/actions/alertActions';
 import useRegister from '../hooks/useRegister';
 
-const Register = () => {
-  const { formData, onChange, onSubmit } = useRegister();
-  const { names, email, password, password2 } = formData;
+const Register = ({ setAlert, register, isAuthenticated }) => {
+  const { formData, onChange } = useRegister();
+  const { name, email, password, password2 } = formData;
+  const onSubmit = async (e) => {
+    console.log('Form data', e);
+    e.preventDefault();
+    if (password !== password2) {
+      setAlert('Password do not match', 'danger');
+    } else {
+      register({ name, email, password });
+    }
+  };
+
+  // Redirect if logged in
+  if (localStorage.token) {
+    window.location.reload(false);
+  }
+
   return (
     <div className='register-form'>
       <h1 className='heading'>Sign Up</h1>
@@ -23,7 +38,7 @@ const Register = () => {
             type='text'
             placeholder='Name'
             name='name'
-            value={names}
+            value={name}
             onChange={(e) => onChange(e)}
           />
         </div>
@@ -56,7 +71,7 @@ const Register = () => {
             onChange={(e) => onChange(e)}
           />
         </div>
-        <input type='submit' className='btn btn-primary' value='Register' />
+        <input type='submit' className='auth__button' value='Register' />
       </form>
       <p className='link'>
         Already have an account? <Link to='/login'>Sign In</Link>

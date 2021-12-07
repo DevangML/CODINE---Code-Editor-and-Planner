@@ -11,16 +11,17 @@ const ListEditor = (props) => {
     }
   };
 
+  const handleClick = (e) => {
+    const node = ref.current;
+
+    if (node.contains(e.target)) {
+      return;
+    }
+
+    props.onClickOutside();
+  };
+
   useEffect(() => {
-    const handleClick = (e) => {
-      const node = ref.current;
-
-      if (node.contains(e.target)) {
-        return;
-      }
-
-      props.onClickOutside();
-    };
     document.addEventListener('click', handleClick, false);
     return () => {
       document.removeEventListener('click', handleClick, false);

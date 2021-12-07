@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { connect } from 'react-redux';
 import { Draggable } from 'react-beautiful-dnd';
+import { connect } from 'react-redux';
 import { CHANGE_CARD_TEXT, DELETE_CARD } from '../../../../../redux/constants/projectPlannerTypes';
 import CardEditor from './CardEditor';
 

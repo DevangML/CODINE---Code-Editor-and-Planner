@@ -20,6 +20,9 @@ import ToDoList from './domain/project/pages/toDoList/ToDoList';
 import store from './redux/store';
 import { loadUser } from './redux/actions/authActions';
 import Landing from './domain/layouts/Landing';
+import LandingRouteButton from './domain/layouts/components/LandingRouteButton';
+import Register from './domain/auth/pages/Register';
+import Login from './domain/auth/pages/Login';
 
 // Dev Styles
 
@@ -48,6 +51,7 @@ import './domain/user/styles/componentStyles/homeComponentStyles/mainOneStyles.c
 import './domain/user/styles/componentStyles/homeComponentStyles/mainTwoStyles.css';
 import './domain/auth/styles/input.css';
 import './domain/layouts/styles/landing.css';
+import './domain/layouts/styles/landingRouteButton.css';
 
 // Loader Section
 
@@ -126,7 +130,12 @@ const App = ({ isAuthenticated }) => {
             </Router>
           ) : (
             <Router>
-              <Route exact path='/' to component={Landing} />
+              <LandingRouteButton />
+              <Switch>
+                <Route exact path='/' to component={Landing} />
+                <Route exact path='/register' to component={Register} />
+                <Route exact path='/login' to component={Login} />
+              </Switch>
             </Router>
           )}
         </>

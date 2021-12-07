@@ -46,7 +46,6 @@ const Board = (props) => {
   };
 
   const { board } = props;
-
   return (
     <DragDropContext onDragEnd={handleDragEnd}>
       <Droppable droppableId='board' direction='horizontal' type='COLUMN'>

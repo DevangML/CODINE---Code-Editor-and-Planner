@@ -20,6 +20,8 @@ module.exports = {
     'import/named': 0,
     'consistent-return': 0,
     'no-case-declarations': 0,
+    'import/prefer-default-export': 0,
+    'no-undef': 0,
   },
   root: true,
   settings: {

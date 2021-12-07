@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
 
-const VanillaRouteButton = () => (
+const LandingRouteButton = () => (
   <section className='landing_button'>
-    <button className='landing_button__item-1'>
-      <Link to='/register'>Register</Link>
-    </button>
+    <Link className='landing_button__item-1' to='/register'>
+      Register
+    </Link>
 
-    <button className='landing_button__item-2'>
-      <Link to='/login'>Login</Link>
-    </button>
+    <Link className='landing_button__item-2' to='/login'>
+      Login
+    </Link>
   </section>
 );
 
-export default VanillaRouteButton;
+export default LandingRouteButton;

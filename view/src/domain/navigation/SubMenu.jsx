@@ -1,3 +1,5 @@
+/* eslint-disable no-nested-ternary */
+
 import { useState } from 'react';
 import { SidebarLink, SidebarLabel, DropdownLink } from './styles/styleModules/subMenuStyles';
 

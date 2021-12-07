@@ -9,16 +9,9 @@ const Landing = () => {
     <section className='landing'>
       <div className='dark-overlay'>
         <div className='landing-inner'>
-          <h1>MERN Project</h1>
-          <p>Register, Login &amp; Logout Functionality with MERN</p>
+          <h1>CODEX</h1>
+          <p>Code Editor and Planner</p>
           <br />
-          <Router>
-            <LandingRouteButton />
-            <Switch>
-              <Route exact path='/register' to component={Register} />
-              <Route exact path='/login' to component={Login} />
-            </Switch>
-          </Router>
         </div>
       </div>
     </section>

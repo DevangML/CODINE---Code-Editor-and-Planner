@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { connect } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
@@ -9,10 +10,17 @@ import SubMenu from './SubMenu';
 import { logout } from '../../redux/actions/authActions';
 import { Nav, NavIcon, SidebarNav, SidebarWrap, Logout } from './styles/styleModules/sideBarStyles';
 
-const Sidebar = ({ auth: logout }) => {
+const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
-
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
+  console.log(state);
   const showSidebar = () => setSidebar(!sidebar);
+  const handleSignOut = () => {
+    dispatch(logout());
+    history.push('/');
+  };
 
   return (
     <IconContext.Provider value={{ color: '#fff' }}>
@@ -33,7 +41,7 @@ const Sidebar = ({ auth: logout }) => {
             <SubMenu item={item} key={index} />
           ))}
         </SidebarWrap>
-        <Logout onclick={logout} to='/' replace>
+        <Logout onClick={() => handleSignOut()} to='/' replace>
           <span>Logout</span>
         </Logout>
       </SidebarNav>

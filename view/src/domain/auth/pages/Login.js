@@ -5,9 +5,20 @@ import useLogin from '../hooks/useLogin';
 import Alert from '../../layouts/Alert';
 import { login } from '../../../redux/actions/authActions';
 
-const Login = () => {
-  const { onChange, onSubmit, formData } = useLogin();
+const Login = ({ login, isAuthenticated }) => {
+  const { onChange, formData } = useLogin();
   const { email, password } = formData;
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    login(email, password);
+  };
+
+  // Redirect if logged in
+  if (localStorage.token) {
+    window.location.reload(false);
+  }
+
   return (
     <div className='login-form'>
       <h1 className='heading'>Sign In</h1>
@@ -38,7 +49,7 @@ const Login = () => {
             required
           />
         </div>
-        <input type='submit' className='btn' value='Login' />
+        <input type='submit' value='Login' className='auth__button' />
       </form>
       <p className='link'>
         Don't have an account? <Link to='/register'>Sign Up</Link>
