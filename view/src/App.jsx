@@ -1,6 +1,9 @@
+/* eslint-disable import/no-named-as-default */
+
 // import './app.css';
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { ErrorBoundry } from 'react-error-boundary';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Lottie from 'react-lottie';
@@ -23,6 +26,8 @@ import Landing from './domain/layouts/Landing';
 import LandingRouteButton from './domain/layouts/components/LandingRouteButton';
 import Register from './domain/auth/pages/Register';
 import Login from './domain/auth/pages/Login';
+
+import { FallBackLayout } from './domain/layouts/FallBackLayout';
 
 // Dev Styles
 
@@ -104,6 +109,10 @@ const App = ({ isAuthenticated }) => {
     store.dispatch(loadUser());
   }, []);
 
+  const errorHandler = (error, errorInfo) => {
+    console.log('Logging', error, errorInfo);
+  };
+
   return (
     <>
       {!completed ? (
@@ -115,7 +124,7 @@ const App = ({ isAuthenticated }) => {
           )}
         </section>
       ) : (
-        <>
+        <ErrorBoundry FallbackComponent={FallBackLayout} onError={errorHandler}>
           {localStorage.token ? (
             <Router>
               <Sidebar />
@@ -138,7 +147,7 @@ const App = ({ isAuthenticated }) => {
               </Switch>
             </Router>
           )}
-        </>
+        </ErrorBoundry>
       )}
     </>
   );

@@ -1,4 +1,7 @@
-import ReactDOM from 'react-dom';
+/* eslint-disable import/no-import-module-exports */
+/* eslint-disable global-require */
+
+import ReactDOM, { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/store';
@@ -11,5 +14,12 @@ ReactDOM.render(
   </Provider>,
   rootElement
 );
+
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    const NextApp = require('./App').default;
+    render(NextApp);
+  });
+}
 
 // serviceWorker.register();

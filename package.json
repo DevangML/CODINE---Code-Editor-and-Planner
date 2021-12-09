@@ -25,7 +25,9 @@
     "nodemon": "^2.0.15",
     "pusher": "^5.0.0",
     "redis": "^3.1.2",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "winston": "^3.3.3",
+    "winston-mongodb": "^5.0.7"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",

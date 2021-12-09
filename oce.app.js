@@ -30,6 +30,8 @@ expressApp.use(cors(corsOptions));
 expressApp.use(express.json());
 expressApp.use(express.urlencoded({ extended: true }));
 
+// Winston Section
+
 // Redis Configuration
 
 // const client = redis.createClient(6379)

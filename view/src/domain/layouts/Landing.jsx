@@ -1,8 +1,4 @@
 /* eslint-disable arrow-body-style */
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Login from '../auth/pages/Login';
-import Register from '../auth/pages/Register';
-import LandingRouteButton from './components/LandingRouteButton';
 
 const Landing = () => {
   return (
