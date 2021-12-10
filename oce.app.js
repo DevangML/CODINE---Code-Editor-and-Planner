@@ -23,11 +23,18 @@ const expressApp = express();
 expressApp.use(compression());
 
 // CORS Setup
-const corsOptions = {
-  origin: 'http://localhost:3000',
-};
-expressApp.use(cors(corsOptions));
 
+if ((process.env.NODE_ENV = 'production')) {
+  const corsOptions = {
+    origin: 'https://codex-development.herokuapp.com',
+  };
+  expressApp.use(cors(corsOptions));
+} else {
+  const corsOptions = {
+    origin: 'http://localhost:3000',
+  };
+  expressApp.use(cors(corsOptions));
+}
 // Basic express config
 expressApp.use(express.json({ limit: '30mb', extended: true }));
 expressApp.use(express.urlencoded({ limit: '30mb', extended: true }));

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 /*eslint-disable*/
 
-export const API = axios.create({ baseURL: 'http://localhost:5000' });
+export const API = axios.create({ baseURL: 'https://codex-development.herokuapp.com' });
 
 export const setHeaders = () => {
   const headers = {
