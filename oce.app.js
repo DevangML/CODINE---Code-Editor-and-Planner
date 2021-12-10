@@ -2,6 +2,8 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const mong = require('./databases/oce.dbs');
+const logger = require('./logs/logger');
 require('dotenv').config({ path: '.env' });
 const compression = require('compression');
 const {
@@ -30,7 +32,9 @@ expressApp.use(cors(corsOptions));
 expressApp.use(express.json());
 expressApp.use(express.urlencoded({ extended: true }));
 
-// Winston Section
+// Making database connection
+
+mong();
 
 // Redis Configuration
 
@@ -48,6 +52,7 @@ expressApp.use('/contact', oceContactRouter);
 expressApp.use(express.static('view/build'));
 expressApp.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'view', 'build', 'index.html'));
+  logger.info('Static files i.e. client served');
 });
 
 // Vanilla Routes Initializers
@@ -66,4 +71,10 @@ expressApp.use('/todo', oceToDoListRouter);
 
 expressApp.use('/user', oceAuthRouter);
 
-module.exports = expressApp;
+// Making Port and connection for express.js
+const port = process.env.PORT || '5000';
+const host = 'localhost';
+
+expressApp.listen(port, () => {
+  logger.info(`Server started and running on http://${host}:${port}`);
+});

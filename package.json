@@ -2,10 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "oce.server.js",
+  "main": "oce.app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -L oce.server.js",
+    "start": "nodemon -L oce.app.js",
     "lint": "eslint \"**/*.js\"",
     "lintfix": "eslint  \"**/*.js\" --fix --cache",
     "prettier": "prettier --write \"**/*.js\""
