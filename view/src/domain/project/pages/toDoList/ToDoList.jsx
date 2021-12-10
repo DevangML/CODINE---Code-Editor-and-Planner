@@ -2,38 +2,37 @@ import { useState } from 'react';
 import CreateTask from './components/CreateTask';
 import TaskList from './components/TaskList';
 
-const task = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
-
 const ToDoList = () => {
-  const [tasks, setTasks] = useState('');
+  const ntask = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
+  const [tasks, setTasks] = useState(ntask);
 
-  const createTask = (task) => {
-    if (task.trim() === '') {
+  const createTask = (tasks) => {
+    if (ntask.trim() === '') {
       alert("Task can't be empty");
       return;
     }
-    tasks.push({ task, isCompleted: false });
-    setTasks({ task });
+    tasks.push({ ntask, isCompleted: false });
+    setTasks({ tasks: ntask });
     localStorage.setItem('tasks', JSON.stringify(tasks));
   };
 
   const toggleTask = (taskId) => {
     const taskItem = tasks[taskId];
     taskItem.isCompleted = !taskItem.isCompleted;
-    setTasks({ task });
+    setTasks({ tasks: ntask });
     localStorage.setItem('tasks', JSON.stringify(tasks));
   };
 
   const deleteTask = (taskId) => {
     tasks.splice(taskId, 1);
-    setTasks({ task });
+    setTasks({ tasks: ntask });
     localStorage.setItem('tasks', JSON.stringify(tasks));
   };
 
   const editTask = (taskId, task) => {
     const taskItem = tasks[taskId];
     taskItem.task = task;
-    setTasks({ task });
+    setTasks({ tasks: ntask });
     localStorage.setItem('tasks', JSON.stringify(tasks));
   };
 

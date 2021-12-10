@@ -14,11 +14,7 @@ const mong = async () => {
     await mongoose.connect(process.env.DBURI, connectionParams);
     logger.info('MongoDB Connection Successful');
   } catch (err) {
-    logger.error(
-      `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
-        req.method
-      } - ${req.ip}`
-    );
+    logger.error(`${err.status || 500} - ${err.message}`);
     process.exit(1);
   }
 };

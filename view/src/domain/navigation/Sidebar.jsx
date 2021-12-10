@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { GoogleLogout } from 'react-google-login';
 import { connect, useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -19,7 +20,12 @@ const Sidebar = () => {
   const showSidebar = () => setSidebar(!sidebar);
   const handleSignOut = () => {
     dispatch(logout());
-    history.push('/');
+    history.go(0);
+  };
+
+  const onSuccess = () => {
+    localStorage.clear();
+    history.go(0);
   };
 
   return (
@@ -41,9 +47,18 @@ const Sidebar = () => {
             <SubMenu item={item} key={index} />
           ))}
         </SidebarWrap>
-        <Logout onClick={() => handleSignOut()} to='/' replace>
-          <span>Logout</span>
-        </Logout>
+        {localStorage.token && (
+          <Logout onClick={() => handleSignOut()} to='/' replace>
+            <span>Logout</span>
+          </Logout>
+        )}
+        {localStorage.gmailLogin && (
+          <GoogleLogout
+            clientId={process.env.REACT_APP_GCID}
+            buttonText='Logout'
+            onLogoutSuccess={onSuccess}
+          />
+        )}
       </SidebarNav>
     </IconContext.Provider>
   );

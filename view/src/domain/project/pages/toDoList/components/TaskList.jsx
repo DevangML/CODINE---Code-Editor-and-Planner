@@ -1,3 +1,5 @@
+/* eslint-disable  lines-between-class-members */
+
 import TaskItem from './TaskItem';
 
 const TaskList = (props) => (

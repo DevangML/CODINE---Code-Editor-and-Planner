@@ -29,8 +29,8 @@ const corsOptions = {
 expressApp.use(cors(corsOptions));
 
 // Basic express config
-expressApp.use(express.json());
-expressApp.use(express.urlencoded({ extended: true }));
+expressApp.use(express.json({ limit: '30mb', extended: true }));
+expressApp.use(express.urlencoded({ limit: '30mb', extended: true }));
 
 // Making database connection
 

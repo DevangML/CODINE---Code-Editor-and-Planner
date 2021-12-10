@@ -78,3 +78,681 @@ info: Dec-10-2021 12:11:32: 	Static files i.e. client served
 info: Dec-10-2021 12:11:32: 	Static files i.e. client served
 info: Dec-10-2021 12:11:32: 	Static files i.e. client served
 info: Dec-10-2021 12:11:46: 	Live Compiler is working as expected
+info: Dec-10-2021 12:16:14: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 12:16:17: 	MongoDB Connection Successful
+info: Dec-10-2021 18:36:18: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:36:21: 	MongoDB Connection Successful
+info: Dec-10-2021 18:36:39: 	Static files i.e. client served
+info: Dec-10-2021 18:51:47: 	Static files i.e. client served
+info: Dec-10-2021 18:55:43: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:55:46: 	MongoDB Connection Successful
+info: Dec-10-2021 18:56:00: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:56:03: 	MongoDB Connection Successful
+info: Dec-10-2021 18:56:09: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:56:11: 	MongoDB Connection Successful
+info: Dec-10-2021 18:56:17: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:56:20: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:56:22: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:56:25: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:56:27: 	MongoDB Connection Successful
+info: Dec-10-2021 18:58:28: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:58:31: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:58:33: 	MongoDB Connection Successful
+info: Dec-10-2021 18:58:34: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:58:36: 	MongoDB Connection Successful
+info: Dec-10-2021 18:58:40: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:58:42: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:58:44: 	MongoDB Connection Successful
+info: Dec-10-2021 18:59:00: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 18:59:02: 	MongoDB Connection Successful
+info: Dec-10-2021 19:00:21: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:00:24: 	MongoDB Connection Successful
+info: Dec-10-2021 19:05:09: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:05:12: 	MongoDB Connection Successful
+info: Dec-10-2021 19:05:14: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:05:16: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:05:19: 	MongoDB Connection Successful
+info: Dec-10-2021 19:05:20: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:05:22: 	MongoDB Connection Successful
+info: Dec-10-2021 19:05:24: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:05:26: 	MongoDB Connection Successful
+info: Dec-10-2021 19:06:42: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:06:45: 	MongoDB Connection Successful
+info: Dec-10-2021 19:07:34: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:07:36: 	MongoDB Connection Successful
+info: Dec-10-2021 19:09:06: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:09:08: 	MongoDB Connection Successful
+info: Dec-10-2021 19:11:10: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:11:13: 	MongoDB Connection Successful
+info: Dec-10-2021 19:11:22: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:11:25: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:11:28: 	MongoDB Connection Successful
+info: Dec-10-2021 19:11:37: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:11:40: 	MongoDB Connection Successful
+info: Dec-10-2021 19:11:47: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:11:49: 	MongoDB Connection Successful
+info: Dec-10-2021 19:12:05: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:12:07: 	MongoDB Connection Successful
+info: Dec-10-2021 19:12:27: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:12:28: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:12:31: 	MongoDB Connection Successful
+info: Dec-10-2021 19:12:35: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:12:38: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:12:40: 	MongoDB Connection Successful
+info: Dec-10-2021 19:12:44: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:12:47: 	MongoDB Connection Successful
+info: Dec-10-2021 19:13:09: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:13:12: 	MongoDB Connection Successful
+info: Dec-10-2021 19:16:07: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:16:09: 	MongoDB Connection Successful
+info: Dec-10-2021 19:16:14: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:16:17: 	MongoDB Connection Successful
+info: Dec-10-2021 19:16:18: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:16:20: 	MongoDB Connection Successful
+info: Dec-10-2021 19:16:26: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:16:28: 	MongoDB Connection Successful
+info: Dec-10-2021 19:16:31: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:16:33: 	MongoDB Connection Successful
+info: Dec-10-2021 19:16:50: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:16:52: 	MongoDB Connection Successful
+info: Dec-10-2021 19:17:48: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:17:50: 	MongoDB Connection Successful
+info: Dec-10-2021 19:17:55: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:17:58: 	MongoDB Connection Successful
+info: Dec-10-2021 19:17:59: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:18:02: 	MongoDB Connection Successful
+info: Dec-10-2021 19:18:12: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:18:14: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:18:16: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:18:19: 	MongoDB Connection Successful
+info: Dec-10-2021 19:18:23: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:18:25: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:18:27: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:18:30: 	MongoDB Connection Successful
+info: Dec-10-2021 19:18:40: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:18:42: 	MongoDB Connection Successful
+info: Dec-10-2021 19:18:59: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:19:01: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:19:03: 	MongoDB Connection Successful
+info: Dec-10-2021 19:19:29: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:19:31: 	MongoDB Connection Successful
+info: Dec-10-2021 19:19:35: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:19:37: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:19:39: 	MongoDB Connection Successful
+info: Dec-10-2021 19:19:42: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:19:45: 	MongoDB Connection Successful
+info: Dec-10-2021 19:19:46: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:19:49: 	MongoDB Connection Successful
+info: Dec-10-2021 19:19:53: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:19:57: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:19:58: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:20:00: 	MongoDB Connection Successful
+info: Dec-10-2021 19:20:02: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:20:03: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:20:07: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:20:09: 	MongoDB Connection Successful
+info: Dec-10-2021 19:21:05: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:21:07: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:21:10: 	MongoDB Connection Successful
+info: Dec-10-2021 19:21:20: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:21:22: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:21:24: 	MongoDB Connection Successful
+info: Dec-10-2021 19:21:44: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:21:47: 	MongoDB Connection Successful
+info: Dec-10-2021 19:21:52: 	Static files i.e. client served
+info: Dec-10-2021 19:23:31: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:23:34: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:23:37: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:23:40: 	MongoDB Connection Successful
+info: Dec-10-2021 19:24:03: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:24:06: 	MongoDB Connection Successful
+info: Dec-10-2021 19:24:18: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:24:21: 	MongoDB Connection Successful
+info: Dec-10-2021 19:53:54: 	Server started and running on http://localhost:5000
+error: Dec-10-2021 19:53:54: 	500 - option usefindandmodify is not supported
+info: Dec-10-2021 19:54:16: 	Server started and running on http://localhost:5000
+error: Dec-10-2021 19:54:16: 	500 - option usefindandmodify is not supported
+info: Dec-10-2021 19:54:37: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 19:54:39: 	MongoDB Connection Successful
+info: Dec-10-2021 19:54:48: 	Static files i.e. client served
+info: Dec-10-2021 19:55:42: 	Static files i.e. client served
+info: Dec-10-2021 19:59:15: 	Static files i.e. client served
+info: Dec-10-2021 20:00:04: 	Static files i.e. client served
+info: Dec-10-2021 20:00:20: 	Static files i.e. client served
+info: Dec-10-2021 20:21:51: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:21:54: 	MongoDB Connection Successful
+info: Dec-10-2021 20:21:55: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:21:57: 	MongoDB Connection Successful
+info: Dec-10-2021 20:22:22: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:22:25: 	MongoDB Connection Successful
+info: Dec-10-2021 20:22:32: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:22:34: 	MongoDB Connection Successful
+info: Dec-10-2021 20:22:48: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:22:50: 	MongoDB Connection Successful
+info: Dec-10-2021 20:23:04: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:23:06: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:23:08: 	MongoDB Connection Successful
+info: Dec-10-2021 20:23:11: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:23:13: 	MongoDB Connection Successful
+info: Dec-10-2021 20:23:19: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:23:21: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:23:24: 	MongoDB Connection Successful
+info: Dec-10-2021 20:23:28: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:23:30: 	MongoDB Connection Successful
+info: Dec-10-2021 20:23:33: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:23:36: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:23:38: 	MongoDB Connection Successful
+info: Dec-10-2021 20:23:40: 	Static files i.e. client served
+info: Dec-10-2021 20:29:08: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:29:11: 	MongoDB Connection Successful
+info: Dec-10-2021 20:29:18: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:29:20: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:29:22: 	MongoDB Connection Successful
+info: Dec-10-2021 20:29:31: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:29:32: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:29:35: 	MongoDB Connection Successful
+info: Dec-10-2021 20:29:55: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:29:57: 	MongoDB Connection Successful
+info: Dec-10-2021 20:31:10: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:31:11: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:31:13: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:31:16: 	MongoDB Connection Successful
+info: Dec-10-2021 20:31:19: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:31:22: 	MongoDB Connection Successful
+info: Dec-10-2021 20:31:23: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:31:26: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:31:30: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:31:32: 	MongoDB Connection Successful
+info: Dec-10-2021 20:31:45: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:31:48: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:31:50: 	MongoDB Connection Successful
+info: Dec-10-2021 20:33:39: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:33:42: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:33:45: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:33:47: 	MongoDB Connection Successful
+info: Dec-10-2021 20:33:50: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:33:53: 	MongoDB Connection Successful
+info: Dec-10-2021 20:34:02: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:34:04: 	MongoDB Connection Successful
+info: Dec-10-2021 20:34:11: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:34:14: 	MongoDB Connection Successful
+info: Dec-10-2021 20:34:20: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:34:22: 	MongoDB Connection Successful
+info: Dec-10-2021 20:34:26: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:34:29: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:34:31: 	MongoDB Connection Successful
+info: Dec-10-2021 20:34:42: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:34:44: 	MongoDB Connection Successful
+info: Dec-10-2021 20:34:52: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:34:55: 	MongoDB Connection Successful
+info: Dec-10-2021 20:35:33: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:35:35: 	MongoDB Connection Successful
+info: Dec-10-2021 20:36:05: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:36:07: 	MongoDB Connection Successful
+info: Dec-10-2021 20:36:43: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:36:46: 	MongoDB Connection Successful
+info: Dec-10-2021 20:37:52: 	Static files i.e. client served
+info: Dec-10-2021 20:43:49: 	Static files i.e. client served
+info: Dec-10-2021 20:47:44: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:48:26: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:48:28: 	MongoDB Connection Successful
+info: Dec-10-2021 20:49:27: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:49:30: 	MongoDB Connection Successful
+info: Dec-10-2021 20:49:34: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:49:35: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:49:37: 	MongoDB Connection Successful
+info: Dec-10-2021 20:49:40: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:49:42: 	MongoDB Connection Successful
+info: Dec-10-2021 20:49:45: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:49:47: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:49:49: 	MongoDB Connection Successful
+info: Dec-10-2021 20:49:51: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:49:54: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:49:58: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:50:00: 	MongoDB Connection Successful
+info: Dec-10-2021 20:50:03: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:50:06: 	MongoDB Connection Successful
+info: Dec-10-2021 20:50:13: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:50:16: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:50:18: 	MongoDB Connection Successful
+info: Dec-10-2021 20:50:28: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:50:29: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:50:32: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:50:34: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:50:36: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:50:39: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:50:41: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:50:43: 	MongoDB Connection Successful
+info: Dec-10-2021 20:50:51: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:50:53: 	MongoDB Connection Successful
+info: Dec-10-2021 20:50:55: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:50:58: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:51:00: 	MongoDB Connection Successful
+info: Dec-10-2021 20:51:04: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:51:07: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:51:09: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:51:12: 	MongoDB Connection Successful
+info: Dec-10-2021 20:52:36: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:52:39: 	MongoDB Connection Successful
+info: Dec-10-2021 20:52:49: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:52:52: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:52:54: 	MongoDB Connection Successful
+info: Dec-10-2021 20:53:07: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:53:09: 	MongoDB Connection Successful
+info: Dec-10-2021 20:53:14: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:53:16: 	MongoDB Connection Successful
+info: Dec-10-2021 20:53:19: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:53:21: 	MongoDB Connection Successful
+info: Dec-10-2021 20:53:48: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:53:51: 	MongoDB Connection Successful
+info: Dec-10-2021 20:53:55: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:53:58: 	MongoDB Connection Successful
+info: Dec-10-2021 20:54:43: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:54:45: 	MongoDB Connection Successful
+info: Dec-10-2021 20:55:02: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:55:04: 	MongoDB Connection Successful
+info: Dec-10-2021 20:55:07: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:55:09: 	MongoDB Connection Successful
+info: Dec-10-2021 20:55:11: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:55:14: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:55:17: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:55:20: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:55:23: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:55:25: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:55:27: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:55:29: 	MongoDB Connection Successful
+info: Dec-10-2021 20:55:45: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:55:47: 	MongoDB Connection Successful
+info: Dec-10-2021 20:55:52: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:55:54: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:55:55: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:55:58: 	MongoDB Connection Successful
+info: Dec-10-2021 20:56:22: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:56:26: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:56:29: 	MongoDB Connection Successful
+info: Dec-10-2021 20:56:35: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:56:37: 	MongoDB Connection Successful
+info: Dec-10-2021 20:56:54: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:56:57: 	MongoDB Connection Successful
+info: Dec-10-2021 20:56:58: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:00: 	MongoDB Connection Successful
+info: Dec-10-2021 20:57:14: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:15: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:18: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:20: 	MongoDB Connection Successful
+info: Dec-10-2021 20:57:22: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:24: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:26: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:27: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:30: 	MongoDB Connection Successful
+info: Dec-10-2021 20:57:33: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:36: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:39: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:41: 	MongoDB Connection Successful
+info: Dec-10-2021 20:57:42: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:44: 	MongoDB Connection Successful
+info: Dec-10-2021 20:57:46: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:48: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:51: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:53: 	MongoDB Connection Successful
+info: Dec-10-2021 20:57:55: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:57:58: 	MongoDB Connection Successful
+info: Dec-10-2021 20:57:59: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:58:01: 	MongoDB Connection Successful
+info: Dec-10-2021 20:58:03: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:58:04: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:58:07: 	MongoDB Connection Successful
+info: Dec-10-2021 20:58:10: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:58:12: 	MongoDB Connection Successful
+info: Dec-10-2021 20:58:15: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:58:17: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:58:19: 	MongoDB Connection Successful
+info: Dec-10-2021 20:58:21: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:58:23: 	MongoDB Connection Successful
+info: Dec-10-2021 20:59:15: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:59:17: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:59:19: 	MongoDB Connection Successful
+info: Dec-10-2021 20:59:22: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:59:24: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 20:59:27: 	MongoDB Connection Successful
+info: Dec-10-2021 21:00:29: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:00:32: 	MongoDB Connection Successful
+info: Dec-10-2021 21:00:35: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:00:37: 	MongoDB Connection Successful
+info: Dec-10-2021 21:00:41: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:00:43: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:00:46: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:00:48: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:00:51: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:00:54: 	MongoDB Connection Successful
+info: Dec-10-2021 21:00:55: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:00:58: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:00: 	MongoDB Connection Successful
+info: Dec-10-2021 21:01:02: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:03: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:05: 	MongoDB Connection Successful
+info: Dec-10-2021 21:01:11: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:12: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:14: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:17: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:21: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:23: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:24: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:26: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:29: 	MongoDB Connection Successful
+info: Dec-10-2021 21:01:31: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:33: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:36: 	MongoDB Connection Successful
+info: Dec-10-2021 21:01:40: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:42: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:44: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:46: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:48: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:51: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:53: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:56: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:01:58: 	MongoDB Connection Successful
+info: Dec-10-2021 21:02:02: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:03: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:07: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:09: 	MongoDB Connection Successful
+info: Dec-10-2021 21:02:13: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:15: 	MongoDB Connection Successful
+info: Dec-10-2021 21:02:17: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:19: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:22: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:25: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:28: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:30: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:32: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:34: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:36: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:39: 	MongoDB Connection Successful
+info: Dec-10-2021 21:02:41: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:42: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:45: 	MongoDB Connection Successful
+info: Dec-10-2021 21:02:49: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:52: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:54: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:56: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:02:57: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:03:00: 	MongoDB Connection Successful
+info: Dec-10-2021 21:32:14: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:32:16: 	MongoDB Connection Successful
+info: Dec-10-2021 21:32:20: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:32:23: 	MongoDB Connection Successful
+info: Dec-10-2021 21:32:24: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:32:27: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:32:28: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:32:31: 	MongoDB Connection Successful
+info: Dec-10-2021 21:33:33: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:33:35: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:33:37: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:33:40: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:33:42: 	MongoDB Connection Successful
+info: Dec-10-2021 21:33:50: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:33:51: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:33:53: 	MongoDB Connection Successful
+info: Dec-10-2021 21:33:58: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:02: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:04: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:06: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:09: 	MongoDB Connection Successful
+info: Dec-10-2021 21:34:11: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:13: 	MongoDB Connection Successful
+info: Dec-10-2021 21:34:14: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:16: 	MongoDB Connection Successful
+info: Dec-10-2021 21:34:20: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:22: 	MongoDB Connection Successful
+info: Dec-10-2021 21:34:23: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:26: 	MongoDB Connection Successful
+info: Dec-10-2021 21:34:27: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:29: 	MongoDB Connection Successful
+info: Dec-10-2021 21:34:31: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:34: 	MongoDB Connection Successful
+info: Dec-10-2021 21:34:36: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:39: 	MongoDB Connection Successful
+info: Dec-10-2021 21:34:41: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:43: 	MongoDB Connection Successful
+info: Dec-10-2021 21:34:44: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:47: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:49: 	MongoDB Connection Successful
+info: Dec-10-2021 21:34:55: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:34:57: 	MongoDB Connection Successful
+info: Dec-10-2021 21:34:59: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:02: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:04: 	MongoDB Connection Successful
+info: Dec-10-2021 21:35:08: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:11: 	MongoDB Connection Successful
+info: Dec-10-2021 21:35:12: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:15: 	MongoDB Connection Successful
+info: Dec-10-2021 21:35:16: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:18: 	MongoDB Connection Successful
+info: Dec-10-2021 21:35:20: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:22: 	MongoDB Connection Successful
+info: Dec-10-2021 21:35:25: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:28: 	MongoDB Connection Successful
+info: Dec-10-2021 21:35:29: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:32: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:33: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:36: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:37: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:40: 	MongoDB Connection Successful
+info: Dec-10-2021 21:35:43: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:45: 	MongoDB Connection Successful
+info: Dec-10-2021 21:35:47: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:35:49: 	MongoDB Connection Successful
+info: Dec-10-2021 21:35:58: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:00: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:03: 	MongoDB Connection Successful
+info: Dec-10-2021 21:36:10: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:13: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:16: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:18: 	MongoDB Connection Successful
+info: Dec-10-2021 21:36:20: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:23: 	MongoDB Connection Successful
+info: Dec-10-2021 21:36:25: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:27: 	MongoDB Connection Successful
+info: Dec-10-2021 21:36:31: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:34: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:36: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:39: 	MongoDB Connection Successful
+info: Dec-10-2021 21:36:40: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:42: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:44: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:46: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:48: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:49: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:52: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:55: 	MongoDB Connection Successful
+info: Dec-10-2021 21:36:56: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:57: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:36:59: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:37:02: 	MongoDB Connection Successful
+info: Dec-10-2021 21:37:08: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:37:10: 	MongoDB Connection Successful
+info: Dec-10-2021 21:37:18: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:37:20: 	MongoDB Connection Successful
+info: Dec-10-2021 21:37:21: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:37:24: 	MongoDB Connection Successful
+info: Dec-10-2021 21:37:25: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:37:28: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:37:30: 	MongoDB Connection Successful
+info: Dec-10-2021 21:37:34: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:37:37: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:37:39: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:37:40: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:37:43: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:37:46: 	MongoDB Connection Successful
+info: Dec-10-2021 21:37:48: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:37:49: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:37:52: 	MongoDB Connection Successful
+info: Dec-10-2021 21:39:59: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:02: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:05: 	MongoDB Connection Successful
+info: Dec-10-2021 21:40:10: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:12: 	MongoDB Connection Successful
+info: Dec-10-2021 21:40:14: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:16: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:18: 	MongoDB Connection Successful
+info: Dec-10-2021 21:40:20: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:22: 	MongoDB Connection Successful
+info: Dec-10-2021 21:40:24: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:25: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:27: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:30: 	MongoDB Connection Successful
+info: Dec-10-2021 21:40:31: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:33: 	MongoDB Connection Successful
+info: Dec-10-2021 21:40:40: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:43: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:45: 	MongoDB Connection Successful
+info: Dec-10-2021 21:40:50: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:53: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:57: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:40:59: 	MongoDB Connection Successful
+info: Dec-10-2021 21:41:03: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:41:06: 	MongoDB Connection Successful
+info: Dec-10-2021 21:41:11: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:41:15: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:41:18: 	MongoDB Connection Successful
+info: Dec-10-2021 21:41:54: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:41:56: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:41:59: 	MongoDB Connection Successful
+info: Dec-10-2021 21:43:19: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:43:22: 	MongoDB Connection Successful
+info: Dec-10-2021 21:43:33: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:43:34: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:43:37: 	MongoDB Connection Successful
+info: Dec-10-2021 21:44:09: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:44:11: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:44:14: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:44:16: 	MongoDB Connection Successful
+info: Dec-10-2021 21:44:19: 	Static files i.e. client served
+info: Dec-10-2021 21:44:45: 	Static files i.e. client served
+info: Dec-10-2021 21:45:19: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:45:21: 	MongoDB Connection Successful
+info: Dec-10-2021 21:45:25: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:45:28: 	MongoDB Connection Successful
+info: Dec-10-2021 21:45:30: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:45:32: 	MongoDB Connection Successful
+info: Dec-10-2021 21:45:52: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:45:55: 	MongoDB Connection Successful
+info: Dec-10-2021 21:46:38: 	Static files i.e. client served
+info: Dec-10-2021 21:46:49: 	Static files i.e. client served
+info: Dec-10-2021 21:47:09: 	Static files i.e. client served
+info: Dec-10-2021 21:51:18: 	Static files i.e. client served
+info: Dec-10-2021 21:52:20: 	Static files i.e. client served
+info: Dec-10-2021 21:52:31: 	Static files i.e. client served
+info: Dec-10-2021 21:52:53: 	Static files i.e. client served
+info: Dec-10-2021 21:54:22: 	Static files i.e. client served
+info: Dec-10-2021 21:54:35: 	Static files i.e. client served
+info: Dec-10-2021 21:54:57: 	Static files i.e. client served
+info: Dec-10-2021 21:55:39: 	Static files i.e. client served
+info: Dec-10-2021 21:56:21: 	Static files i.e. client served
+info: Dec-10-2021 21:56:36: 	Static files i.e. client served
+info: Dec-10-2021 21:57:14: 	Static files i.e. client served
+info: Dec-10-2021 21:58:53: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 21:58:56: 	MongoDB Connection Successful
+info: Dec-10-2021 21:59:28: 	Static files i.e. client served
+info: Dec-10-2021 22:00:06: 	Static files i.e. client served
+info: Dec-10-2021 22:01:04: 	Static files i.e. client served
+info: Dec-10-2021 22:01:42: 	Static files i.e. client served
+info: Dec-10-2021 22:01:52: 	Static files i.e. client served
+info: Dec-10-2021 22:02:04: 	Static files i.e. client served
+info: Dec-10-2021 22:03:41: 	Static files i.e. client served
+info: Dec-10-2021 22:03:47: 	Static files i.e. client served
+info: Dec-10-2021 22:04:13: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:04:16: 	MongoDB Connection Successful
+info: Dec-10-2021 22:04:20: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:04:23: 	MongoDB Connection Successful
+info: Dec-10-2021 22:04:35: 	Static files i.e. client served
+info: Dec-10-2021 22:04:41: 	Static files i.e. client served
+info: Dec-10-2021 22:05:23: 	Static files i.e. client served
+info: Dec-10-2021 22:06:37: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:06:39: 	MongoDB Connection Successful
+info: Dec-10-2021 22:06:42: 	Static files i.e. client served
+info: Dec-10-2021 22:06:48: 	Static files i.e. client served
+info: Dec-10-2021 22:07:44: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:07:46: 	MongoDB Connection Successful
+info: Dec-10-2021 22:07:50: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:07:52: 	MongoDB Connection Successful
+info: Dec-10-2021 22:07:57: 	Static files i.e. client served
+info: Dec-10-2021 22:08:20: 	Static files i.e. client served
+info: Dec-10-2021 22:08:28: 	Static files i.e. client served
+info: Dec-10-2021 22:10:48: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:10:49: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:10:52: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:10:55: 	MongoDB Connection Successful
+info: Dec-10-2021 22:11:54: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:11:56: 	MongoDB Connection Successful
+info: Dec-10-2021 22:11:58: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:12:01: 	MongoDB Connection Successful
+info: Dec-10-2021 22:12:04: 	Static files i.e. client served
+info: Dec-10-2021 22:12:12: 	Static files i.e. client served
+info: Dec-10-2021 22:12:33: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:12:35: 	MongoDB Connection Successful
+info: Dec-10-2021 22:12:42: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:12:45: 	MongoDB Connection Successful
+info: Dec-10-2021 22:12:50: 	Static files i.e. client served
+info: Dec-10-2021 22:12:56: 	Static files i.e. client served
+info: Dec-10-2021 22:13:42: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:13:44: 	MongoDB Connection Successful
+info: Dec-10-2021 22:13:45: 	Static files i.e. client served
+info: Dec-10-2021 22:13:51: 	Static files i.e. client served
+info: Dec-10-2021 22:15:55: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:15:57: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:15:59: 	MongoDB Connection Successful
+info: Dec-10-2021 22:16:35: 	Static files i.e. client served
+info: Dec-10-2021 22:16:42: 	Static files i.e. client served
+info: Dec-10-2021 22:19:36: 	Static files i.e. client served
+info: Dec-10-2021 22:20:34: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:20:37: 	MongoDB Connection Successful
+info: Dec-10-2021 22:20:46: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:20:48: 	MongoDB Connection Successful
+info: Dec-10-2021 22:21:02: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:21:03: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:21:06: 	MongoDB Connection Successful
+info: Dec-10-2021 22:21:28: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:21:30: 	MongoDB Connection Successful
+info: Dec-10-2021 22:22:17: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:22:20: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:22:22: 	MongoDB Connection Successful
+info: Dec-10-2021 22:22:25: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:22:27: 	MongoDB Connection Successful
+info: Dec-10-2021 22:22:30: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:22:33: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:22:35: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:22:38: 	MongoDB Connection Successful
+info: Dec-10-2021 22:22:42: 	Static files i.e. client served
+info: Dec-10-2021 22:22:58: 	Static files i.e. client served
+info: Dec-10-2021 22:23:16: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:23:17: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:23:19: 	MongoDB Connection Successful
+info: Dec-10-2021 22:23:26: 	Static files i.e. client served
+info: Dec-10-2021 22:23:34: 	Static files i.e. client served
+info: Dec-10-2021 22:23:42: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:23:44: 	MongoDB Connection Successful
+info: Dec-10-2021 22:23:44: 	Static files i.e. client served
+info: Dec-10-2021 22:23:52: 	Static files i.e. client served
+info: Dec-10-2021 22:24:03: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:24:06: 	MongoDB Connection Successful
+info: Dec-10-2021 22:24:07: 	Static files i.e. client served
+info: Dec-10-2021 22:24:13: 	Static files i.e. client served
+info: Dec-10-2021 22:38:42: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 22:38:45: 	MongoDB Connection Successful
+info: Dec-10-2021 22:53:56: 	Static files i.e. client served
+info: Dec-10-2021 22:54:30: 	Static files i.e. client served
+info: Dec-10-2021 23:14:23: 	Static files i.e. client served
+info: Dec-10-2021 23:27:19: 	Static files i.e. client served
+info: Dec-10-2021 23:29:05: 	Static files i.e. client served
+info: Dec-10-2021 23:29:22: 	Static files i.e. client served
+info: Dec-10-2021 23:36:13: 	Static files i.e. client served
+info: Dec-10-2021 23:41:22: 	Static files i.e. client served
+info: Dec-10-2021 23:42:02: 	Static files i.e. client served
+info: Dec-10-2021 23:42:31: 	Static files i.e. client served
+info: Dec-10-2021 23:43:08: 	Static files i.e. client served
+info: Dec-10-2021 23:43:34: 	Static files i.e. client served
+info: Dec-10-2021 23:43:56: 	Static files i.e. client served
+info: Dec-10-2021 23:47:36: 	Static files i.e. client served
+info: Dec-10-2021 23:49:10: 	Server started and running on http://localhost:5000
+info: Dec-10-2021 23:49:13: 	MongoDB Connection Successful

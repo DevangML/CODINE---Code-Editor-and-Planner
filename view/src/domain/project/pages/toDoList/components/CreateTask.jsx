@@ -1,38 +1,33 @@
-import { Component } from 'react';
+import { useState } from 'react';
 
-export default class CreateTask extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      task: '',
-    };
-  }
+const CreateTask = (props) => {
+  const [task, setTask] = useState('');
 
-  handleChange = (event) => {
-    this.setState({ task: event.target.value });
+  const handleChange = (event) => {
+    setTask({ task: event.target.value });
   };
 
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    this.props.createTask(this.state.task);
-    this.setState({ task: '' });
+    props.createTask(task);
+    setTask({ task: '' });
   };
 
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type='text'
-          placeholder='Enter task'
-          value={this.state.task}
-          onChange={this.handleChange}
-          autoFocus
-          className='tasks__input'
-        />
-        <button class='add' type='submit'>
-          Add
-        </button>
-      </form>
-    );
-  }
-}
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type='text'
+        placeholder='Enter task'
+        value={task}
+        onChange={handleChange}
+        autoFocus
+        className='tasks__input'
+      />
+      <button class='add' type='submit'>
+        Add
+      </button>
+    </form>
+  );
+};
+
+export default CreateTask;
