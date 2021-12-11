@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import pushid from 'pushid';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import useVanilla from '../../../hooks/useVanilla';
 import 'codemirror/lib/codemirror.css';
@@ -8,7 +9,8 @@ import 'codemirror/mode/css/css';
 import 'codemirror/mode/javascript/javascript';
 
 const VanillaFluent = () => {
-  const { html, setHtml, css, setCss, js, setJs, iRef, runCode } = useVanilla();
+  const { compData, setCompData, iRef, runCode, syncUpdates } = useVanilla();
+  const { html, css, js, id } = compData;
 
   const codeMirrorOptions = {
     theme: 'material',
@@ -19,7 +21,8 @@ const VanillaFluent = () => {
 
   useEffect(() => {
     runCode();
-  }, [html, css, js]);
+    setCompData({ id: pushid() });
+  }, [html, css, js, id]);
 
   return (
     <section className='vanilla_fluent'>
@@ -33,7 +36,9 @@ const VanillaFluent = () => {
                 mode: 'htmlmixed',
                 ...codeMirrorOptions,
               }}
-              onBeforeChange={(editor, data, html) => setHtml(html)}
+              onBeforeChange={(editor, data, html) => {
+                setCompData({ html }, () => syncUpdates());
+              }}
             />
           </section>
           <section className='vanilla_fluent__main__section-1__sub-section-2'>
@@ -44,7 +49,9 @@ const VanillaFluent = () => {
                 mode: 'css',
                 ...codeMirrorOptions,
               }}
-              onBeforeChange={(editor, data, css) => setCss(css)}
+              onBeforeChange={(editor, data, css) => {
+                setCompData({ css }, () => syncUpdates());
+              }}
             />
           </section>
           <section className='vanilla_fluent__main__section-1__sub-section-3'>
@@ -55,7 +62,9 @@ const VanillaFluent = () => {
                 mode: 'javascript',
                 ...codeMirrorOptions,
               }}
-              onBeforeChange={(editor, data, js) => setJs(js)}
+              onBeforeChange={(editor, data, js) => {
+                setCompData({ js }, () => syncUpdates());
+              }}
             />
           </section>
         </section>

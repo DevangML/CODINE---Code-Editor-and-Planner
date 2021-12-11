@@ -4,13 +4,13 @@ const CreateTask = (props) => {
   const [task, setTask] = useState('');
 
   const handleChange = (event) => {
-    setTask({ task: event.target.value });
+    setTask(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     props.createTask(task);
-    setTask({ task: '' });
+    setTask('');
   };
 
   return (

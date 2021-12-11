@@ -1,19 +1,11 @@
 import { useState } from 'react';
 
 const TaskItem = (props) => {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     task: this.props.taskItem.task,
-  //     isEditing: false,
-  //   };
-  // }
-
   const [task, setTask] = useState(props.taskItem.task);
   const [isEditing, setIsEditing] = useState(false);
 
   const setEditingState = (isEditing) => {
-    setIsEditing({ isEditing });
+    setIsEditing(isEditing);
   };
 
   const toggleTask = () => {
@@ -25,13 +17,13 @@ const TaskItem = (props) => {
   };
 
   const handleChange = (event) => {
-    setTask({ task: event.target.value });
+    setTask(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     props.editTask(props.id, task);
-    setIsEditing({ isEditing: false });
+    setIsEditing(false);
   };
 
   return (

@@ -8,7 +8,8 @@ import 'codemirror/mode/css/css';
 import 'codemirror/mode/javascript/javascript';
 
 const VanillaNormal = () => {
-  const { html, setHtml, css, setCss, js, setJs, iRef, runCode } = useVanilla();
+  const { compData, setCompData, iRef, runCode, syncUpdates } = useVanilla();
+  const { html, css, js } = compData;
 
   const codeMirrorOptions = {
     theme: 'material',
@@ -32,7 +33,9 @@ const VanillaNormal = () => {
               mode: 'htmlmixed',
               ...codeMirrorOptions,
             }}
-            onBeforeChange={(editor, data, html) => setHtml(html)}
+            onBeforeChange={(editor, data, html) => {
+              setCompData({ html }, () => syncUpdates());
+            }}
           />
         </section>
         <section className='vanilla_normal__section-1__sub-section-2'>
@@ -43,7 +46,9 @@ const VanillaNormal = () => {
               mode: 'css',
               ...codeMirrorOptions,
             }}
-            onBeforeChange={(editor, data, css) => setCss(css)}
+            onBeforeChange={(editor, data, css) => {
+              setCompData({ css }, () => syncUpdates());
+            }}
           />
         </section>
         <section className='vanilla_normal__section-1__sub-section-3'>
@@ -54,7 +59,9 @@ const VanillaNormal = () => {
               mode: 'javascript',
               ...codeMirrorOptions,
             }}
-            onBeforeChange={(editor, data, js) => setJs(js)}
+            onBeforeChange={(editor, data, js) => {
+              setCompData({ js }, () => syncUpdates());
+            }}
           />
         </section>
       </section>

@@ -1,11 +1,38 @@
 import { useRef, useState } from 'react';
+import Pusher from 'pusher-js';
+
+import { API } from '../../../api/index';
 
 const useVanilla = () => {
-  const [html, setHtml] = useState('');
-  const [css, setCss] = useState('');
-  const [js, setJs] = useState('');
+  const [compData, setCompData] = useState({
+    html: '',
+    css: '',
+    js: '',
+    id: '',
+  });
+
+  const { html, css, js, id } = compData;
 
   const iRef = useRef();
+
+  const pusher = new Pusher(process.env.REACT_APP_PUSHER_KEY, {
+    cluster: process.env.REACT_APP_PUSHER_CLUSTER,
+    forceTLS: true,
+  });
+
+  pusher.subscribe('Codex', (data) => {
+    if (data.id === id) return;
+
+    setCompData({ html: data.html });
+    setCompData({ css: data.css });
+    setCompData({ js: data.js });
+  });
+
+  const syncUpdates = () => {
+    const data = { compData };
+
+    API.post('/vanilla', data).catch(console.error);
+  };
 
   const runCode = () => {
     if (!iRef.current) return;
@@ -37,7 +64,7 @@ const useVanilla = () => {
     document.close();
   };
 
-  return { html, setHtml, css, setCss, js, setJs, iRef, runCode };
+  return { compData, setCompData, syncUpdates, iRef, runCode };
 };
 
 export default useVanilla;

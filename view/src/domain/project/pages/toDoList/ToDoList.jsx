@@ -4,35 +4,36 @@ import TaskList from './components/TaskList';
 
 const ToDoList = () => {
   const ntask = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
+
   const [tasks, setTasks] = useState(ntask);
 
-  const createTask = (tasks) => {
-    if (ntask.trim() === '') {
+  const createTask = (task) => {
+    if (task.trim() === '') {
       alert("Task can't be empty");
       return;
     }
-    tasks.push({ ntask, isCompleted: false });
-    setTasks({ tasks: ntask });
+    tasks.push({ task, isCompleted: false });
+    setTasks(ntask);
     localStorage.setItem('tasks', JSON.stringify(tasks));
   };
 
   const toggleTask = (taskId) => {
     const taskItem = tasks[taskId];
     taskItem.isCompleted = !taskItem.isCompleted;
-    setTasks({ tasks: ntask });
+    setTasks(ntask);
     localStorage.setItem('tasks', JSON.stringify(tasks));
   };
 
   const deleteTask = (taskId) => {
     tasks.splice(taskId, 1);
-    setTasks({ tasks: ntask });
+    setTasks(ntask);
     localStorage.setItem('tasks', JSON.stringify(tasks));
   };
 
   const editTask = (taskId, task) => {
     const taskItem = tasks[taskId];
     taskItem.task = task;
-    setTasks({ tasks: ntask });
+    setTasks(ntask);
     localStorage.setItem('tasks', JSON.stringify(tasks));
   };
 
