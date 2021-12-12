@@ -12,6 +12,7 @@ const {
   oceLiveCompilerRouter,
   oceToDoListRouter,
   oceAuthRouter,
+  oceGoogleAuthTestRouter,
 } = require('./routes/oce.routes');
 // const redis = require('redis')
 
@@ -23,18 +24,11 @@ const expressApp = express();
 expressApp.use(compression());
 
 // CORS Setup
+const corsOptions = {
+  origin: 'http://localhost:3000',
+};
+expressApp.use(cors(corsOptions));
 
-if ((process.env.NODE_ENV = 'production')) {
-  const corsOptions = {
-    origin: 'https://codex-development.herokuapp.com',
-  };
-  expressApp.use(cors(corsOptions));
-} else {
-  const corsOptions = {
-    origin: 'http://localhost:3000',
-  };
-  expressApp.use(cors(corsOptions));
-}
 // Basic express config
 expressApp.use(express.json({ limit: '30mb', extended: true }));
 expressApp.use(express.urlencoded({ limit: '30mb', extended: true }));
@@ -77,6 +71,8 @@ expressApp.use('/todo', oceToDoListRouter);
 // Authentication Routes Initializers
 
 expressApp.use('/user', oceAuthRouter);
+
+expressApp.use('/google', oceGoogleAuthTestRouter);
 
 // Making Port and connection for express.js
 const port = process.env.PORT || '5000';

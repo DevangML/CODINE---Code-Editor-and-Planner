@@ -52,7 +52,7 @@ const Sidebar = () => {
             <span>Logout</span>
           </Logout>
         )}
-        {localStorage.gmailLogin && (
+        {localStorage.googleData && (
           <GoogleLogout
             clientId={process.env.REACT_APP_GCID}
             buttonText='Logout'

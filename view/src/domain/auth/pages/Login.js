@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { useHistory } from 'react-router';
 import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
@@ -8,6 +9,7 @@ import useLogin from '../hooks/useLogin';
 import Alert from '../../layouts/Alert';
 import { login } from '../../../redux/actions/authActions';
 import Icon from '../templates/Icon';
+import { API } from '../../../api';
 
 const Login = ({ login, isAuthenticated }) => {
   const { onChange, formData } = useLogin();
@@ -17,24 +19,32 @@ const Login = ({ login, isAuthenticated }) => {
 
     login(email, password);
   };
-
+  const [googleData, setGoogleData] = useState(
+    localStorage.getItem('loginData') ? JSON.parse(localStorage.getItem('loginData')) : null
+  );
   const history = useHistory();
   const dispatch = useDispatch(null);
-
   // Redirect if logged in
   if (localStorage.token) {
     history.go(0);
   }
 
-  const googleSuccess = async (res) => {
+  const googleSuccess = async (response) => {
     try {
-      console.log('[Login Success] currentUser:', res.profileObj);
-      await localStorage.setItem('gmailLogin', 'true');
-      await history.push('/');
-      setTimeout(() => {
-        window.location.reload(false);
-      }, 2);
-      refreshTokenSetup(res);
+      const res = await API.post('/google', { token: response.tokenId });
+
+      setGoogleData(res);
+
+      await localStorage.setItem('googleData', JSON.stringify(res));
+      // await history.push('/');
+      // setTimeout(() => {
+      //   window.location.reload(false);
+      // }, 2);
+      refreshTokenSetup(response);
+
+      if (res.status === 201) {
+        console.log('Data sent to backend');
+      }
     } catch (error) {
       console.log(error);
     }
@@ -100,6 +110,11 @@ const Login = ({ login, isAuthenticated }) => {
       </p>
     </div>
   );
+};
+
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({

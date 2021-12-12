@@ -12,6 +12,7 @@ const {
   oceAuthRegisterController,
   oceAuthLoadingController,
   oceAuthLoginController,
+  oceGoogleAuthTestController,
 } = require('../controllers/oce.controllers');
 
 const oceContactRouter = express.Router();
@@ -19,6 +20,7 @@ const oceVanillaRouter = express.Router();
 const oceLiveCompilerRouter = express.Router();
 const oceToDoListRouter = express.Router();
 const oceAuthRouter = express.Router();
+const oceGoogleAuthTestRouter = express.Router();
 
 // Routes here
 
@@ -70,10 +72,15 @@ oceAuthRouter.post(
   oceAuthLoginController
 );
 
+// Google Authentication Routes
+
+oceGoogleAuthTestRouter.post('/', oceGoogleAuthTestController);
+
 module.exports = {
   oceContactRouter,
   oceVanillaRouter,
   oceLiveCompilerRouter,
   oceToDoListRouter,
   oceAuthRouter,
+  oceGoogleAuthTestRouter,
 };

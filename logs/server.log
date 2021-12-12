@@ -1,25 +1,37 @@
-
-info: Dec-11-2021 21:43:08: 	Server started and running on http://localhost:5000
-info: Dec-11-2021 21:43:11: 	MongoDB Connection Successful
-info: Dec-11-2021 22:06:39: 	Server started and running on http://localhost:5000
-info: Dec-11-2021 22:06:41: 	MongoDB Connection Successful
-info: Dec-11-2021 22:18:54: 	Static files i.e. client served
-info: Dec-11-2021 22:20:09: 	Static files i.e. client served
-info: Dec-11-2021 22:23:02: 	Static files i.e. client served
-info: Dec-11-2021 22:23:19: 	Static files i.e. client served
-info: Dec-11-2021 22:24:49: 	Static files i.e. client served
-info: Dec-11-2021 22:25:24: 	Static files i.e. client served
-info: Dec-11-2021 22:25:27: 	Static files i.e. client served
-info: Dec-11-2021 22:31:12: 	Static files i.e. client served
-info: Dec-11-2021 22:32:36: 	Static files i.e. client served
-info: Dec-11-2021 22:32:46: 	Static files i.e. client served
-info: Dec-11-2021 22:35:59: 	Static files i.e. client served
-info: Dec-11-2021 23:42:28: 	Server started and running on http://localhost:5000
-info: Dec-11-2021 23:42:31: 	MongoDB Connection Successful
-info: Dec-11-2021 23:42:42: 	Static files i.e. client served
-info: Dec-11-2021 23:48:46: 	Static files i.e. client served
-info: Dec-11-2021 23:51:05: 	Server started and running on http://localhost:5000
-info: Dec-11-2021 23:51:08: 	MongoDB Connection Successful
-info: Dec-11-2021 23:51:13: 	Server started and running on http://localhost:5000
-info: Dec-11-2021 23:51:16: 	MongoDB Connection Successful
-info: Dec-11-2021 23:51:46: 	Static files i.e. client served
+info: Dec-12-2021 22:06:49: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:06:51: 	MongoDB Connection Successful
+info: Dec-12-2021 22:09:17: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:09:20: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:09:23: 	MongoDB Connection Successful
+info: Dec-12-2021 22:09:26: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:09:28: 	MongoDB Connection Successful
+info: Dec-12-2021 22:09:34: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:09:37: 	MongoDB Connection Successful
+info: Dec-12-2021 22:10:03: 	Static files i.e. client served
+info: Dec-12-2021 22:19:06: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:19:09: 	MongoDB Connection Successful
+info: Dec-12-2021 22:19:21: 	Static files i.e. client served
+info: Dec-12-2021 22:21:45: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:21:48: 	MongoDB Connection Successful
+info: Dec-12-2021 22:21:52: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:21:55: 	MongoDB Connection Successful
+info: Dec-12-2021 22:24:41: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:24:44: 	MongoDB Connection Successful
+info: Dec-12-2021 22:25:18: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:25:21: 	MongoDB Connection Successful
+info: Dec-12-2021 22:25:38: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:25:40: 	MongoDB Connection Successful
+info: Dec-12-2021 22:26:33: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:26:35: 	MongoDB Connection Successful
+info: Dec-12-2021 22:26:48: 	Payload is: 
+info: Dec-12-2021 22:27:05: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:27:06: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:27:08: 	MongoDB Connection Successful
+info: Dec-12-2021 22:27:15: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:27:17: 	MongoDB Connection Successful
+info: Dec-12-2021 22:27:19: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:27:21: 	MongoDB Connection Successful
+info: Dec-12-2021 22:27:23: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:27:25: 	Server started and running on http://localhost:5000
+info: Dec-12-2021 22:27:27: 	MongoDB Connection Successful
+info: Dec-12-2021 22:27:31: 	Email is: 
