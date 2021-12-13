@@ -1,6 +1,7 @@
 // Token confirmation
 const { OAuth2Client } = require('google-auth-library');
 const logger = require('../logs/logger');
+
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 require('path');
 require('dotenv').config({ path: '.env' });
@@ -28,7 +29,7 @@ const gAuth = async (req, res, next) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
 };

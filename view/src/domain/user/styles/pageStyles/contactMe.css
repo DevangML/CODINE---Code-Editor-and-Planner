@@ -17,7 +17,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   color: #555;
-  background: url('../../../../assets/images/contact1.jpg');
+  background: url('../../../../assets/images/contact1.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -41,7 +41,7 @@
 }
 
 .contact__section__item-1 {
-  background: url('../../../../assets/images/logo.png');
+  background: url('../../../../assets/images/logo.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -3,19 +3,22 @@ const jwt = require('jsonwebtoken');
 const { OAuth2Client } = require('google-auth-library');
 require('path');
 const dotenv = require('dotenv');
+
 dotenv.config();
 const Pusher = require('pusher');
-const logger = require('../logs/logger');
 const { validationResult } = require('express-validator');
-var jwtSecret = process.env.ACCESS_TOKEN_SECRET;
+
+const jwtSecret = process.env.ACCESS_TOKEN_SECRET;
 require('../databases/oce.dbs');
 const request = require('request');
+const logger = require('../logs/logger');
 const {
   OceContactModel,
   OceToDoModel,
   OceAuthModel,
   OceGoogleAuthModel,
 } = require('../models/oce.models');
+
 const clientSecret = process.env.CLIENT_SECRET;
 const clientId = process.env.CLIENT_ID;
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
@@ -46,7 +49,7 @@ const oceContactPostController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
 };
@@ -74,7 +77,7 @@ const oceVanillaController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
 };
@@ -98,7 +101,7 @@ const oceLiveCompilerPostController = async (req, res) => {
         method: 'POST',
         json: program,
       },
-      (error, response, body) => res.status(201).send(body)
+      (error, response, body) => res.status(201).send(body),
     );
     logger.info('Live Compiler is working as expected');
   } catch (err) {
@@ -106,7 +109,7 @@ const oceLiveCompilerPostController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
 };
@@ -123,7 +126,7 @@ const oceToDoListGetController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
 };
@@ -138,7 +141,7 @@ const oceToDoListPostController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
 };
@@ -153,7 +156,7 @@ const oceToDoListPutController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
 };
@@ -168,7 +171,7 @@ const oceToDoListDeleteController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
   return null;
@@ -200,14 +203,14 @@ const oceAuthRegisterController = async (req, res) => {
       password,
     });
 
-    //Encrypt Password
+    // Encrypt Password
     const salt = await bcrypt.genSalt(10);
 
     user.password = await bcrypt.hash(password, salt);
 
     await user.save();
 
-    //Return jsonwebtoken
+    // Return jsonwebtoken
     const payload = {
       user: {
         id: user.id,
@@ -224,7 +227,7 @@ const oceAuthRegisterController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
 };
@@ -239,7 +242,7 @@ const oceAuthLoadingController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
 };
@@ -255,7 +258,7 @@ const oceAuthLoginController = async (req, res) => {
 
   try {
     // See if user exists
-    let user = await OceAuthModel.findOne({ email });
+    const user = await OceAuthModel.findOne({ email });
 
     if (!user) {
       logger.error(`400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
@@ -269,7 +272,7 @@ const oceAuthLoginController = async (req, res) => {
       return await res.status(400).json({ errors: [{ msg: 'Invalid Credentials' }] });
     }
 
-    //Return jsonwebtoken
+    // Return jsonwebtoken
     const payload = {
       user: {
         id: user.id,
@@ -286,7 +289,7 @@ const oceAuthLoginController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
 };
@@ -304,14 +307,16 @@ const oceGoogleAuthSaveController = async (req, res) => {
       requiredAudience: client,
     });
     const payload = await ticket.getPayload();
-    const { sub, email, name, picture } = payload;
+    const {
+      sub, email, name, picture,
+    } = payload;
 
     const userId = sub;
 
     const oceGoogleAuthInstance = new OceGoogleAuthModel({
-      userId: userId,
+      userId,
       fullName: name,
-      email: email,
+      email,
       photoUrl: picture,
     });
 
@@ -323,7 +328,7 @@ const oceGoogleAuthSaveController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
 };

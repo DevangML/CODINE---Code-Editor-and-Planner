@@ -3,24 +3,28 @@ const mongoose = require('mongoose');
 const oceContactSchema = new mongoose.Schema({
   Name: {
     type: String,
-    required: true,
+    required: [true, 'Name Required'],
     trim: true,
+    min: [0, 'Name is too short'],
   },
   Email: {
     type: String,
-    required: true,
+    required: [true, 'Email Required'],
     trim: true,
     unique: true,
+    min: [0, 'Email is too short'],
   },
   Phone: {
     type: Number,
-    required: true,
+    required: [true, 'Phone Number Required'],
     trim: true,
+    min: [10, 'Phone number is invalid'],
   },
   Message: {
     type: String,
-    required: true,
+    required: [true, 'Message Required'],
     trim: true,
+    min: [0, 'Message is empty'],
   },
 });
 
@@ -65,4 +69,9 @@ const googleAuthSchema = new mongoose.Schema({
 
 const OceGoogleAuthModel = mongoose.model('googleuser', googleAuthSchema);
 
-module.exports = { OceContactModel, OceToDoModel, OceAuthModel, OceGoogleAuthModel };
+module.exports = {
+  OceContactModel,
+  OceToDoModel,
+  OceAuthModel,
+  OceGoogleAuthModel,
+};

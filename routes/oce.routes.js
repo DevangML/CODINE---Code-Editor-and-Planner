@@ -1,6 +1,6 @@
 const express = require('express');
-const auth = require('../middlewares/auth');
 const { check } = require('express-validator');
+const auth = require('../middlewares/auth');
 const {
   oceContactPostController,
   oceVanillaController,
@@ -79,7 +79,7 @@ oceAuthRouter.post(
     check('email', 'Please include a valid email').isEmail(),
     check('password', 'Please enter password with 6 or more characters').isLength({ min: 6 }),
   ],
-  oceAuthRegisterController
+  oceAuthRegisterController,
 );
 
 // @route   GET /auth/get
@@ -96,7 +96,7 @@ oceAuthRouter.post(
     check('email', 'Please include a valid email').isEmail(),
     check('password', 'Password is required').exists(),
   ],
-  oceAuthLoginController
+  oceAuthLoginController,
 );
 
 // Google Authentication Routes

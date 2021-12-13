@@ -13,14 +13,14 @@ module.exports = createLogger({
       format: format.combine(
         format.timestamp({ format: 'MMM-DD-YYYY HH:mm:ss' }),
         format.align(),
-        format.printf((info) => `${info.level}: ${[info.timestamp]}: ${info.message}`)
+        format.printf((info) => `${info.level}: ${[info.timestamp]}: ${info.message}`),
       ),
     }),
 
     // MongoDB transport
     new transports.MongoDB({
       level: 'error',
-      //mongo database connection link
+      // mongo database connection link
       db: process.env.DBURI,
       options: {
         useNewUrlParser: true,
@@ -31,7 +31,7 @@ module.exports = createLogger({
       format: format.combine(
         format.timestamp(),
         // Convert logs to a json format
-        format.json()
+        format.json(),
       ),
     }),
   ],

@@ -18,7 +18,7 @@ const Sidebar = () => {
   const state = useSelector((state) => state);
   console.log(state);
   const showSidebar = () => setSidebar(!sidebar);
-  
+
   const handleSignOut = () => {
     dispatch(logout());
     history.go(0);

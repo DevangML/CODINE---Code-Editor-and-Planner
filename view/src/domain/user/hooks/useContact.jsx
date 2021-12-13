@@ -2,34 +2,24 @@ import { useState } from 'react';
 import { API } from '../../../api/index';
 
 const useContact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
+  const [contactData, setContactData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
 
-  const onNameChange = (e) => {
-    setName(e.target.value);
+  const onContactDataChange = (e) => {
+    setContactData({
+      name: e.target.value,
+      email: e.target.value,
+      phone: e.target.value,
+      message: e.target.value,
+    });
   };
-
-  const onEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const onPhoneChange = (e) => {
-    setPhone(e.target.value);
-  };
-
-  const onMsgChange = (e) => {
-    setMessage(e.target.value);
-  };
-
-  const data = { name, email, phone, message };
 
   const resetForm = () => {
-    setName('');
-    setEmail('');
-    setPhone('');
-    setMessage('');
+    setContactData({ name: '', email: '', phone: '', message: '' });
   };
 
   const handleSubmit = async (e) => {
@@ -44,11 +34,9 @@ const useContact = () => {
       });
   };
   return {
-    onNameChange,
-    onEmailChange,
-    onPhoneChange,
-    onMsgChange,
+    onContactDataChange,
     handleSubmit,
+    contactData,
   };
 };
 
