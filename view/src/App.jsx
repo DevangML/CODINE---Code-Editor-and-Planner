@@ -125,7 +125,7 @@ const App = ({ isAuthenticated }) => {
         </section>
       ) : (
         <ErrorBoundry FallbackComponent={FallBackLayout} onError={errorHandler}>
-          {localStorage.token || localStorage.gmailLogin ? (
+          {localStorage.token || localStorage.googleData ? (
             <Router>
               <Sidebar />
               <Switch>

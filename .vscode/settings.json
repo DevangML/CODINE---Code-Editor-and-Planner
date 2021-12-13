@@ -20,5 +20,5 @@
   },
   "javascript.format.enable": false,
   "spellright.language": ["en"],
-  "spellright.documentTypes": ["markdown", "latex", "javascriptreact"]
+  "spellright.documentTypes": ["markdown", "latex"]
 }

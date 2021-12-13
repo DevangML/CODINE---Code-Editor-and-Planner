@@ -35,3 +35,78 @@ info: Dec-12-2021 22:27:23: 	Server started and running on http://localhost:5000
 info: Dec-12-2021 22:27:25: 	Server started and running on http://localhost:5000
 info: Dec-12-2021 22:27:27: 	MongoDB Connection Successful
 info: Dec-12-2021 22:27:31: 	Email is: 
+info: Dec-13-2021 16:10:26: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:10:29: 	MongoDB Connection Successful
+info: Dec-13-2021 16:11:11: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:11:12: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:11:14: 	MongoDB Connection Successful
+info: Dec-13-2021 16:11:33: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:11:36: 	MongoDB Connection Successful
+info: Dec-13-2021 16:12:47: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:12:50: 	MongoDB Connection Successful
+info: Dec-13-2021 16:13:19: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:13:21: 	MongoDB Connection Successful
+info: Dec-13-2021 16:13:35: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:13:37: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:13:39: 	MongoDB Connection Successful
+info: Dec-13-2021 16:18:04: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:18:07: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:18:10: 	MongoDB Connection Successful
+info: Dec-13-2021 16:18:52: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:18:54: 	MongoDB Connection Successful
+info: Dec-13-2021 16:19:33: 	Static files i.e. client served
+info: Dec-13-2021 16:19:57: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:19:59: 	MongoDB Connection Successful
+info: Dec-13-2021 16:20:09: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:20:11: 	MongoDB Connection Successful
+info: Dec-13-2021 16:20:33: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:20:35: 	MongoDB Connection Successful
+info: Dec-13-2021 16:20:36: 	Static files i.e. client served
+info: Dec-13-2021 16:21:04: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:21:06: 	MongoDB Connection Successful
+info: Dec-13-2021 16:21:16: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:21:18: 	MongoDB Connection Successful
+info: Dec-13-2021 16:21:19: 	Static files i.e. client served
+info: Dec-13-2021 16:29:47: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:29:50: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:29:52: 	MongoDB Connection Successful
+info: Dec-13-2021 16:30:04: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:30:05: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:30:08: 	MongoDB Connection Successful
+info: Dec-13-2021 16:30:51: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:30:53: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:30:55: 	MongoDB Connection Successful
+info: Dec-13-2021 16:31:00: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:31:03: 	MongoDB Connection Successful
+info: Dec-13-2021 16:31:09: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:31:11: 	MongoDB Connection Successful
+info: Dec-13-2021 16:31:17: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:31:19: 	MongoDB Connection Successful
+info: Dec-13-2021 16:31:33: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:31:35: 	MongoDB Connection Successful
+info: Dec-13-2021 16:31:37: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:31:39: 	MongoDB Connection Successful
+info: Dec-13-2021 16:31:41: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:31:43: 	MongoDB Connection Successful
+info: Dec-13-2021 16:32:51: 	Static files i.e. client served
+info: Dec-13-2021 16:34:53: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:34:56: 	MongoDB Connection Successful
+info: Dec-13-2021 16:35:07: 	Static files i.e. client served
+error: Dec-13-2021 16:35:17: 	500 - Internal Server Error - Wrong recipient, payload audience != requiredAudience - /auth/google/save - POST - ::1
+info: Dec-13-2021 16:36:24: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:36:26: 	MongoDB Connection Successful
+info: Dec-13-2021 16:36:37: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:36:39: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:36:41: 	MongoDB Connection Successful
+error: Dec-13-2021 16:37:39: 	500 - Internal Server Error - OceGoogleAuthModel is not defined - /auth/google/save - POST - ::1
+info: Dec-13-2021 16:38:19: 	Server started and running on http://localhost:5000
+error: Dec-13-2021 16:38:25: 	500 - Internal Server Error - googleAuthInstance is not defined - /auth/google/save - POST - ::1
+info: Dec-13-2021 16:38:31: 	MongoDB Connection Successful
+info: Dec-13-2021 16:39:17: 	Server started and running on http://localhost:5000
+info: Dec-13-2021 16:39:19: 	MongoDB Connection Successful
+info: Dec-13-2021 16:39:25: 	Google User data saved to DB
+info: Dec-13-2021 16:39:27: 	Static files i.e. client served
+info: Dec-13-2021 16:40:41: 	Static files i.e. client served
+info: Dec-13-2021 16:40:58: 	Live Compiler is working as expected
+info: Dec-13-2021 16:41:27: 	Static files i.e. client served
+info: Dec-13-2021 16:41:36: 	Static files i.e. client served

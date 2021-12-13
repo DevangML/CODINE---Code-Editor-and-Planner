@@ -10,19 +10,25 @@ const { validationResult } = require('express-validator');
 var jwtSecret = process.env.ACCESS_TOKEN_SECRET;
 require('../databases/oce.dbs');
 const request = require('request');
-const { OceContactModel, OceToDoModel, OceAuthModel } = require('../models/oce.models');
+const {
+  OceContactModel,
+  OceToDoModel,
+  OceAuthModel,
+  OceGoogleAuthModel,
+} = require('../models/oce.models');
 const clientSecret = process.env.CLIENT_SECRET;
 const clientId = process.env.CLIENT_ID;
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 // Contact Controllers
 
 const oceContactPostController = async (req, res) => {
   try {
     if (!req.body.name || !req.body.email || !req.body.phone || !req.body.message) {
-      await res.status(400).json({
+      logger.error(`400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+      return await res.status(400).json({
         error: 'Insufficient inputs',
       });
-      logger.error(`400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
     }
 
     const oceInstance = new OceContactModel({
@@ -287,48 +293,39 @@ const oceAuthLoginController = async (req, res) => {
 
 // Google Authentication Controllers
 
-// const oceGoogleAuthSignInController = async (req, res) => {
-//   const { email, password } = req.body;
+// Google Authentication Controllers
 
-//   try {
-//     const oldUser = await OceGoogleAuthModel.findOne({ email });
+const oceGoogleAuthSaveController = async (req, res) => {
+  try {
+    const { token } = req.body;
 
-//     if (!oldUser) {
-//       logger.error(`404 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
-//       return res.status(404).json({ message: "User doesn't exist" });
-//     }
+    const ticket = await client.verifyIdToken({
+      idToken: token,
+      requiredAudience: client,
+    });
+    const payload = await ticket.getPayload();
+    const { sub, email, name, picture } = payload;
 
-//     const isPasswordCorrect = await bcrypt.compare(password, oldUser.password);
+    const userId = sub;
 
-//     if (!isPasswordCorrect) {
-//       logger.error(`400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
-//       return res.status(400).json({ message: 'Invalid credentials' });
-//     }
+    const oceGoogleAuthInstance = new OceGoogleAuthModel({
+      userId: userId,
+      fullName: name,
+      email: email,
+      photoUrl: picture,
+    });
 
-//     const token = jwt.sign({ email: oldUser.email, id: oldUser._id }, gSecret, { expiresIn: '1h' });
-
-//     res.status(200).json({ result: oldUser, token });
-//     logger.info('Google Login Successful');
-//   } catch (err) {
-//     res.status(500).json({ message: 'Something went wrong' });
-//     logger.error(
-//       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
-//         req.method
-//       } - ${req.ip}`
-//     );
-//   }
-// };
-
-const oceGoogleAuthTestController = async (req, res) => {
-  const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
-  const { token } = req.body;
-  const ticket = await client.verifyIdToken({
-    idToken: token,
-    requiredAudience: client,
-  });
-  const { email } = await ticket.getPayload();
-  logger.info('Email is: ', email);
-  console.log(email);
+    const confirmation = await oceGoogleAuthInstance.save();
+    res.send(confirmation);
+    logger.info('Google User data saved to DB');
+  } catch (err) {
+    await res.status(500).send('Server error');
+    logger.error(
+      `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
+        req.method
+      } - ${req.ip}`
+    );
+  }
 };
 
 module.exports = {
@@ -342,5 +339,5 @@ module.exports = {
   oceAuthRegisterController,
   oceAuthLoadingController,
   oceAuthLoginController,
-  oceGoogleAuthTestController,
+  oceGoogleAuthSaveController,
 };

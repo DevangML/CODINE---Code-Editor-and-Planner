@@ -52,4 +52,17 @@ const oceAuthSchema = new mongoose.Schema({
 
 const OceAuthModel = mongoose.model('user', oceAuthSchema);
 
-module.exports = { OceContactModel, OceToDoModel, OceAuthModel };
+const googleAuthSchema = new mongoose.Schema({
+  userId: { type: String, required: true },
+  fullName: { type: String, required: true },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  photoUrl: { type: String, required: true },
+});
+
+const OceGoogleAuthModel = mongoose.model('googleuser', googleAuthSchema);
+
+module.exports = { OceContactModel, OceToDoModel, OceAuthModel, OceGoogleAuthModel };

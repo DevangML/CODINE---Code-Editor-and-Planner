@@ -41,6 +41,6 @@
     "yarn-upgrade-all": "^0.5.4"
   },
   "engines": {
-    "node": "16.13.1"
+    "node": "16.x"
   }
 }

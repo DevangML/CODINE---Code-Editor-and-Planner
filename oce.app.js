@@ -12,7 +12,6 @@ const {
   oceLiveCompilerRouter,
   oceToDoListRouter,
   oceAuthRouter,
-  oceGoogleAuthTestRouter,
 } = require('./routes/oce.routes');
 // const redis = require('redis')
 
@@ -45,9 +44,6 @@ mong();
 // console.error(error)
 // })
 
-// Contact Route Initializers
-expressApp.use('/contact', oceContactRouter);
-
 // Static view configuration
 
 expressApp.use(express.static('view/build'));
@@ -55,6 +51,9 @@ expressApp.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'view', 'build', 'index.html'));
   logger.info('Static files i.e. client served');
 });
+
+// Contact Route Initializers
+expressApp.use('/contact', oceContactRouter);
 
 // Vanilla Routes Initializers
 
@@ -70,9 +69,7 @@ expressApp.use('/todo', oceToDoListRouter);
 
 // Authentication Routes Initializers
 
-expressApp.use('/user', oceAuthRouter);
-
-expressApp.use('/google', oceGoogleAuthTestRouter);
+expressApp.use('/auth', oceAuthRouter);
 
 // Making Port and connection for express.js
 const port = process.env.PORT || '5000';

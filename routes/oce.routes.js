@@ -12,7 +12,7 @@ const {
   oceAuthRegisterController,
   oceAuthLoadingController,
   oceAuthLoginController,
-  oceGoogleAuthTestController,
+  oceGoogleAuthSaveController,
 } = require('../controllers/oce.controllers');
 
 const oceContactRouter = express.Router();
@@ -25,28 +25,55 @@ const oceGoogleAuthTestRouter = express.Router();
 // Routes here
 
 // Contact Routes
+
+// @route POST /contact/post
+// @desc Posts contact form to DB
+// @access  Public
 oceContactRouter.post('/post', oceContactPostController);
 
 // Vanilla Routes
+
+// @route POST /vanilla
+// @desc Implements Pusher Live Sync Functionality
+// @access Public
 oceVanillaRouter.post('/', oceVanillaController);
 
 // LiveCompiler Routes
+
+// @route POST /compiler/runCode
+// @desc Implements Live Compiler Logic
+// @access Public
 oceLiveCompilerRouter.post('/runCode', oceLiveCompilerPostController);
 
 // To-Do List Routes
 
-oceToDoListRouter.post('/', oceToDoListPostController);
-oceToDoListRouter.get('/', oceToDoListGetController);
-oceToDoListRouter.put('/:id', oceToDoListPutController);
-oceToDoListRouter.delete('/:id', oceToDoListDeleteController);
+// @route POST /todo/post
+// @desc Saves Tasks in DB
+// @access Public
+oceToDoListRouter.post('/post', oceToDoListPostController);
+
+// @route POST /todo/get
+// @desc Retrieves Tasks from DB
+// @access Public
+oceToDoListRouter.get('/get', oceToDoListGetController);
+
+// @route POST /todo/put/:id
+// @desc Updates Tasks in DB
+// @access Public
+oceToDoListRouter.put('/put/:id', oceToDoListPutController);
+
+// @route POST /todo/delete/:id
+// @desc Deletes Tasks from DB
+// @access Public
+oceToDoListRouter.delete('/delete/:id', oceToDoListDeleteController);
 
 // Authentication Routes
 
-// @route   POST /users
+// @route   POST /auth/post
 // @desc    Register user
 // @access  Public
 oceAuthRouter.post(
-  '/',
+  '/post/register',
   [
     check('name', 'Name is required').not().isEmpty(),
     check('email', 'Please include a valid email').isEmail(),
@@ -55,16 +82,16 @@ oceAuthRouter.post(
   oceAuthRegisterController
 );
 
-// @route   GET /users/auth
+// @route   GET /auth/get
 // @desc    Get user by token/ Loading user
 // @access  Private
-oceAuthRouter.get('/auth', auth, oceAuthLoadingController);
+oceAuthRouter.get('/get', auth, oceAuthLoadingController);
 
-// @route   POST /users/auth
+// @route   POST /auth/post/load
 // @desc    Authentication user & get token/ Login user
 // @access  Public
 oceAuthRouter.post(
-  '/auth',
+  '/post/login',
   [
     check('email', 'Please include a valid email').isEmail(),
     check('password', 'Password is required').exists(),
@@ -74,7 +101,10 @@ oceAuthRouter.post(
 
 // Google Authentication Routes
 
-oceGoogleAuthTestRouter.post('/', oceGoogleAuthTestController);
+// @route POST /auth/auth/google
+// @desc Google authentication - saves user information to mongoDB
+// @access Public
+oceAuthRouter.post('/google/save', oceGoogleAuthSaveController);
 
 module.exports = {
   oceContactRouter,
@@ -82,5 +112,4 @@ module.exports = {
   oceLiveCompilerRouter,
   oceToDoListRouter,
   oceAuthRouter,
-  oceGoogleAuthTestRouter,
 };

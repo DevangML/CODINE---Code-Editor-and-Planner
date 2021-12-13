@@ -31,20 +31,16 @@ const Login = ({ login, isAuthenticated }) => {
 
   const googleSuccess = async (response) => {
     try {
-      const res = await API.post('/google', { token: response.tokenId });
+      const res = await API.post('/auth/google/save', { token: response.tokenId });
 
       setGoogleData(res);
 
       await localStorage.setItem('googleData', JSON.stringify(res));
-      // await history.push('/');
-      // setTimeout(() => {
-      //   window.location.reload(false);
-      // }, 2);
+      await history.push('/');
+      setTimeout(() => {
+        window.location.reload(false);
+      }, 2);
       refreshTokenSetup(response);
-
-      if (res.status === 201) {
-        console.log('Data sent to backend');
-      }
     } catch (error) {
       console.log(error);
     }
