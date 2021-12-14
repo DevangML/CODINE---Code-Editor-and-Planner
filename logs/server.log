@@ -163,3 +163,9 @@ info: Dec-14-2021 00:43:17: 	MongoDB Connection Successful
 info: Dec-14-2021 00:44:20: 	Server started and running on http://localhost:5000
 info: Dec-14-2021 00:44:22: 	Server started and running on http://localhost:5000
 info: Dec-14-2021 00:44:24: 	MongoDB Connection Successful
+info: Dec-14-2021 14:10:05: 	Server started and running on http://localhost:5000
+info: Dec-14-2021 14:10:08: 	MongoDB Connection Successful
+info: Dec-14-2021 14:10:26: 	Static files i.e. client served
+error: Dec-14-2021 14:10:39: 	500 - Internal Server Error - E11000 duplicate key error collection: CODEX.googleusers index: email_1 dup key: { email: "devangmanjramkar@gmail.com" } - /auth/google/save - POST - ::1
+info: Dec-14-2021 14:10:45: 	Google User data saved to DB
+info: Dec-14-2021 14:10:45: 	Static files i.e. client served

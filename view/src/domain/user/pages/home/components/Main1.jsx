@@ -1,6 +1,6 @@
 const Main1 = () => (
   <section className='main-1' data-aos='fade-up'>
-    <h1 className='main-1__item-1'>CODEX</h1>
+    <h1 className='main-1__item-1'>CODINE</h1>
     <br />
     <br />
     <em className='main-1__item-2'>Welcome to CODEX your coding companion</em>
