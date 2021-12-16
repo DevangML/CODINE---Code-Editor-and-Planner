@@ -28,25 +28,25 @@
   text-shadow: -0.34vh 0 0.56vh rgb(36 36 36);
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-aspect-ratio: 31/50) {
   .compilerHeader__item-1 {
     font-size: 8vh !important;
   }
 }
 
-@media only screen and (max-width: 530px) {
+@media only screen and (max-aspect-ratio: 53/100) {
   .compilerHeader__item-1 {
     font-size: 6vh !important;
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-aspect-ratio: 2/5) {
   .compilerHeader__item-1 {
     font-size: 5vh !important;
   }
 }
 
-@media screen and (max-width: 330px) {
+@media screen and (max-aspect-ratio: 33/100) {
   .compilerHeader__item-1 {
     font-size: 4vh !important;
   }
@@ -56,7 +56,7 @@
   }
 }
 
-@media screen and (max-width: 280px) {
+@media screen and (max-aspect-ratio: 7/25) {
   .compilerHeader__item-1 {
     font-size: 3.2vh !important;
   }
@@ -66,7 +66,7 @@
   }
 }
 
-@media screen and (max-width: 200px) {
+@media screen and (max-aspect-ratio: 1/5) {
   .compilerHeader__item-1 {
     font-size: 3vh !important;
   }

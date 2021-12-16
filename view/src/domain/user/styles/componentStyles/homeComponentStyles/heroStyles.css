@@ -27,7 +27,7 @@
     3.22vh 3.22vh 0 #017e7f, 4.03vh 4.03vh 0 #052939, 4.83vh 4.83vh 1vh #c11a2b;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-aspect-ratio: 1/1) {
   @supports (text-shadow: 0.11vw 0.11vw 0.11vw 0.11vw black) {
     .hero__item-1 {
       text-shadow: var(--x-offset) var(--y-offset) 0 0 var(--background-color),
@@ -59,7 +59,7 @@
   color: #faeca0;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-aspect-ratio: 1/1) {
   .hero {
     margin-bottom: -9vh;
     min-height: 70vh;

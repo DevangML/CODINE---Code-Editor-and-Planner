@@ -25,16 +25,16 @@
 .main-1__item-2 {
   font-size: 6vh;
   text-align: center;
-  font-family: "Courgette", cursive;
+  font-family: 'Courgette', cursive;
 }
 
 .main-1__item-3 {
   font-size: 5vh;
   text-align: center;
-  font-family: "Courgette", cursive;
+  font-family: 'Courgette', cursive;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-aspect-ratio: 13/20) {
   .main-1__item-1 {
     font-size: 12vh;
   }
@@ -52,7 +52,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-aspect-ratio: 1/2) {
   .main-1__item-1 {
     font-size: 9vh;
   }
@@ -70,13 +70,13 @@
   }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-aspect-ratio: 19/50) {
   .main-1__item-1 {
     font-size: 6.5vh;
   }
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-aspect-ratio: 3/10) {
   .main-1__item-1 {
     font-size: 4vh;
   }
@@ -90,7 +90,7 @@
   }
 }
 
-@media screen and (max-width: 250px) {
+@media screen and (max-aspect-ratio: 1/4) {
   .main-1__item-1 {
     font-size: 3vh;
   }

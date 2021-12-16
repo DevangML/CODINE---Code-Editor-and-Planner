@@ -11,7 +11,7 @@
   gap: 5vh;
   z-index: 8;
   overflow: hidden;
-  font-family: "Kaushan Script", cursive;
+  font-family: 'Kaushan Script', cursive;
   user-select: none;
   user-select: none;
   user-select: none;
@@ -31,19 +31,13 @@
   margin-top: -6vh;
 }
 
-@media only screen and (max-height: 2160px) and (max-width: 3840px) {
+@media only screen and (max-aspect-ratio: 16/9) {
   .vanilla {
     padding-top: 13vh;
   }
 }
 
-@media only screen and (max-height: 1080px) and (max-width: 1920px) {
-  .vanilla {
-    padding-top: 9vh;
-  }
-}
-
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-aspect-ratio: 7/5) {
   .vanilla__header__item {
     font-size: 6vw;
   }
