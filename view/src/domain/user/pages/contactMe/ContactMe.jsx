@@ -1,7 +1,7 @@
 import useContact from '../../hooks/useContact';
 
 const ContactMe = () => {
-  const { onContactDataChange, handleSubmit } = useContact();
+  const { setName, setEmail, setPhone, setMessage, handleSubmit } = useContact();
   return (
     <section className='contact'>
       <section className='contact__container'>
@@ -19,7 +19,7 @@ const ContactMe = () => {
               type='text'
               className='contact__section__sub-section__item-1_mod-2'
               placeholder='Name'
-              onChange={onContactDataChange}
+              onChange={(e) => setName(e.target.value)}
             />
           </section>
           <section className='contact__section__sub-section__item-2'>
@@ -30,7 +30,7 @@ const ContactMe = () => {
               />
             </svg>
             <input
-              onChange={onContactDataChange}
+              onChange={(e) => setEmail(e.target.value)}
               type='email'
               className='contact__section__sub-section__item-1_mod-2'
               placeholder='Email'
@@ -45,7 +45,7 @@ const ContactMe = () => {
             </svg>
             <input
               type='tel'
-              onChange={onContactDataChange}
+              onChange={(e) => setPhone(e.target.value)}
               className='contact__section__sub-section__item-1_mod-2'
               placeholder='Phone Number'
             />
@@ -59,7 +59,7 @@ const ContactMe = () => {
             </svg>
             <input
               type='text'
-              onChange={onContactDataChange}
+              onChange={(e) => setMessage(e.target.value)}
               className='contact__section__sub-section__item-1_mod-2'
               placeholder='Message'
             />

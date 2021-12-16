@@ -169,3 +169,73 @@ info: Dec-14-2021 14:10:26: 	Static files i.e. client served
 error: Dec-14-2021 14:10:39: 	500 - Internal Server Error - E11000 duplicate key error collection: CODEX.googleusers index: email_1 dup key: { email: "devangmanjramkar@gmail.com" } - /auth/google/save - POST - ::1
 info: Dec-14-2021 14:10:45: 	Google User data saved to DB
 info: Dec-14-2021 14:10:45: 	Static files i.e. client served
+info: Dec-15-2021 13:23:52: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 13:23:55: 	MongoDB Connection Successful
+info: Dec-15-2021 13:23:59: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 13:24:01: 	MongoDB Connection Successful
+info: Dec-15-2021 13:24:12: 	Static files i.e. client served
+info: Dec-15-2021 13:25:56: 	Static files i.e. client served
+error: Dec-15-2021 13:26:21: 	500 - Internal Server Error - contact validation failed: Name: Cast to string failed for value "{ name: 'Devang' }" (type Object) at path "Name", Email: Cast to string failed for value "{ email: 'devangmanjramkar@gmail.com' }" (type Object) at path "Email", Phone: Cast to Number failed for value "{ phone: '8806113283' }" (type Object) at path "Phone", Message: Cast to string failed for value "{ message: 'Hii' }" (type Object) at path "Message" - /contact/post - POST - ::1
+info: Dec-15-2021 13:26:57: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 13:26:59: 	MongoDB Connection Successful
+error: Dec-15-2021 13:27:00: 	500 - Internal Server Error - contact validation failed: Name: Cast to string failed for value "{ name: 'Devang' }" (type Object) at path "Name", Email: Cast to string failed for value "{ email: 'devangmanjramkar@gmail.com' }" (type Object) at path "Email", Phone: Cast to Number failed for value "{ phone: '8806113283' }" (type Object) at path "Phone", Message: Cast to string failed for value "{ message: 'Hii' }" (type Object) at path "Message" - /contact/post - POST - ::1
+info: Dec-15-2021 13:27:18: 	Static files i.e. client served
+error: Dec-15-2021 13:27:37: 	500 - Internal Server Error - contact validation failed: Name: Cast to string failed for value "{ name: 'Devang Manjramkar' }" (type Object) at path "Name", Email: Cast to string failed for value "{ email: 'devang.manjramkar20@vit.edu' }" (type Object) at path "Email", Phone: Cast to Number failed for value "{ phone: '8806113283' }" (type Object) at path "Phone", Message: Cast to string failed for value "{ message: 'Hii' }" (type Object) at path "Message" - /contact/post - POST - ::1
+info: Dec-15-2021 13:30:26: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 13:30:29: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 13:30:31: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 13:30:33: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 13:30:35: 	MongoDB Connection Successful
+error: Dec-15-2021 13:30:38: 	500 - Internal Server Error - contact validation failed: message: Message Required, phone: Phone Number Required, email: Email Required, name: Name Required - /contact/post - POST - ::1
+info: Dec-15-2021 13:30:43: 	Static files i.e. client served
+error: Dec-15-2021 13:30:57: 	500 - Internal Server Error - contact validation failed: message: Message Required, phone: Phone Number Required, email: Email Required, name: Name Required - /contact/post - POST - ::1
+info: Dec-15-2021 13:34:48: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 13:34:50: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 13:34:52: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 13:34:54: 	MongoDB Connection Successful
+info: Dec-15-2021 13:35:25: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 13:35:28: 	MongoDB Connection Successful
+error: Dec-15-2021 13:35:29: 	500 - Internal Server Error - contact validation failed: name: Cast to string failed for value "{ name: 'Devang' }" (type Object) at path "name", email: Cast to string failed for value "{ email: 'devangmanjramkar@gmail.com' }" (type Object) at path "email", phone: Cast to Number failed for value "{ phone: '8806113283' }" (type Object) at path "phone", message: Cast to string failed for value "{ message: 'Hii' }" (type Object) at path "message" - /contact/post - POST - ::1
+error: Dec-15-2021 13:35:36: 	500 - Internal Server Error - contact validation failed: name: Cast to string failed for value "{ name: 'Devang' }" (type Object) at path "name", email: Cast to string failed for value "{ email: 'devangmanjramkar@gmail.com' }" (type Object) at path "email", phone: Cast to Number failed for value "{ phone: '8806113283' }" (type Object) at path "phone", message: Cast to string failed for value "{ message: 'Hii' }" (type Object) at path "message" - /contact/post - POST - ::1
+info: Dec-15-2021 13:41:14: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 13:44:39: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 13:44:42: 	MongoDB Connection Successful
+error: Dec-15-2021 13:44:47: 	500 - Internal Server Error - contact validation failed: name: Cast to string failed for value "{ name: 'Devang' }" (type Object) at path "name", email: Cast to string failed for value "{ email: 'devangmanjramkar@gmail.com' }" (type Object) at path "email", phone: Cast to Number failed for value "{ phone: '8806113283' }" (type Object) at path "phone", message: Cast to string failed for value "{ message: 'Hii' }" (type Object) at path "message" - /contact/post - POST - ::1
+info: Dec-15-2021 13:44:53: 	Static files i.e. client served
+error: Dec-15-2021 13:45:02: 	500 - Internal Server Error - E11000 duplicate key error collection: CODEX.contacts index: Email_1 dup key: { Email: null } - /contact/post - POST - ::1
+error: Dec-15-2021 13:45:45: 	500 - Internal Server Error - E11000 duplicate key error collection: CODEX.contacts index: Email_1 dup key: { Email: null } - /contact/post - POST - ::1
+info: Dec-15-2021 13:46:47: 	Form Submission Successful
+error: Dec-15-2021 14:24:09: 	400 || undefined - /contact/post - POST - ::1
+error: Dec-15-2021 14:26:41: 	400 || undefined - /contact/post - POST - ::1
+info: Dec-15-2021 14:27:19: 	Static files i.e. client served
+error: Dec-15-2021 14:27:34: 	400 || undefined - /contact/post - POST - ::1
+error: Dec-15-2021 14:28:29: 	400 || undefined - /contact/post - POST - ::1
+info: Dec-15-2021 14:28:37: 	Static files i.e. client served
+info: Dec-15-2021 14:38:07: 	Static files i.e. client served
+error: Dec-15-2021 14:38:18: 	400 || undefined - /contact/post - POST - ::1
+info: Dec-15-2021 14:39:35: 	Static files i.e. client served
+info: Dec-15-2021 14:40:21: 	Static files i.e. client served
+error: Dec-15-2021 14:40:31: 	400 || undefined - /contact/post - POST - ::1
+error: Dec-15-2021 15:27:34: 	400 || undefined - /contact/post - POST - ::1
+info: Dec-15-2021 15:27:40: 	Static files i.e. client served
+error: Dec-15-2021 15:27:54: 	500 - Internal Server Error - E11000 duplicate key error collection: CODEX.contacts index: Email_1 dup key: { Email: null } - /contact/post - POST - ::1
+error: Dec-15-2021 15:28:37: 	500 - Internal Server Error - E11000 duplicate key error collection: CODEX.contacts index: Email_1 dup key: { Email: null } - /contact/post - POST - ::1
+error: Dec-15-2021 15:28:57: 	500 - Internal Server Error - E11000 duplicate key error collection: CODEX.contacts index: Email_1 dup key: { Email: null } - /contact/post - POST - ::1
+error: Dec-15-2021 15:28:59: 	500 - Internal Server Error - E11000 duplicate key error collection: CODEX.contacts index: Email_1 dup key: { Email: null } - /contact/post - POST - ::1
+info: Dec-15-2021 15:30:40: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 15:30:43: 	MongoDB Connection Successful
+info: Dec-15-2021 15:30:47: 	Form Submission Successful
+error: Dec-15-2021 15:30:47: 	500 - Internal Server Error - E11000 duplicate key error collection: CODINE.contacts index: email_1 dup key: { email: "harsh.manjramkar20@vit.edu" } - /contact/post - POST - ::1
+error: Dec-15-2021 15:30:52: 	400 || undefined - /contact/post - POST - ::1
+error: Dec-15-2021 15:30:55: 	400 || undefined - /contact/post - POST - ::1
+error: Dec-15-2021 15:32:08: 	400 || undefined - /contact/post - POST - ::1
+error: Dec-15-2021 15:32:16: 	400 || undefined - /contact/post - POST - ::1
+info: Dec-15-2021 15:32:56: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 15:32:58: 	MongoDB Connection Successful
+info: Dec-15-2021 15:33:04: 	Server started and running on http://localhost:5000
+info: Dec-15-2021 15:33:06: 	MongoDB Connection Successful
+info: Dec-15-2021 15:33:25: 	Static files i.e. client served
+info: Dec-15-2021 15:33:41: 	Form Submission Successful
+info: Dec-15-2021 15:34:08: 	Live Compiler is working as expected
+info: Dec-15-2021 15:35:44: 	Static files i.e. client served
+info: Dec-15-2021 15:38:13: 	Static files i.e. client served

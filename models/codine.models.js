@@ -1,26 +1,26 @@
 const mongoose = require('mongoose');
 
 const codineContactSchema = new mongoose.Schema({
-  Name: {
+  name: {
     type: String,
     required: [true, 'Name Required'],
     trim: true,
     min: [0, 'Name is too short'],
   },
-  Email: {
+  email: {
     type: String,
     required: [true, 'Email Required'],
     trim: true,
     unique: true,
     min: [0, 'Email is too short'],
   },
-  Phone: {
+  phone: {
     type: Number,
     required: [true, 'Phone Number Required'],
     trim: true,
     min: [10, 'Phone number is invalid'],
   },
-  Message: {
+  message: {
     type: String,
     required: [true, 'Message Required'],
     trim: true,

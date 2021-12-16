@@ -3,11 +3,11 @@ const Main1 = () => (
     <h1 className='main-1__item-1'>CODINE</h1>
     <br />
     <br />
-    <em className='main-1__item-2'>Welcome to CODEX your coding companion</em>
+    <em className='main-1__item-2'>Welcome to CODINE your coding companion</em>
     <br />
     <br />
     <p className='main-1__item-3'>
-      You can use CODEX to plan your projects and do prototyping here
+      You can use CODINE to plan your projects and do prototyping here
     </p>
   </section>
 );

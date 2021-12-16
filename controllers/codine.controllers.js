@@ -25,7 +25,7 @@ const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 // Contact Controllers
 
-const CodineContactPostController = async (req, res) => {
+const codineContactPostController = async (req, res) => {
   try {
     if (!req.body.name || !req.body.email || !req.body.phone || !req.body.message) {
       logger.error(`400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
@@ -35,14 +35,14 @@ const CodineContactPostController = async (req, res) => {
     }
 
     const codineInstance = new CodineContactModel({
-      Name: req.body.name,
-      Email: req.body.email,
-      Phone: req.body.phone,
-      Message: req.body.message,
+      name: req.body.name,
+      email: req.body.email,
+      phone: req.body.phone,
+      message: req.body.message,
     });
 
     const confirmation = await codineInstance.save();
-    await res.send(confirmation);
+    res.send(confirmation);
     logger.info('Form Submission Successful');
   } catch (err) {
     await res.status(500).json({ error: err, errorInfo: 'Unexpected Error' });
@@ -249,10 +249,10 @@ const codineAuthLoadingController = async (req, res) => {
 
 const codineAuthLoginController = async (req, res) => {
   const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    logger.error(`400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
-    return await res.status(400).json({ errors: errors.array() });
-  }
+  // if (!errors.isEmpty()) {
+  //   logger.error(`400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`);
+  //   return await res.status(400).json({ errors: errors.array() });
+  // }
 
   const { email, password } = req.body;
 
