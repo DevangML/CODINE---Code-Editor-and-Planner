@@ -130,8 +130,8 @@
   background: #d8d8d8a9;
 }
 
-@media only screen and (min-width: 3600px) {
+/* @media only screen and (min-width: 3600px) {
   .contact__container {
     border-radius: 1vw;
   }
-}
+} */

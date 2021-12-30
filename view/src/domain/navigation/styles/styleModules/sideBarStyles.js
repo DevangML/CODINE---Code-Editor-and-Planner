@@ -27,12 +27,12 @@ export const NavIcon = styled(Link)`
   z-index: 400;
   margin-top: 7vh;
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-aspect-ratio: 4/5) {
     min-width: 13vw;
     min-height: 9vh;
     border-radius: 50%;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-aspect-ratio: 3/5) {
     min-width: 20vw;
     min-height: 9vh;
     border-radius: 50%;
