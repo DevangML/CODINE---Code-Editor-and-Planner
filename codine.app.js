@@ -3,16 +3,15 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const mong = require('./databases/codine.dbs');
+const helmet = require('helmet');
 const logger = require('./logs/logger');
 require('dotenv').config({ path: '.env' });
 const compression = require('compression');
-const {
-  codineContactRouter,
-  codineVanillaRouter,
-  codineLiveCompilerRouter,
-  codineToDoListRouter,
-  codineAuthRouter,
-} = require('./routes/codine.routes');
+const codineAuthRouter = require('./routes/codine.auth.routes');
+const codineContactRouter = require('./routes/codine.contact.routes');
+const codineLiveCompilerRouter = require('./routes/codine.contact.routes');
+const codineToDoListRouter = require('./routes/codine.todo.routes');
+const codineVanillaRouter = require('./routes/codine.vanilla.routes');
 // const redis = require('redis')
 
 // App Initialization
@@ -31,6 +30,7 @@ expressApp.use(cors(corsOptions));
 // Basic express config
 expressApp.use(express.json({ limit: '30mb', extended: true }));
 expressApp.use(express.urlencoded({ limit: '30mb', extended: true }));
+expressApp.use(helmet());
 
 // Making database connection
 

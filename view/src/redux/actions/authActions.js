@@ -44,7 +44,7 @@ export const register =
     const body = JSON.stringify({ name, email, password });
 
     try {
-      const res = await axios.post('http://localhost:5000/auth/post/register', body, config);
+      const res = await axios.post('http://localhost:5000/auth', body, config);
 
       dispatch({
         type: REGISTER_SUCCESS,
