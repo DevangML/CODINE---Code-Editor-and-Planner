@@ -1,1 +1,3 @@
-export const FallBackLayout = () => <h1>Something went wrong!!!</h1>;
+export const FallBackLayout = function () {
+  return <h1>Something went wrong!!!</h1>;
+};

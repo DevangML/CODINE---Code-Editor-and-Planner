@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { OAuth2Client } = require('google-auth-library');
+
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 require('path');
 const dotenv = require('dotenv');
@@ -21,7 +22,7 @@ const authMiddleware = async (req, res, next) => {
           const payload = result.getPayload();
           if (!payload.email) {
             logger.error(
-              `400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`
+              `400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`,
             );
             return res.status(400).json({
               error: 'Google User cannot be authorized',
@@ -37,7 +38,7 @@ const authMiddleware = async (req, res, next) => {
       // Check if there is no token in the header
       if (!token) {
         logger.error(
-          `401 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`
+          `401 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`,
         );
         return res.status(401).json({ msg: 'No token, authorization denied' });
       }
@@ -57,7 +58,7 @@ const authMiddleware = async (req, res, next) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
   return null;

@@ -20,5 +20,6 @@
   },
   "javascript.format.enable": false,
   "spellright.language": ["en"],
-  "spellright.documentTypes": ["markdown", "latex"]
+  "spellright.documentTypes": ["markdown", "latex"],
+  "workbench.editor.enablePreview": false
 }

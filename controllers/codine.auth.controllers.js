@@ -1,9 +1,12 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 require('path');
+const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+
 dotenv.config();
 const { validationResult } = require('express-validator');
+
 const jwtSecret = process.env.ACCESS_TOKEN_SECRET;
 require('../databases/codine.dbs');
 const logger = require('../logs/logger');
@@ -12,6 +15,10 @@ const {
   CodineGoogleAuthModel,
   CodineUserModel,
 } = require('../models/codine.auth.models');
+
+const CodineContactModel = require('../models/codine.contact.models');
+
+const db = mongoose.createConnection(process.env.DBURI);
 
 // Authentication Controllers
 
@@ -50,18 +57,19 @@ const codineAuthCreateController1 = async (req, res) => {
     };
 
     const userId = payload.id;
-    const fullName = name;
-    const emailId = email;
-    const phone = await FormModel.findById({ userId }).select('phone');
 
     const user = await db.collection('users').findOne({ userId });
 
     if (!user) {
+      const fullName = name;
+      const emailId = email;
+      // const phone = await CodineContactModel.findById({ userId }).select('phone');
+
       const userInstance = new CodineUserModel({
-        userId: userId,
-        fullName: fullName,
+        userId,
+        fullName,
         email: emailId,
-        phone,
+        // phone,
       });
 
       const userCreateConfirmation = await userInstance.save();
@@ -188,13 +196,13 @@ const codineAuthCreateController4 = async (req, res) => {
     const userId = req.user.sub;
     const fullName = req.user.name;
     const emailId = req.user.email;
-    const phone = await EventFormModel.findById({ userId }).select('phone');
+    const phone = await CodineContactModel.findById({ userId }).select('phone');
     const user = await db.collection('users').findOne({ emailId });
 
     if (!user) {
       const googleUserInstance = new CodineUserModel({
-        userId: userId,
-        fullName: fullName,
+        userId,
+        fullName,
         email: emailId,
         phone,
       });

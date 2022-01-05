@@ -1,5 +1,6 @@
 require('path');
 const dotenv = require('dotenv');
+
 dotenv.config();
 const Pusher = require('pusher');
 require('../databases/codine.dbs');
@@ -28,7 +29,7 @@ const codineVanillaController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
 };

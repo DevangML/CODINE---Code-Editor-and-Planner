@@ -5,7 +5,7 @@ import { MOVE_LIST, MOVE_CARD } from '../../../../../redux/constants/projectPlan
 import List from './List';
 import AddList from './AddList';
 
-const Board = (props) => {
+const Board = function (props) {
   const [addingList, setAddingList] = useState(false);
 
   const toggleAddingList = () => setAddingList({ addingList: !addingList });

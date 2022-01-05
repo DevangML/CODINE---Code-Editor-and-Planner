@@ -33,7 +33,7 @@ const codineUserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  phone: { type: Number, required: true, trim: true, default: null },
+  // phone: { type: Number, required: true, trim: true, default: null },
 });
 
 const CodineUserModel = mongoose.model('user', codineUserSchema);

@@ -14,7 +14,12 @@ const useContact = () => {
     setMessage('');
   };
 
-  const data = { name, email, phone, message };
+  const data = {
+    name,
+    email,
+    phone,
+    message,
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();

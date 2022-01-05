@@ -10,8 +10,10 @@ import SidebarData from './SidebarData';
 import SubMenu from './SubMenu';
 import { logout } from '../../redux/actions/authActions';
 import { Nav, NavIcon, SidebarNav, SidebarWrap, Logout } from './styles/styleModules/sideBarStyles';
+import { API } from '../../api';
+import store from '../../redux/store';
 
-const Sidebar = () => {
+const Sidebar = function () {
   const [sidebar, setSidebar] = useState(false);
   const history = useHistory();
   const dispatch = useDispatch();
@@ -25,12 +27,26 @@ const Sidebar = () => {
   };
 
   const onSuccess = () => {
-    localStorage.clear();
+    localStorage.removeItem('g-auth-token');
+    localStorage.removeItem('authType');
     history.go(0);
   };
 
+  const authType = localStorage.getItem('authType');
+
+  let googleSaveHandler;
+
+  if (authType === 'Google') {
+    googleSaveHandler = async () => {
+      const token = localStorage.getItem('g-auth-token');
+      const body = { authType, token };
+      await API.post('/auth/create/3', body);
+      await API.post('/auth/create/4', body);
+    };
+  }
+
   return (
-    <IconContext.Provider value={{ color: '#fff' }}>
+    <IconContext.Provider value={{ color: '#fff' }} onClick={googleSaveHandler}>
       <Nav>
         <NavIcon to='#'>
           <FaIcons.FaBars
@@ -48,12 +64,12 @@ const Sidebar = () => {
             <SubMenu item={item} key={index} />
           ))}
         </SidebarWrap>
-        {localStorage.token && (
+        {store.getState().auth.authType === 'jwtAuth' && (
           <Logout onClick={() => handleSignOut()} to='/' replace>
             <span>Logout</span>
           </Logout>
         )}
-        {localStorage.googleData && (
+        {localStorage.getItem('authType') === 'Google' && (
           <GoogleLogout
             clientId={process.env.REACT_APP_GCID}
             buttonText='Logout'

@@ -1,5 +1,6 @@
 require('path');
 const dotenv = require('dotenv');
+
 dotenv.config();
 require('../databases/codine.dbs');
 const logger = require('../logs/logger');
@@ -9,8 +10,22 @@ const { CodineToDoModel } = require('../models/codine.todo.models');
 
 const codineToDoListCreateController = async (req, res) => {
   try {
-    const task = await new CodineToDoModel(req.body).save();
-    await res.send(task);
+    const { authType, tasks } = req.body;
+
+    let userId;
+
+    if (authType === 'Google') {
+      userId = req.user.sub;
+    } else if (authType === 'jwtAuth') {
+      userId = req.user.id;
+    }
+
+    const userExists = await CodineToDoModel.findById({ userId });
+
+    if (!userExists) {
+      const task = await new CodineToDoModel(userId, req.body).save();
+      await res.send(task);
+    }
     logger.info('Sending tasks to frontend for post route of to do list');
   } catch (error) {
     await res.status(500).json({ error: err, errorInfo: 'Unexpected Error' });

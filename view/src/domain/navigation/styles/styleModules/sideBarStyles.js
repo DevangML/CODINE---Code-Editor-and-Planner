@@ -87,10 +87,18 @@ export const SidebarWrap = styled.div`
 
 export const Logout = styled(Link)`
   background: #6100c2;
-  box-shadow: inset 15px -15px 39px #490092, inset -15px 15px 39px #7900f3;
   outline: none;
-  border: none;
-  border-radius: 3vh;
+  border-radius: 1vh;
+  font-size: 3vh;
   color: gold;
-  max-width: 20%;
+  max-width: 50%;
+  min-width: 30%;
+  text-align: center;
+  transition: all cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.2s;
+
+  &:hover {
+    border: 2px solid white;
+    background: #525252;
+    color: #fff;
+  }
 `;

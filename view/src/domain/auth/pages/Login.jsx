@@ -1,24 +1,20 @@
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Redirect } from 'react-router';
-import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
 import { ErrorBoundary } from 'react-error-boundary';
-import { refreshTokenSetup } from '../utils/refreshToken';
+import refreshTokenSetup from '../utils/refreshToken';
 import useLogin from '../hooks/useLogin';
-import Alert from '../../layouts/Alert';
 import Icon from '../templates/Icon';
 import { errorHandler } from '../../../utils/errorHandler';
 import { FallBackLayout } from '../../layouts/FallBackLayout';
 
 import { login } from '../../../redux/actions/authActions';
 
-const Login = () => {
+function Login() {
   const { onChange, formData } = useLogin();
   const { email, password } = formData;
   const dispatch = useDispatch(null);
-
-  const auth = useSelector((state) => state.auth);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -41,6 +37,7 @@ const Login = () => {
     } catch (error) {
       console.log(error);
     }
+    return null;
   };
 
   const googleError = (res) => {
@@ -55,65 +52,55 @@ const Login = () => {
           <p className='lead'>
             <i className='fas fa-user' /> Sign Into Your Account
           </p>
-          <Alert />
           <br />
           <form className='form' onSubmit={(e) => onSubmit(e)}>
             <div className='form-group'>
               <input
-                type='email'
-                placeholder='Email Address'
                 name='email'
-                value={email}
                 onChange={(e) => onChange(e)}
+                placeholder='Email Address'
                 required
+                type='email'
+                value={email}
               />
             </div>
             <div className='form-group'>
               <input
-                type='password'
-                placeholder='Password'
-                name='password'
                 minLength='6'
-                value={password}
+                name='password'
                 onChange={(e) => onChange(e)}
+                placeholder='Password'
                 required
+                type='password'
+                value={password}
               />
             </div>
-            <input type='submit' value='Login' className='auth__button' />
+            <input className='auth__button' type='submit' value='Login' />
             <GoogleLogin
               clientId={process.env.REACT_APP_GCID}
+              cookiePolicy='single_host_origin'
+              onFailure={googleError}
+              onSuccess={googleSuccess}
               render={(renderProps) => (
                 <button
                   className='googleButton'
-                  color='primary'
-                  fullWidth
-                  onClick={renderProps.onClick}
                   disabled={renderProps.disabled}
+                  onClick={renderProps.onClick}
                   startIcon={<Icon />}
-                  variant='contained'
+                  type='button'
                 >
                   Google Sign In
                 </button>
               )}
-              onSuccess={googleSuccess}
-              onFailure={googleError}
-              cookiePolicy='single_host_origin'
             />
           </form>
           <p className='link'>
-            Don't have an account? <Link to='/register'>Sign Up</Link>
+            Don`&apos`t have an account? <Link to='/register'>Sign Up</Link>
           </p>
         </section>
       </div>
     </ErrorBoundary>
   );
-};
-
-Login.propTypes = {
-  login: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool,
-  authType: PropTypes.string,
-  token: PropTypes.string,
-};
+}
 
 export default Login;

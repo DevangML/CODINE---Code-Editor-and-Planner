@@ -25,7 +25,8 @@ codineAuthRouter.post(
     check('email', 'Please include a valid email').isEmail(),
     check('password', 'Please enter password with 6 or more characters').isLength({ min: 6 }),
   ],
-  codineAuthCreateController1
+
+  codineAuthCreateController1,
 );
 
 // @route   GET /auth/read
@@ -42,7 +43,7 @@ codineAuthRouter.post(
     check('email', 'Please include a valid email').isEmail(),
     check('password', 'Password is required').exists(),
   ],
-  codineAuthCreateController2
+  codineAuthCreateController2,
 );
 
 // Google Authentication Routes

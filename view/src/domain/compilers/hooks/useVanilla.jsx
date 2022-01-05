@@ -64,7 +64,13 @@ const useVanilla = () => {
     document.close();
   };
 
-  return { compData, setCompData, syncUpdates, iRef, runCode };
+  return {
+    compData,
+    setCompData,
+    syncUpdates,
+    iRef,
+    runCode,
+  };
 };
 
 export default useVanilla;

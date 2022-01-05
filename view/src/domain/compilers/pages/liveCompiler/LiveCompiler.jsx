@@ -5,7 +5,7 @@ import OutputLogs from './components/OutputLogs';
 import Header from './components/Header';
 import useLiveCompiler from '../../hooks/useLiveCompiler';
 
-const LiveCompiler = () => {
+const LiveCompiler = function () {
   const { setLanguage, setCode, setInput, input, code, language, outputLogs, stat, runCode } =
     useLiveCompiler();
   return (

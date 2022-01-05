@@ -5,7 +5,7 @@ import { ADD_LIST } from '../../../../../redux/constants/projectPlannerTypes';
 import ListEditor from './ListEditor';
 import EditButtons from './EditButtons';
 
-const AddList = (props) => {
+const AddList = function (props) {
   const [title, setTitle] = useState('');
 
   const handleChangeTitle = (e) => setTitle(e.target.value);

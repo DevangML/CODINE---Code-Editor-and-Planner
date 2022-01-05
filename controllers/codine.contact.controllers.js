@@ -1,5 +1,6 @@
 require('path');
 const dotenv = require('dotenv');
+
 dotenv.config();
 require('../databases/codine.dbs');
 const logger = require('../logs/logger');
@@ -31,7 +32,7 @@ const codineContactCreateController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`
+      } - ${req.ip}`,
     );
   }
 };

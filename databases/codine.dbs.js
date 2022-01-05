@@ -11,7 +11,7 @@ const mong = async () => {
     useUnifiedTopology: true,
   };
   try {
-   mongoose.connect(process.env.DBURI, connectionParams);
+    mongoose.connect(process.env.DBURI, connectionParams);
     logger.info('MongoDB Connection Successful');
   } catch (err) {
     logger.error(`${err.status || 500} - ${err.message}`);

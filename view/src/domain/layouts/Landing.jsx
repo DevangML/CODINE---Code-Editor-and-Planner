@@ -1,14 +1,12 @@
 /* eslint-disable arrow-body-style */
 
-const Landing = () => {
+const Landing = function () {
   return (
     <section className='landing'>
-      <div className='dark-overlay'>
-        <div className='landing-inner'>
-          <h1>CODEX</h1>
-          <p>Code Editor and Planner</p>
-          <br />
-        </div>
+      <div className='landing-inner'>
+        <h1>CODINE</h1>
+        <p>Code Editor and Planner</p>
+        <br />
       </div>
     </section>
   );

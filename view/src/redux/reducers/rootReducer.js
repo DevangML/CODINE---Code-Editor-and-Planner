@@ -4,6 +4,7 @@ import alertReducer from './authReducers/alertReducer';
 import boardReducer from './projectPlannerReducers/boardReducer';
 import cardsByIdReducer from './projectPlannerReducers/cardsByIdReducer';
 import listsByIdReducer from './projectPlannerReducers/listByIdReducer';
+import todoReducer from './todoReducer';
 
 const rootReducer = combineReducers({
   board: boardReducer,
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   cardsById: cardsByIdReducer,
   auth: authReducer,
   alert: alertReducer,
+  todos: todoReducer,
 });
 
 export default rootReducer;

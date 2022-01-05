@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import setAlert from './alertActions';
 import {
   REGISTER_SUCCESS,
@@ -10,15 +11,16 @@ import {
   LOGOUT,
 } from '../constants/authTypes';
 import setAuthToken from '../utils/setAuthToken';
+import store from '../store';
 
 // Load User
 export const loadUser = () => async (dispatch) => {
-  if (localStorage.token) {
-    setAuthToken(localStorage.token);
+  if (store.getState().auth.token) {
+    setAuthToken(store.getState().auth.token);
   }
 
   try {
-    const res = await axios.get('http://localhost:5000/auth/get');
+    const res = await axios.get('http://localhost:5000/auth/read');
 
     dispatch({
       type: USER_LOADED,
@@ -35,29 +37,31 @@ export const loadUser = () => async (dispatch) => {
 export const register =
   ({ name, email, password }) =>
   async (dispatch) => {
+    const body = JSON.stringify({ name, email, password });
+
     const config = {
       headers: {
         'Content-Type': 'application/json',
       },
     };
 
-    const body = JSON.stringify({ name, email, password });
-
     try {
-      const res = await axios.post('http://localhost:5000/auth', body, config);
+      const res = await axios.post('http://localhost:5000/auth/create/1', body, config);
 
       dispatch({
         type: REGISTER_SUCCESS,
         payload: res.data,
       });
-
-      dispatch(loadUser());
     } catch (err) {
       // const { errors } = err.response.data;
 
       // if (errors) {
       //   errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
       // }
+
+      toast.error(error.response?.data, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
 
       dispatch({
         type: REGISTER_FAIL,
@@ -76,16 +80,18 @@ export const login = (email, password) => async (dispatch) => {
   const body = JSON.stringify({ email, password });
 
   try {
-    const res = await axios.post('http://localhost:5000/auth/post/login', body, config);
+    const res = await axios.post('http://localhost:5000/auth/create/2', body, config);
 
     dispatch({
       type: LOGIN_SUCCESS,
       payload: res.data,
     });
-
-    dispatch(loadUser());
   } catch (err) {
     const { errors } = err.response.data;
+
+    toast.error(err.response?.data, {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
 
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));

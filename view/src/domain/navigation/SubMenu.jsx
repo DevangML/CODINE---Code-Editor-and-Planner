@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { SidebarLink, SidebarLabel, DropdownLink } from './styles/styleModules/subMenuStyles';
 
-const SubMenu = ({ item }) => {
+const SubMenu = function ({ item }) {
   const [subnav, setSubnav] = useState(false);
 
   const showSubnav = () => setSubnav(!subnav);

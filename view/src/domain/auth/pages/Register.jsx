@@ -1,20 +1,16 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { ErrorBoundary } from 'react-error-boundary';
 import { GoogleLogin } from 'react-google-login';
 import { useHistory } from 'react-router';
 import { errorHandler } from '../../../utils/errorHandler';
 import { FallBackLayout } from '../../layouts/FallBackLayout';
-import { refreshTokenSetup } from '../utils/refreshToken';
+import refreshTokenSetup from '../utils/refreshToken';
 import Icon from '../templates/Icon';
 import { register } from '../../../redux/actions/authActions';
-import Alert from '../../layouts/Alert';
-import setAlert from '../../../redux/actions/alertActions';
 import useRegister from '../hooks/useRegister';
-import store from '../../../redux/store';
 
-const Register = ({ setAlert, isAuthenticated }) => {
+function Register() {
   const { formData, onChange } = useRegister();
   const history = useHistory();
   const dispatch = useDispatch(null);
@@ -23,7 +19,7 @@ const Register = ({ setAlert, isAuthenticated }) => {
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      setAlert('Password do not match', 'danger');
+      console.log(`Passwords do not match`);
     } else {
       dispatch(register({ name, email, password }));
 
@@ -32,6 +28,7 @@ const Register = ({ setAlert, isAuthenticated }) => {
       }, 2);
       return <Redirect to='/' />;
     }
+    return null;
   };
 
   // Redirect if logged in
@@ -51,6 +48,7 @@ const Register = ({ setAlert, isAuthenticated }) => {
     } catch (error) {
       console.log(error);
     }
+    return null;
   };
 
   const googleError = (res) => {
@@ -65,66 +63,63 @@ const Register = ({ setAlert, isAuthenticated }) => {
           <p className='lead'>
             <i className='fas fa-user' /> Create Your Account
           </p>
-          <Alert />
           <br />
           <form className='form' onSubmit={(e) => onSubmit(e)}>
             <div className='form-group'>
               <input
-                type='text'
-                placeholder='Name'
                 name='name'
+                onChange={(e) => onChange(e)}
+                placeholder='Name'
+                type='text'
                 value={name}
-                onChange={(e) => onChange(e)}
               />
             </div>
             <div className='form-group'>
               <input
-                type='email'
-                placeholder='Email Address'
                 name='email'
+                onChange={(e) => onChange(e)}
+                placeholder='Email Address'
+                type='email'
                 value={email}
-                onChange={(e) => onChange(e)}
               />
             </div>
             <div className='form-group'>
               <input
-                type='password'
-                placeholder='Password'
+                minLength='6'
                 name='password'
-                minLength='6'
-                value={password}
                 onChange={(e) => onChange(e)}
+                placeholder='Password'
+                type='password'
+                value={password}
               />
             </div>
             <div className='form-group'>
               <input
-                type='password'
-                placeholder='Confirm Password'
-                name='password2'
                 minLength='6'
-                value={password2}
+                name='password2'
                 onChange={(e) => onChange(e)}
+                placeholder='Confirm Password'
+                type='password'
+                value={password2}
               />
             </div>
-            <input type='submit' className='auth__button' value='Register' />
+            <input className='auth__button' type='submit' value='Register' />
             <GoogleLogin
               clientId={process.env.REACT_APP_GCID}
+              cookiePolicy='single_host_origin'
+              onFailure={googleError}
+              onSuccess={googleSuccess}
               render={(renderProps) => (
                 <button
                   className='googleButton'
-                  color='primary'
-                  fullWidth
-                  onClick={renderProps.onClick}
                   disabled={renderProps.disabled}
+                  onClick={renderProps.onClick}
                   startIcon={<Icon />}
-                  variant='contained'
+                  type='button'
                 >
                   Google Sign In
                 </button>
               )}
-              onSuccess={googleSuccess}
-              onFailure={googleError}
-              cookiePolicy='single_host_origin'
             />
           </form>
           <p className='link'>
@@ -134,12 +129,6 @@ const Register = ({ setAlert, isAuthenticated }) => {
       </div>
     </ErrorBoundary>
   );
-};
-
-Register.propTypes = {
-  setAlert: PropTypes.func.isRequired,
-  register: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool,
-};
+}
 
 export default Register;

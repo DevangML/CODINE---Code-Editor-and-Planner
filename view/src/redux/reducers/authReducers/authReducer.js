@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+import jwtDecode from 'jwt-decode';
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
@@ -7,44 +9,76 @@ import {
   LOGIN_FAIL,
   LOGOUT,
 } from '../../constants/authTypes';
+import store from '../../store';
 
 const initialState = {
-  token: localStorage.getItem('token'),
   isAuthenticated: null,
+  _id: null,
   loading: true,
-  user: null,
+  auth: null,
+  authType: '',
+  token: null,
 };
 
 export default function (state = initialState, action) {
   const { type, payload } = action;
+  let user;
+  if (payload) {
+    user = jwtDecode(payload?.token);
+  }
 
   switch (type) {
     case USER_LOADED:
+      toast('Welcome...', {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
+
       return {
         ...state,
         isAuthenticated: true,
         loading: false,
-        user: payload,
+        auth: payload,
+        authType: 'jwtAuth',
+        token: payload.token,
+        _id: user?.id,
       };
     case REGISTER_SUCCESS:
-    case LOGIN_SUCCESS:
-      localStorage.setItem('token', payload.token);
       return {
         ...state,
         ...payload,
         isAuthenticated: true,
         loading: false,
+        auth: payload,
+        authType: 'jwtAuth',
+        token: payload.token,
+        _id: user?.id,
+      };
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        ...payload,
+        isAuthenticated: true,
+        loading: false,
+        auth: payload,
+        authType: 'jwtAuth',
+        token: payload.token,
+        _id: user?.id,
       };
     case REGISTER_FAIL:
     case AUTH_ERROR:
     case LOGIN_FAIL:
     case LOGOUT:
-      localStorage.removeItem('token');
+      toast('Goodbye...', {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
       return {
         ...state,
-        token: null,
         isAuthenticated: false,
         loading: false,
+        auth: null,
+        authType: '',
+        token: null,
+        _id: null,
       };
     default:
       return state;

@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const codineToDoSchema = new mongoose.Schema({
+  userId: { type: String, required: true, unique: true },
   task: {
     type: String,
     required: true,
