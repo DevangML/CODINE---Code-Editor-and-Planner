@@ -8,9 +8,9 @@ const useLiveCompiler = () => {
   const [outputLogs, setOutputLogs] = useState('');
   const [stat, setStat] = useState('Run');
 
-  const runCode = () => {
+  const runCode = async () => {
     setStat('Loading...');
-    API.post('/compiler/runCode', { language, code, input })
+    await API.post('/compiler/create', { language, code, input })
       .then((res) => {
         if (res.data.memory && res.data.cpuTime) {
           setOutputLogs('');
@@ -23,7 +23,7 @@ const useLiveCompiler = () => {
         setStat('Run');
       })
       .catch((err) => {
-        console.log('Live Compiler Frontend error: ', err);
+        console.log(`Live Compiler Frontend error: ${err.message}`);
       });
   };
 

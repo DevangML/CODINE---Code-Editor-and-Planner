@@ -9,7 +9,7 @@ const logger = require('../logs/logger');
 dotenv.config();
 const jwtSecret = process.env.ACCESS_TOKEN_SECRET;
 
-const authMiddleware = async (req, res, next) => {
+const auth = async (req, res, next) => {
   try {
     const { authType, token } = req.body;
     if (authType === 'Google') {
@@ -22,7 +22,7 @@ const authMiddleware = async (req, res, next) => {
           const payload = result.getPayload();
           if (!payload.email) {
             logger.error(
-              `400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`,
+              `400 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`
             );
             return res.status(400).json({
               error: 'Google User cannot be authorized',
@@ -30,15 +30,17 @@ const authMiddleware = async (req, res, next) => {
           }
           req.user = payload;
 
+          logger.info(`${req.user}`);
+
           next();
-          return null;
         });
+      return null;
     } else if (authType === 'jwtAuth') {
       // Get token from header
       // Check if there is no token in the header
       if (!token) {
         logger.error(
-          `401 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`,
+          `401 || ${res.statusMessage} - ${req.originalUrl} - ${req.method} - ${req.ip}`
         );
         return res.status(401).json({ msg: 'No token, authorization denied' });
       }
@@ -58,10 +60,10 @@ const authMiddleware = async (req, res, next) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`,
+      } - ${req.ip}`
     );
   }
   return null;
 };
 
-module.exports = authMiddleware;
+module.exports = auth;

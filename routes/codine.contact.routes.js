@@ -1,7 +1,7 @@
 const express = require('express');
 
 const { codineContactCreateController } = require('../controllers/codine.contact.controllers');
-
+const auth = require('../middlewares/auth');
 const codineContactRouter = express.Router();
 
 // Routes here
@@ -11,6 +11,6 @@ const codineContactRouter = express.Router();
 // @route POST /contact/create
 // @desc Posts contact form to DB
 // @access  Public
-codineContactRouter.post('/create', codineContactCreateController);
+codineContactRouter.post('/create', auth, codineContactCreateController);
 
-module.exports = codineContactCreateController;
+module.exports = codineContactRouter;

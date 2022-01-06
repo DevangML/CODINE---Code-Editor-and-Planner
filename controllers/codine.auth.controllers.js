@@ -16,8 +16,6 @@ const {
   CodineUserModel,
 } = require('../models/codine.auth.models');
 
-const CodineContactModel = require('../models/codine.contact.models');
-
 const db = mongoose.createConnection(process.env.DBURI);
 
 // Authentication Controllers
@@ -63,13 +61,11 @@ const codineAuthCreateController1 = async (req, res) => {
     if (!user) {
       const fullName = name;
       const emailId = email;
-      // const phone = await CodineContactModel.findById({ userId }).select('phone');
 
       const userInstance = new CodineUserModel({
         userId,
         fullName,
         email: emailId,
-        // phone,
       });
 
       const userCreateConfirmation = await userInstance.save();
@@ -161,14 +157,12 @@ const codineAuthCreateController2 = async (req, res) => {
 
 const codineAuthCreateController3 = async (req, res) => {
   try {
-    const userId = req.user.sub;
     const { name, email, picture } = req.user;
 
     const user = await db.collection('googleauths').findOne({ email });
 
     if (!user) {
       const googleAuthInstance = new CodineGoogleAuthModel({
-        userId,
         fullName: name,
         email,
         photoUrl: picture,
@@ -196,15 +190,13 @@ const codineAuthCreateController4 = async (req, res) => {
     const userId = req.user.sub;
     const fullName = req.user.name;
     const emailId = req.user.email;
-    const phone = await CodineContactModel.findById({ userId }).select('phone');
-    const user = await db.collection('users').findOne({ emailId });
+    const user = await db.collection('users').findOne({ userId });
 
     if (!user) {
       const googleUserInstance = new CodineUserModel({
         userId,
         fullName,
         email: emailId,
-        phone,
       });
 
       const googleUserCreateConfirmation = await googleUserInstance.save();

@@ -77,12 +77,14 @@ export const glogin = (response) => async (dispatch) => {
 
     dispatch({
       type: GOOGLE_LOGIN_SUCCESS,
-      payload: token,
+      payload: { token },
     });
   } catch (err) {
     toast.error(err.response?.data, {
       position: toast.POSITION.BOTTOM_RIGHT,
     });
+
+    console.log(`${err}`);
 
     dispatch({
       type: GOOGLE_LOGIN_FAIL,

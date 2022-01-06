@@ -17,7 +17,16 @@ const codineContactCreateController = async (req, res) => {
       });
     }
 
+    const { authType } = req.body;
+    let userId;
+    if (authType === 'Google') {
+      userId = req.user.sub;
+    } else if (authType === 'jwtAuth') {
+      userId = req.user.id;
+    }
+
     const codineInstance = new CodineContactModel({
+      userId,
       name: req.body.name,
       email: req.body.email,
       phone: req.body.phone,
@@ -32,7 +41,7 @@ const codineContactCreateController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`,
+      } - ${req.ip}`
     );
   }
 };

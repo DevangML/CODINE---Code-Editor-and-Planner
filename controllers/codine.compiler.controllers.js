@@ -28,7 +28,7 @@ const codineLiveCompilerCreateController = async (req, res) => {
         method: 'POST',
         json: program,
       },
-      (error, response, body) => res.status(201).send(body),
+      (error, response, body) => res.status(201).send(body)
     );
     logger.info('Live Compiler is working as expected');
   } catch (err) {
@@ -36,7 +36,7 @@ const codineLiveCompilerCreateController = async (req, res) => {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
         req.method
-      } - ${req.ip}`,
+      } - ${req.ip}`
     );
   }
 };

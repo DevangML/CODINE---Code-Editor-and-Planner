@@ -26,29 +26,32 @@ const Sidebar = function () {
   };
 
   const onSuccess = async () => {
-    await dispatch(logout()).then(() => {
-      history.push('/');
-      setTimeout(() => {
-        window.location.reload(false);
-      }, 2);
-    });
+    dispatch(logout());
+    history.push('/');
+    setTimeout(() => {
+      window.location.reload(false);
+    }, 2);
   };
-
-  const authType = state.auth.authType;
 
   let googleSaveHandler;
 
-  if (authType === 'Google') {
+  if (state.auth.authType === 'Google') {
     googleSaveHandler = async () => {
-      const token = state.auth.token;
+      const config = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      };
+      const { token } = state.auth;
+      const { authType } = state.auth;
       const body = { authType, token };
-      await API.post('/auth/create/3', body);
-      await API.post('/auth/create/4', body);
+      await API.post('/auth/create/3', body, config);
+      await API.post('/auth/create/4', body, config);
     };
   }
 
   return (
-    <IconContext.Provider value={{ color: '#fff' }} onClick={googleSaveHandler}>
+    <IconContext.Provider value={{ color: '#fff' }}>
       <Nav>
         <NavIcon to='#'>
           <FaIcons.FaBars
@@ -59,7 +62,7 @@ const Sidebar = function () {
       </Nav>
       <SidebarNav sidebar={sidebar}>
         <SidebarWrap>
-          <NavIcon to='#'>
+          <NavIcon to='#' onClick={googleSaveHandler}>
             <AiIcons.AiOutlineClose onClick={showSidebar} />
           </NavIcon>
           {SidebarData.map((item, index) => (
@@ -81,11 +84,6 @@ const Sidebar = function () {
       </SidebarNav>
     </IconContext.Provider>
   );
-};
-
-Sidebar.propTypes = {
-  logout: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired,
 };
 
 export default Sidebar;

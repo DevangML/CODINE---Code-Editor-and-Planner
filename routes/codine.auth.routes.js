@@ -26,7 +26,7 @@ codineAuthRouter.post(
     check('password', 'Please enter password with 6 or more characters').isLength({ min: 6 }),
   ],
 
-  codineAuthCreateController1,
+  codineAuthCreateController1
 );
 
 // @route   GET /auth/read
@@ -43,7 +43,7 @@ codineAuthRouter.post(
     check('email', 'Please include a valid email').isEmail(),
     check('password', 'Password is required').exists(),
   ],
-  codineAuthCreateController2,
+  codineAuthCreateController2
 );
 
 // Google Authentication Routes
@@ -51,11 +51,11 @@ codineAuthRouter.post(
 // @route POST /auth/create/3
 // @desc Google authentication - saves user information to googleauths collection
 // @access Public
-codineAuthRouter.post('/create/3', codineAuthCreateController3);
+codineAuthRouter.post('/create/3', auth, codineAuthCreateController3);
 
 // @route POST /auth/create/4
 // @desc Google authentication - saves user information to users collection
 // @access Public
-codineAuthRouter.post('/create/4', codineAuthCreateController4);
+codineAuthRouter.post('/create/4', auth, codineAuthCreateController4);
 
 module.exports = codineAuthRouter;
