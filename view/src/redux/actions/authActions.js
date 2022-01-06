@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import setAlert from './alertActions';
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
@@ -8,6 +7,8 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
+  GOOGLE_LOGIN_SUCCESS,
+  GOOGLE_LOGIN_FAIL,
   LOGOUT,
 } from '../constants/authTypes';
 import setAuthToken from '../utils/setAuthToken';
@@ -15,8 +16,8 @@ import store from '../store';
 
 // Load User
 export const loadUser = () => async (dispatch) => {
-  if (store.getState().auth.token) {
-    setAuthToken(store.getState().auth.token);
+  if (localStorage.token) {
+    setAuthToken(localStorage.token);
   }
 
   try {
@@ -66,20 +67,39 @@ export const register =
       dispatch({
         type: REGISTER_FAIL,
       });
+      dispatch(loadUser());
     }
   };
 
+export const glogin = (response) => async (dispatch) => {
+  try {
+    const token = response.tokenId;
+
+    dispatch({
+      type: GOOGLE_LOGIN_SUCCESS,
+      payload: token,
+    });
+  } catch (err) {
+    toast.error(err.response?.data, {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
+
+    dispatch({
+      type: GOOGLE_LOGIN_FAIL,
+    });
+  }
+};
+
 // Login User
 export const login = (email, password) => async (dispatch) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  };
-
-  const body = JSON.stringify({ email, password });
-
   try {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+
+    const body = JSON.stringify({ email, password });
     const res = await axios.post('http://localhost:5000/auth/create/2', body, config);
 
     dispatch({
@@ -87,15 +107,9 @@ export const login = (email, password) => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
-    const { errors } = err.response.data;
-
     toast.error(err.response?.data, {
       position: toast.POSITION.BOTTOM_RIGHT,
     });
-
-    if (errors) {
-      errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
-    }
 
     dispatch({
       type: LOGIN_FAIL,

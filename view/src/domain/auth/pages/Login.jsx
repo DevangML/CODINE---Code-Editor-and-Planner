@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { Redirect } from 'react-router';
 import { GoogleLogin } from 'react-google-login';
 import { ErrorBoundary } from 'react-error-boundary';
 import refreshTokenSetup from '../utils/refreshToken';
@@ -9,31 +8,33 @@ import Icon from '../templates/Icon';
 import { errorHandler } from '../../../utils/errorHandler';
 import { FallBackLayout } from '../../layouts/FallBackLayout';
 
-import { login } from '../../../redux/actions/authActions';
+import { glogin, login } from '../../../redux/actions/authActions';
 
 function Login() {
   const { onChange, formData } = useLogin();
   const { email, password } = formData;
   const dispatch = useDispatch(null);
+  const history = useHistory();
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    dispatch(login(email, password));
-    setTimeout(() => {
-      window.location.reload(false);
-    }, 2);
-    return <Redirect to='/' />;
+    dispatch(login(email, password)).then(() => {
+      history.push('/');
+      setTimeout(() => {
+        window.location.reload(false);
+      }, 3);
+    });
   };
 
   const googleSuccess = async (response) => {
     try {
-      setTimeout(() => {
-        window.location.reload(false);
-      }, 2);
-      localStorage.setItem('g-auth-token', response.tokenId);
-      localStorage.setItem('authType', 'Google');
-      refreshTokenSetup(response);
-      return <Redirect to='/' />;
+      await dispatch(glogin(response)).then(() => {
+        history.push('/');
+        setTimeout(() => {
+          window.location.reload(false);
+        }, 2);
+        refreshTokenSetup(response);
+      });
     } catch (error) {
       console.log(error);
     }
@@ -95,7 +96,7 @@ function Login() {
             />
           </form>
           <p className='link'>
-            Don`&apos`t have an account? <Link to='/register'>Sign Up</Link>
+            Don't have an account? <Link to='/register'>Sign Up</Link>
           </p>
         </section>
       </div>

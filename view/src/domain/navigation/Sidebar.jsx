@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { GoogleLogout } from 'react-google-login';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import * as FaIcons from 'react-icons/fa';
@@ -11,7 +11,6 @@ import SubMenu from './SubMenu';
 import { logout } from '../../redux/actions/authActions';
 import { Nav, NavIcon, SidebarNav, SidebarWrap, Logout } from './styles/styleModules/sideBarStyles';
 import { API } from '../../api';
-import store from '../../redux/store';
 
 const Sidebar = function () {
   const [sidebar, setSidebar] = useState(false);
@@ -26,19 +25,22 @@ const Sidebar = function () {
     history.go(0);
   };
 
-  const onSuccess = () => {
-    localStorage.removeItem('g-auth-token');
-    localStorage.removeItem('authType');
-    history.go(0);
+  const onSuccess = async () => {
+    await dispatch(logout()).then(() => {
+      history.push('/');
+      setTimeout(() => {
+        window.location.reload(false);
+      }, 2);
+    });
   };
 
-  const authType = localStorage.getItem('authType');
+  const authType = state.auth.authType;
 
   let googleSaveHandler;
 
   if (authType === 'Google') {
     googleSaveHandler = async () => {
-      const token = localStorage.getItem('g-auth-token');
+      const token = state.auth.token;
       const body = { authType, token };
       await API.post('/auth/create/3', body);
       await API.post('/auth/create/4', body);
@@ -64,12 +66,12 @@ const Sidebar = function () {
             <SubMenu item={item} key={index} />
           ))}
         </SidebarWrap>
-        {store.getState().auth.authType === 'jwtAuth' && (
+        {state.auth.authType === 'jwtAuth' && (
           <Logout onClick={() => handleSignOut()} to='/' replace>
             <span>Logout</span>
           </Logout>
         )}
-        {localStorage.getItem('authType') === 'Google' && (
+        {state.auth.authType === 'Google' && (
           <GoogleLogout
             clientId={process.env.REACT_APP_GCID}
             buttonText='Logout'
@@ -86,8 +88,4 @@ Sidebar.propTypes = {
   auth: PropTypes.object.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  auth: state.auth,
-});
-
-export default connect(mapStateToProps, { logout })(Sidebar);
+export default Sidebar;

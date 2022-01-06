@@ -8,8 +8,9 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
+  GOOGLE_LOGIN_SUCCESS,
+  GOOGLE_LOGIN_FAIL,
 } from '../../constants/authTypes';
-import store from '../../store';
 
 const initialState = {
   isAuthenticated: null,
@@ -22,10 +23,10 @@ const initialState = {
 
 export default function (state = initialState, action) {
   const { type, payload } = action;
-  let user;
-  if (payload) {
-    user = jwtDecode(payload?.token);
-  }
+  // let user;
+  // if (payload) {
+  //   user = jwtDecode(payload?.token);
+  // }
 
   switch (type) {
     case USER_LOADED:
@@ -40,7 +41,7 @@ export default function (state = initialState, action) {
         auth: payload,
         authType: 'jwtAuth',
         token: payload.token,
-        _id: user?.id,
+        // _id: user?.id,
       };
     case REGISTER_SUCCESS:
       return {
@@ -51,7 +52,7 @@ export default function (state = initialState, action) {
         auth: payload,
         authType: 'jwtAuth',
         token: payload.token,
-        _id: user?.id,
+        // _id: user?.id,
       };
     case LOGIN_SUCCESS:
       return {
@@ -62,10 +63,23 @@ export default function (state = initialState, action) {
         auth: payload,
         authType: 'jwtAuth',
         token: payload.token,
-        _id: user?.id,
+        // _id: user?.id,
       };
+    case GOOGLE_LOGIN_SUCCESS:
+      return {
+        ...state,
+        isAuthenticated: true,
+        loading: false,
+        authType: 'Google',
+        token: payload,
+        // _id: user?.id,
+      };
+    case GOOGLE_LOGIN_FAIL:
+      break;
     case REGISTER_FAIL:
+      break;
     case AUTH_ERROR:
+      break;
     case LOGIN_FAIL:
     case LOGOUT:
       toast('Goodbye...', {
@@ -78,7 +92,7 @@ export default function (state = initialState, action) {
         auth: null,
         authType: '',
         token: null,
-        _id: null,
+        // _id: null,
       };
     default:
       return state;

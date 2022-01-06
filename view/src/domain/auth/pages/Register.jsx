@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 import { GoogleLogin } from 'react-google-login';
 import { useHistory } from 'react-router';
@@ -7,7 +7,7 @@ import { errorHandler } from '../../../utils/errorHandler';
 import { FallBackLayout } from '../../layouts/FallBackLayout';
 import refreshTokenSetup from '../utils/refreshToken';
 import Icon from '../templates/Icon';
-import { register } from '../../../redux/actions/authActions';
+import { glogin, register } from '../../../redux/actions/authActions';
 import useRegister from '../hooks/useRegister';
 
 function Register() {
@@ -21,12 +21,12 @@ function Register() {
     if (password !== password2) {
       console.log(`Passwords do not match`);
     } else {
-      dispatch(register({ name, email, password }));
-
-      setTimeout(() => {
-        window.location.reload(false);
-      }, 2);
-      return <Redirect to='/' />;
+      await dispatch(register({ name, email, password })).then(() => {
+        history.push('/');
+        setTimeout(() => {
+          window.location.reload(false);
+        }, 3);
+      });
     }
     return null;
   };
@@ -37,14 +37,13 @@ function Register() {
 
   const googleSuccess = async (response) => {
     try {
-      localStorage.setItem('g-auth-token', response.tokenId);
-      localStorage.setItem('authType', 'Google');
-      history.push('/');
-      setTimeout(() => {
-        window.location.reload(false);
-      }, 2);
-      refreshTokenSetup(response);
-      return <Redirect to='/' />;
+      await dispatch(glogin(response)).then(() => {
+        history.push('/');
+        setTimeout(() => {
+          window.location.reload(false);
+        }, 2);
+        refreshTokenSetup(response);
+      });
     } catch (error) {
       console.log(error);
     }
