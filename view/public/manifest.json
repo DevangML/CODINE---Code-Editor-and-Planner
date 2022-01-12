@@ -6,7 +6,6 @@
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "orientation": "portrait-primary",
-  "content_security_policy": "default src 'self' https://jsonplaceholder.typicode.com/posts script-src 'self' https://unpkg.com/ionicons@4.5.5/dist/ionicons.js ; object-src 'self'",
   "icons": [
     {
       "src": "favicon.ico",

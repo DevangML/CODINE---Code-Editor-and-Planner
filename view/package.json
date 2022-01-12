@@ -65,26 +65,6 @@
     "slint": "stylelint \"./src/app.css\"",
     "slintfix": "stylelint \"./src/app.css\" --fix --cache"
   },
-  "devDependencies": {
-    "csp-html-webpack-plugin": "^5.1.0",
-    "eslint": "^8.3.0",
-    "eslint-config-airbnb": "^19.0.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-preact": "^1.2.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-airbnb-base": "^0.0.1-security",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^27.3.1",
-    "prettier": "^2.5.0",
-    "replace": "^1.2.1",
-    "serve": "^13.0.2",
-    "stylelint": "^14.1.0",
-    "stylelint-config-standard": "^24.0.0",
-    "webpack-cli": "^4.9.1",
-    "yarn-upgrade-all": "^0.5.4"
-  },
   "browserslist": {
     "production": [
       ">0.2%",

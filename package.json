@@ -33,19 +33,6 @@
     "winston": "^3.3.3",
     "winston-mongodb": "^5.0.7"
   },
-  "devDependencies": {
-    "@commitlint/cli": "^16.0.1",
-    "@commitlint/config-conventional": "^16.0.0",
-    "env-cmd": "^10.1.0",
-    "eslint": "^8.3.0",
-    "eslint-config-airbnb": "^19.0.1",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-markdown": "^2.2.1",
-    "husky": "^7.0.4",
-    "prettier": "^2.5.0",
-    "yarn-upgrade-all": "^0.5.4"
-  },
   "engines": {
     "node": "16.x"
   },

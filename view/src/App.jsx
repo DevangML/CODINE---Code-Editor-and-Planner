@@ -1,5 +1,3 @@
-/* eslint-disable import/no-named-as-default */
-
 // import './app.css';
 import { useEffect, useState } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
