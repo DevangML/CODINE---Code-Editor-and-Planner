@@ -102,5 +102,6 @@
       "react-router",
       "react-router-dom"
     ]
-  }
+  },
+  "nodeLinker": "node-modules"
 }
