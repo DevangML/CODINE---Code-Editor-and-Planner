@@ -1,3 +1,5 @@
+/* eslint-disable import/no-import-module-exports */
+
 import { createStore, applyMiddleware } from 'redux';
 import throttle from 'lodash.throttle';
 import thunk from 'redux-thunk';
@@ -27,6 +29,14 @@ const loadState = () => {
 
 const persistedState = loadState();
 const store = createStore(rootReducer, persistedState, applyMiddleware(thunk));
+
+if (process.env.NODE_ENV !== 'production') {
+  if (module.hot) {
+    module.hot.accept('./reducers/rootReducer', () => {
+      store.replaceReducer(rootReducer);
+    });
+  }
+}
 
 store.subscribe(
   throttle(() => {

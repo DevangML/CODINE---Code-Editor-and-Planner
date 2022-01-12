@@ -1,20 +1,84 @@
-import { AUTH, LOGOUT } from "../../constants/authTypes";
+import { toast } from 'react-toastify';
+import jwtDecode from 'jwt-decode';
+import {
+  REGISTER_SUCCESS,
+  REGISTER_FAIL,
+  USER_LOADED,
+  AUTH_ERROR,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  LOGOUT,
+  GOOGLE_LOGIN_SUCCESS,
+  GOOGLE_LOGIN_FAIL,
+} from '../../constants/authTypes';
 
-const initialState = { authData: null };
+const initialState = {
+  isAuthenticated: false,
+  _id: null,
+  loading: true,
+  name: '',
+  email: '',
+  authType: '',
+  token: null,
+};
 
-const authReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case AUTH:
-      localStorage.setItem("profile", JSON.stringify({ ...action?.data }));
-      return { ...state, authData: action?.data };
+export default function (state = initialState, action) {
+  const { type, payload } = action;
+  let user;
+  switch (type) {
+    case USER_LOADED:
+      toast('Welcome...', {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
+      user = jwtDecode(payload?.token);
 
+      return {
+        ...state,
+        isAuthenticated: true,
+        loading: false,
+        authType: 'jwtAuth',
+        token: payload?.token,
+        name: user?.name,
+        email: user?.email,
+        _id: user?.id,
+      };
+    case REGISTER_SUCCESS:
+    case LOGIN_SUCCESS:
+    case GOOGLE_LOGIN_SUCCESS:
+      const guser = jwtDecode(payload?.token);
+      return {
+        ...state,
+        isAuthenticated: true,
+        loading: false,
+        authType: 'Google',
+        token: payload?.token,
+        _id: guser?.sub,
+        name: guser?.name,
+        email: guser?.email,
+      };
+    case GOOGLE_LOGIN_FAIL:
+      return state;
+    case REGISTER_FAIL:
+      return state;
+    case AUTH_ERROR:
+      return state;
+    case LOGIN_FAIL:
+      return state;
     case LOGOUT:
-      localStorage.clear();
-      return { ...state, authData: null };
-
+      toast('Goodbye...', {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
+      return {
+        ...state,
+        isAuthenticated: false,
+        loading: false,
+        authType: '',
+        token: null,
+        name: '',
+        email: '',
+        _id: null,
+      };
     default:
       return state;
   }
-};
-
-export default authReducer;
+}

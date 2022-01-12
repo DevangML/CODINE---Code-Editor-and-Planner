@@ -1,8 +1,17 @@
 import axios from 'axios';
+import store from '../redux/store';
 
 /*eslint-disable*/
 
-export const API = axios.create({ baseURL: 'https://codex7.herokuapp.com' });
+export const API = axios.create({ baseURL: 'http://localhost:5000' });
 
-export const signin = (formData) => API.post('/user/signin', formData);
-export const signup = (formData) => API.post('/user/signin', formData);
+export const setHeaders = () => {
+  const headers = {
+    headers: {
+      token: store.getState().auth.token,
+      authType: store.getState().auth.authType,
+    },
+  };
+
+  return headers;
+};

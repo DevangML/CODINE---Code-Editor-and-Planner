@@ -6,7 +6,7 @@
   "theme_color": "#000000",
   "background_color": "#ffffff",
   "orientation": "portrait-primary",
-  "content_security_policy": "default-src 'self' style-src 'self' 'unsafe-inline' script-src 'self' https://jsonplaceholder.typicode.com/posts 'unsafe-eval'; object-src 'self' https://unpkg.com/ionicons@4.5.5/dist/ionicons/ionicons.dy5iahpg.js",
+  "content_security_policy": "default src 'self' https://jsonplaceholder.typicode.com/posts script-src 'self' https://unpkg.com/ionicons@4.5.5/dist/ionicons.js ; object-src 'self'",
   "icons": [
     {
       "src": "favicon.ico",
@@ -17,7 +17,7 @@
       "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192",
-      "purpose": "any"
+      "purpose": "maskable"
     },
     {
       "src": "logo512.png",

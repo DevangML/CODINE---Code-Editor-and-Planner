@@ -1,0 +1,50 @@
+.landing_button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 6;
+  gap: 3vw;
+  min-width: 5vw;
+  min-height: 5vh;
+  padding: 2vh;
+  background-color: transparent;
+}
+
+.landing_button__item-1,
+.landing_button__item-2 {
+  width: 20%;
+  padding-top: 2.2vh;
+  padding-bottom: 2.2vh;
+  text-align: center;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  border: 2px solid #3c73ff;
+  background-color: #3c73ff;
+  border-radius: 2.8vh;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.landing_button__item-1:hover,
+.landing_button__item-2:hover {
+  box-shadow: 8px 8px #99bdff;
+  transition: 0.3s;
+}
+
+@media only screen and (max-aspect-ratio: 11/10) {
+  .landing_button__item-1,
+  .landing_button__item-2 {
+    min-height: 10vh;
+  }
+}
+
+@media only screen and (max-aspect-ratio: 4/5) {
+  .landing_button__item-1,
+  .landing_button__item-2 {
+    min-height: 6vh;
+  }
+}

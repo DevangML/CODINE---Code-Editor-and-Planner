@@ -28,6 +28,28 @@ body {
   user-select: none;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-animation: autofill 0s forwards;
+  animation: autofill 0s forwards;
+}
+
+@keyframes autofill {
+  100% {
+    background: transparent;
+    color: inherit;
+  }
+}
+
+@-webkit-keyframes autofill {
+  100% {
+    background: transparent;
+    color: inherit;
+  }
+}
+
 body {
   overflow: hidden;
 }
@@ -65,10 +87,4 @@ body {
   background: #000428;
   background: linear-gradient(to right, #004e92e1, #000428d0);
   background: linear-gradient(to right, #004e92e1, #000428d0);
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    overflow: visible;
-  }
 }

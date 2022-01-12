@@ -1,6 +1,7 @@
 {
   "files.eol": "\n",
   "editor.formatOnSave": true,
+  "editor.formatOnType": true,
   "files.autoSave": "afterDelay",
   "editor.fontFamily": "'Operator Mono Lig', Consolas,'Operator Mono Lig',monospace",
   "editor.tabSize": 2,
@@ -19,5 +20,6 @@
   },
   "javascript.format.enable": false,
   "spellright.language": ["en"],
-  "spellright.documentTypes": ["markdown", "latex"]
+  "spellright.documentTypes": ["markdown", "latex"],
+  "workbench.editor.enablePreview": false
 }

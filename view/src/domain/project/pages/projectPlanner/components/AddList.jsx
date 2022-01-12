@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import shortid from 'shortid';
+import { ADD_LIST } from '../../../../../redux/constants/projectPlannerTypes';
 import ListEditor from './ListEditor';
 import EditButtons from './EditButtons';
-import { ADD_LIST } from '../../../../../redux/constants/projectPlannerTypes';
 
-const AddList = (props) => {
+const AddList = function (props) {
   const [title, setTitle] = useState('');
 
   const handleChangeTitle = (e) => setTitle(e.target.value);
@@ -22,7 +22,6 @@ const AddList = (props) => {
   };
 
   const { toggleAddingList } = props;
-
   return (
     <div className='Add-List-Editor'>
       <ListEditor

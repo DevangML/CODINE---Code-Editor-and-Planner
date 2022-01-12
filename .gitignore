@@ -19,3 +19,15 @@ yarn-error.log*
 
 *.js text eol=lf
 * text=auto eol=lf
+
+# yarn 2 ignores
+
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+/logs/server.log

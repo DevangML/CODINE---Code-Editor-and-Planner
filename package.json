@@ -2,10 +2,13 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "oce.server.js",
+  "main": "codine.app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node oce.server.js"
+    "start": "nodemon -L oce.app.js",
+    "lint": "eslint \"**/*.js\"",
+    "lintfix": "eslint  \"**/*.js\" --fix --cache",
+    "prettier": "prettier --write \"**/*.js\""
   },
   "author": "",
   "license": "ISC",
@@ -16,14 +19,35 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "express-validator": "^6.13.0",
+    "google-auth-library": "^7.10.3",
+    "helmet": "^4.6.0",
+    "joi": "^17.5.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.0.13",
+    "mongoose": "^6.1.4",
     "nodemon": "^2.0.15",
     "pusher": "^5.0.0",
-    "redis": "^3.1.2",
-    "request": "^2.88.2"
+    "redis": "^4.0.1",
+    "request": "^2.88.2",
+    "underscore": "^1.13.2",
+    "winston": "^3.3.3",
+    "winston-mongodb": "^5.0.7"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.0.1",
+    "@commitlint/config-conventional": "^16.0.0",
+    "env-cmd": "^10.1.0",
+    "eslint": "^8.3.0",
+    "eslint-config-airbnb": "^19.0.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-markdown": "^2.2.1",
+    "husky": "^7.0.4",
+    "prettier": "^2.5.0",
+    "yarn-upgrade-all": "^0.5.4"
   },
   "engines": {
-    "node": "16.13.1"
-  }
+    "node": "16.x"
+  },
+  "nodeLinker": "node-modules"
 }

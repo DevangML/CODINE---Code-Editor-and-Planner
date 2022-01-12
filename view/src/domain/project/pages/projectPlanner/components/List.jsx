@@ -1,18 +1,17 @@
 import { useState } from 'react';
+import shortid from 'shortid';
 import { connect } from 'react-redux';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
-import shortid from 'shortid';
 import {
   ADD_CARD,
   CHANGE_LIST_TITLE,
   DELETE_LIST,
 } from '../../../../../redux/constants/projectPlannerTypes';
-
 import Card from './Card';
 import CardEditor from './CardEditor';
 import ListEditor from './ListEditor';
 
-const List = (props) => {
+const List = function (props) {
   const [editingTitle, setEditingTitle] = useState(false);
   const [title, setTitle] = useState(props.list.title);
   const [addingCard, setAddingCard] = useState(false);
@@ -59,6 +58,7 @@ const List = (props) => {
   };
 
   const { list, index } = props;
+
   return (
     <Draggable draggableId={list._id} index={index}>
       {(provided, snapshot) => (

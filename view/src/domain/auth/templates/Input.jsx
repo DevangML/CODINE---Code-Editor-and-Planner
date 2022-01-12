@@ -1,4 +1,4 @@
-function Input({ name, handleChange, placeholder, autoFocus, type, handleShowPassword }) {
+const Input = function ({ name, handleChange, placeholder, autoFocus, type, handleShowPassword }) {
   return (
     <section className='form__group'>
       <input
@@ -6,15 +6,15 @@ function Input({ name, handleChange, placeholder, autoFocus, type, handleShowPas
         name={name}
         onChane={handleChange}
         required
-        autofocus={autoFocus}
+        autoFocus={autoFocus}
         type={type}
         placeholder={placeholder}
       />
-      <label for={name} className='form__label'>
+      <label htmlFor={name} className='form__label'>
         {placeholder}
       </label>
     </section>
   );
-}
+};
 
 export default Input;

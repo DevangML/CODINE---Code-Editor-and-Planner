@@ -1,12 +1,12 @@
-import shortid from "shortid";
-import { ADD_CARD, ADD_LIST } from "./constants/projectPlannerTypes";
+import shortid from 'shortid';
+import { ADD_CARD, ADD_LIST } from './constants/projectPlannerTypes';
 
 export default function seed(store) {
   const firstListId = shortid.generate();
 
   store.dispatch({
     type: ADD_LIST,
-    payload: { listId: firstListId, listTitle: "First list" },
+    payload: { listId: firstListId, listTitle: 'First list' },
   });
 
   store.dispatch({
@@ -14,7 +14,7 @@ export default function seed(store) {
     payload: {
       listId: firstListId,
       cardId: shortid.generate(),
-      cardText: "First card",
+      cardText: 'First card',
     },
   });
 
@@ -23,7 +23,7 @@ export default function seed(store) {
     payload: {
       listId: firstListId,
       cardId: shortid.generate(),
-      cardText: "Second card",
+      cardText: 'Second card',
     },
   });
 
@@ -31,7 +31,7 @@ export default function seed(store) {
 
   store.dispatch({
     type: ADD_LIST,
-    payload: { listId: secondListId, listTitle: "Second list" },
+    payload: { listId: secondListId, listTitle: 'Second list' },
   });
 
   store.dispatch({
@@ -39,7 +39,7 @@ export default function seed(store) {
     payload: {
       listId: secondListId,
       cardId: shortid.generate(),
-      cardText: "Card 1",
+      cardText: 'Card 1',
     },
   });
 
@@ -48,7 +48,7 @@ export default function seed(store) {
     payload: {
       listId: secondListId,
       cardId: shortid.generate(),
-      cardText: "Card 2",
+      cardText: 'Card 2',
     },
   });
 }

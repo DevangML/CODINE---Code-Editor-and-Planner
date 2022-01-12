@@ -1,8 +1,4 @@
-import {
-  ADD_LIST,
-  DELETE_LIST,
-  MOVE_LIST,
-} from "../../constants/projectPlannerTypes";
+import { ADD_LIST, DELETE_LIST, MOVE_LIST } from '../../constants/projectPlannerTypes';
 
 const initialState = {
   lists: [],
