@@ -32,10 +32,9 @@ export const SidebarLink = styled(Link)`
   }
 
   &:hover {
-    background: #870000;
-    background: -webkit-linear-gradient(to right, #190a05, #870000);
-    background: linear-gradient(to right, #190a05, #870000);
-
+    background: #8e2de2;
+    background: -webkit-linear-gradient(to right, #4a00e0, #8e2de2);
+    background: linear-gradient(to right, #4a00e0, #8e2de2);
     color: white;
     border-left: 0.644vh solid #632ce4;
     cursor: pointer;

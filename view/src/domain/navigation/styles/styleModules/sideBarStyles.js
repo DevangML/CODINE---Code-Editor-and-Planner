@@ -97,8 +97,19 @@ export const Logout = styled(Link)`
   transition: all cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.2s;
 
   &:hover {
-    border: 2px solid white;
-    background: #525252;
+    /* border: 2px solid white; */
+    background: #8e2de2; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #4a00e0,
+      #8e2de2
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #4a00e0,
+      #8e2de2
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     color: #fff;
   }
 `;

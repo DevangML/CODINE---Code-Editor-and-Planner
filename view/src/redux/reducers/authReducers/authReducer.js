@@ -16,7 +16,8 @@ const initialState = {
   isAuthenticated: false,
   _id: null,
   loading: true,
-  auth: null,
+  name: '',
+  email: '',
   authType: '',
   token: null,
 };
@@ -30,39 +31,19 @@ export default function (state = initialState, action) {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
       user = jwtDecode(payload?.token);
+
       return {
         ...state,
         isAuthenticated: true,
         loading: false,
-        auth: payload,
         authType: 'jwtAuth',
-        token: payload.token,
-        _id: user !== null && user?._id,
+        token: payload?.token,
+        name: user?.name,
+        email: user?.email,
+        _id: user?.id,
       };
     case REGISTER_SUCCESS:
-      user = jwtDecode(payload?.token);
-      return {
-        ...state,
-        ...payload,
-        isAuthenticated: true,
-        loading: false,
-        auth: payload,
-        authType: 'jwtAuth',
-        token: payload.token,
-        _id: user !== null && user?._id,
-      };
     case LOGIN_SUCCESS:
-      user = jwtDecode(payload?.token);
-      return {
-        ...state,
-        ...payload,
-        isAuthenticated: true,
-        loading: false,
-        auth: payload,
-        authType: 'jwtAuth',
-        token: payload.token,
-        _id: user !== null && user?._id,
-      };
     case GOOGLE_LOGIN_SUCCESS:
       const guser = jwtDecode(payload?.token);
       return {
@@ -70,8 +51,10 @@ export default function (state = initialState, action) {
         isAuthenticated: true,
         loading: false,
         authType: 'Google',
-        token: payload && payload.token,
-        _id: guser !== null && guser?.sub,
+        token: payload?.token,
+        _id: guser?.sub,
+        name: guser?.name,
+        email: guser?.email,
       };
     case GOOGLE_LOGIN_FAIL:
       return state;
@@ -89,9 +72,10 @@ export default function (state = initialState, action) {
         ...state,
         isAuthenticated: false,
         loading: false,
-        auth: null,
         authType: '',
         token: null,
+        name: '',
+        email: '',
         _id: null,
       };
     default:

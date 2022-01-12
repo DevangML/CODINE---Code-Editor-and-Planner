@@ -10,8 +10,7 @@ const compression = require('compression');
 const codineAuthRouter = require('./routes/codine.auth.routes');
 const codineContactRouter = require('./routes/codine.contact.routes');
 const codineLiveCompilerRouter = require('./routes/codine.contact.routes');
-const codineToDoListRouter = require('./routes/codine.todo.routes');
-const codineVanillaRouter = require('./routes/codine.vanilla.routes');
+const codineToDoRouter = require('./routes/codine.todo.routes');
 // const redis = require('redis')
 
 // App Initialization
@@ -55,17 +54,13 @@ expressApp.get('*', (req, res) => {
 // Contact Route Initializers
 expressApp.use('/contact', codineContactRouter);
 
-// Vanilla Routes Initializers
-
-expressApp.use('/vanilla', codineVanillaRouter);
-
 // LiveCompiler Routes Initializers
 
 expressApp.use('/compiler', codineLiveCompilerRouter);
 
 // To-Do List Routes Initializers
 
-expressApp.use('/todo', codineToDoListRouter);
+expressApp.use('/todo', codineToDoRouter);
 
 // Authentication Routes Initializers
 

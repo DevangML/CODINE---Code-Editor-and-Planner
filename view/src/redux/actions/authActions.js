@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { CLEAR_TODOS } from '../constants/toDoTypes';
 import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
@@ -11,27 +12,15 @@ import {
   GOOGLE_LOGIN_FAIL,
   LOGOUT,
 } from '../constants/authTypes';
-import setAuthToken from '../utils/setAuthToken';
-import store from '../store';
 
 // Load User
-export const loadUser = () => async (dispatch) => {
-  if (localStorage.token) {
-    setAuthToken(localStorage.token);
-  }
-
-  try {
-    const res = await axios.get('http://localhost:5000/auth/read');
-
+export const loadUser = (token) => async (dispatch) => {
+  if (token) {
     dispatch({
-      type: USER_LOADED,
-      payload: res.data,
+      type: 'USER_LOADED',
+      payload: { token },
     });
-  } catch (err) {
-    dispatch({
-      type: AUTH_ERROR,
-    });
-  }
+  } else return null;
 };
 
 // Register User
@@ -48,11 +37,8 @@ export const register =
 
     try {
       const res = await axios.post('http://localhost:5000/auth/create/1', body, config);
-
-      dispatch({
-        type: REGISTER_SUCCESS,
-        payload: res.data,
-      });
+      const token = res.data.token;
+      dispatch(loadUser(token));
     } catch (err) {
       // const { errors } = err.response.data;
 
@@ -67,7 +53,6 @@ export const register =
       dispatch({
         type: REGISTER_FAIL,
       });
-      dispatch(loadUser());
     }
   };
 
@@ -103,11 +88,8 @@ export const login = (email, password) => async (dispatch) => {
 
     const body = JSON.stringify({ email, password });
     const res = await axios.post('http://localhost:5000/auth/create/2', body, config);
-
-    dispatch({
-      type: LOGIN_SUCCESS,
-      payload: res.data,
-    });
+    const token = res.data.token;
+    dispatch(loadUser(token));
   } catch (err) {
     toast.error(err.response?.data, {
       position: toast.POSITION.BOTTOM_RIGHT,
@@ -123,4 +105,7 @@ export const login = (email, password) => async (dispatch) => {
 
 export const logout = () => (dispatch) => {
   dispatch({ type: LOGOUT });
+  dispatch({
+    type: CLEAR_TODOS,
+  });
 };

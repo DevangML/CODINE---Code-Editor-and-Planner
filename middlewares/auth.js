@@ -11,7 +11,8 @@ const jwtSecret = process.env.ACCESS_TOKEN_SECRET;
 
 const auth = async (req, res, next) => {
   try {
-    const { authType, token } = req.body;
+    const token = req.header('token');
+    const authType = req.header('authType');
     if (authType === 'Google') {
       await client
         .verifyIdToken({
@@ -50,7 +51,6 @@ const auth = async (req, res, next) => {
       const decoded = jwt.verify(token, jwtSecret);
       req.user = decoded;
       next();
-      logger.info('User Authorized');
     } else {
       logger.info('User not logged in');
       return res.status(400).send('User not logged in');
@@ -63,7 +63,6 @@ const auth = async (req, res, next) => {
       } - ${req.ip}`
     );
   }
-  return null;
 };
 
 module.exports = auth;

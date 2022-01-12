@@ -69,6 +69,7 @@ const Sidebar = function () {
             <SubMenu item={item} key={index} />
           ))}
         </SidebarWrap>
+        <br />
         {state.auth.authType === 'jwtAuth' && (
           <Logout onClick={() => handleSignOut()} to='/' replace>
             <span>Logout</span>

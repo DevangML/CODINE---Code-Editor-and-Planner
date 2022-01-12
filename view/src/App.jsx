@@ -29,7 +29,7 @@ import Landing from './domain/layouts/Landing';
 import LandingRouteButton from './domain/layouts/components/LandingRouteButton';
 import Register from './domain/auth/pages/Register';
 import Login from './domain/auth/pages/Login';
-// import Todos from './domain/project/pages/toDoList/Todos';
+import Todos from './domain/project/pages/toDoList/Todos';
 
 import { FallBackLayout } from './domain/layouts/FallBackLayout';
 
@@ -119,7 +119,8 @@ const App = ({ isAuthenticated }) => {
   };
 
   return (
-    <ErrorBoundary FallbackComponent={FallBackLayout} onError={errorHandler}>
+    // <ErrorBoundary FallbackComponent={FallBackLayout} onError={errorHandler}>
+    <>
       {!completed ? (
         <section className='loading'>
           {!loading ? (
@@ -132,36 +133,35 @@ const App = ({ isAuthenticated }) => {
         <>
           {store.getState().auth.token !== null || localStorage.getItem('authType') === 'Google' ? (
             <Router>
-              <ErrorBoundary FallbackComponent={FallBackLayout} onError={errorHandler}>
-                <ToastContainer />
-                <Sidebar />
-                <Switch>
-                  <Route exact path='/' to component={Home} />
-                  <Route exact path='/vanilla' to component={Vanilla} />
-                  <Route exact path='/compiler' to component={LiveCompiler} />
-                  <Route exact path='/contact' to component={ContactMe} />
-                  <Route exact path='/proj' to component={ProjectPlanner} />
-                  {/* <Route exact path='/todo' to component={Todos} /> */}
-                </Switch>
-              </ErrorBoundary>
+              {/* <ErrorBoundary FallbackComponent={FallBackLayout} onError={errorHandler}> */}
+              <ToastContainer />
+              <Sidebar />
+              <Switch>
+                <Route exact path='/' to component={Home} />
+                <Route exact path='/vanilla' to component={Vanilla} />
+                <Route exact path='/compiler' to component={LiveCompiler} />
+                <Route exact path='/contact' to component={ContactMe} />
+                <Route exact path='/proj' to component={ProjectPlanner} />
+                <Route exact path='/todo' to component={Todos} />
+              </Switch>
+              {/* </ErrorBoundary> */}
             </Router>
           ) : (
             <Router>
-              <ErrorBoundary FallbackComponent={FallBackLayout} onError={errorHandler}>
-                {' '}
-                <ToastContainer />
-                <LandingRouteButton />
-                <Switch>
-                  <Route exact path='/' to component={Landing} />
-                  <Route exact path='/register' to component={Register} />
-                  <Route exact path='/login' to component={Login} />
-                </Switch>
-              </ErrorBoundary>
+              {/* <ErrorBoundary FallbackComponent={FallBackLayout} onError={errorHandler}> */}{' '}
+              <ToastContainer />
+              <LandingRouteButton />
+              <Switch>
+                <Route exact path='/' to component={Landing} />
+                <Route exact path='/register' to component={Register} />
+                <Route exact path='/login' to component={Login} />
+              </Switch>
+              {/* </ErrorBoundary> */}
             </Router>
           )}
         </>
       )}
-    </ErrorBoundary>
+    </>
   );
 };
 

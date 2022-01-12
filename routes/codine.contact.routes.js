@@ -1,8 +1,7 @@
 const express = require('express');
-
 const { codineContactCreateController } = require('../controllers/codine.contact.controllers');
-const auth = require('../middlewares/auth');
 const codineContactRouter = express.Router();
+const auth = require('../middlewares/auth');
 
 // Routes here
 

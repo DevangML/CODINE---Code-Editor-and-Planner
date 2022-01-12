@@ -34,7 +34,7 @@ const VanillaNormal = function () {
               ...codeMirrorOptions,
             }}
             onBeforeChange={(editor, data, html) => {
-              setCompData({ html }, () => syncUpdates());
+              setCompData({ html });
             }}
           />
         </section>
@@ -47,7 +47,7 @@ const VanillaNormal = function () {
               ...codeMirrorOptions,
             }}
             onBeforeChange={(editor, data, css) => {
-              setCompData({ css }, () => syncUpdates());
+              setCompData({ css });
             }}
           />
         </section>
@@ -60,7 +60,7 @@ const VanillaNormal = function () {
               ...codeMirrorOptions,
             }}
             onBeforeChange={(editor, data, js) => {
-              setCompData({ js }, () => syncUpdates());
+              setCompData({ js });
             }}
           />
         </section>

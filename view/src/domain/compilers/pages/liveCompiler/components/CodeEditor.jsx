@@ -6,7 +6,7 @@ import 'ace-builds/src-noconflict/theme-monokai';
 const CodeEditor = function ({ value, onCodeChange, programmingLanguage }) {
   return (
     <section className='aceEditor'>
-      <AceEditor
+      <AceEditor 
         className='codeEditor'
         placeholder='Code goes here'
         mode={programmingLanguage}

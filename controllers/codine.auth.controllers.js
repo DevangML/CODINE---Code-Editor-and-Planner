@@ -52,6 +52,8 @@ const codineAuthCreateController1 = async (req, res) => {
     // Return jsonwebtoken
     const payload = {
       id: auth.id,
+      name: auth.name,
+      email: auth.email,
     };
 
     const userId = payload.id;
@@ -95,21 +97,6 @@ const codineAuthCreateController1 = async (req, res) => {
   }
 };
 
-const codineAuthReadController = async (req, res) => {
-  try {
-    const auth = await CodineAuthModel.findById(req.id).select('-password');
-    await res.json(auth);
-    logger.info('User Loaded');
-  } catch (err) {
-    await res.status(500).json({ error: err, errorInfo: 'Unexpected Error' });
-    logger.error(
-      `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${
-        req.method
-      } - ${req.ip}`
-    );
-  }
-};
-
 const codineAuthCreateController2 = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -138,6 +125,8 @@ const codineAuthCreateController2 = async (req, res) => {
     // Return jsonwebtoken
     const payload = {
       id: auth.id,
+      name: auth.name,
+      email: auth.email,
     };
 
     jwt.sign(payload, jwtSecret, { expiresIn: 360000 }, async (err, token) => {
@@ -217,7 +206,6 @@ const codineAuthCreateController4 = async (req, res) => {
 
 module.exports = {
   codineAuthCreateController1,
-  codineAuthReadController,
   codineAuthCreateController2,
   codineAuthCreateController3,
   codineAuthCreateController4,

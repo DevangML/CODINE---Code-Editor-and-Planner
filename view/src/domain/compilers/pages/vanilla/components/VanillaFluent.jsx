@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import pushid from 'pushid';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import useVanilla from '../../../hooks/useVanilla';
 import 'codemirror/lib/codemirror.css';
@@ -9,7 +8,7 @@ import 'codemirror/mode/css/css';
 import 'codemirror/mode/javascript/javascript';
 
 const VanillaFluent = function () {
-  const { compData, setCompData, iRef, runCode, syncUpdates } = useVanilla();
+  const { compData, setCompData, iRef, runCode } = useVanilla();
   const { html, css, js, id } = compData;
 
   const codeMirrorOptions = {
@@ -21,7 +20,6 @@ const VanillaFluent = function () {
 
   useEffect(() => {
     runCode();
-    setCompData({ id: pushid() });
   }, [html, css, js, id]);
 
   return (
@@ -37,7 +35,7 @@ const VanillaFluent = function () {
                 ...codeMirrorOptions,
               }}
               onBeforeChange={(editor, data, html) => {
-                setCompData({ html }, () => syncUpdates());
+                setCompData({ html });
               }}
             />
           </section>
@@ -50,7 +48,7 @@ const VanillaFluent = function () {
                 ...codeMirrorOptions,
               }}
               onBeforeChange={(editor, data, css) => {
-                setCompData({ css }, () => syncUpdates());
+                setCompData({ css });
               }}
             />
           </section>
@@ -63,7 +61,7 @@ const VanillaFluent = function () {
                 ...codeMirrorOptions,
               }}
               onBeforeChange={(editor, data, js) => {
-                setCompData({ js }, () => syncUpdates());
+                setCompData({ js });
               }}
             />
           </section>

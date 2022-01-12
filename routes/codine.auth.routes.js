@@ -3,7 +3,6 @@ const { check } = require('express-validator');
 const auth = require('../middlewares/auth');
 const {
   codineAuthCreateController1,
-  codineAuthReadController,
   codineAuthCreateController2,
   codineAuthCreateController3,
   codineAuthCreateController4,
@@ -28,11 +27,6 @@ codineAuthRouter.post(
 
   codineAuthCreateController1
 );
-
-// @route   GET /auth/read
-// @desc    Get user by token/ Loading user
-// @access  Private
-codineAuthRouter.get('/read', auth, codineAuthReadController);
 
 // @route   POST /auth/create/2
 // @desc    Authentication user & get token/ Login user

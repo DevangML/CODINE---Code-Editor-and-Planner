@@ -10,6 +10,7 @@ const rootReducer = combineReducers({
   listsById: listsByIdReducer,
   cardsById: cardsByIdReducer,
   auth: authReducer,
+  todos: todoReducer,
 });
 
 export default rootReducer;
