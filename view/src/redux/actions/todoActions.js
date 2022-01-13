@@ -19,8 +19,8 @@ export const getTodos = () => (dispatch) => {
 };
 
 export const addTodo = (newTodo) => (dispatch, getState) => {
-  const author = getState().auth.name;
-  const uid = getState().auth._id;
+  const author = store.getState().auth.name;
+  const uid = store.getState().auth._id;
   API.post('/todo', { ...newTodo, author, uid }, setHeaders())
     .then((todo) => {
       dispatch({

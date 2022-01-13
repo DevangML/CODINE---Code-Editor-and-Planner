@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import authReducer from './authReducers/authReducer';
+import authReducer from './authReducer';
 import boardReducer from './projectPlannerReducers/boardReducer';
 import cardsByIdReducer from './projectPlannerReducers/cardsByIdReducer';
 import listsByIdReducer from './projectPlannerReducers/listByIdReducer';

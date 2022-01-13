@@ -10,7 +10,7 @@ import {
   LOGOUT,
   GOOGLE_LOGIN_SUCCESS,
   GOOGLE_LOGIN_FAIL,
-} from '../../constants/authTypes';
+} from '../constants/authTypes';
 
 const initialState = {
   isAuthenticated: false,

@@ -1,0 +1,131 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: -30vh;
+  width: 100vw;
+  padding: 3vh;
+  padding-top: 13vh;
+  min-height: 120vh;
+  background: url('../../../../assets/images/compiler.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.inner-container {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 70vw;
+  min-height: 80vh;
+  gap: 1vh;
+  padding: 2vw;
+  border-radius: 3vw;
+  background: rgba(177, 172, 173, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.lang__switch {
+  display: unset;
+  min-width: 8vw;
+  max-width: 10vw;
+  font-size: 2.5vh;
+  border-radius: 3vw;
+  padding: 0.5vw;
+  text-align: center;
+  background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f5af19, #f12711); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  outline: none;
+  border: none;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.run {
+  min-width: 10vw;
+  min-height: 5vh;
+  border-radius: 3vh;
+  outline: none;
+  border: none;
+  background: #f12711; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f5af19, #f12711); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f5af19,
+    #f12711
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  font-size: 3vh;
+}
+
+.input {
+  background-color: antiquewhite;
+  border-radius: 3vh;
+  padding: 3vh;
+  min-height: 20vh;
+}
+.input::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.output {
+  background-color: antiquewhite;
+  border-radius: 3vh;
+  padding: 3vh;
+  min-height: 20vh;
+  min-width: 60vw;
+}
+
+.header {
+  font-family: 'Kaushan Script', cursive;
+  color: #faeca0;
+  text-shadow: -0.34vh 0 0.56vh rgb(36 36 36);
+  font-size: 7vh;
+}
+
+.langselect {
+  font-family: 'Kaushan Script', cursive;
+  color: #faeca0;
+  text-shadow: -0.34vh 0 0.56vh rgb(36 36 36);
+  font-size: 5vh;
+}
+
+.userinput {
+  background-color: antiquewhite;
+  border-radius: 3vh;
+  padding: 3vh;
+  min-height: 20vh;
+  min-width: 60vw;
+}
+
+.userheader {
+  font-family: 'Kaushan Script', cursive;
+  color: #faeca0;
+  text-shadow: -0.34vh 0 0.56vh rgb(36 36 36);
+  font-size: 5vh;
+}
+
+.outputheader {
+  font-family: 'Kaushan Script', cursive;
+  color: #faeca0;
+  text-shadow: -0.34vh 0 0.56vh rgb(36 36 36);
+  font-size: 7vh;
+  text-align: center;
+}

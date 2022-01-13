@@ -1,0 +1,10 @@
+.todo__container {
+  min-height: 110vh;
+  min-width: 100vw;
+  background-image: url("../../../../assets/images/login.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -15vh;
+  padding-top: 20vh;
+}

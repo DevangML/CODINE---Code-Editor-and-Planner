@@ -1,32 +1,33 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import { makeStyles } from '@material-ui/core/styles';
-import { Typography, ButtonGroup, Button } from '@material-ui/core';
-import { Create, Delete, CheckCircle } from '@material-ui/icons';
-import moment from 'moment';
+import { makeStyles } from "@material-ui/core/styles";
+import { Typography, ButtonGroup, Button } from "@material-ui/core";
+import { Create, Delete, CheckCircle } from "@material-ui/icons";
+import moment from "moment";
 
-import { deleteTodo, checkTodo } from '../../../../redux/actions/todoActions';
-import store from '../../../../redux/store';
+import { deleteTodo, checkTodo } from "../../../../redux/actions/todoActions";
+import store from "../../../../redux/store";
 
 const useStyles = makeStyles({
   todoStyle: {
-    margin: '20px auto',
-    padding: '20px',
-    border: '2px solid #bdbdbd',
-    margin: '3vw',
-    borderRadius: '9px',
-    display: 'flex',
-    justifyContent: 'space-between',
+    margin: "20px auto",
+    padding: "20px",
+    border: "2px solid #bdbdbd",
+    backgroundColor: "white",
+    margin: "3vw",
+    borderRadius: "9px",
+    display: "flex",
+    justifyContent: "space-between",
   },
   moreStyle: {
-    color: '#8f8f8f',
+    color: "#8f8f8f",
   },
   isComplete: {
-    color: 'green',
+    color: "green",
   },
   checked: {
-    textDecoration: 'line-through',
+    textDecoration: "line-through",
   },
 });
 
@@ -41,7 +42,7 @@ const Todo = ({ todo, setTodo, todos }) => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -58,34 +59,37 @@ const Todo = ({ todo, setTodo, todos }) => {
       <div className={classes.todoStyle}>
         <div>
           {todo.isComplete ? (
-            <Typography variant='subtitle1' className={classes.checked}>
+            <Typography variant="subtitle1" className={classes.checked}>
               {todo.name}
             </Typography>
           ) : (
-            <Typography variant='subtitle1'>{todo.name}</Typography>
+            <Typography variant="subtitle1">{todo.name}</Typography>
           )}
-          <Typography variant='body2' className={classes.moreStyle}>
+          <Typography variant="body2" className={classes.moreStyle}>
             Author: {todo.author}
           </Typography>
-          <Typography variant='body2' className={classes.moreStyle}>
+          <Typography variant="body2" className={classes.moreStyle}>
             Added: {moment(todo.date).fromNow()}
           </Typography>
         </div>
         <div>
           {auth._id && auth._id === todo.uid ? (
-            <ButtonGroup size='small' aria-label='outlined primary button group'>
+            <ButtonGroup
+              size="small"
+              aria-label="outlined primary button group"
+            >
               <Button onClick={() => handleCheck(todo._id)}>
                 {todo.isComplete ? (
                   <CheckCircle className={classes.isComplete} />
                 ) : (
-                  <CheckCircle color='action' />
+                  <CheckCircle color="action" />
                 )}
               </Button>
               <Button onClick={() => handleOnUpdateClick(todo._id)}>
-                <Create color='primary' />
+                <Create color="primary" />
               </Button>
               <Button onClick={() => handleDelete(todo._id)}>
-                <Delete color='secondary' />
+                <Delete color="secondary" />
               </Button>
             </ButtonGroup>
           ) : null}

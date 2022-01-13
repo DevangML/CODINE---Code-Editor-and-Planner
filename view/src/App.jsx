@@ -21,7 +21,7 @@ import Vanilla from './domain/compilers/pages/vanilla/Vanilla';
 import Home from './domain/user/pages/home/Home';
 import ContactMe from './domain/user/pages/contactMe/ContactMe';
 import ProjectPlanner from './domain/project/pages/projectPlanner/ProjectPlanner';
-import LiveCompiler from './domain/compilers/pages/liveCompiler/LiveCompiler';
+import Compiler from './domain/compilers/pages/liveCompiler/Compiler';
 import store from './redux/store';
 import Landing from './domain/layouts/Landing';
 import LandingRouteButton from './domain/layouts/components/LandingRouteButton';
@@ -36,7 +36,6 @@ import { FallBackLayout } from './domain/layouts/FallBackLayout';
 import './domain/common/styles/general.css';
 import './domain/common/styles/partStyles/dfooter.css';
 import './domain/common/styles/partStyles/loader.css';
-import './domain/compilers/styles/pageStyles/liveCompiler.css';
 import './domain/compilers/styles/pageStyles/vanilla.css';
 import './domain/compilers/styles/componentStyles/vanillaComponentStyles/vanillaFluent.css';
 import './domain/compilers/styles/componentStyles/vanillaComponentStyles/vanillaNormal.css';
@@ -131,30 +130,31 @@ const App = ({ isAuthenticated }) => {
         <>
           {store.getState().auth.token !== null || localStorage.getItem('authType') === 'Google' ? (
             <Router>
-              {/* <ErrorBoundary FallbackComponent={FallBackLayout} onError={errorHandler}> */}
-              <ToastContainer />
-              <Sidebar />
-              <Switch>
-                <Route exact path='/' to component={Home} />
-                <Route exact path='/vanilla' to component={Vanilla} />
-                <Route exact path='/compiler' to component={LiveCompiler} />
-                <Route exact path='/contact' to component={ContactMe} />
-                <Route exact path='/proj' to component={ProjectPlanner} />
-                <Route exact path='/todo' to component={Todos} />
-              </Switch>
-              {/* </ErrorBoundary> */}
+              <ErrorBoundary FallbackComponent={FallBackLayout} onError={errorHandler}>
+                <ToastContainer />
+                <Sidebar />
+                <Switch>
+                  <Route exact path='/' to component={Home} />
+                  <Route exact path='/vanilla' to component={Vanilla} />
+                  <Route exact path='/compiler' to component={Compiler} />
+                  <Route exact path='/contact' to component={ContactMe} />
+                  <Route exact path='/proj' to component={ProjectPlanner} />
+                  <Route exact path='/todo' to component={Todos} />
+                </Switch>
+              </ErrorBoundary>
             </Router>
           ) : (
             <Router>
-              {/* <ErrorBoundary FallbackComponent={FallBackLayout} onError={errorHandler}> */}{' '}
-              <ToastContainer />
-              <LandingRouteButton />
-              <Switch>
-                <Route exact path='/' to component={Landing} />
-                <Route exact path='/register' to component={Register} />
-                <Route exact path='/login' to component={Login} />
-              </Switch>
-              {/* </ErrorBoundary> */}
+              <ErrorBoundary FallbackComponent={FallBackLayout} onError={errorHandler}>
+                {' '}
+                <ToastContainer />
+                <LandingRouteButton />
+                <Switch>
+                  <Route exact path='/' to component={Landing} />
+                  <Route exact path='/register' to component={Register} />
+                  <Route exact path='/login' to component={Login} />
+                </Switch>
+              </ErrorBoundary>
             </Router>
           )}
         </>
