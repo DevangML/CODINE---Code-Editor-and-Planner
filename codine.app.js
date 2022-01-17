@@ -53,6 +53,8 @@ expressApp.use(
       connectSrc: [
         'https://jsonplaceholder.typicode.com/posts',
         'https://o968057.ingest.sentry.io',
+        '*',
+        "'unsafe-inline'",
       ],
       upgradeInsecureRequests: [],
     },
