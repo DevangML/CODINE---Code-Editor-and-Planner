@@ -22,7 +22,7 @@ expressApp.use(compression());
 
 // CORS Setup
 const corsOptions = {
-  origin: 'http://localhost:57232',
+  origin: 'http://localhost:3000',
 };
 expressApp.use(cors(corsOptions));
 
