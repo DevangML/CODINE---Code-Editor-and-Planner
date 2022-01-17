@@ -21,5 +21,9 @@
   "javascript.format.enable": false,
   "spellright.language": ["en"],
   "spellright.documentTypes": ["markdown", "latex"],
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
+  "workbench.colorCustomizations": {
+    "sash.hoverBorder": "#a1ccfb"
+  },
+  "peacock.color": "#70b1f9"
 }

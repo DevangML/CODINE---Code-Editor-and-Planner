@@ -35,6 +35,5 @@
   },
   "engines": {
     "node": "16.x"
-  },
-  "nodeLinker": "node-modules"
+  }
 }

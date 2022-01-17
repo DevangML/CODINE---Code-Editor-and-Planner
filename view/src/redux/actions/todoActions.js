@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { toast } from 'react-toastify';
 import { API, setHeaders } from '../../api';
 import { GET_TODOS, ADD_TODO, UPDATE_TODO, DELETE_TODO, CHECK_TODO } from '../constants/toDoTypes';
@@ -5,10 +6,18 @@ import store from '../store';
 
 export const getTodos = () => (dispatch) => {
   try {
-    API.get('/todo', setHeaders()).then((todos) => {
+    axios.get('http://localhost:5000/todo/read', setHeaders()).then((todoss) => {
+      // for (let index = 0; index < todoss.length; index++) {
+      //   const element = todoss[index];
+      //   todos.push(element)
+      // }
+      // console.log(`Hello`)
+      let todos = todoss.data;
+      console.log(`${todos.values()}`);
+
       dispatch({
         type: GET_TODOS,
-        todos,
+        todo: todos,
       });
     });
   } catch (err) {
@@ -18,10 +27,10 @@ export const getTodos = () => (dispatch) => {
   }
 };
 
-export const addTodo = (newTodo) => (dispatch, getState) => {
+export const addTodo = (newTodo) => async (dispatch, getState) => {
   const author = store.getState().auth.name;
   const uid = store.getState().auth._id;
-  API.post('/todo', { ...newTodo, author, uid }, setHeaders())
+  await API.post('/todo/create', { ...newTodo, author, uid }, setHeaders())
     .then((todo) => {
       dispatch({
         type: ADD_TODO,
@@ -40,8 +49,8 @@ export const addTodo = (newTodo) => (dispatch, getState) => {
     });
 };
 
-export const updateTodo = (updatedTodo, id) => (dispatch) => {
-  API.put(`/todo/${id}`, updatedTodo, setHeaders())
+export const updateTodo = (updatedTodo, id) => async (dispatch) => {
+  await API.put(`/todo/update/${id}`, updatedTodo, setHeaders())
     .then((todo) => {
       dispatch({
         type: UPDATE_TODO,
@@ -59,8 +68,8 @@ export const updateTodo = (updatedTodo, id) => (dispatch) => {
     });
 };
 
-export const deleteTodo = (id) => (dispatch) => {
-  API.delete(`/todo/${id}`, setHeaders())
+export const deleteTodo = (id) => async (dispatch) => {
+  await API.delete(`/todo/delete/${id}`, setHeaders())
     .then(() => {
       dispatch({
         type: DELETE_TODO,
@@ -78,8 +87,8 @@ export const deleteTodo = (id) => (dispatch) => {
     });
 };
 
-export const checkTodo = (id) => (dispatch) => {
-  API.patch(`/todo/${id}`, {}, setHeaders())
+export const checkTodo = (id) => async (dispatch) => {
+  await API.patch(`/todo/update/partial/${id}`, {}, setHeaders())
     .then((todo) => {
       dispatch({
         type: CHECK_TODO,

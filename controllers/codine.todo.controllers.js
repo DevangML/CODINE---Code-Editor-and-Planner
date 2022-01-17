@@ -59,7 +59,8 @@ const codineToDoReadController = async (req, res, next) => {
 
     const todos = await CodineToDoModel.find().sort({ date: -1 });
     const filteredTodos = todos.filter((todo) => todo.uid === userId);
-    res.send(filteredTodos);
+    const filterTodo = Array.from(filteredTodos);
+    res.send(filterTodo);
   } catch (error) {
     logger.error(
       `${err.status || 500} - ${res.statusMessage} - ${err.message} - ${req.originalUrl} - ${

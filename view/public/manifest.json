@@ -1,6 +1,6 @@
 {
-  "name": "CODEX - Code Editor and Planner",
-  "short_name": "CODEX",
+  "name": "CODINE - Code Editor and Planner",
+  "short_name": "CODINE",
   "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",

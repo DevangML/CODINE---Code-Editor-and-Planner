@@ -68,16 +68,6 @@ export default function (state = initialState, action) {
       toast('Goodbye...', {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
-      return {
-        ...state,
-        isAuthenticated: false,
-        loading: false,
-        authType: '',
-        token: null,
-        name: '',
-        email: '',
-        _id: null,
-      };
     default:
       return state;
   }

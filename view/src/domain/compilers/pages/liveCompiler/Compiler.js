@@ -36,7 +36,7 @@ const Compiler = () => {
       method: 'POST',
       headers: {
         'x-rapidapi-host': 'judge0-ce.p.rapidapi.com',
-        'x-rapidapi-key': '7881de12dfmsh2113304271aed00p101cd9jsn038bca142e18', // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
+        'x-rapidapi-key': process.env.REACT_APP_JUDGE_KEY,
         'content-type': 'application/json',
         accept: 'application/json',
       },
@@ -70,7 +70,7 @@ const Compiler = () => {
           method: 'GET',
           headers: {
             'x-rapidapi-host': 'judge0-ce.p.rapidapi.com',
-            'x-rapidapi-key': '7881de12dfmsh2113304271aed00p101cd9jsn038bca142e18', // Get yours for free at https://rapidapi.com/judge0-official/api/judge0-ce/
+            'x-rapidapi-key': process.env.REACT_APP_JUDGE_KEY,
             'content-type': 'application/json',
           },
         });

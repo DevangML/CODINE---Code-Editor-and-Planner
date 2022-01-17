@@ -60,11 +60,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint --ext .js --ext .jsx src ",
-    "lintfix": "eslint --ext .js --ext .jsx src --fix --cache",
-    "slint": "stylelint \"./src/app.css\"",
-    "slintfix": "stylelint \"./src/app.css\" --fix --cache"
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [
@@ -77,12 +73,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "yarn-upgrade-all": {
-    "ignore": [
-      "react-router",
-      "react-router-dom"
-    ]
-  },
-  "nodeLinker": "node-modules"
+  }
 }

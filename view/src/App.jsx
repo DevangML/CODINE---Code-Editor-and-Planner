@@ -116,7 +116,6 @@ const App = ({ isAuthenticated }) => {
   };
 
   return (
-    // <ErrorBoundary FallbackComponent={FallBackLayout} onError={errorHandler}>
     <>
       {!completed ? (
         <section className='loading'>
