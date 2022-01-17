@@ -43,23 +43,23 @@ expressApp.use(helmet.originAgentCluster());
 expressApp.use(helmet.permittedCrossDomainPolicies());
 expressApp.use(helmet.referrerPolicy());
 expressApp.use(helmet.xssFilter());
-expressApp.use(
-  helmet.contentSecurityPolicy({
-    useDefaults: false,
-    directives: {
-      defaultSrc: ["'self'"],
-      scriptSrc: ["'self'"],
-      objectSrc: ["'none'"],
-      connectSrc: [
-        'https://jsonplaceholder.typicode.com/posts',
-        'https://o968057.ingest.sentry.io',
-        '*',
-        "'unsafe-inline'",
-      ],
-      upgradeInsecureRequests: [],
-    },
-  })
-);
+// expressApp.use(
+//   helmet.contentSecurityPolicy({
+//     useDefaults: false,
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       scriptSrc: ["'self'"],
+//       objectSrc: ["'none'"],
+//       connectSrc: [
+//         'https://jsonplaceholder.typicode.com/posts',
+//         'https://o968057.ingest.sentry.io',
+//         '*',
+//         "'unsafe-inline'",
+//       ],
+//       upgradeInsecureRequests: [],
+//     },
+//   })
+// );
 // Making database connection
 
 mong();
