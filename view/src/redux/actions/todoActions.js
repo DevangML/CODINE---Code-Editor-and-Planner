@@ -6,7 +6,7 @@ import store from '../store';
 
 export const getTodos = () => (dispatch) => {
   try {
-    axios.get('http://localhost:5000/todo/read', setHeaders()).then((todoss) => {
+    API.get('/todo/read', setHeaders()).then((todoss) => {
       // for (let index = 0; index < todoss.length; index++) {
       //   const element = todoss[index];
       //   todos.push(element)
