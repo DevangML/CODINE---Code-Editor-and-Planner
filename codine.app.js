@@ -50,7 +50,10 @@ expressApp.use(
       defaultSrc: ["'self'"],
       scriptSrc: ["'self'"],
       objectSrc: ["'none'"],
-      connectSrc: ['https://jsonplaceholder.typicode.com/posts'],
+      connectSrc: [
+        'https://jsonplaceholder.typicode.com/posts',
+        'https://o968057.ingest.sentry.io',
+      ],
       upgradeInsecureRequests: [],
     },
   })
