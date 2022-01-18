@@ -1161,3 +1161,83 @@ info: Jan-18-2022 00:23:04: 	Server started and running on http://localhost:5000
 info: Jan-18-2022 00:23:35: 	MongoDB Connection Successful
 info: Jan-18-2022 00:23:35: 	Server started and running on http://localhost:5000
 info: Jan-18-2022 00:23:51: 	JWT Signed and sent as response for login request
+info: Jan-18-2022 10:03:40: 	MongoDB Connection Successful
+info: Jan-18-2022 10:03:40: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:05:40: 	MongoDB Connection Successful
+info: Jan-18-2022 10:05:40: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:05:54: 	MongoDB Connection Successful
+info: Jan-18-2022 10:05:54: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:05:57: 	MongoDB Connection Successful
+info: Jan-18-2022 10:05:57: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:06:08: 	MongoDB Connection Successful
+info: Jan-18-2022 10:06:08: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:06:09: 	MongoDB Connection Successful
+info: Jan-18-2022 10:06:09: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:06:26: 	MongoDB Connection Successful
+info: Jan-18-2022 10:06:26: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:06:28: 	MongoDB Connection Successful
+info: Jan-18-2022 10:06:28: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:06:40: 	MongoDB Connection Successful
+info: Jan-18-2022 10:06:40: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:06:42: 	MongoDB Connection Successful
+info: Jan-18-2022 10:06:42: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:06:52: 	MongoDB Connection Successful
+info: Jan-18-2022 10:06:52: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:06:54: 	MongoDB Connection Successful
+info: Jan-18-2022 10:06:54: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:07:03: 	MongoDB Connection Successful
+info: Jan-18-2022 10:07:03: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:07:07: 	MongoDB Connection Successful
+info: Jan-18-2022 10:07:07: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:07:11: 	MongoDB Connection Successful
+info: Jan-18-2022 10:07:11: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:07:22: 	MongoDB Connection Successful
+info: Jan-18-2022 10:07:22: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:07:28: 	MongoDB Connection Successful
+info: Jan-18-2022 10:07:28: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:07:32: 	MongoDB Connection Successful
+info: Jan-18-2022 10:07:32: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:07:33: 	MongoDB Connection Successful
+info: Jan-18-2022 10:07:33: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:08:01: 	MongoDB Connection Successful
+info: Jan-18-2022 10:08:01: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:08:12: 	MongoDB Connection Successful
+info: Jan-18-2022 10:08:12: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:08:20: 	MongoDB Connection Successful
+info: Jan-18-2022 10:08:20: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:08:26: 	MongoDB Connection Successful
+info: Jan-18-2022 10:08:26: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:09:19: 	MongoDB Connection Successful
+info: Jan-18-2022 10:09:19: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:09:50: 	JWT Signed and sent as response for login request
+info: Jan-18-2022 10:10:37: 	MongoDB Connection Successful
+info: Jan-18-2022 10:10:37: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:10:44: 	MongoDB Connection Successful
+info: Jan-18-2022 10:10:44: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:11:11: 	MongoDB Connection Successful
+info: Jan-18-2022 10:11:11: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:17:17: 	MongoDB Connection Successful
+info: Jan-18-2022 10:17:17: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:19:42: 	MongoDB Connection Successful
+info: Jan-18-2022 10:19:42: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:20:45: 	MongoDB Connection Successful
+info: Jan-18-2022 10:20:45: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:22:45: 	JWT Signed and sent as response for login request
+info: Jan-18-2022 10:29:43: 	MongoDB Connection Successful
+info: Jan-18-2022 10:29:43: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:29:53: 	MongoDB Connection Successful
+info: Jan-18-2022 10:29:53: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:29:59: 	MongoDB Connection Successful
+info: Jan-18-2022 10:29:59: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:30:04: 	MongoDB Connection Successful
+info: Jan-18-2022 10:30:04: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:30:11: 	MongoDB Connection Successful
+info: Jan-18-2022 10:30:11: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:30:14: 	MongoDB Connection Successful
+info: Jan-18-2022 10:30:14: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:30:15: 	MongoDB Connection Successful
+info: Jan-18-2022 10:30:15: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:30:23: 	MongoDB Connection Successful
+info: Jan-18-2022 10:30:23: 	Server started and running on http://localhost:5000
+info: Jan-18-2022 10:30:27: 	MongoDB Connection Successful
+info: Jan-18-2022 10:30:27: 	Server started and running on http://localhost:5000

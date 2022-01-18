@@ -21,9 +21,18 @@ const expressApp = express();
 expressApp.use(compression());
 
 // CORS Setup
-const corsOptions = {
-  origin: 'http://localhost:3000',
-};
+
+let corsOptions;
+
+if (process.env.NODE_ENV === 'production') {
+  corsOptions = {
+    origin: 'https://codine007.herokuapp.com',
+  };
+} else {
+  corsOptions = {
+    origin: 'http://localhost:5000',
+  };
+}
 expressApp.use(cors(corsOptions));
 
 // Basic express config
