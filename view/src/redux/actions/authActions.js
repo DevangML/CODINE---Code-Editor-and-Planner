@@ -14,6 +14,12 @@ import {
 } from '../constants/authTypes';
 import { API } from '../../api';
 
+if (process.env.NODE_ENV === 'production') {
+  API = axios;
+} else {
+  API = API;
+}
+
 // Load User
 export const loadUser = (token) => async (dispatch) => {
   if (token) {
