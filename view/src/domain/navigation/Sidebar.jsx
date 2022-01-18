@@ -46,8 +46,8 @@ const Sidebar = function () {
       const { token } = state.auth;
       const { authType } = state.auth;
       const body = { authType, token };
-      await axios.post('/api/auth/create/3', body, config);
-      await axios.post('/api/auth/create/4', body, config);
+      await API.post('/auth/create/3', body, config);
+      await API.post('/auth/create/4', body, config);
     };
   }
 

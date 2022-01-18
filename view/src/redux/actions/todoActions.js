@@ -6,7 +6,7 @@ import store from '../store';
 
 export const getTodos = () => async (dispatch) => {
   try {
-    await axios.get('/api/todo/read', setHeaders()).then((todoss) => {
+    await API.get('/todo/read', setHeaders()).then((todoss) => {
       // for (let index = 0; index < todoss.length; index++) {
       //   const element = todoss[index];
       //   todos.push(element)
@@ -30,8 +30,7 @@ export const getTodos = () => async (dispatch) => {
 export const addTodo = (newTodo) => async (dispatch, getState) => {
   const author = store.getState().auth.name;
   const uid = store.getState().auth._id;
-  await axios
-    .post('/api/todo/create', { ...newTodo, author, uid }, setHeaders())
+  await API.post('/todo/create', { ...newTodo, author, uid }, setHeaders())
     .then((todo) => {
       dispatch({
         type: ADD_TODO,
@@ -51,8 +50,7 @@ export const addTodo = (newTodo) => async (dispatch, getState) => {
 };
 
 export const updateTodo = (updatedTodo, id) => async (dispatch) => {
-  await axios
-    .put(`/api/todo/update/${id}`, updatedTodo, setHeaders())
+  await API.put(`/todo/update/${id}`, updatedTodo, setHeaders())
     .then((todo) => {
       dispatch({
         type: UPDATE_TODO,
@@ -71,8 +69,7 @@ export const updateTodo = (updatedTodo, id) => async (dispatch) => {
 };
 
 export const deleteTodo = (id) => async (dispatch) => {
-  await axios
-    .delete(`/api/todo/delete/${id}`, setHeaders())
+  await API.delete(`/todo/delete/${id}`, setHeaders())
     .then(() => {
       dispatch({
         type: DELETE_TODO,
@@ -91,8 +88,7 @@ export const deleteTodo = (id) => async (dispatch) => {
 };
 
 export const checkTodo = (id) => async (dispatch) => {
-  await axios
-    .patch(`/api/todo/update/partial/${id}`, {}, setHeaders())
+  await API.patch(`/todo/update/partial/${id}`, {}, setHeaders())
     .then((todo) => {
       dispatch({
         type: CHECK_TODO,

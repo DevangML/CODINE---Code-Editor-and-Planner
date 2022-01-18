@@ -26,7 +26,7 @@ let corsOptions;
 
 if (process.env.NODE_ENV === 'production') {
   corsOptions = {
-    origin: 'https://codine007.herokuapp.com',
+    origin: 'https://pcodine.netlify.app',
   };
 } else {
   corsOptions = {
@@ -82,27 +82,27 @@ mong();
 // })
 
 // Contact Route Initializers
-expressApp.use('/api/contact', codineContactRouter);
+expressApp.use('/contact', codineContactRouter);
 
 // LiveCompiler Routes Initializers
 
-expressApp.use('/api/compiler', codineLiveCompilerRouter);
+expressApp.use('/compiler', codineLiveCompilerRouter);
 
 // To-Do List Routes Initializers
 
-expressApp.use('/api/todo', codineToDoRouter);
+expressApp.use('/todo', codineToDoRouter);
 
 // Authentication Routes Initializers
 
-expressApp.use('/api/auth', codineAuthRouter);
+expressApp.use('/auth', codineAuthRouter);
 
 // Static view configuration
 
-expressApp.use(express.static('view/build'));
-expressApp.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'view', 'build', 'index.html'));
-  logger.info('Static files i.e. client served');
-});
+// expressApp.use(express.static('view/build'));
+// expressApp.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, 'view', 'build', 'index.html'));
+//   logger.info('Static files i.e. client served');
+// });
 
 // Making Port and connection for express.js
 const port = process.env.PORT || '5000';

@@ -7,7 +7,7 @@ const codineLiveCompilerRouter = express.Router();
 
 // Routes here
 
-// @route POST /api/compiler/create
+// @route POST /compiler/create
 // @desc Implements Live Compiler Logic
 // @access Public
 codineLiveCompilerRouter.post('/create', codineLiveCompilerCreateController);
