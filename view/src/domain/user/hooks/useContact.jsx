@@ -31,7 +31,8 @@ const useContact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    API.post('/contact/create', data)
+    await axios
+      .post('/contact/create', data)
       .then((res) => {
         console.log(res);
         resetForm();

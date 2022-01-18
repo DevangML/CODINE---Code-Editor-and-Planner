@@ -4,9 +4,9 @@ import { API, setHeaders } from '../../api';
 import { GET_TODOS, ADD_TODO, UPDATE_TODO, DELETE_TODO, CHECK_TODO } from '../constants/toDoTypes';
 import store from '../store';
 
-export const getTodos = () => (dispatch) => {
+export const getTodos = () => async (dispatch) => {
   try {
-    API.get('/todo/read', setHeaders()).then((todoss) => {
+    await axios.get('/todo/read', setHeaders()).then((todoss) => {
       // for (let index = 0; index < todoss.length; index++) {
       //   const element = todoss[index];
       //   todos.push(element)
@@ -30,7 +30,8 @@ export const getTodos = () => (dispatch) => {
 export const addTodo = (newTodo) => async (dispatch, getState) => {
   const author = store.getState().auth.name;
   const uid = store.getState().auth._id;
-  await API.post('/todo/create', { ...newTodo, author, uid }, setHeaders())
+  await axios
+    .post('/todo/create', { ...newTodo, author, uid }, setHeaders())
     .then((todo) => {
       dispatch({
         type: ADD_TODO,
@@ -50,7 +51,8 @@ export const addTodo = (newTodo) => async (dispatch, getState) => {
 };
 
 export const updateTodo = (updatedTodo, id) => async (dispatch) => {
-  await API.put(`/todo/update/${id}`, updatedTodo, setHeaders())
+  await axios
+    .put(`/todo/update/${id}`, updatedTodo, setHeaders())
     .then((todo) => {
       dispatch({
         type: UPDATE_TODO,
@@ -69,7 +71,8 @@ export const updateTodo = (updatedTodo, id) => async (dispatch) => {
 };
 
 export const deleteTodo = (id) => async (dispatch) => {
-  await API.delete(`/todo/delete/${id}`, setHeaders())
+  await axios
+    .delete(`/todo/delete/${id}`, setHeaders())
     .then(() => {
       dispatch({
         type: DELETE_TODO,
@@ -88,7 +91,8 @@ export const deleteTodo = (id) => async (dispatch) => {
 };
 
 export const checkTodo = (id) => async (dispatch) => {
-  await API.patch(`/todo/update/partial/${id}`, {}, setHeaders())
+  await axios
+    .patch(`/todo/update/partial/${id}`, {}, setHeaders())
     .then((todo) => {
       dispatch({
         type: CHECK_TODO,

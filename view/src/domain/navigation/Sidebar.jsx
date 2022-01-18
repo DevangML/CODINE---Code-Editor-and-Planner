@@ -11,6 +11,7 @@ import SubMenu from './SubMenu';
 import { logout } from '../../redux/actions/authActions';
 import { Nav, NavIcon, SidebarNav, SidebarWrap, Logout } from './styles/styleModules/sideBarStyles';
 import { API } from '../../api';
+import axios from 'axios';
 
 const Sidebar = function () {
   const [sidebar, setSidebar] = useState(false);
@@ -45,8 +46,8 @@ const Sidebar = function () {
       const { token } = state.auth;
       const { authType } = state.auth;
       const body = { authType, token };
-      await API.post('/auth/create/3', body, config);
-      await API.post('/auth/create/4', body, config);
+      await axios.post('/auth/create/3', body, config);
+      await axios.post('/auth/create/4', body, config);
     };
   }
 

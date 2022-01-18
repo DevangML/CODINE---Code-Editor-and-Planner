@@ -84,7 +84,7 @@ mong();
 // Static view configuration
 
 expressApp.use(express.static('view/build'));
-expressApp.get('/', (req, res) => {
+expressApp.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'view', 'build', 'index.html'));
   logger.info('Static files i.e. client served');
 });

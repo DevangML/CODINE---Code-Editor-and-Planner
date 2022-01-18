@@ -3,13 +3,7 @@ import store from '../redux/store';
 
 /*eslint-disable*/
 
-export let API;
-
-if (process.env.NODE_ENV === 'production') {
-  API = axios.create({ baseURL: '' });
-} else {
-  API = axios.create({ baseURL: 'http://localhost:5000' });
-}
+export const API = axios.create({ baseURL: process.env.baseURL || 'http://localhost:5000/' });
 
 export const setHeaders = () => {
   const headers = {
