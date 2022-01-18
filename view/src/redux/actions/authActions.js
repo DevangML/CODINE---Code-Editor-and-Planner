@@ -37,7 +37,7 @@ export const register =
     };
 
     try {
-      const res = await axios.post('/auth/create/1', body, config);
+      const res = await axios.post('/api/auth/create/1', body, config);
       const token = res.data.token;
       dispatch(loadUser(token));
     } catch (err) {
@@ -88,7 +88,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const body = JSON.stringify({ email, password });
-    const res = await axios.post('/auth/create/2', body, config);
+    const res = await axios.post('/api/auth/create/2', body, config);
     const token = res.data.token;
     dispatch(loadUser(token));
   } catch (err) {
