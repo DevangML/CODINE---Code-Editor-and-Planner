@@ -5,9 +5,7 @@
   "main": "codine.app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon -L oce.app.js",
-    "lint": "eslint \"**/*.js\"",
-    "lintfix": "eslint  \"**/*.js\" --fix --cache",
+    "start": "node codine.app.js",
     "prettier": "prettier --write \"**/*.js\""
   },
   "author": "",

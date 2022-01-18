@@ -81,14 +81,6 @@ mong();
 // console.error(error)
 // })
 
-// Static view configuration
-
-expressApp.use(express.static('view/build'));
-expressApp.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'view', 'build', 'index.html'));
-  logger.info('Static files i.e. client served');
-});
-
 // Contact Route Initializers
 expressApp.use('/contact', codineContactRouter);
 
@@ -103,6 +95,14 @@ expressApp.use('/todo', codineToDoRouter);
 // Authentication Routes Initializers
 
 expressApp.use('/auth', codineAuthRouter);
+
+// Static view configuration
+
+expressApp.use(express.static('view/build'));
+expressApp.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'view', 'build', 'index.html'));
+  logger.info('Static files i.e. client served');
+});
 
 // Making Port and connection for express.js
 const port = process.env.PORT || '5000';
