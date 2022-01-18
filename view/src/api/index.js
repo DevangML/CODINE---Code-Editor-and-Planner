@@ -6,7 +6,7 @@ import store from '../redux/store';
 export let API;
 
 if (process.env.NODE_ENV === 'production') {
-  API = axios.create({ baseURL: 'https://codine007.herokuapp.com' });
+  API = axios.create({ baseURL: '' });
 } else {
   API = axios.create({ baseURL: 'http://localhost:5000' });
 }
