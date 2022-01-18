@@ -14,7 +14,7 @@ const codineAuthRouter = express.Router();
 
 // Authentication Routes
 
-// @route   POST /auth/create/1
+// @route   POST /api/auth/create/1
 // @desc    Register user
 // @access  Public
 codineAuthRouter.post(
@@ -28,7 +28,7 @@ codineAuthRouter.post(
   codineAuthCreateController1
 );
 
-// @route   POST /auth/create/2
+// @route   POST /api/auth/create/2
 // @desc    Authentication user & get token/ Login user
 // @access  Public
 codineAuthRouter.post(
@@ -42,12 +42,12 @@ codineAuthRouter.post(
 
 // Google Authentication Routes
 
-// @route POST /auth/create/3
+// @route POST /api/auth/create/3
 // @desc Google authentication - saves user information to googleauths collection
 // @access Public
 codineAuthRouter.post('/create/3', auth, codineAuthCreateController3);
 
-// @route POST /auth/create/4
+// @route POST /api/auth/create/4
 // @desc Google authentication - saves user information to users collection
 // @access Public
 codineAuthRouter.post('/create/4', auth, codineAuthCreateController4);

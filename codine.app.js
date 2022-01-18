@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
   };
 } else {
   corsOptions = {
-    origin: 'http://localhost:5000',
+    origin: 'http://localhost:3000',
   };
 }
 expressApp.use(cors(corsOptions));
@@ -82,19 +82,19 @@ mong();
 // })
 
 // Contact Route Initializers
-expressApp.use('/contact', codineContactRouter);
+expressApp.use('/api/contact', codineContactRouter);
 
 // LiveCompiler Routes Initializers
 
-expressApp.use('/compiler', codineLiveCompilerRouter);
+expressApp.use('/api/compiler', codineLiveCompilerRouter);
 
 // To-Do List Routes Initializers
 
-expressApp.use('/todo', codineToDoRouter);
+expressApp.use('/api/todo', codineToDoRouter);
 
 // Authentication Routes Initializers
 
-expressApp.use('/auth', codineAuthRouter);
+expressApp.use('/api/auth', codineAuthRouter);
 
 // Static view configuration
 

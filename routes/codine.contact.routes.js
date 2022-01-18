@@ -7,7 +7,7 @@ const auth = require('../middlewares/auth');
 
 // Contact Routes
 
-// @route POST /contact/create
+// @route POST /api/contact/create
 // @desc Posts contact form to DB
 // @access  Public
 codineContactRouter.post('/create', auth, codineContactCreateController);
