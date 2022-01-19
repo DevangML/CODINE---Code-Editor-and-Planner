@@ -17,7 +17,7 @@ const codineContactCreateController = async (req, res) => {
       });
     }
 
-    const { authType } = req.body;
+    const authType = req.header('authType');
     let userId;
     if (authType === 'Google') {
       userId = req.user.sub;

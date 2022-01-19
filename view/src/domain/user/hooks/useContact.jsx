@@ -1,14 +1,11 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { API } from '../../../api/index';
+import { API, setHeaders } from '../../../api/index';
 
 const useContact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState(null);
   const [message, setMessage] = useState('');
-
-  const auth = useSelector((state) => state.auth);
 
   const resetForm = () => {
     setName('');
@@ -17,12 +14,7 @@ const useContact = () => {
     setMessage('');
   };
 
-  const { authType } = auth;
-  const { token } = auth;
-
   const data = {
-    token,
-    authType,
     name,
     email,
     phone,
@@ -31,7 +23,7 @@ const useContact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await API.post('/contact/create', data)
+    await API.post('/contact/create', data, setHeaders())
       .then((res) => {
         console.log(res);
         resetForm();
