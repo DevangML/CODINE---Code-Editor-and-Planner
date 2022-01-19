@@ -1028,6 +1028,13 @@ body {
   color: #6cafa4;
 }
 
+.auth__cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .auth__button {
   padding: 2vh 2.5vh;
   color: #333 !important;
@@ -1040,7 +1047,7 @@ body {
   border: none;
   font-size: 3vh !important;
   transition: all linear 0.3s;
-  min-width: 25vw !important;
+  min-width: fit-content;
   max-width: 30vw;
 }
 
@@ -1052,10 +1059,8 @@ body {
 }
 
 .googleButton {
-  width: 60%;
-
-  padding-top: 2.2vh;
-  padding-bottom: 2.2vh;
+  width: fit-content;
+  padding: 1vw;
   text-align: center;
   color: #000;
   text-transform: uppercase;
@@ -1100,17 +1105,16 @@ body {
   z-index: 6;
   font-size: calc(20px, 1vh);
   gap: 3vw;
-  min-width: 5vw;
-  min-height: 5vh;
+  width: fit-content;
+  height: fit-content;
   padding: 2vh;
   background-color: transparent;
 }
 
 .landing_button__item-1,
 .landing_button__item-2 {
-  width: 25%;
-  padding-top: 2.2vh;
-  padding-bottom: 2.2vh;
+  width: fit-content;
+  padding: 1vw;
   text-align: center;
   color: #000;
   text-transform: uppercase;
@@ -1129,20 +1133,6 @@ body {
 .landing_button__item-2:hover {
   box-shadow: 8px 8px #99bdff;
   transition: 0.3s;
-}
-
-@media only screen and (max-aspect-ratio: 11/10) {
-  .landing_button__item-1,
-  .landing_button__item-2 {
-    min-height: 10vh;
-  }
-}
-
-@media only screen and (max-aspect-ratio: 4/5) {
-  .landing_button__item-1,
-  .landing_button__item-2 {
-    min-height: 6vh;
-  }
 }
 /* Sidebar Section */
 
@@ -1319,7 +1309,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 2vh;
-  justify-content: center;
+  justify-content: flex-start;
   padding-bottom: 2vh;
   min-height: 110vh;
   min-width: 100vw;

@@ -105,25 +105,27 @@ function Register() {
                 type='password'
                 value={password2}
               />
-            </div>
-            <input className='auth__button' type='submit' value='Register' />
-            <GoogleLogin
-              clientId={process.env.REACT_APP_GCID}
-              cookiePolicy='single_host_origin'
-              onFailure={googleError}
-              onSuccess={googleSuccess}
-              render={(renderProps) => (
-                <button
-                  className='googleButton'
-                  disabled={renderProps.disabled}
-                  onClick={renderProps.onClick}
-                  startIcon={<Icon />}
-                  type='button'
-                >
-                  Google Sign In
-                </button>
-              )}
-            />
+            </div>{' '}
+            <section className='auth__cont'>
+              <input className='auth__button' type='submit' value='Register' />
+              <GoogleLogin
+                clientId={process.env.REACT_APP_GCID}
+                cookiePolicy='single_host_origin'
+                onFailure={googleError}
+                onSuccess={googleSuccess}
+                render={(renderProps) => (
+                  <button
+                    className='googleButton'
+                    disabled={renderProps.disabled}
+                    onClick={renderProps.onClick}
+                    startIcon={<Icon />}
+                    type='button'
+                  >
+                    Google Sign In
+                  </button>
+                )}
+              />
+            </section>
           </form>
           <p className='link'>
             Already have an account? <Link to='/login'>Sign In</Link>

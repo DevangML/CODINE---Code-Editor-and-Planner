@@ -78,24 +78,26 @@ function Login() {
                 value={password}
               />
             </div>
-            <input className='auth__button' type='submit' value='Login' />
-            <GoogleLogin
-              clientId={process.env.REACT_APP_GCID}
-              cookiePolicy='single_host_origin'
-              onFailure={googleError}
-              onSuccess={googleSuccess}
-              render={(renderProps) => (
-                <button
-                  className='googleButton'
-                  disabled={renderProps.disabled}
-                  onClick={renderProps.onClick}
-                  startIcon={<Icon />}
-                  type='button'
-                >
-                  Google Sign In
-                </button>
-              )}
-            />
+            <section className='auth__cont'>
+              <input className='auth__button' type='submit' value='Login' />
+              <GoogleLogin
+                clientId={process.env.REACT_APP_GCID}
+                cookiePolicy='single_host_origin'
+                onFailure={googleError}
+                onSuccess={googleSuccess}
+                render={(renderProps) => (
+                  <button
+                    className='googleButton'
+                    disabled={renderProps.disabled}
+                    onClick={renderProps.onClick}
+                    startIcon={<Icon />}
+                    type='button'
+                  >
+                    Google Sign In
+                  </button>
+                )}
+              />
+            </section>
           </form>
           <p className='link'>
             Don't have an account? <Link to='/register'>Sign Up</Link>
