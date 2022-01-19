@@ -13,3 +13,5 @@ info: Jan-19-2022 17:06:08: 	[object Object]
 error: Jan-19-2022 17:06:08: 	500 - Internal Server Error - E11000 duplicate key error collection: CODINE.contacts index: email_1 dup key: { email: "devangmanjramkar@gmail.com" } - /contact/create - POST - ::1
 info: Jan-19-2022 17:06:22: 	[object Object]
 info: Jan-19-2022 17:06:22: 	Form Submission Successful
+info: Jan-19-2022 17:08:20: 	MongoDB Connection Successful
+info: Jan-19-2022 17:08:20: 	Server started and running on http://localhost:5000
