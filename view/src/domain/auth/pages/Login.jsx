@@ -18,7 +18,7 @@ function Login() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    dispatch(login(email, password)).then(() => {
+    await dispatch(login(email, password)).then(() => {
       history.push('/');
       setTimeout(() => {
         window.location.reload(false);
@@ -61,6 +61,7 @@ function Login() {
                 onChange={(e) => onChange(e)}
                 placeholder='Email Address'
                 required
+                className='authInput'
                 type='email'
                 value={email}
               />
@@ -71,6 +72,7 @@ function Login() {
                 name='password'
                 onChange={(e) => onChange(e)}
                 placeholder='Password'
+                className='authInput'
                 required
                 type='password'
                 value={password}

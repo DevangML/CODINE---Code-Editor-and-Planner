@@ -1,4 +1,4 @@
-// import './app.css';
+import './app.css';
 import { useEffect, useState } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
@@ -33,31 +33,30 @@ import { FallBackLayout } from './domain/layouts/FallBackLayout';
 
 // Dev Styles
 
-import './domain/common/styles/general.css';
-import './domain/common/styles/partStyles/dfooter.css';
-import './domain/common/styles/partStyles/loader.css';
-import './domain/compilers/styles/pageStyles/vanilla.css';
-import './domain/compilers/styles/componentStyles/vanillaComponentStyles/vanillaFluent.css';
-import './domain/compilers/styles/componentStyles/vanillaComponentStyles/vanillaNormal.css';
-import './domain/compilers/styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css';
-import './domain/navigation/styles/pageStyles/navBar.css';
-import './domain/project/styles/pageStyles/projectPlanner.css';
-import './domain/project/styles/pageStyles/toDoList.css';
-import './domain/project/styles/componentStyles/projectPlannerComponentStyles/addList.css';
-import './domain/project/styles/componentStyles/projectPlannerComponentStyles/board.css';
-import './domain/project/styles/componentStyles/projectPlannerComponentStyles/card.css';
-import './domain/project/styles/componentStyles/projectPlannerComponentStyles/cardEditor.css';
-import './domain/project/styles/componentStyles/projectPlannerComponentStyles/editButtons.css';
-import './domain/project/styles/componentStyles/projectPlannerComponentStyles/list.css';
-import './domain/project/styles/componentStyles/projectPlannerComponentStyles/listEditor.css';
-import './domain/user/styles/pageStyles/contactMe.css';
-import './domain/user/styles/pageStyles/home.css';
-import './domain/user/styles/componentStyles/homeComponentStyles/heroStyles.css';
-import './domain/user/styles/componentStyles/homeComponentStyles/mainOneStyles.css';
-import './domain/user/styles/componentStyles/homeComponentStyles/mainTwoStyles.css';
-import './domain/auth/styles/input.css';
-import './domain/layouts/styles/landing.css';
-import './domain/layouts/styles/landingRouteButton.css';
+// import './domain/common/styles/general.css';
+// import './domain/common/styles/partStyles/dfooter.css';
+// import './domain/common/styles/partStyles/loader.css';
+// import './domain/compilers/styles/pageStyles/vanilla.css';
+// import './domain/compilers/styles/componentStyles/vanillaComponentStyles/vanillaFluent.css';
+// import './domain/compilers/styles/componentStyles/vanillaComponentStyles/vanillaNormal.css';
+// import './domain/compilers/styles/componentStyles/vanillaComponentStyles/vanillaRouteButton.css';
+// import './domain/navigation/styles/pageStyles/navBar.css';
+// import './domain/project/styles/pageStyles/projectPlanner.css';
+// import './domain/project/styles/pageStyles/toDoList.css';
+// import './domain/project/styles/componentStyles/projectPlannerComponentStyles/addList.css';
+// import './domain/project/styles/componentStyles/projectPlannerComponentStyles/board.css';
+// import './domain/project/styles/componentStyles/projectPlannerComponentStyles/card.css';
+// import './domain/project/styles/componentStyles/projectPlannerComponentStyles/cardEditor.css';
+// import './domain/project/styles/componentStyles/projectPlannerComponentStyles/editButtons.css';
+// import './domain/project/styles/componentStyles/projectPlannerComponentStyles/list.css';
+// import './domain/project/styles/componentStyles/projectPlannerComponentStyles/listEditor.css';
+// import './domain/user/styles/pageStyles/contactMe.css';
+// import './domain/user/styles/pageStyles/home.css';
+// import './domain/user/styles/componentStyles/homeComponentStyles/heroStyles.css';
+// import './domain/user/styles/componentStyles/homeComponentStyles/mainOneStyles.css';
+// import './domain/user/styles/componentStyles/homeComponentStyles/mainTwoStyles.css';
+// import './domain/layouts/styles/landing.css';
+// import './domain/layouts/styles/landingRouteButton.css';
 
 // Loader Section
 

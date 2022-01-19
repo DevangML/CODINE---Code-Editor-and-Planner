@@ -68,6 +68,7 @@ function Register() {
               <input
                 name='name'
                 onChange={(e) => onChange(e)}
+                className='authInput'
                 placeholder='Name'
                 type='text'
                 value={name}
@@ -77,6 +78,7 @@ function Register() {
               <input
                 name='email'
                 onChange={(e) => onChange(e)}
+                className='authInput'
                 placeholder='Email Address'
                 type='email'
                 value={email}
@@ -87,6 +89,7 @@ function Register() {
                 minLength='6'
                 name='password'
                 onChange={(e) => onChange(e)}
+                className='authInput'
                 placeholder='Password'
                 type='password'
                 value={password}
@@ -97,6 +100,7 @@ function Register() {
                 minLength='6'
                 name='password2'
                 onChange={(e) => onChange(e)}
+                className='authInput'
                 placeholder='Confirm Password'
                 type='password'
                 value={password2}

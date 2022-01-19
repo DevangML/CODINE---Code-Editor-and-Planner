@@ -1,52 +1,48 @@
 import { useState } from 'react';
+import axios from 'axios';
 import styles from '../../styles/pageStyles/compiler.module.css';
 
 const Compiler = () => {
-  const [state, setState] = useState({
-    input: localStorage.getItem('input') || ``,
-    language_id: localStorage.getItem('language_Id') || 2,
-    user_input: ``,
-  });
-
-  const { input, language_id } = state;
-
+  const [input, setInput] = useState(localStorage.getItem('input') || ``);
+  const [languageId, setLanguageId] = useState(localStorage.getItem('language_Id') || 2);
+  const [user_Input, setUser_Input] = useState(``);
   const [output, setOutput] = useState(``);
 
   const inputChange = (event) => {
     event.preventDefault();
-    setState({ input: event.target.value });
+    setInput(event.target.value);
     localStorage.setItem('input', event.target.value);
   };
 
   const userInput = (event) => {
     event.preventDefault();
-    setState({ user_input: event.target.value });
+    setUser_Input(event.target.value);
   };
+
   const language = (event) => {
     event.preventDefault();
-    setState({ language_id: event.target.value });
-    localStorage.setItem('language_Id', event.target.value);
+    setLanguageId(event.target.value);
+    localStorage.setItem('languageId', event.target.value);
   };
 
   const submit = async (e) => {
     e.preventDefault();
-
-    setOutput('Creating Submission ...\n');
+    setOutput(`Creating Submission ...\n`);
     const response = await fetch('https://judge0-ce.p.rapidapi.com/submissions', {
       method: 'POST',
       headers: {
         'x-rapidapi-host': 'judge0-ce.p.rapidapi.com',
-        'x-rapidapi-key': process.env.REACT_APP_JUDGE_KEY,
+        'x-rapidapi-key': '7881de12dfmsh2113304271aed00p101cd9jsn038bca142e18',
         'content-type': 'application/json',
         accept: 'application/json',
       },
       body: JSON.stringify({
-        source_code: state.input,
-        stdin: state.user_input,
-        language_id: state.language_id,
+        source_code: input,
+        stdin: user_Input,
+        language_id: languageId,
       }),
     });
-    response && setOutput('Submission Created ...\n');
+    setOutput(`Submission Created ...\n`);
     const jsonResponse = await response.json();
 
     let jsonGetSolution = {
@@ -70,7 +66,7 @@ const Compiler = () => {
           method: 'GET',
           headers: {
             'x-rapidapi-host': 'judge0-ce.p.rapidapi.com',
-            'x-rapidapi-key': process.env.REACT_APP_JUDGE_KEY,
+            'x-rapidapi-key': '7881de12dfmsh2113304271aed00p101cd9jsn038bca142e18',
             'content-type': 'application/json',
           },
         });
@@ -107,13 +103,13 @@ const Compiler = () => {
           required
           name='solution'
           onChange={inputChange}
-          value={input}
           className={styles['input']}
+          value={input}
         ></textarea>
         <label htmlFor='tags'>
           <b className={styles['langselect']}>Language:</b>
         </label>
-        <select className={styles['lang__switch']} value={language_id} onChange={language}>
+        <select value={languageId} className={styles['lang__switch']} onChange={language}>
           <option className={styles['dropdown']} value='54'>
             C++
           </option>
@@ -127,7 +123,7 @@ const Compiler = () => {
             Python
           </option>
         </select>
-        <button type='submit' onClick={submit} className={styles['run']}>
+        <button type='button' onClick={submit} className={styles['run']}>
           Run
         </button>
 
@@ -136,7 +132,7 @@ const Compiler = () => {
             <span>
               <i className={styles['outputheader']}>Output</i>
             </span>
-            <textarea value={output} className={styles['output']}></textarea>
+            <textarea value={output} className={styles['output']} value={output}></textarea>
           </section>
         </section>
         <span>

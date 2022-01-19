@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from "react";
-import AddTodo from "./AddTodo";
-import ListTodos from "./ListTodos";
-
-import { useSelector } from "react-redux";
-import store from "../../../../redux/store";
+import React, { useState } from 'react';
+import store from '../../../../redux/store';
+import AddTodo from './AddTodo';
+import ListTodos from './ListTodos';
 
 const Todos = () => {
   const auth = store.getState().auth;
   const [todo, setTodo] = useState({
-    name: "",
+    name: '',
     isComplete: false,
   });
 
   return (
-    <section className="todo__container">
+    <section className='todo__container'>
       {auth._id ? (
         <>
           <AddTodo todo={todo} setTodo={setTodo} />
