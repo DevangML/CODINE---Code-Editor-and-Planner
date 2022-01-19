@@ -29,12 +29,12 @@
 }
 .lang__switch {
   display: unset;
-  min-width: 8vw;
-  max-width: 10vw;
+  min-width: 16vw;
+  max-width: 20vw;
   min-height: 6vh;
-  max-height: 8vh;
-  font-size: calc(13px + 1vw);
-  border-radius: 3vw;
+  max-height: 10vh;
+  font-size: calc(14px + 0.5vw);
+  border-radius: 3vh;
   padding: 0.5vw;
   text-align: center;
   background: #f12711;
@@ -43,6 +43,18 @@
   outline: none;
   border: none;
 }
+
+@media only screen and (max-aspect-ratio: 25/31) {
+  .lang__switch {
+    min-width: fit-content;
+    overflow: hidden;
+  }
+  .run {
+    min-width: fit-content;
+    overflow: hidden;
+  }
+}
+
 .dropdown {
   display: flex;
   align-items: center;
@@ -50,8 +62,11 @@
   justify-content: center;
 }
 .run {
-  min-width: 10vw;
-  min-height: 5vh;
+  min-width: 16vw;
+  max-width: 20vw;
+  min-height: 6vh;
+  max-height: 10vh;
+  font-size: calc(14px + 0.5vw);
   border-radius: 3vh;
   outline: none;
   border: none;
@@ -64,6 +79,7 @@
   background-color: #faebd7;
   border-radius: 3vh;
   padding: 3vh;
+  min-width: 98%;
   font-size: calc(8px + 1vw);
   min-height: 20vh;
 }
@@ -77,7 +93,7 @@
   padding: 3vh;
   font-size: calc(8px + 1vw);
   min-height: 20vh;
-  min-width: 60vw;
+  min-width: 70vw;
 }
 .header {
   font-family: 'Kaushan Script', cursive;
@@ -97,7 +113,7 @@
   padding: 3vh;
   font-size: calc(8px + 1vw);
   min-height: 20vh;
-  min-width: 60vw;
+  min-width: 70vw;
 }
 .userheader {
   font-family: 'Kaushan Script', cursive;

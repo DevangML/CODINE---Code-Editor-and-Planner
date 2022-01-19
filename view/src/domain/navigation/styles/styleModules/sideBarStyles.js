@@ -92,9 +92,15 @@ export const Logout = styled(Link)`
   font-size: 3vh;
   color: gold;
   max-width: 50%;
-  min-width: 30%;
+  min-width: 40%;
   text-align: center;
   transition: all cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.2s;
+  text-decoration: none;
+  display: flex;
+  align-items:center;
+  justify-content:center;
+  min-height: 5%;
+  max-height: 10%;
 
   &:hover {
     /* border: 2px solid white; */

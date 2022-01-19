@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { GoogleLogout } from 'react-google-login';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { IconContext } from 'react-icons/lib';
@@ -11,7 +10,6 @@ import SubMenu from './SubMenu';
 import { logout } from '../../redux/actions/authActions';
 import { Nav, NavIcon, SidebarNav, SidebarWrap, Logout } from './styles/styleModules/sideBarStyles';
 import { API } from '../../api';
-import axios from 'axios';
 
 const Sidebar = function () {
   const [sidebar, setSidebar] = useState(false);

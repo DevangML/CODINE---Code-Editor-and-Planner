@@ -129,9 +129,7 @@ const Compiler = () => {
 
         <section>
           <section>
-            <span>
-              <i className={styles['outputheader']}>Output</i>
-            </span>
+              <h5 className={styles['outputheader']}>Output</h5>
             <textarea value={output} className={styles['output']} value={output}></textarea>
           </section>
         </section>
