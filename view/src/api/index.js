@@ -6,7 +6,7 @@ import store from '../redux/store';
 export let API;
 
 if (process.env.NODE_ENV === 'production') {
-  API = axios.create({ baseURL: 'https://pcodine-server.netlify.app' });
+  API = axios.create({ baseURL: 'https://codine-server.herokuapp.com' });
 } else {
   API = axios.create({ baseURL: 'http://localhost:5000' });
 }
