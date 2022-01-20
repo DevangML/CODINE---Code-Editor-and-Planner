@@ -1,8 +1,8 @@
 import './app.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, lazy, Suspense } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
-import { useDispatch, connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Lottie from 'react-lottie';
 import { ToastContainer } from 'react-toastify';
@@ -17,17 +17,17 @@ import 'react-toastify/dist/ReactToastify.css';
 // Component Imports
 
 import Sidebar from './domain/navigation/Sidebar';
-import Vanilla from './domain/compilers/pages/vanilla/Vanilla';
-import Home from './domain/user/pages/home/Home';
-import ContactMe from './domain/user/pages/contactMe/ContactMe';
-import ProjectPlanner from './domain/project/pages/projectPlanner/ProjectPlanner';
-import Compiler from './domain/compilers/pages/liveCompiler/Compiler';
+const Vanilla = lazy(() => import('./domain/compilers/pages/vanilla/Vanilla'));
+const Home = lazy(() => import('./domain/user/pages/home/Home'));
+const ContactMe = lazy(() => import('./domain/user/pages/contactMe/ContactMe'));
+const ProjectPlanner = lazy(() => import('./domain/project/pages/projectPlanner/ProjectPlanner'));
+const Compiler = lazy(() => import('./domain/compilers/pages/liveCompiler/Compiler'));
 import store from './redux/store';
-import Landing from './domain/layouts/Landing';
-import LandingRouteButton from './domain/layouts/components/LandingRouteButton';
-import Register from './domain/auth/pages/Register';
-import Login from './domain/auth/pages/Login';
-import Todos from './domain/project/pages/toDoList/Todos';
+const Landing = lazy(() => import('./domain/layouts/Landing'));
+const LandingRouteButton = lazy(() => import('./domain/layouts/components/LandingRouteButton'));
+const Register = lazy(() => import('./domain/auth/pages/Register'));
+const Login = lazy(() => import('./domain/auth/pages/Login'));
+const Todos = lazy(() => import('./domain/project/pages/toDoList/Todos'));
 
 import { FallBackLayout } from './domain/layouts/FallBackLayout';
 
@@ -115,7 +115,7 @@ const App = ({ isAuthenticated }) => {
   };
 
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       {!completed ? (
         <section className='loading'>
           {!loading ? (
@@ -131,6 +131,7 @@ const App = ({ isAuthenticated }) => {
               <ErrorBoundary FallbackComponent={FallBackLayout} onError={errorHandler}>
                 <ToastContainer />
                 <Sidebar />
+
                 <Switch>
                   <Route exact path='/' to component={Home} />
                   <Route exact path='/vanilla' to component={Vanilla} />
@@ -157,7 +158,7 @@ const App = ({ isAuthenticated }) => {
           )}
         </>
       )}
-    </>
+    </Suspense>
   );
 };
 

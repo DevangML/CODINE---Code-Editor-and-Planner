@@ -26,10 +26,7 @@ const Sidebar = function () {
 
   const onSuccess = async () => {
     dispatch(logout());
-    history.push('/');
-    setTimeout(() => {
-      window.location.reload(false);
-    }, 2);
+    history.go(0);
   };
 
   let googleSaveHandler;
