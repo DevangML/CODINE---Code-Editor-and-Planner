@@ -13,12 +13,12 @@ export const Nav = styled.div`
 export const NavIcon = styled(Link)`
   font-size: 3.1vh;
   margin-left: 1vw;
-  min-height: 8vh;
+  min-height: 9vh;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  min-width: 8vw;
+  min-width: 9vh;
   flex-shrink: 0;
   background: #000428;
   background: -webkit-linear-gradient(to right, #004e92, #000428);
@@ -28,13 +28,13 @@ export const NavIcon = styled(Link)`
   margin-top: 7vh;
 
   @media screen and (max-aspect-ratio: 4/5) {
-    min-width: 13vw;
-    min-height: 9vh;
+    min-width: 7.5vh;
+    min-height: 7.5vh;
     border-radius: 50%;
   }
   @media screen and (max-aspect-ratio: 3/5) {
-    min-width: 20vw;
-    min-height: 9vh;
+    min-width: 6vh;
+    min-height: 6vh;
     border-radius: 50%;
   }
 `;
@@ -97,8 +97,8 @@ export const Logout = styled(Link)`
   transition: all cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.2s;
   text-decoration: none;
   display: flex;
-  align-items:center;
-  justify-content:center;
+  align-items: center;
+  justify-content: center;
   min-height: 5%;
   max-height: 10%;
 

@@ -103,7 +103,12 @@ const App = ({ isAuthenticated }) => {
           {!loading ? (
             <BoxLoading />
           ) : (
-            <svg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 130.2 130.2'>
+            <svg
+              className='tickSvg'
+              version='1.1'
+              xmlns='http://www.w3.org/2000/svg'
+              viewBox='0 0 130.2 130.2'
+            >
               <circle
                 class='path circle'
                 fill='none'
