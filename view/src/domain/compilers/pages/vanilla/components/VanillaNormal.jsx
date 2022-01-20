@@ -8,8 +8,7 @@ import 'codemirror/mode/css/css';
 import 'codemirror/mode/javascript/javascript';
 
 const VanillaNormal = function () {
-  const { compData, setCompData, iRef, runCode, syncUpdates } = useVanilla();
-  const { html, css, js } = compData;
+  const { html, setHtml, css, setCss, js, setJs, iRef, runCode } = useVanilla();
 
   const codeMirrorOptions = {
     theme: 'material',
@@ -34,7 +33,7 @@ const VanillaNormal = function () {
               ...codeMirrorOptions,
             }}
             onBeforeChange={(editor, data, html) => {
-              setCompData({ html });
+              setHtml(html);
             }}
           />
         </section>
@@ -47,7 +46,7 @@ const VanillaNormal = function () {
               ...codeMirrorOptions,
             }}
             onBeforeChange={(editor, data, css) => {
-              setCompData({ css });
+              setCss(css);
             }}
           />
         </section>
@@ -60,7 +59,7 @@ const VanillaNormal = function () {
               ...codeMirrorOptions,
             }}
             onBeforeChange={(editor, data, js) => {
-              setCompData({ js });
+              setJs(js);
             }}
           />
         </section>
