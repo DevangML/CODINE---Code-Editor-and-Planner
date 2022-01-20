@@ -47,9 +47,9 @@ input:-webkit-autofill:active {
   min-width: 100vw;
 }
 .loading {
-  background: #0f2027;
-  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: #c02425;
+  background: -webkit-linear-gradient(to right, #f0cb35, #c02425);
+  background: linear-gradient(to right, #f0cb35, #c02425);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -91,157 +91,6 @@ body {
     font-size: 9vw;
   }
 }
-.animation-container {
-  display: block;
-  position: relative;
-  width: 800px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-.animation-container .boom-container {
-  position: absolute;
-  display: flex;
-  width: 80px;
-  height: 80px;
-  text-align: center;
-  align-items: center;
-  transform: translateY(-50%);
-  left: 200px;
-  top: -145px;
-}
-.animation-container .boom-container .shape {
-  display: inline-block;
-  position: relative;
-  opacity: 0;
-  transform-origin: center center;
-}
-.animation-container .boom-container .shape.circle {
-  width: 20px;
-  height: 20px;
-  animation-name: boom-circle;
-  animation-name: boom-circle;
-  animation-duration: 1s;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-timing-function: ease-out;
-  animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  border-radius: 100%;
-  margin-left: -30px;
-  animation-delay: 0.6s;
-  animation-delay: 0.6s;
-}
-.animation-container .boom-container .shape.circle.big {
-  width: 40px;
-  height: 40px;
-  margin-left: 0;
-}
-.animation-container .boom-container .shape.circle.big.white {
-  border: 2px solid white;
-}
-.animation-container .boom-container .shape.circle.white {
-  border: 1px solid white;
-}
-.animation-container .boom-container .shape.disc {
-  width: 8px;
-  height: 8px;
-  border-radius: 100%;
-  background-color: #d15ff4;
-  animation-name: boom-disc;
-  animation-name: boom-disc;
-  animation-duration: 1s;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-timing-function: ease-out;
-  animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-}
-.animation-container .boom-container .shape.triangle {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  transform-origin: 50% 80%;
-  animation-duration: 1s;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  animation-timing-function: ease-out;
-  animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  margin-left: -15px;
-  border-width: 0 2.5px 5px;
-  border-color: transparent transparent #42e599;
-  animation-name: boom-triangle;
-  animation-name: boom-triangle;
-}
-.animation-container .boom-container .shape.triangle,
-.animation-container .boom-container .shape.circle,
-.animation-container .boom-container .shape.circle.big,
-.animation-container .boom-container .shape.disc {
-  animation-delay: 0.38s;
-  animation-delay: 0.38s;
-  animation-duration: 3s;
-  animation-duration: 3s;
-}
-.animation-container .boom-container .shape.triangle.big {
-  margin-left: -25px;
-  border-width: 0 5px 10px;
-  border-color: transparent transparent #fade28;
-  animation-name: boom-triangle-big;
-  animation-name: boom-triangle-big;
-}
-.animation-container .boom-container .shape::after {
-  background-color: rgb(178 215 232 / 20%);
-}
-.animation-container .boom-container.second {
-  left: 485px;
-  top: 155px;
-}
-.animation-container .boom-container.second .shape.circle {
-  animation-delay: 2.15s;
-  animation-delay: 2.15s;
-}
-.animation-container .boom-container.second .shape.triangle,
-.animation-container .boom-container.second .shape.circle,
-.animation-container .boom-container.second .shape.circle.big,
-.animation-container .boom-container.second .shape.disc {
-  animation-delay: 1.9s;
-  animation-delay: 1.9s;
-}
-.animation-container .lightning-container {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  display: flex;
-  transform: translateY(-50%);
-}
-.animation-container .lightning-container .lightning {
-  position: absolute;
-  display: block;
-  height: 12px;
-  width: 12px;
-  border-radius: 12px;
-  transform-origin: 6px 6px;
-  animation-name: woosh;
-  animation-name: woosh;
-  animation-duration: 1.5s;
-  animation-duration: 1.5s;
-  animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  animation-direction: alternate;
-  animation-direction: alternate;
-}
-.animation-container .lightning-container .lightning.red {
-  background-color: #fc7171;
-  box-shadow: 0 50px 50px 0 rgb(252 113 113 / 30%);
-  animation-delay: 0.2s;
-  animation-delay: 0.2s;
-}
-.animation-container .lightning-container .lightning.white {
-  background-color: white;
-  box-shadow: 0 50px 50px 0 rgb(255 255 255 / 30%);
-}
 .dfooter {
   width: 100vw;
   background: #232526;
@@ -260,124 +109,6 @@ body {
   z-index: 7;
   min-height: 12vh;
   max-height: 15vh;
-}
-.loader {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: linear-gradient(to bottom right, #070630 0%, #060454 100%);
-}
-@keyframes woosh {
-  0% {
-    width: 12px;
-    transform: translate(0, 0) rotate(-35deg);
-    width: 12px;
-    transform: translate(0, 0) rotate(-35deg);
-  }
-  100% {
-    width: 12px;
-    transform: translate(700px, 0) rotate(-37deg);
-    width: 12px;
-    transform: translate(700px, 0) rotate(-37deg);
-  }
-  15% {
-    width: 50px;
-    width: 50px;
-  }
-  30% {
-    width: 12px;
-    transform: translate(214px, -150px) rotate(-35deg);
-    width: 12px;
-    transform: translate(214px, -150px) rotate(-35deg);
-  }
-  30.1% {
-    transform: translate(214px, -150px) rotate(46deg);
-    transform: translate(214px, -150px) rotate(46deg);
-  }
-  50% {
-    width: 110px;
-    width: 110px;
-  }
-  70% {
-    width: 12px;
-    transform: translate(500px, 150px) rotate(46deg);
-    width: 12px;
-    transform: translate(500px, 150px) rotate(46deg);
-  }
-  70.1% {
-    transform: translate(500px, 150px) rotate(-37deg);
-    transform: translate(500px, 150px) rotate(-37deg);
-  }
-  85% {
-    width: 50px;
-    width: 50px;
-  }
-}
-@keyframes boom-circle {
-  0% {
-    opacity: 0;
-    opacity: 0;
-  }
-  30% {
-    opacity: 0;
-    transform: scale(3);
-    opacity: 0;
-    transform: scale(3);
-  }
-  5% {
-    opacity: 1;
-    opacity: 1;
-  }
-}
-@keyframes boom-triangle-big {
-  0% {
-    opacity: 0;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-    transform: scale(2.5) translate(50px, -50px) rotate(360deg);
-    opacity: 0;
-    transform: scale(2.5) translate(50px, -50px) rotate(360deg);
-  }
-  5% {
-    opacity: 1;
-    opacity: 1;
-  }
-}
-@keyframes boom-triangle {
-  0% {
-    opacity: 0;
-    opacity: 0;
-  }
-  30% {
-    opacity: 0;
-    transform: scale(3) translate(20px, 40px) rotate(360deg);
-    opacity: 0;
-    transform: scale(3) translate(20px, 40px) rotate(360deg);
-  }
-  5% {
-    opacity: 1;
-    opacity: 1;
-  }
-}
-@keyframes boom-disc {
-  0% {
-    opacity: 0;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-    transform: scale(2) translate(-70px, -30px);
-    opacity: 0;
-    transform: scale(2) translate(-70px, -30px);
-  }
-  5% {
-    opacity: 1;
-    opacity: 1;
-  }
 }
 .footer {
   color: white;
@@ -1797,5 +1528,63 @@ body {
         var(--stroke-color);
     line-height: unset;
     height: unset;
+  }
+}
+
+svg {
+  width: 20vw;
+  display: block;
+  background-color: wheat;
+  margin: -0.078125vw;
+  border-radius: 50%;
+}
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+.path.circle {
+  -webkit-animation: dash 0.9s ease-in-out;
+  animation: dash 0.9s ease-in-out;
+}
+.path.line {
+  stroke-dashoffset: 1000;
+  -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+  animation: dash 0.9s 0.35s ease-in-out forwards;
+}
+.path.check {
+  stroke-dashoffset: -100;
+  -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+  animation: dash-check 0.9s 0.35s ease-in-out forwards;
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
   }
 }
