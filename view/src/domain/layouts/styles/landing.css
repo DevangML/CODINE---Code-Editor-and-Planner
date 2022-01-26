@@ -68,17 +68,21 @@
   display: flex;
   flex-direction: column;
   gap: 1vw;
-  max-width: 90vw;
+  max-width: 80vw;
   padding-bottom: 20vh;
   min-height: 100vh;
 }
 
-.form input {
-  padding: 1.2vh;
+.authInput {
+  padding: 1.2vh !important;
   margin: 1.12vh;
   color: rgba(255, 255, 255, 0.911);
-  font-size: 2vh;
+  font-size: 2.5vh !important;
   min-width: 40vw;
+}
+
+.authInput::placeholder {
+  font-size: 2.1vh !important;
 }
 
 .lead {
@@ -102,39 +106,34 @@
   color: #333 !important;
   border: 1px solid #333;
   background: #f5e7a2;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
   border-radius: 2vh;
+  outline: none;
+  border: none;
   font-size: 3vh !important;
-  transition: all cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.2s;
-  width: 50%;
+  transition: all linear 0.3s;
+  min-width: 25vw !important;
+  max-width: 30vw;
 }
 
 .auth__button:hover {
-  border-color: #fff;
-  background: #0f2027; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #2c5364,
-    #203a43,
-    #0f2027
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #0f2027;
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
   color: #fff !important;
 }
 
 .googleButton {
   width: 60%;
+
   padding-top: 2.2vh;
   padding-bottom: 2.2vh;
   text-align: center;
   color: #000;
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 3vh !important;
   cursor: pointer;
   display: inline-block;
   border: 2px solid #3c73ff;

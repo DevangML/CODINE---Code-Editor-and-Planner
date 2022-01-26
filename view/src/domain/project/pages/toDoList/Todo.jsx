@@ -1,37 +1,10 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { makeStyles } from '@material-ui/core/styles';
-import { Typography, ButtonGroup, Button } from '@material-ui/core';
-import { Create, Delete, CheckCircle } from '@material-ui/icons';
+import { useDispatch } from 'react-redux';
 import moment from 'moment';
-
 import { deleteTodo, checkTodo } from '../../../../redux/actions/todoActions';
 import store from '../../../../redux/store';
 
-const useStyles = makeStyles({
-  todoStyle: {
-    margin: '20px auto',
-    padding: '20px',
-    border: '2px solid #bdbdbd',
-    margin: '3vw',
-    borderRadius: '9px',
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  moreStyle: {
-    color: '#8f8f8f',
-  },
-  isComplete: {
-    color: 'green',
-  },
-  checked: {
-    textDecoration: 'line-through',
-  },
-});
-
 const Todo = ({ todo, setTodo, todos }) => {
-  const classes = useStyles();
   const dispatch = useDispatch();
   const auth = store.getState().auth;
 
@@ -55,41 +28,31 @@ const Todo = ({ todo, setTodo, todos }) => {
 
   return (
     <>
-      <div className={classes.todoStyle}>
+      <div className='todoStyle'>
         <div>
           {todo.isComplete ? (
-            <Typography variant='subtitle1' className={classes.checked}>
-              {todo.name}
-            </Typography>
+            <h5 className='checked'>{todo.name}</h5>
           ) : (
-            <Typography variant='subtitle1'>{todo.name}</Typography>
+            <h5 className='unchecked'>{todo.name}</h5>
           )}
-          <Typography variant='body2' className={classes.moreStyle}>
-            Author: {todo.author}
-          </Typography>
-          <Typography variant='body2' className={classes.moreStyle}>
-            Added: {moment(todo.date).fromNow()}
-          </Typography>
+          <h5 className='moreStyle'>Author: {todo.author}</h5>
+          <h5 className='moreStyle'>Added: {moment(todo.date).fromNow()}</h5>
         </div>
-        <div>
+        <section className='buttonGroup'>
           {auth._id && auth._id === todo.uid ? (
-            <ButtonGroup size='small' aria-label='outlined primary button group'>
-              <Button onClick={() => handleCheck(todo._id)}>
-                {todo.isComplete ? (
-                  <CheckCircle className={classes.isComplete} />
-                ) : (
-                  <CheckCircle color='action' />
-                )}
-              </Button>
-              <Button onClick={() => handleOnUpdateClick(todo._id)}>
-                <Create color='primary' />
-              </Button>
-              <Button onClick={() => handleDelete(todo._id)}>
-                <Delete color='secondary' />
-              </Button>
-            </ButtonGroup>
+            <>
+              <button className='checkbtn' onClick={() => handleCheck(todo._id)}>
+                {todo.isComplete ? <>❌</> : <>✅</>}
+              </button>
+              <button className='updateButton' onClick={() => handleOnUpdateClick(todo._id)}>
+                Update
+              </button>
+              <button className='deleteButton' onClick={() => handleDelete(todo._id)}>
+                🗑️
+              </button>
+            </>
           ) : null}
-        </div>
+        </section>
       </div>
     </>
   );

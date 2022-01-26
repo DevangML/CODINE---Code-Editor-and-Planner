@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import store from '../../../../redux/store';
 import AddTodo from './AddTodo';
 import ListTodos from './ListTodos';
-
-import { useSelector } from 'react-redux';
-import store from '../../../../redux/store';
 
 const Todos = () => {
   const auth = store.getState().auth;
@@ -13,7 +11,7 @@ const Todos = () => {
   });
 
   return (
-    <>
+    <section className='todo__container'>
       {auth._id ? (
         <>
           <AddTodo todo={todo} setTodo={setTodo} />
@@ -24,7 +22,7 @@ const Todos = () => {
           <ListTodos todo={todo} setTodo={setTodo} />
         </>
       )}
-    </>
+    </section>
   );
 };
 

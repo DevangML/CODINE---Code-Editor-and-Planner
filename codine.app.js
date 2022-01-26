@@ -21,16 +21,54 @@ const expressApp = express();
 expressApp.use(compression());
 
 // CORS Setup
-const corsOptions = {
-  origin: 'http://localhost:3000',
-};
+
+let corsOptions;
+
+if (process.env.NODE_ENV === 'production') {
+  corsOptions = {
+    origin: 'https://pcodine.netlify.app',
+  };
+} else {
+  corsOptions = {
+    origin: 'http://localhost:3000',
+  };
+}
 expressApp.use(cors(corsOptions));
 
 // Basic express config
-expressApp.use(express.json({ limit: '30mb', extended: true }));
-expressApp.use(express.urlencoded({ limit: '30mb', extended: true }));
-expressApp.use(helmet());
-
+expressApp.use(express.json({ extended: true }));
+expressApp.use(express.urlencoded({ extended: true }));
+expressApp.use(helmet.crossOriginEmbedderPolicy());
+expressApp.use(helmet.crossOriginOpenerPolicy());
+expressApp.use(helmet.crossOriginResourcePolicy());
+expressApp.use(helmet.dnsPrefetchControl());
+expressApp.use(helmet.expectCt());
+expressApp.use(helmet.frameguard());
+expressApp.use(helmet.hidePoweredBy());
+expressApp.use(helmet.hsts());
+expressApp.use(helmet.ieNoOpen());
+expressApp.use(helmet.noSniff());
+expressApp.use(helmet.originAgentCluster());
+expressApp.use(helmet.permittedCrossDomainPolicies());
+expressApp.use(helmet.referrerPolicy());
+expressApp.use(helmet.xssFilter());
+// expressApp.use(
+//   helmet.contentSecurityPolicy({
+//     useDefaults: false,
+//     directives: {
+//       defaultSrc: ["'self'"],
+//       scriptSrc: ["'self'"],
+//       objectSrc: ["'none'"],
+//       connectSrc: [
+//         'https://jsonplaceholder.typicode.com/posts',
+//         'https://o968057.ingest.sentry.io',
+//         '*',
+//         "'unsafe-inline'",
+//       ],
+//       upgradeInsecureRequests: [],
+//     },
+//   })
+// );
 // Making database connection
 
 mong();
@@ -42,14 +80,6 @@ mong();
 // client.on('error', (error) => {
 // console.error(error)
 // })
-
-// Static view configuration
-
-expressApp.use(express.static('view/build'));
-expressApp.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'view', 'build', 'index.html'));
-  logger.info('Static files i.e. client served');
-});
 
 // Contact Route Initializers
 expressApp.use('/contact', codineContactRouter);
@@ -65,6 +95,14 @@ expressApp.use('/todo', codineToDoRouter);
 // Authentication Routes Initializers
 
 expressApp.use('/auth', codineAuthRouter);
+
+// Static view configuration
+
+// expressApp.use(express.static('view/build'));
+// expressApp.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, 'view', 'build', 'index.html'));
+//   logger.info('Static files i.e. client served');
+// });
 
 // Making Port and connection for express.js
 const port = process.env.PORT || '5000';

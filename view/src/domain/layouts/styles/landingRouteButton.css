@@ -4,6 +4,7 @@
   align-items: center;
   flex-wrap: wrap;
   z-index: 6;
+  font-size: calc(20px, 1vh);
   gap: 3vw;
   min-width: 5vw;
   min-height: 5vh;
@@ -13,13 +14,15 @@
 
 .landing_button__item-1,
 .landing_button__item-2 {
-  width: 20%;
+  width: 25%;
   padding-top: 2.2vh;
   padding-bottom: 2.2vh;
+  text-decoration: none;
   text-align: center;
   color: #000;
   text-transform: uppercase;
-  font-weight: 600;
+  font-size: 4vh;
+  font-weight: 400;
   cursor: pointer;
   display: inline-block;
   border: 2px solid #3c73ff;

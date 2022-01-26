@@ -18,7 +18,7 @@ function Login() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    dispatch(login(email, password)).then(() => {
+    await dispatch(login(email, password)).then(() => {
       history.push('/');
       setTimeout(() => {
         window.location.reload(false);
@@ -61,6 +61,7 @@ function Login() {
                 onChange={(e) => onChange(e)}
                 placeholder='Email Address'
                 required
+                className='authInput'
                 type='email'
                 value={email}
               />
@@ -71,29 +72,32 @@ function Login() {
                 name='password'
                 onChange={(e) => onChange(e)}
                 placeholder='Password'
+                className='authInput'
                 required
                 type='password'
                 value={password}
               />
             </div>
-            <input className='auth__button' type='submit' value='Login' />
-            <GoogleLogin
-              clientId={process.env.REACT_APP_GCID}
-              cookiePolicy='single_host_origin'
-              onFailure={googleError}
-              onSuccess={googleSuccess}
-              render={(renderProps) => (
-                <button
-                  className='googleButton'
-                  disabled={renderProps.disabled}
-                  onClick={renderProps.onClick}
-                  startIcon={<Icon />}
-                  type='button'
-                >
-                  Google Sign In
-                </button>
-              )}
-            />
+            <section className='auth__cont'>
+              <input className='auth__button' type='submit' value='Login' />
+              <GoogleLogin
+                clientId={process.env.REACT_APP_GCID}
+                cookiePolicy='single_host_origin'
+                onFailure={googleError}
+                onSuccess={googleSuccess}
+                render={(renderProps) => (
+                  <button
+                    className='googleButton'
+                    disabled={renderProps.disabled}
+                    onClick={renderProps.onClick}
+                    startIcon={<Icon />}
+                    type='button'
+                  >
+                    Google Sign In
+                  </button>
+                )}
+              />
+            </section>
           </form>
           <p className='link'>
             Don't have an account? <Link to='/register'>Sign Up</Link>

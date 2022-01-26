@@ -1,5 +1,3 @@
-/* eslint-disable import/no-import-module-exports */
-
 import { createStore, applyMiddleware } from 'redux';
 import throttle from 'lodash.throttle';
 import thunk from 'redux-thunk';

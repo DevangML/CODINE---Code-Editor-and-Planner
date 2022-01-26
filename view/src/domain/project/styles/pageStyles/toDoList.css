@@ -1,0 +1,127 @@
+.todo__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+  justify-content: center;
+  padding-bottom: 2vh;
+  min-height: 110vh;
+  min-width: 100vw;
+  background-image: url('../../../../assets/images/login.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: -15vh;
+  padding-top: 20vh;
+}
+
+.addtodo {
+  background-color: antiquewhite;
+  min-width: 83vw;
+  max-width: 90vw;
+  padding: 1.5vw;
+  border-radius: 3vh;
+}
+
+.formStyle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.todosStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+  gap: 1vw;
+  background-color: #faebd7;
+  min-width: 80vw;
+  max-width: 90vw;
+  padding: 1.5vw;
+  border-radius: 3vh;
+}
+
+.todoStyle {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  justify-content: space-between;
+  gap: 45vw;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  min-width: 80vw;
+  max-width: 90vw;
+  padding: 1.5vw;
+  border-radius: 3vh;
+}
+
+.moreStyle {
+  font-size: 2vh;
+}
+
+.checked,
+.unchecked {
+  font-size: 3vh;
+}
+
+.checked {
+  text-decoration: line-through;
+}
+
+@media only screen and (max-aspect-ratio: 19/24) {
+  .todoStyle {
+    gap: 10vw;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.submitButton {
+  padding: 0.8vw;
+  border-radius: 1vw;
+  background-color: teal;
+  color: wheat;
+}
+
+.isComplete {
+  padding: 2vh;
+}
+
+.checkbtn {
+  border-radius: 2vh;
+  font-size: 3vh;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2vw;
+}
+
+.deleteButton {
+  background-color: transparent;
+  font-size: 3vh;
+  border: none;
+  outline: none;
+}
+
+.deleteButton:hover,
+.checkbtn:hover {
+  background-color: transparent;
+}
+
+.updateButton {
+  padding: 0.4vw;
+  border-radius: 1vw;
+  background-color: teal;
+  color: wheat;
+}

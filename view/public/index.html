@@ -1,41 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self'; base-uri 'self';"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <link rel="apple-touch-icon" href="./logo192.png" />
-    <link rel="preload" as="style" href="../src/app.css" />
-    <link rel="preload" href="/your/webpage/link" />
-    <title>CODEX</title>
-  </head>
 
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+<head>
+  <meta charset="utf-8" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.svg" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="preconnect" href="https://jsonplaceholder.typicode.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preload" href="../src/app.css" as="style" type="text/css"/>
+  <link rel="stylesheet" href="../src/app.css"/>
+  <link rel="preload" href="../src/assets/images/landing.webp" as="image"/>
+  <link rel="preload" href="../src/assets/images/login.webp" as="image" />
+  <link rel="apple-touch-icon" href="./logo192.png" />
+  <title>CODINE</title>
+</head>
 
-    <div id="root"></div>
-    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker
-            .register('./serviceworker.js')
-            .then((reg) => console.log('Success: ', reg.scope))
-            .catch((err) => console.log('Failure: ', err));
-        });
-      }
-    </script>
-    <script src="scrollbot.js"></script>
-  </body>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+
+  <div id="root"></div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker
+          .register('./serviceworker.js')
+          .then((reg) => console.log('Success: ', reg.scope))
+          .catch((err) => console.log('Failure: ', err));
+      });
+    }
+  </script>
+</body>
+
 </html>

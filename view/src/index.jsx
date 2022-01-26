@@ -1,7 +1,5 @@
-/* eslint-disable import/no-import-module-exports */
-/* eslint-disable global-require */
-
 import ReactDOM, { render } from 'react-dom';
+import React from 'react';
 import { Provider } from 'react-redux';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
@@ -23,7 +21,9 @@ Sentry.init({
 const rootElement = document.getElementById('root');
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
   </Provider>,
   rootElement
 );

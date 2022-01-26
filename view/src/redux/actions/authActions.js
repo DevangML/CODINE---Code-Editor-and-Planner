@@ -12,6 +12,7 @@ import {
   GOOGLE_LOGIN_FAIL,
   LOGOUT,
 } from '../constants/authTypes';
+import { API } from '../../api';
 
 // Load User
 export const loadUser = (token) => async (dispatch) => {
@@ -36,7 +37,7 @@ export const register =
     };
 
     try {
-      const res = await axios.post('http://localhost:5000/auth/create/1', body, config);
+      const res = await API.post('/auth/create/1', body, config);
       const token = res.data.token;
       dispatch(loadUser(token));
     } catch (err) {
@@ -87,7 +88,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const body = JSON.stringify({ email, password });
-    const res = await axios.post('http://localhost:5000/auth/create/2', body, config);
+    const res = await API.post('/auth/create/2', body, config);
     const token = res.data.token;
     dispatch(loadUser(token));
   } catch (err) {
@@ -105,7 +106,4 @@ export const login = (email, password) => async (dispatch) => {
 
 export const logout = () => (dispatch) => {
   dispatch({ type: LOGOUT });
-  dispatch({
-    type: CLEAR_TODOS,
-  });
 };

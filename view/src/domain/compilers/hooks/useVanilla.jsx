@@ -1,14 +1,9 @@
 import { useRef, useState } from 'react';
 
 const useVanilla = () => {
-  const [compData, setCompData] = useState({
-    html: '',
-    css: '',
-    js: '',
-    id: '',
-  });
-
-  const { html, css, js, id } = compData;
+  const [html, setHtml] = useState(null);
+  const [css, setCss] = useState(null);
+  const [js, setJs] = useState(null);
 
   const iRef = useRef();
 
@@ -43,8 +38,12 @@ const useVanilla = () => {
   };
 
   return {
-    compData,
-    setCompData,
+    html,
+    setHtml,
+    css,
+    setCss,
+    js,
+    setJs,
     iRef,
     runCode,
   };

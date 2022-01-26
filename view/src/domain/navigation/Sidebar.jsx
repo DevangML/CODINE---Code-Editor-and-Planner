@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { GoogleLogout } from 'react-google-login';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { IconContext } from 'react-icons/lib';
@@ -27,10 +26,7 @@ const Sidebar = function () {
 
   const onSuccess = async () => {
     dispatch(logout());
-    history.push('/');
-    setTimeout(() => {
-      window.location.reload(false);
-    }, 2);
+    history.go(0);
   };
 
   let googleSaveHandler;
