@@ -81,6 +81,7 @@ const codineAuthCreateController1 = async (req, res) => {
       });
 
       await auth.save();
+      res.status(200).send('ok');
 
       logger.info('Registered user info saved in DB');
     } else {
@@ -131,7 +132,7 @@ const codineAuthCreateController2 = async (req, res) => {
 
     jwt.sign(payload, jwtSecret, { expiresIn: 360000 }, async (err, token) => {
       if (err) throw err;
-      await res.json({ token });
+      await res.status(200).json({ token });
       logger.info('JWT Signed and sent as response for login request');
     });
   } catch (err) {
@@ -158,7 +159,7 @@ const codineAuthCreateController3 = async (req, res) => {
       });
 
       const confirmation = await googleAuthInstance.save();
-      await res.send(confirmation);
+      await res.status(200).send(confirmation);
       logger.info('Google User data saved to DB');
     } else {
       await res.status(400).send('User already exists');
@@ -189,6 +190,7 @@ const codineAuthCreateController4 = async (req, res) => {
       });
 
       const googleUserCreateConfirmation = await googleUserInstance.save();
+      res.status(200).send('ok');
       logger.info('Form data saved to DB with message: ', googleUserCreateConfirmation);
     } else {
       await res.status(400).send('User already exists');

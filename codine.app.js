@@ -111,3 +111,5 @@ const host = 'localhost';
 expressApp.listen(port, () => {
   logger.info(`Server started and running on http://${host}:${port}`);
 });
+
+module.exports = expressApp;
