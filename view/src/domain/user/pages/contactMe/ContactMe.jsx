@@ -25,6 +25,7 @@ const ContactMe = function () {
               </svg>
               <input
                 type='text'
+                role='textbox'
                 className='contact__section__sub-section__item-1_mod-2'
                 placeholder='Name'
                 onChange={(e) => setName(e.target.value)}
@@ -40,6 +41,7 @@ const ContactMe = function () {
               <input
                 onChange={(e) => setEmail(e.target.value)}
                 type='email'
+                role='textbox'
                 className='contact__section__sub-section__item-1_mod-2'
                 placeholder='Email'
               />
@@ -53,6 +55,7 @@ const ContactMe = function () {
               </svg>
               <input
                 type='tel'
+                role='textbox'
                 onChange={(e) => setPhone(e.target.value)}
                 className='contact__section__sub-section__item-1_mod-2'
                 placeholder='Phone Number'
@@ -67,12 +70,13 @@ const ContactMe = function () {
               </svg>
               <input
                 type='text'
+                role='textbox'
                 onChange={(e) => setMessage(e.target.value)}
                 className='contact__section__sub-section__item-1_mod-2'
                 placeholder='Message'
               />
             </section>
-            <input type='submit' className='contact__item' />
+            <input role='button' type='submit' className='contact__item' />
           </form>
         </section>
       </section>

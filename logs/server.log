@@ -273,3 +273,10 @@ info: Jan-27-2022 22:28:58: 	Server started and running on http://localhost:5000
 info: Jan-27-2022 22:33:09: 	MongoDB Connection Successful
 info: Jan-27-2022 22:33:09: 	Server started and running on http://localhost:5000
 info: Jan-27-2022 22:36:31: 	MongoDB Connection Successful
+info: Jan-28-2022 13:43:24: 	MongoDB Connection Successful
+info: Jan-28-2022 13:43:24: 	Server started and running on http://localhost:5000
+info: Jan-28-2022 13:43:34: 	JWT Signed and sent as response for login request
+info: Jan-28-2022 13:52:24: 	MongoDB Connection Successful
+info: Jan-28-2022 13:52:24: 	Server started and running on http://localhost:5000
+info: Jan-28-2022 14:37:36: 	MongoDB Connection Successful
+info: Jan-28-2022 14:37:36: 	Server started and running on http://localhost:5000
