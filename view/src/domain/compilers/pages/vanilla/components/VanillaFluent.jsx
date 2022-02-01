@@ -25,8 +25,13 @@ const VanillaFluent = function () {
     <section className='vanilla_fluent'>
       <main className='vanilla_fluent__main'>
         <section className='vanilla_fluent__main__section-1'>
-          <section className='vanilla_fluent__main__section-1__sub-section-1'>
-            <div className='editor-header'>HTML</div>
+          <section
+            aria-labelledby='html'
+            className='vanilla_fluent__main__section-1__sub-section-1'
+          >
+            <label id='html' className='editor-header'>
+              HTML
+            </label>
             <CodeMirror
               value={html}
               options={{
@@ -38,8 +43,10 @@ const VanillaFluent = function () {
               }}
             />
           </section>
-          <section className='vanilla_fluent__main__section-1__sub-section-2'>
-            <div className='editor-header'>CSS</div>
+          <section aria-labelledby='css' className='vanilla_fluent__main__section-1__sub-section-2'>
+            <label id='css' className='editor-header'>
+              CSS
+            </label>
             <CodeMirror
               value={css}
               options={{
@@ -51,8 +58,10 @@ const VanillaFluent = function () {
               }}
             />
           </section>
-          <section className='vanilla_fluent__main__section-1__sub-section-3'>
-            <div className='editor-header'>JS</div>
+          <section aria-labelledby='js' className='vanilla_fluent__main__section-1__sub-section-3'>
+            <label id='js' className='editor-header'>
+              JS
+            </label>
             <CodeMirror
               value={js}
               options={{
@@ -66,6 +75,7 @@ const VanillaFluent = function () {
           </section>
         </section>
         <section className='vanilla_fluent__main__section-2'>
+          <label id='output'></label>
           <iframe className='vanilla_fluent__main__section-2__item' ref={iRef} title='foutput' />
         </section>
       </main>

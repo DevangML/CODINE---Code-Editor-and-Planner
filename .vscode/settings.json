@@ -25,5 +25,6 @@
   "workbench.colorCustomizations": {
     "sash.hoverBorder": "#a1ccfb"
   },
-  "peacock.color": "#70b1f9"
+  "peacock.color": "#70b1f9",
+  "editor.wordWrap": "on"
 }

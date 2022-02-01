@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import axios from 'axios';
 import styles from '../../styles/pageStyles/compiler.module.css';
 
 const Compiler = () => {
@@ -19,10 +18,10 @@ const Compiler = () => {
     setUser_Input(event.target.value);
   };
 
-  const language = (event) => {
-    event.preventDefault();
-    setLanguageId(event.target.value);
-    localStorage.setItem('languageId', event.target.value);
+  const language = (value, selectOptionSetter) => {
+    selectOptionSetter(value);
+    localStorage.setItem('languageId', value);
+    // handle other stuff like persisting to store etc
   };
 
   const submit = async (e) => {
@@ -94,50 +93,66 @@ const Compiler = () => {
   return (
     <section className={styles['container']}>
       <section className={styles['inner-container']}>
-        <label htmlFor='solution '>
-          <span>
-            <i className={styles['header']}>Code Here</i>
-          </span>
+        <label className={styles['header']} htmlFor='solution'>
+          Code Here
         </label>
         <textarea
           required
+          id='solution'
           name='solution'
           onChange={inputChange}
           className={styles['input']}
-          value={input}
         ></textarea>
-        <label htmlFor='tags'>
-          <b className={styles['langselect']}>Language:</b>
+        <label className={styles['langselect']} htmlFor='tags'>
+          Language
         </label>
-        <select value={languageId} className={styles['lang__switch']} onChange={language}>
-          <option className={styles['dropdown']} value='54'>
+        <select
+          value={languageId}
+          id='tags'
+          className={styles['lang__switch']}
+          role='listbox'
+          onChange={(e) => language(e.target.value, setLanguageId)}
+        >
+          <option role='option' className={styles['dropdown']} value='54'>
             C++
           </option>
-          <option className={styles['dropdown']} value='50'>
+          <option role='option' className={styles['dropdown']} value='50'>
             C
           </option>
-          <option className={styles['dropdown']} value='62'>
+          <option role='option' className={styles['dropdown']} value='62'>
             Java
           </option>
-          <option className={styles['dropdown']} value='71'>
+          <option role='option' className={styles['dropdown']} value='71' name='Python'>
             Python
           </option>
         </select>
         <button type='button' onClick={submit} className={styles['run']}>
           Run
         </button>
-
+        <br />
         <section>
           <section>
-              <h5 className={styles['outputheader']}>Output</h5>
-            <textarea value={output} className={styles['output']} value={output}></textarea>
+            <label htmlFor='output' className={styles['outputheader']}>
+              Output
+            </label>
+            <textarea
+              value={output}
+              id='output'
+              className={styles['output']}
+              name='output'
+            ></textarea>
           </section>
         </section>
-        <span>
-          <i className={styles['userheader']}>User Input</i>
-        </span>
+        <label className={styles['userheader']} htmlFor='user-input'>
+          User Input
+        </label>
         <br />
-        <textarea onChange={userInput} className={styles['userinput']}></textarea>
+        <textarea
+          onChange={userInput}
+          className={styles['userinput']}
+          name='user-input'
+          id='user-input'
+        ></textarea>
       </section>
     </section>
   );

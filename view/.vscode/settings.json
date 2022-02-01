@@ -18,5 +18,6 @@
     "source.fixAll": true,
     "source.fixAll.eslint": true
   },
-  "javascript.format.enable": false
+  "javascript.format.enable": false,
+  "editor.wordWrap": "on"
 }

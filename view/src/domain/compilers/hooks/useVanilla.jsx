@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react';
 
 const useVanilla = () => {
-  const [html, setHtml] = useState(null);
-  const [css, setCss] = useState(null);
-  const [js, setJs] = useState(null);
+  const [html, setHtml] = useState('');
+  const [css, setCss] = useState('');
+  const [js, setJs] = useState('');
 
   const iRef = useRef();
 

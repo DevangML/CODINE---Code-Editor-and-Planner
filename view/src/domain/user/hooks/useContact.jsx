@@ -1,43 +1,45 @@
-import { useState } from 'react';
-import { API, setHeaders } from '../../../api/index';
+import { useState, useRef } from 'react';
 
 const useContact = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState(null);
-  const [message, setMessage] = useState('');
+  const [contactInput, setContactInput] = useState({
+    name: '',
+    email: '',
+    phone: null,
+    message: '',
+  });
+  const [error, setError] = useState('');
 
   const resetForm = () => {
-    setName('');
-    setEmail('');
-    setPhone(null);
-    setMessage('');
+    setContactInput({
+      name: '',
+      email: '',
+      phone: null,
+      message: '',
+    });
+  };
+
+  const handleChange = (e) => {
+    setContactInput({
+      ...contactInput,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const data = {
-    name,
-    email,
-    phone,
-    message,
+    name: contactInput.name,
+    email: contactInput.email,
+    phone: contactInput.phone,
+    message: contactInput.message,
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    await API.post('/contact/create', data, setHeaders())
-      .then((res) => {
-        console.log(res);
-        resetForm();
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
   return {
-    setName,
-    setEmail,
-    setPhone,
-    setMessage,
-    handleSubmit,
+    error,
+    setError,
+    contactInput,
+    setContactInput,
+    handleChange,
+    resetForm,
+    data,
   };
 };
 

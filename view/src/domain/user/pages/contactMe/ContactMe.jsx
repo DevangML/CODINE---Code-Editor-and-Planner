@@ -1,10 +1,27 @@
 import { ErrorBoundary } from 'react-error-boundary';
 import useContact from '../../hooks/useContact';
 import { errorHandler } from '../../../../utils/errorHandler';
-import { FallBackLayout } from '../../../layouts/FallBackLayout';
+import { API, setHeaders } from '../../../../api/index';
+import validator from 'validator';
+import { FallBackLayout } from '../../../../domain/layouts/FallBackLayout';
 
 const ContactMe = function () {
-  const { setName, setEmail, setPhone, setMessage, handleSubmit } = useContact();
+  const { error, contactInput, handleChange, resetForm, setError, data } = useContact();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validator.isEmail(contactInput.email)) {
+      return setError('The email you typed is invalid');
+    }
+    await API.post('/contact/create', data, setHeaders())
+      .then((res) => {
+        console.log(res);
+        resetForm();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <ErrorBoundary FallbackComponent={FallBackLayout} onError={errorHandler}>
       <section className='contact'>
@@ -28,7 +45,9 @@ const ContactMe = function () {
                 role='textbox'
                 className='contact__section__sub-section__item-1_mod-2'
                 placeholder='Name'
-                onChange={(e) => setName(e.target.value)}
+                name='name'
+                // value={contactInput.name}
+                onChange={handleChange}
               />
             </section>
             <section className='contact__section__sub-section__item-2'>
@@ -44,6 +63,9 @@ const ContactMe = function () {
                 role='textbox'
                 className='contact__section__sub-section__item-1_mod-2'
                 placeholder='Email'
+                name='email'
+                // value={contactInput.email}
+                onChange={handleChange}
               />
             </section>
             <section className='contact__section__sub-section__item-3'>
@@ -56,9 +78,11 @@ const ContactMe = function () {
               <input
                 type='tel'
                 role='textbox'
-                onChange={(e) => setPhone(e.target.value)}
                 className='contact__section__sub-section__item-1_mod-2'
                 placeholder='Phone Number'
+                name='phone'
+                // value={contactInput.phone}
+                onChange={handleChange}
               />
             </section>
             <section className='contact__section__sub-section__item-4'>
@@ -71,11 +95,14 @@ const ContactMe = function () {
               <input
                 type='text'
                 role='textbox'
-                onChange={(e) => setMessage(e.target.value)}
                 className='contact__section__sub-section__item-1_mod-2'
                 placeholder='Message'
+                name='message'
+                // value={contactInput.message}
+                onChange={handleChange}
               />
             </section>
+            {error && <p className='text-danger'>{error}</p>}
             <input role='button' type='submit' className='contact__item' />
           </form>
         </section>

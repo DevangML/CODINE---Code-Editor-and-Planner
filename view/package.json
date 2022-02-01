@@ -39,6 +39,7 @@
     "redux-thunk": "^2.4.0",
     "shortid": "^2.2.16",
     "styled-components": "^5.3.3",
+    "validator": "^13.7.0",
     "web-vitals": "^2.1.2"
   },
   "scripts": {
@@ -89,5 +90,19 @@
       "react-router-dom"
     ]
   },
-  "nodeLinker": "node-modules"
+  "nodeLinker": "node-modules",
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+      "text-summary",
+      "lcov",
+      "cobertura"
+    ],
+    "testMatch": [
+      "**/*.test.jsx"
+    ]
+  }
 }

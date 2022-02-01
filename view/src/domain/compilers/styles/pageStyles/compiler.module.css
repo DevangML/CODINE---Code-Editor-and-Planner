@@ -127,4 +127,5 @@
   text-shadow: -0.34vh 0 0.56vh #240000;
   font-size: calc(18px + 1vw);
   text-align: center;
+  display: block;
 }

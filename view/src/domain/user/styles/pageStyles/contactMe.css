@@ -130,6 +130,11 @@
   background: #d8d8d8a9;
 }
 
+.text-danger {
+  color: red;
+  font-size: 2vh;
+}
+
 /* @media only screen and (min-width: 3600px) {
   .contact__container {
     border-radius: 1vw;

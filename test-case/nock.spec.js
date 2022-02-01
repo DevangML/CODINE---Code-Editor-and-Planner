@@ -3,7 +3,6 @@ var expect = chai.expect;
 var Student = require('./controllers/studentCtrl');
 var studentObj = new Student();
 const userCtrl = require('./controllers/userCtrl');
-const nock = require('nock');
 
 describe('----------Nock----------', function () {
   it('api test', (done) => {
